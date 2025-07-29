@@ -30,3 +30,22 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
+
+// Theme Toggle Functionality
+const toggleCheckbox = document.getElementById('theme-toggle');
+console.log("clicked");
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    toggleCheckbox.checked = (theme === 'dark');
+  }
+
+applyTheme(currentTheme);
+
+toggleCheckbox.addEventListener('change', () => {
+    const theme = toggleCheckbox.checked ? 'dark' : 'light';
+    applyTheme(theme);
+});
+

@@ -1131,3 +1131,135 @@ a:focus {
         font-size: 26px;
     }
 }
+
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --nav-bg: #111111;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar, .header_section, .footer_section {
+  background-color: var(--nav-bg);
+}
+
+.navbar a, .footer_section a {
+  color: var(--text-color);
+}
+
+
+/* Theme toggle switch */
+.theme-switch {
+  position: relative;
+  top: 7px;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch .slider {
+  background-color: #003DA5;
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.theme-switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Icons */
+.sun-icon, .moon-icon {
+  font-size: 14px;
+  color: white;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* DARK mode toggle active */
+#theme-toggle:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+
+
+/* Light Mode Defaults  */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Header Section */
+.hero {
+  background-color: #e5efff;
+  color: #000;
+}
+
+/* Button */
+.btn-primary {
+  background-color: #ff7f27;
+  color: white;
+}
+
+
+[data-theme="dark"] body {
+  background-color: #0d1117;
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .hero {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: #ff7f27; 
+  color: white;
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+[data-theme="dark"] .navbar a {
+  color: white;
+}
+
+body, .hero, .navbar, .btn-primary {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
