@@ -1345,3 +1345,88 @@ body, .hero, .navbar, .btn-primary {
 #backToTop i {
   pointer-events: none;
 }
+
+/* Style For FAQ Section */
+.faq_section .heading_container p {
+  font-size: 20px;
+}
+.faq_section .accordion-item {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+}
+
+.faq_section .accordion-header {
+  margin: 0;
+}
+
+/* Header button */
+.faq_section .accordion-button {
+  display: flex !important;
+  align-items: center;
+  width: 100% !important;
+  text-align: left;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+  line-height: 1.35;
+  background-color: #fff;
+  color: #212529;
+  box-shadow: none !important;
+  outline: 0 !important;
+  background-image: none !important;
+}
+
+/* Entire bar should feel interactive on hover*/
+.faq_section .accordion-button:hover {
+  background-color: #f6f9ff;
+}
+
+.faq_section .accordion-button:focus-visible {
+  outline: 2px solid rgba(13, 110, 253, .35);
+  outline-offset: 2px;
+}
+
+/*Remove Bootstrap’s chevron entirely*/
+.faq_section .accordion-button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/*Active (open) state*/
+.faq_section .accordion-button:not(.collapsed) {
+  border-bottom: 1px solid rgba(13, 110, 253, .15);
+  /* box-shadow: none !important; */
+}
+
+/*Body (answer)*/
+.faq_section .accordion-body {
+  background: #fff;
+  color: #495057;
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+}
+
+/*Transition on collapse*/
+@media (prefers-reduced-motion: no-preference) {
+  .faq_section .accordion-collapse {
+    transition: height .2s ease;
+  }
+}
+
+/*Small visual polish for first/last items*/
+.faq_section .accordion-item:first-child .accordion-button {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.faq_section .accordion-item:last-child .accordion-button.collapsed {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+/* Style For FAQ Section END*/
