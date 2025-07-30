@@ -830,20 +830,164 @@ a:focus {
 }
 
 /* footer section*/
-.footer_section {
-  background-color: #0a0f43;
+.footer {
+  background-color: #000;
+  padding: 40px 20px;
 }
 
-.footer_section p {
-  margin: 0;
-  padding: 25px 0;
-  color: #ffffff;
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-col .tagline {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.footer-col .section-title {
+  color: orange;
+  font-size: 18px;
+  margin: 15px 0 10px;
+}
+
+.footer-col .about-text {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.footer-col .contact-title {
+  color: orange;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 14px;
+  color: #ccc;
+  margin: 6px 0;
+}
+
+.footer-col p i,
+.footer-col li i {
+  color: orange;
+  margin-right: 8px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: orange;
+}
+
+.subscribe-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.subscribe-box button {
+  background-color: orange;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.subscribe-box button:hover {
+  background-color: #ff9500;
+}
+
+.footer-bottom {
   text-align: center;
-  border-top: 0.8px solid #ffffff;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  position: relative;
 }
 
-.footer_section a {
-  color: inherit;
+.footer-bottom .social-icons {
+  margin-bottom: 10px;
+}
+
+.footer-bottom .social-icons i {
+  background-color: orange;
+  color: #000;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.footer-bottom .social-icons i:hover {
+  background-color: #ff9500;
+}
+
+.scroll-top {
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  cursor: pointer;
+}
+
+.scroll-top i {
+  background-color: orange;
+  color: #000;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.scroll-top i:hover {
+  background-color: #ff9500;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 10px;
 }
 
 /* end footer section*/
