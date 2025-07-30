@@ -1076,26 +1076,6 @@ a:focus {
     margin-top: 30px; 
 }
 
-/* Order Now Button */
-.footer-order-btn {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.05em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); 
-}
-
-.footer-order-btn:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
-}
-
 
 /* Footer Bottom - Copyright */
 .new-footer-bottom {
