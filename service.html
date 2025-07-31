@@ -24,31 +24,52 @@
   <link rel="stylesheet" href="css/responsive.css" />
 
   <!-- Custom Styles -->
-  <style>
-    .fw-bold {
-      font-weight: bolder;
-    }
+<style>
+  .fw-bold {
+    font-weight: bolder;
+  }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
-    }
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
 
     .whatsapp i {
       font-size: 28px;
       color: white;
+    }
+
+    /*Adding styles on hover for card elements*/
+    #card1:hover{
+      background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
+    }
+    #card2:hover{
+      background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+    }
+    #card3:hover{
+      background: linear-gradient(rgba(245, 235, 101, 0.295), rgb(255, 255, 122));
+    }
+    #card4:hover{
+      background: linear-gradient(rgba(255, 76, 225, 0.336), lightpink);
+    }
+    #card5:hover{
+      background: linear-gradient(rgba(57, 225, 255, 0.295), lightblue);
+    }
+    #card6:hover{
+      background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
     }
   </style>
 </head>
@@ -100,14 +121,14 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
             <h5 class="fw-bold-1">Home Maintenance</h5>
             <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-broom fa-3x mb-3 text-success" ></i>
             <h5 class="fw-bold">Cleaning Services</h5>
             <div class="mt-4">
@@ -116,7 +137,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
             <h5 class="fw-bold">Renovation & Painting</h5>
             <div class="mt-4">
@@ -128,7 +149,7 @@
 
       <div class="row mt-2">
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
             <h5 class="fw-bold">Appliance Repair</h5>
             <div class="mt-4">
@@ -137,7 +158,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
             <h5 class="fw-bold">IT & Network Setup</h5>
             <div class="mt-4">
@@ -146,7 +167,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
             <h5 class="fw-bold-2">Security Systems</h5>
             <div class="mt-4">
@@ -240,6 +261,8 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
     // Display current year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
