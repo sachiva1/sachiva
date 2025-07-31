@@ -143,6 +143,7 @@ a:focus {
   padding: 10px 25px;
   color: #000000;
   text-align: center;
+  color: var(--nav-text-color);
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
@@ -1194,6 +1195,7 @@ a:focus {
   --bg-color: #000000;
   --text-color: #ffffff;
   --nav-bg: #111111;
+  --nav-text-color: #ffffff;
 }
 
 body {
