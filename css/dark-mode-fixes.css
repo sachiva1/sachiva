@@ -1,0 +1,379 @@
+/* Dark Mode Enhancements for Sachiva */
+/* Import this file after your main stylesheet */
+
+/* Global Variables for Dark Theme */
+:root {
+  --dark-bg: #181a20;
+  --dark-card-bg: #23272f;
+  --dark-text: #e0e0e0;
+  --dark-accent: #007bff;
+  --dark-error: #ff5252;
+  --dark-success: #43a047;
+  --dark-icon: #b0b3b8;
+  --dark-border: #333;
+  --transition-smooth: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Global Smooth Transitions */
+body, button, a, input, .box, .card, .contributor-card, .service_section .box {
+  transition: var(--transition-smooth);
+}
+
+/* Contributors Page Dark Mode - Fixed */
+[data-theme="dark"] .contributors-section {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .contributor-card {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .contributor-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .contributor-name {
+  color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .contributor-role {
+  color: var(--dark-icon) !important;
+}
+
+[data-theme="dark"] .contributors-section .heading_container h2 {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .contributors-section .heading_container p {
+  color: var(--dark-icon) !important;
+}
+
+/* Service Cards Dark Mode - Enhanced */
+[data-theme="dark"] .service_section {
+  background-color: var(--dark-bg);
+}
+
+[data-theme="dark"] .service_section .box {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .service_section .box:hover {
+  background-color: var(--dark-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .service_section .box:hover .img-box img {
+  filter: brightness(1.2) invert(0.9);
+}
+
+[data-theme="dark"] .service_section .box .detail-box h5 {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .service_section .box .detail-box p {
+  color: var(--dark-icon) !important;
+}
+
+[data-theme="dark"] .service_section .box:hover .detail-box h5,
+[data-theme="dark"] .service_section .box:hover .detail-box p {
+  color: #ffffff !important;
+}
+
+/* Contact Form Dark Mode - Enhanced */
+[data-theme="dark"] .contact_section {
+  background-color: var(--dark-bg);
+}
+
+[data-theme="dark"] .contact_section input {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border: 1px solid var(--dark-border) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .contact_section input:focus {
+  border-color: var(--dark-accent) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .contact_section input::placeholder {
+  color: var(--dark-icon) !important;
+}
+
+[data-theme="dark"] .contact_section button {
+  background-color: var(--dark-accent) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .contact_section button:hover {
+  background-color: transparent !important;
+  color: var(--dark-accent) !important;
+  border-color: var(--dark-accent) !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Contact Form Container Dark Mode */
+[data-theme="dark"] .contact-container {
+  background-color: rgba(35, 39, 47, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dark-border);
+}
+
+[data-theme="dark"] .contact-form h2 {
+  color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .contact-form .form-control {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+}
+
+[data-theme="dark"] .btn-send {
+  background-color: var(--dark-accent) !important;
+  border-color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .btn-send:hover {
+  background-color: transparent !important;
+  color: var(--dark-accent) !important;
+}
+
+/* Footer Social Icons Dark Mode - Enhanced */
+[data-theme="dark"] .footer-social-icons a {
+  color: var(--dark-icon) !important;
+  border-color: var(--dark-border) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .footer-social-icons a:hover {
+  background-color: var(--dark-accent) !important;
+  border-color: var(--dark-accent) !important;
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+[data-theme="dark"] .info_section a {
+  color: var(--dark-icon) !important;
+}
+
+[data-theme="dark"] .info_section a:hover {
+  color: var(--dark-accent) !important;
+}
+
+/* Loading Spinner Dark Mode */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+[data-theme="dark"] .spinner {
+  border: 4px solid var(--dark-card-bg) !important;
+  border-top: 4px solid var(--dark-accent) !important;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message Dark Mode - Enhanced */
+.error-message {
+  color: #ff5252;
+  background: #fff3f3;
+  border: 1px solid #ff5252;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-theme="dark"] .error-message {
+  color: var(--dark-error) !important;
+  background: var(--dark-card-bg) !important;
+  border: 1px solid var(--dark-error) !important;
+}
+
+[data-theme="dark"] .error-message h4 {
+  color: var(--dark-error) !important;
+}
+
+[data-theme="dark"] .error-message p {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .error-message a {
+  color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .error-message a:hover {
+  color: #ffffff !important;
+}
+
+/* Success Message Dark Mode */
+.success-message {
+  color: #28a745;
+  background: #f3fff3;
+  border: 1px solid #28a745;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+[data-theme="dark"] .success-message {
+  color: var(--dark-success) !important;
+  background: var(--dark-card-bg) !important;
+  border: 1px solid var(--dark-success) !important;
+}
+
+/* Button Hover Effects Enhanced */
+[data-theme="dark"] .btn-primary {
+  background-color: var(--dark-accent) !important;
+  border-color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: transparent !important;
+  color: var(--dark-accent) !important;
+  border-color: var(--dark-accent) !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--dark-border) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Cards and Boxes General Enhancement */
+[data-theme="dark"] .card {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .card h5,
+[data-theme="dark"] .card p {
+  color: var(--dark-text) !important;
+}
+
+/* Navigation Enhancement */
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+  color: var(--dark-accent) !important;
+}
+
+/* Form Elements General */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: var(--dark-accent) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Text Contrast Improvements */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] p {
+  color: var(--dark-icon) !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--dark-icon) !important;
+}
+
+/* Professional Section Enhancement */
+[data-theme="dark"] .professional_section {
+  background-color: var(--dark-bg) !important;
+}
+
+[data-theme="dark"] .professional_section .detail-box h2 {
+  color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .professional_section .detail-box p {
+  color: var(--dark-text) !important;
+}
+
+/* About Section Enhancement */
+[data-theme="dark"] .about_section {
+  background-color: var(--dark-bg) !important;
+}
+
+[data-theme="dark"] .about_section .detail-box h2 {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .about_section .detail-box p {
+  color: var(--dark-icon) !important;
+}
+
+/* Hero Section Enhancement */
+[data-theme="dark"] .hero_area {
+  background-color: var(--dark-bg) !important;
+}
+
+[data-theme="dark"] .slider_section .detail-box h1 {
+  color: var(--dark-accent) !important;
+}
+
+[data-theme="dark"] .slider_section .detail-box p {
+  color: var(--dark-text) !important;
+}
+
+/* Feature Section Enhancement */
+[data-theme="dark"] .feature_section .feature_container .box {
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-text) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .feature_section .feature_container .box:hover {
+  background-color: var(--dark-accent) !important;
+  color: #ffffff !important;
+}
