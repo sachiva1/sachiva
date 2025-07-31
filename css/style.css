@@ -1303,6 +1303,19 @@ body {
   color: white;
 }
 
+.slider i{
+  color:#e9ecef;
+}
+
+.carousel-wrap_layout_padding2-top{
+  background-color: #94c3d3;
+  color: white;
+}
+
+.client-section p{
+  color: #ffffff;
+}
+
 /* Navbar */
 [data-theme="dark"] .navbar {
   background-color: #1a1a1a;
@@ -1313,8 +1326,56 @@ body {
   color: white;
 }
 
+[data-theme="dark"] .container-1 .detail-box p{
+  color: black;
+}
+
+[data-theme="dark"] .container-1 .detail-box h5{
+  color: black;
+}
+
+[data-theme="dark"] .container-3 .detail-box p{
+  color: black;
+}
+
+[data-theme="dark"] .container-2 .detail-box h2,a{
+  color: rgb(245, 239, 239);
+  margin-left: 40px;
+}
+
+[data-theme="dark"] .container-2 .detail-box p{
+  color: rgb(245, 239, 239);
+  margin-left: 40px;
+}
+
+[data-theme="dark"] .box .client_text1 {
+  color: rgb(245, 239, 239);
+}
+
+.client_section .container {
+  background-color: #c1e3e6;
+  color: #000;
+}
+
+[data-theme="light"] .container-2 .detail-box h2,p,a{
+  color: rgb(12, 12, 12);
+  margin-left: 40px;
+}
+
 body, .hero, .navbar, .btn-primary {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .about_section_layout_padding .heading_container p{
+  color: #ffffff;
+}
+
+[data-theme="dark"] .about_section_layout_padding .row h5{
+  color: #070707;
+}
+
+[data-theme="dark"] .about_section .detail-box p{
+  color: #f7efef;
 }
 
 
