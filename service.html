@@ -24,31 +24,52 @@
   <link rel="stylesheet" href="css/responsive.css" />
 
   <!-- Custom Styles -->
-  <style>
-    .fw-bold {
-      font-weight: bolder;
-    }
+<style>
+  .fw-bold {
+    font-weight: bolder;
+  }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
-    }
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
 
     .whatsapp i {
       font-size: 28px;
       color: white;
+    }
+
+    /*Adding styles on hover for card elements*/
+    #card1:hover{
+      background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
+    }
+    #card2:hover{
+      background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+    }
+    #card3:hover{
+      background: linear-gradient(rgba(245, 235, 101, 0.295), rgb(255, 255, 122));
+    }
+    #card4:hover{
+      background: linear-gradient(rgba(255, 76, 225, 0.336), lightpink);
+    }
+    #card5:hover{
+      background: linear-gradient(rgba(57, 225, 255, 0.295), lightblue);
+    }
+    #card6:hover{
+      background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
     }
   </style>
 </head>
@@ -76,6 +97,13 @@
                 <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
                 <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
               </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
             </div>
           </nav>
         </div>
@@ -93,14 +121,14 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
             <h5 class="fw-bold-1">Home Maintenance</h5>
             <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-broom fa-3x mb-3 text-success" ></i>
             <h5 class="fw-bold">Cleaning Services</h5>
             <div class="mt-4">
@@ -109,7 +137,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
             <h5 class="fw-bold">Renovation & Painting</h5>
             <div class="mt-4">
@@ -121,7 +149,7 @@
 
       <div class="row mt-2">
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
             <h5 class="fw-bold">Appliance Repair</h5>
             <div class="mt-4">
@@ -130,7 +158,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
             <h5 class="fw-bold">IT & Network Setup</h5>
             <div class="mt-4">
@@ -139,7 +167,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <div id = "card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
             <h5 class="fw-bold-2">Security Systems</h5>
             <div class="mt-4">
@@ -153,78 +181,92 @@
   <!-- End Services Section -->
 
   <!-- Footer -->
-  <section class="info_section">
-    <div class="container">
-      <h4>Get In Touch</h4>
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <div class="info_items">
-            <div class="row">
-              <div class="col-md-4">
-                <a href="https://www.google.pl/maps/place/Cosmo+Valley+Gwalior">
-                  <div class="item">
-                    <div class="img-box">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    </div>
-                    <p>India</p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="tel:+9175XXXXXXX">
-                  <div class="item">
-                    <div class="img-box">
-                      <i class="fa fa-phone" aria-hidden="true"></i>
-                    </div>
-                    <p>+91 75XXXXXXX</p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="mailto:sumit.......X@gmail.com">
-                  <div class="item">
-                    <div class="img-box">
-                      <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </div>
-                    <p>sumit.......X@gmail.com</p>
-                  </div>
-                </a>
-              </div>
+  <section class="new-info-section">
+    <div class="new-container">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    </a>
+                <p class="footer-description">
+                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="social-box">
-        <h4>Follow Us</h4>
-        <div class="box">
-          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <div class="text-center mt-4">
-          <a href="./" class="text-white btn btn-primary px-4 py-2">ORDER NOW</a>
-        </div>
+            <div class="footer-column footer-links">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-services">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">App Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                </p>
+                
+            </div>
+
+        </div> 
       </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="./">Sachiva</a>
+            </p>
+        </div>
+    </footer>
     </div>
 
     <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-      <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
-  </section>
 
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="./">Sachiva</a>
-      </p>
-    </div>
-  </footer>
-  <!-- End Footer -->
+</section>
 
   <!-- JS Scripts -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    // Display current year
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

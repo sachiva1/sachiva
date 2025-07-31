@@ -395,8 +395,15 @@
         </div>
       </div>
     </div>
-    <div class="new-footer-bottom">
-      <p>© 2025 All Rights Reserved By Sachiva</p>
+    </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="./">Sachiva</a>
+            </p>
+        </div>
+    </footer>
     </div>
 
     <a href="https://wa.me/75...." target="_blank" class="whatsapp">
@@ -404,14 +411,7 @@
     </a>
   </section>
 
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="./">Sachiva</a>
-      </p>
-    </div>
-  </footer>
+
 
   <button id="backToTop" title="Go to top">
     <i class="fas fa-arrow-up"></i>
@@ -423,9 +423,12 @@
   <script src="js/custom.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetchContributors();
-    });
+  document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+
+  // When DOM is ready, fetch contributors
+  document.addEventListener("DOMContentLoaded", function () {
+    fetchContributors();
+  });
 
     async function fetchContributors() {
       const loadingElement = document.getElementById("loading");
