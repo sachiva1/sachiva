@@ -880,7 +880,31 @@ a:focus {
 }
 
 .footer_section a {
-  color: inherit;
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer_section a:hover {
+  color: #007bff !important;
+}
+
+/* Dark mode styles for footer */
+[data-theme="dark"] .footer_section {
+  background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .footer_section p {
+  color: #ffffff;
+}
+
+/* Light mode styles for footer */
+[data-theme="light"] .footer_section {
+  background-color: #0a0f43;
+}
+
+[data-theme="light"] .footer_section p {
+  color: #ffffff;
 }
 
 /* end footer section*/
@@ -1189,6 +1213,7 @@ a:focus {
   --bg-color: #ffffff;
   --text-color: #000000;
   --nav-bg: #ffffff;
+  --nav-text-color: #000000;
 }
 
 [data-theme="dark"] {
@@ -1270,7 +1295,7 @@ body {
 
 
 /* Light Mode Defaults  */
-body {
+[data-theme="light"] body {
   background-color: white;
   color: black;
 }
