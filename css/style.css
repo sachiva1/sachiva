@@ -1,53 +1,59 @@
-/* Sachiva Design System: Custom Properties & Utilities */
-:root {
-  --primary-color: #007bff;
-  --secondary-color: #0056b3;
-  --success-color: #28a745;
-  --whatsapp-color: #25D366;
-  --border-radius: 15px;
-  --font-main: 'Roboto', sans-serif;
-  --footer-bg: #f8f9fa;
-  --footer-text: #2c3e50;
-}
+/* =================================================================
+   SACHIVA LEGACY STYLES - UPDATED TO USE DESIGN SYSTEM
+   This file contains legacy styles updated to use design tokens
+   from design-system.css. Duplicated tokens have been removed.
+   ================================================================= */
 
-/* Utility Classes */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather+Sans:wght@400;700&display=swap");
+
+/* Legacy utility classes - these should be migrated to utilities.css over time */
 .fw-bold {
-  font-weight: bolder;
+  font-weight: var(--font-weight-bold);
 }
 .mt-5 {
-  margin-top: 3rem !important;
+  margin-top: var(--space-12) !important;
 }
 
-/* Whatsapp Floating Button */
+/* Legacy WhatsApp button - now uses design system tokens */
 .whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--whatsapp-color);
-  color: white;
+  bottom: var(--space-5);
+  right: var(--space-5);
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-index-fixed);
   cursor: pointer;
-}
-.whatsapp i {
-  font-size: 28px;
-  color: white;
+  transition: var(--transition-all);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather+Sans:wght@400;700&display=swap");
+.whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.whatsapp i {
+  font-size: 28px;
+  color: var(--color-white);
+}
+
 body {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-family-base);
   color: #040000;
 }
 
 .main-logo {
   width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 10px;
 }
 
 .layout_padding {
@@ -165,7 +171,14 @@ a:focus {
   color: #000000;
   font-weight: bold;
   font-size: 24px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+  color: #0355cc;
 }
 
 .navbar-brand span {
@@ -1308,23 +1321,10 @@ a:focus {
     }
 }
 
-
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --nav-bg: #ffffff;
-  --nav-text-color: #000000;
-}
-
-[data-theme="dark"] {
-  --bg-color: #000000;
-  --text-color: #ffffff;
-  --nav-bg: #111111;
-  --nav-text-color: #ffffff;
-}
-
+/* Theme variables are now handled by design-system.css */
+/* Legacy theme support maintained for backward compatibility */
 body {
-  background-color: var(--bg-color);
+  background-color: var(--color-background);
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -1353,7 +1353,7 @@ body {
 }
 
 .theme-switch .slider {
-  background-color: #003DA5;
+  background-color: #ccc;
   border-radius: 30px;
   height: 100%;
   width: 100%;
@@ -1364,6 +1364,12 @@ body {
   box-sizing: border-box;
   position: relative;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Dark mode slider background */
+#theme-toggle:checked + .slider {
+  background-color: #003DA5;
 }
 
 .theme-switch .slider::before {
@@ -1377,17 +1383,36 @@ body {
   left: 3px;
   transition: transform 0.3s ease;
   z-index: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Icons */
 .sun-icon, .moon-icon {
   font-size: 14px;
-  color: white;
   z-index: 2;
   pointer-events: none;
+  transition: color 0.3s ease;
 }
 
-/* DARK mode toggle active */
+/* Light mode - sun icon visible, moon icon dimmed */
+.sun-icon {
+  color: #fbbf24;
+}
+
+.moon-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dark mode - moon icon visible, sun icon dimmed */
+#theme-toggle:checked + .slider .sun-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#theme-toggle:checked + .slider .moon-icon {
+  color: #60a5fa;
+}
+
+/* DARK mode toggle active - slide the button */
 #theme-toggle:checked + .slider::before {
   transform: translateX(30px);
 }
@@ -1467,8 +1492,16 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(255, 255, 255, 0.075) !important;
 }
 
-[data-theme="dark"] .navbar-brand span {
+[data-theme="dark"] .navbar-brand {
   color: #ffffff !important;
+}
+
+[data-theme="dark"] .navbar-brand:hover {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .navbar-brand span {
+  color: #60a5fa !important;
 }
 
 [data-theme="dark"] .navbar-nav .nav-link {

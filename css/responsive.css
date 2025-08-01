@@ -1,7 +1,19 @@
-@media (max-width: 1300px) {}
+/* =================================================================
+   SACHIVA RESPONSIVE STYLES - UPDATED TO USE DESIGN SYSTEM
+   Using standardized breakpoints from design-system.css
+   ================================================================= */
 
-@media (max-width: 1120px) {}
+/* Extra Large Screens */
+@media (max-width: 1300px) {
+  /* Large desktop specific styles */
+}
 
+/* Large Screens */  
+@media (max-width: 1120px) {
+  /* Desktop specific styles */
+}
+
+/* Medium Screens (Tablet Landscape) */
 @media (max-width: 992px) {
     .hero_area {
         height: auto;
@@ -12,42 +24,40 @@
     }
 
     #navbarSupportedContent {
-        margin-top: 15px;
+        margin-top: var(--space-4);
     }
 
     .slider_section {
-        padding-top: 45px;
+        padding-top: var(--space-11);
     }
 
     .feature_section .feature_container .box {
-        padding: 30px 15px;
+        padding: var(--space-8) var(--space-4);
     }
 
     .feature_section .feature_container .box .img-box {
         width: 75px;
     }
 
-
     .feature_section {
         transform: none;
-        padding: 90px 0;
+        padding: var(--space-22) 0;
     }
-
-
 }
 
+/* Small Screens (Tablet Portrait) */
 @media (max-width: 767px) {
     .layout_padding {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding-top: var(--space-22);
+        padding-bottom: var(--space-22);
     }
 
     .layout_padding-top {
-        padding-top: 90px;
+        padding-top: var(--space-22);
     }
 
     .layout_padding-bottom {
-        padding-bottom: 90px;
+        padding-bottom: var(--space-22);
     }
 
     .slider_section .detail-box {
