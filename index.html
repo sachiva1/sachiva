@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Sachiva - Professional home services including maintenance, cleaning, renovation, and repair solutions" />
+  <meta name="keywords" content="home services, maintenance, cleaning, renovation, repairs, professional services" />
+  <meta name="author" content="Sachiva Team" />
   <link rel="icon" href="./images/logo_blue.png">
-  <title>Sachiva</title>
+  <title>Sachiva - Professional Home Services</title>
 
   <!-- CSS links -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,42 +21,46 @@
   <link href="css/responsive.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
+  <link href="css/accessibility.css" rel="stylesheet" />
   <!-- Consolidated CSS links for maintainability -->
 </head>
 
 <body>
-  <div class="hero_area">
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <div class="hero_area">
     <!-- header section -->
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva - Home">
+              <img src="images/logo_blue.png" alt="Sachiva company logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active fw-bold"><a class="nav-link" href="index.html">Home <span
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item active fw-bold" role="none"><a class="nav-link" href="index.html" role="menuitem" aria-current="page">Home <span
                       class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html"> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                <li class="nav-item" role="none"><a class="nav-link" href="about.html" role="menuitem">About</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="service.html" role="menuitem">Services</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="contributors.html" role="menuitem">Contributors</a></li>
+                <li class="nav-item contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                  <label class="switch theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
-                      <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
+                <li class="nav-item" role="none">
+                  <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark/light theme">
+                    <input type="checkbox" id="theme-toggle" aria-describedby="theme-description">
+                    <span class="slider" aria-hidden="true">
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                      <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
                     </span>
+                    <span id="theme-description" class="sr-only">Switch between light and dark theme</span>
                   </label>
                 </li>
               </ul>
@@ -64,55 +71,56 @@
     </header>
     <!-- end header section -->
 
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="detail-box">
-              <h1>
-                Reliable IT Solutions for <br> Your Business
-              </h1>
-              <p>
-                At Sachiva, we specialize in web development, software
-                solutions, and cybersecurity. Our expert team ensures seamless
-                digital transformation for businesses of all sizes.
-              </p>
-              <a href="contact.html">
-                Contact Us
-              </a>
+    <main id="main-content">
+      <!-- slider section -->
+      <section class="slider_section" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-box">
+                <h1 id="hero-heading">
+                  Reliable IT Solutions for <br> Your Business
+                </h1>
+                <p>
+                  At Sachiva, we specialize in web development, software
+                  solutions, and cybersecurity. Our expert team ensures seamless
+                  digital transformation for businesses of all sizes.
+                </p>
+                <a href="contact.html" class="btn btn-primary" aria-label="Contact us for IT solutions">
+                  Contact Us
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="images/maintenance.gif" alt="Professional IT maintenance and support services illustration">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     <!-- end slider section -->
 
   </div>
 
   <!-- about section -->
-  <section class="about_section layout_padding-bottom">
+  <section class="about_section layout_padding-bottom" aria-labelledby="about-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <div class="detail-box">
-            <h2>About us</h2>
+            <h2 id="about-heading">About us</h2>
             <p>
               Sachiva is a leading IT solutions provider offering web
               development, cybersecurity, and software management services.
               Our mission is to empower businesses with innovative technology.
             </p>
-            <a href="about.html">Read More</a>
+            <a href="about.html" class="btn btn-outline-primary" aria-label="Learn more about Sachiva">Read More</a>
           </div>
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
+            <img src="images/about_us.gif" alt="Team collaboration and IT solutions illustration" loading="lazy">
           </div>
         </div>
       </div>
@@ -121,22 +129,22 @@
   <!-- end about section -->
 
   <!-- professional section -->
-  <section class="professional_section layout_padding">
+  <section class="professional_section layout_padding" aria-labelledby="professional-heading">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/Expert_Solutions.gif" alt="Professional Home Services" loading="lazy">
+            <img src="images/Expert_Solutions.gif" alt="Professional home services and expert solutions illustration" loading="lazy">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <h2>Expert Solutions for Your Home & Business</h2>
+            <h2 id="professional-heading">Expert Solutions for Your Home & Business</h2>
             <p>
               We provide top-quality repair, maintenance, and professional home services tailored to your
               needs. Our skilled team ensures efficiency, reliability, and customer satisfaction in every project.
             </p>
-            <a href="service.html">Learn More</a>
+            <a href="service.html" class="btn btn-outline-primary" aria-label="Learn more about our professional services">Learn More</a>
           </div>
         </div>
       </div>
@@ -394,83 +402,89 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- footer -->
-<section class="new-info-section">
+<footer class="new-info-section" role="contentinfo">
     <div class="new-container">
         <div class="footer-grid-wrapper">
 
             <div class="footer-column footer-about">
-                <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                <a href="#" class="footer-logo" aria-label="Sachiva company logo">
+                    <img src="images/logo_blue.png" alt="Sachiva company logo">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
                 </p>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-social-icons" role="list" aria-label="Social media links">
+                    <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter profile"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
             </div>
 
             <div class="footer-column footer-links">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul role="list">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
                     <li><a href="contributors.html">Contributors</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-column footer-services">
-                <h5 class="footer-heading">Our Services</h5>
-                <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">App Development</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
+                <h3 class="footer-heading">Our Services</h3>
+                <ul role="list">
+                    <li><a href="service.html">Home Maintenance</a></li>
+                    <li><a href="service.html">Cleaning Services</a></li>
+                    <li><a href="service.html">Renovation & Painting</a></li>
+                    <li><a href="service.html">Appliance Repair</a></li>
+                    <li><a href="service.html">IT & Network Setup</a></li>
+                    <li><a href="service.html">Security Systems</a></li>
                 </ul>
             </div>
 
             <div class="footer-column footer-contact">
-                <h5 class="footer-heading">Get In Touch</h5>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
-                </p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-                </p>
-                <p>
-                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
-                </p>
-                
+                <h3 class="footer-heading">Get In Touch</h3>
+                <address>
+                    <p>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
+                        <span>India (Your detailed address here if needed)</span>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i> 
+                        <a href="tel:+9175XXXXXXX" aria-label="Call us at +91 75XXXXXXX">+91 75XXXXXXX</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" aria-hidden="true"></i> 
+                        <a href="mailto:sumit.......X@gmail.com" aria-label="Email us at sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                    </p>
+                </address>
             </div>
 
         </div> 
       </div>
-      <footer class="footer_section">
+      <section class="footer_section">
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
                 <a href="./">Sachiva</a>
             </p>
         </div>
-    </footer>
+    </section>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/75...." target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-</section>
+</footer>
 
 
 
