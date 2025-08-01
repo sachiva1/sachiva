@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
   <meta name="description" content="Sachiva - Professional IT solutions, web development, cybersecurity, and software management services for businesses." />
   <meta name="keywords" content="IT solutions, web development, cybersecurity, software management, digital transformation" />
   <meta name="author" content="Sachiva Team" />
@@ -270,6 +270,45 @@
       z-index: 9999;
       transition: width 0.3s ease;
     }
+    
+    /* Critical Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar-toggler {
+        min-height: 48px;
+        min-width: 48px;
+        padding: 8px;
+        border: 2px solid #007bff;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      
+      .slider_section .img-box {
+        min-height: 300px;
+        margin-top: 20px;
+      }
+      
+      .detail-box h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2;
+      }
+      
+      .service_section .box {
+        margin-bottom: 20px;
+        padding: 25px 20px;
+      }
+      
+      .btn, .floating-btn, .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      
+      .whatsapp.floating-btn {
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
   </style>
   
   <!-- Non-critical CSS loaded asynchronously -->
@@ -286,6 +325,7 @@
   <link href="css/responsive.css" rel="stylesheet" media="print" onload="this.media='all'" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" media="print" onload="this.media='all'" />
   <link href="css/ui-enhancements.css" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="css/mobile-responsiveness.css" rel="stylesheet" media="print" onload="this.media='all'" />
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="print" onload="this.media='all'" />
 </head>
 
@@ -504,7 +544,7 @@
         <div class="box">
           <div class="client_id">
             <div class="img-box">
-              <img src="images/owner.png" alt="Shivani Sharma - CEO and Founder" width="100" height="100">
+              <img src="images/client-1.jpg" alt="Shivani Sharma - CEO and Founder" width="100" height="100">
             </div>
             <div class="client_detail">
               <div class="client_info">
@@ -569,7 +609,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
+                                    <img src="images/client-1.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -627,7 +667,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
+                                    <img src="images/client-1.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -849,6 +889,7 @@
   <!-- Scripts optimized for performance -->
   <script src="js/performance.js" defer></script>
   <script src="js/ui-enhancements.js" defer></script>
+  <script src="js/mobile-interactions.js" defer></script>
   <script src="js/jquery-3.4.1.min.js" defer></script>
   <script src="js/bootstrap.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
