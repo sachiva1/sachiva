@@ -86,6 +86,13 @@ a:focus {
   background-color: #d1e3ff;
 }
 
+.header_section{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
@@ -207,6 +214,10 @@ a:focus {
   top: 10px;
 }
 
+.nav-link{
+  margin-right: 30px;
+}
+
 .custom_nav-container .navbar-toggler[aria-expanded="true"] {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
@@ -275,6 +286,7 @@ a:focus {
 /*end header section*/
 /* slider section */
 .slider_section {
+  margin-top: 78px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
