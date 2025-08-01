@@ -1,0 +1,111 @@
+/* Critical CSS - Above the fold styles */
+/* Inlined in head for faster first paint */
+
+/* Basic reset and typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header and navigation - critical for first view */
+.header_section {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.hero_area {
+  margin-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+}
+
+.slider_section {
+  padding: 60px 0;
+}
+
+.detail-box h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.detail-box p {
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.btn-custom {
+  background: #ff6b35;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+/* Loading state */
+.page-loading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page-loaded {
+  opacity: 1;
+}
+
+/* Dark mode critical styles */
+[data-theme="dark"] .header_section {
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+[data-theme="dark"] body {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}

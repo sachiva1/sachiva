@@ -34,10 +34,36 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.whatsapp:hover {
+  background-color: #1ebea5;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(37, 211, 102, 0.4);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
 .whatsapp i {
   font-size: 28px;
   color: white;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp:hover i {
+  transform: rotate(360deg);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather+Sans:wght@400;700&display=swap");
@@ -166,11 +192,25 @@ a:focus {
   font-weight: bold;
   font-size: 24px;
   font-weight: bold;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #000000;
 }
 
 .navbar-brand span {
   color: #0355cc;
   text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover span {
+  color: #007bff;
+  text-shadow: 0 2px 4px rgba(3, 85, 204, 0.3);
 }
 
 .custom_nav-container {
@@ -186,11 +226,32 @@ a:focus {
   color: #000000;
   text-align: center;
   color: var(--nav-text-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom_nav-container .navbar-nav .nav-item .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #0355cc, #007bff);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
 .custom_nav-container .navbar-nav .nav-item.active .nav-link {
   color: #0355cc;
+  transform: translateY(-2px);
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link::before,
+.custom_nav-container .navbar-nav .nav-item.active .nav-link::before {
+  width: 80%;
 }
 
 .custom_nav-container .form-inline .nav_search-btn {
@@ -360,17 +421,39 @@ a:focus {
   display: inline-block;
   font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
-  padding: 10px 45px;
-  background-color: #ff8a1d;
-  border: 1px solid #ff8a1d;
-  border-radius: 5px;
+  padding: 12px 45px;
+  background: linear-gradient(45deg, #ff8a1d, #f7971e);
+  border: 2px solid #ff8a1d;
+  border-radius: 30px;
   color: #ffffff;
   margin-top: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 138, 29, 0.3);
+}
+
+.slider_section .detail-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.slider_section .detail-box a:hover::before {
+  left: 100%;
 }
 
 .slider_section .detail-box a:hover {
-  background-color: transparent;
-  color: #ff8a1d;
+  background: linear-gradient(45deg, #f7971e, #e68900);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 138, 29, 0.4);
+  border-color: #f7971e;
 }
 
 .slider_section .img-box img {
@@ -593,15 +676,26 @@ a:focus {
 }
 
 .service_section .box:hover {
-  background-color: #ff8a1d;
+  background: linear-gradient(135deg, #ff8a1d, #f7971e);
   color: #ffffff;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Lift effect */
-  transform: translateY(-8px) scale(1.03); /* Scale & lift */
+  box-shadow: 0 15px 40px rgba(255, 138, 29, 0.3);
+  transform: translateY(-12px) scale(1.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .service_section .box:hover .img-box img {
   -webkit-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1);
+  transform: scale(1.2) rotate(10deg);
+}
+
+.service_section .box:hover .detail-box h5 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service_section .box:hover .detail-box p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .service_section .btn-box {
@@ -618,16 +712,38 @@ a:focus {
   display: inline-block;
   font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
-  padding: 10px 45px;
-  background-color: #0355cc;
-  border: 1px solid #0355cc;
-  border-radius: 0;
+  padding: 12px 45px;
+  background: linear-gradient(45deg, #0355cc, #007bff);
+  border: 2px solid #0355cc;
+  border-radius: 30px;
   color: #ffffff;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(3, 85, 204, 0.3);
+}
+
+.service_section .btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.service_section .btn-box a:hover::before {
+  left: 100%;
 }
 
 .service_section .btn-box a:hover {
-  background-color: transparent;
-  color: #0355cc;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(3, 85, 204, 0.4);
+  border-color: #007bff;
 }
 
 .about_section_layout_padding h2{
@@ -1802,3 +1918,89 @@ body, .hero, .navbar, .btn-primary {
   border-bottom-right-radius: 12px;
 }
 /* Style For FAQ Section END*/
+
+/* Enhanced Light Mode Hover Effects */
+
+/* Card hover effects */
+.card, .box {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover, .box:not(.service_section .box):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image hover effects */
+img {
+  transition: all 0.3s ease;
+}
+
+.img-box:hover img {
+  transform: scale(1.05);
+}
+
+/* Social icon hover effects */
+.footer-social-icons a {
+  transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  transform: translateY(-3px) rotate(15deg);
+  color: #0355cc !important;
+  text-shadow: 0 4px 8px rgba(3, 85, 204, 0.3);
+}
+
+/* Input field hover effects */
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:hover, textarea:hover {
+  border-color: #0355cc !important;
+  box-shadow: 0 0 0 3px rgba(3, 85, 204, 0.1);
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Contact highlight enhanced */
+.contact-highlight .nav-link {
+  background: linear-gradient(45deg, #0355cc, #007bff);
+  color: white !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(3, 85, 204, 0.3);
+}
+
+.contact-highlight .nav-link:hover {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(3, 85, 204, 0.4);
+  color: white !important;
+}
+
+/* Theme switch hover */
+.theme-switch {
+  transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+  transform: scale(1.1);
+}
+
+/* Back to top button hover */
+#backToTop {
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background: linear-gradient(45deg, #0355cc, #007bff) !important;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(3, 85, 204, 0.4);
+}

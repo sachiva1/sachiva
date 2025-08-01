@@ -1,0 +1,43 @@
+{
+  "name": "sachiva-website",
+  "version": "1.0.0",
+  "description": "Sachiva IT Services Website - Optimized for Performance",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output html --output-path lighthouse-report.html",
+    "lighthouse-ci": "npx lighthouse http://localhost:3000 --output json --output-path lighthouse-report.json",
+    "performance-test": "bash performance-test.sh",
+    "build": "echo 'Building optimized version...' && npm run minify-css && npm run optimize-images",
+    "minify-css": "npx clean-css-cli css/*.css -o css/style.min.css",
+    "optimize-images": "echo 'Image optimization requires imagemin-cli'",
+    "validate-html": "npx html-validate *.html",
+    "test-performance": "npm run start & sleep 5 && npm run lighthouse && npm run performance-test"
+  },
+  "keywords": [
+    "IT services",
+    "web development",
+    "performance",
+    "responsive design",
+    "accessibility"
+  ],
+  "author": "Sachiva IT Services",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-validate": "^8.7.4",
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.4.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kushanware/sachiva.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kushanware/sachiva/issues"
+  },
+  "homepage": "https://github.com/Kushanware/sachiva#readme"
+}

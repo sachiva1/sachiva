@@ -1,27 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" href="./images/logo_blue.png">
-  <title>Sachiva</title>
+  <meta name="description" content="Sachiva - Professional IT solutions, web development, cybersecurity, and software management services for businesses." />
+  <meta name="keywords" content="IT solutions, web development, cybersecurity, software management, digital transformation" />
+  <meta name="author" content="Sachiva Team" />
+  
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Critical resources preload -->
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="css/bootstrap.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="images/logo_blue.png" as="image">
+  
+  <link rel="icon" href="./images/logo_blue.png" type="image/png">
+  <title>Sachiva - Professional IT Solutions & Web Development Services</title>
 
-  <!-- CSS links -->
+  <!-- Critical CSS inlined for immediate render -->
+  <style>
+    /* Critical above-the-fold styles with modern enhancements */
+    body { 
+      font-family: "Lato", sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      color: #040000;
+      scroll-behavior: smooth;
+    }
+    
+    /* Enhanced header with glass morphism effect */
+    .header_section { 
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1); 
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand { 
+      display: flex; 
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+      transform: scale(1.05);
+    }
+    
+    .main-logo { 
+      width: 60px; 
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    /* Enhanced hero section with animated gradient */
+    .slider_section { 
+      padding: 60px 0; 
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slider_section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+    
+    .slider_section .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .detail-box h1 { 
+      font-size: 2.5rem; 
+      font-weight: bold; 
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+    
+    .detail-box p {
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+    
+    .detail-box a {
+      animation: fadeInUp 1s ease 0.9s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Modern button styling */
+    .btn-custom, .detail-box a {
+      background: linear-gradient(45deg, #ff6b35, #f7971e);
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-custom::before, .detail-box a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-custom:hover::before, .detail-box a:hover::before {
+      left: 100%;
+    }
+    
+    .btn-custom:hover, .detail-box a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    }
+    
+    /* Enhanced loading animations */
+    .page-loading {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    
+    .page-loaded {
+      opacity: 1;
+    }
+    
+    /* Service cards preview enhancement */
+    .service_section .box {
+      transition: all 0.4s ease;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .service_section .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    
+    /* Hero image alignment */
+    .slider_section .img-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 400px;
+    }
+    
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      /* Remove any unwanted transforms that might interfere */
+      transform: none;
+    }
+    
+    .hero-image:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Fix for all images to prevent scroll issues */
+    .img-box img {
+      transform: none !important;
+    }
+    
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+    
+    @media (max-width: 768px) {
+      .slider_section .img-box {
+        margin-top: 30px;
+        min-height: 300px;
+      }
+      
+      .hero-image {
+        max-width: 90%;
+      }
+      
+      .min-vh-75 {
+        min-height: auto;
+      }
+    }
+    
+    /* Dark mode critical styles with enhanced effects */
+    [data-theme="dark"] .header_section {
+      background: rgba(26, 26, 26, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+    }
+    
+    [data-theme="dark"] .slider_section {
+      background: linear-gradient(-45deg, #2d3748, #4a5568, #2b6cb0, #3182ce);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    
+    /* Performance optimizations */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .lazy {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    
+    .lazy.loaded {
+      opacity: 1;
+    }
+    
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6b35, #f7971e);
+      z-index: 9999;
+      transition: width 0.3s ease;
+    }
+  </style>
+  
+  <!-- Non-critical CSS loaded asynchronously -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link href="css/responsive.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-  <!-- Consolidated CSS links for maintainability -->
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+  
+  <noscript>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </noscript>
+  
+  <!-- Deferred non-critical CSS -->
+  <link href="css/responsive.css" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="css/dark-mode-fixes.css" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="css/ui-enhancements.css" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="print" onload="this.media='all'" />
 </head>
 
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
   <div class="hero_area">
 
     <!-- header section -->
@@ -30,7 +301,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+              <img src="images/logo_blue.png" alt="Sachiva Logo" class="main-logo" width="60" height="60">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -67,7 +338,7 @@
     <!-- slider section -->
     <section class="slider_section ">
       <div class="container ">
-        <div class="row">
+        <div class="row align-items-center min-vh-75">
           <div class="col-md-6 ">
             <div class="detail-box">
               <h1>
@@ -84,8 +355,9 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+            <div class="img-box text-center">
+              <img src="images/maintenance.gif" alt="Professional IT maintenance and support services illustration" 
+                   loading="lazy" width="500" height="400" class="img-fluid hero-image">
             </div>
           </div>
         </div>
@@ -112,7 +384,8 @@
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
+            <img src="images/about_us.gif" alt="Team collaboration and IT solutions illustration" 
+                 loading="lazy" width="600" height="450">
           </div>
         </div>
       </div>
@@ -126,7 +399,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/Expert_Solutions.gif" alt="Professional Home Services" loading="lazy">
+            <img src="images/Expert_Solutions.gif" alt="Professional home services and expert solutions illustration" 
+                 loading="lazy" width="600" height="450">
           </div>
         </div>
         <div class="col-md-6">
@@ -145,54 +419,70 @@
   <!-- end professional section -->
 
   <!-- service section -->
-  <section class="service_section layout_padding">
+  <section class="service_section layout_padding" id="service">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>Our Services</h2>
       </div>
       <div class="row">
-        <!-- Each service -->
-        <div class="col-sm-6 col-md-3 mx-auto">
-          <div class="box">
+        <!-- Enhanced service cards with animations -->
+        <div class="col-sm-6 col-md-3 mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <div class="box modern-card">
+            <div class="card-glow"></div>
             <div class="img-box">
-              <img src="images/os1.png" alt="" loading="lazy" />
+              <img src="images/os1.png" alt="Web Development Services Icon" loading="lazy" width="80" height="80" />
             </div>
             <div class="detail-box">
               <h5>Web Development</h5>
-              <p>Custom websites tailored for businesses, eCommerce, and startups.</p>
+              <p>Custom websites tailored for businesses, eCommerce, and startups with modern technologies.</p>
+              <div class="service-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 mx-auto">
-          <div class="box">
+        <div class="col-sm-6 col-md-3 mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <div class="box modern-card">
+            <div class="card-glow"></div>
             <div class="img-box">
-              <img src="images/s1.png" alt="" loading="lazy" />
+              <img src="images/s1.png" alt="Software Management Services Icon" loading="lazy" width="80" height="80" />
             </div>
             <div class="detail-box">
               <h5>Software Management</h5>
               <p>Smart, scalable, and efficient software solutions tailored to your business needs.</p>
+              <div class="service-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 mx-auto">
-          <div class="box">
+        <div class="col-sm-6 col-md-3 mx-auto" data-aos="fade-up" data-aos-delay="300">
+          <div class="box modern-card">
+            <div class="card-glow"></div>
             <div class="img-box">
-              <img src="images/os3.png" alt="Google Ads" loading="lazy" />
+              <img src="images/os3.png" alt="Google Ads Services Icon" loading="lazy" width="80" height="80" />
             </div>
             <div class="detail-box">
               <h5>Google Ads</h5>
-              <p>Maximize your online visibility with our expert Google Ads services.</p>
+              <p>Maximize your online visibility with our expert Google Ads and digital marketing services.</p>
+              <div class="service-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 mx-auto">
-          <div class="box">
+        <div class="col-sm-6 col-md-3 mx-auto" data-aos="fade-up" data-aos-delay="400">
+          <div class="box modern-card">
+            <div class="card-glow"></div>
             <div class="img-box">
-              <img src="images/os4.png" alt="" loading="lazy" />
+              <img src="images/os4.png" alt="Cybersecurity Services Icon" loading="lazy" width="80" height="80" />
             </div>
             <div class="detail-box">
               <h5>Cybersecurity</h5>
-              <p>Protect your business from online threats with our security solutions.</p>
+              <p>Protect your business from online threats with our comprehensive security solutions.</p>
+              <div class="service-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -214,7 +504,7 @@
         <div class="box">
           <div class="client_id">
             <div class="img-box">
-              <img src="images/client-1.jpg" alt="">
+              <img src="images/client-1.jpg" alt="Sachin Sharma - CEO and Founder" width="100" height="100">
             </div>
             <div class="client_detail">
               <div class="client_info">
@@ -250,7 +540,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-              <img src="images/client-1.jpg" alt="" loading="lazy">
+              <img src="images/client-1.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -279,7 +569,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="">
+                                    <img src="images/client-2.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -308,7 +598,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-1.jpg" alt="">
+                                    <img src="images/client-1.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -337,7 +627,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="" loading="lazy">
+                                    <img src="images/client-2.jpg" alt="Client testimonial photo" loading="lazy" width="100" height="100">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -367,27 +657,70 @@
         </div>
     </section>
 
-  <!-- Contact section -->
-  <section class="contact_section layout_padding">
+  <!-- Contact section with enhanced form -->
+  <section class="contact_section layout_padding" id="contact">
     <div class="container">
       <div class="heading_container">
-        <h2>Contact Us</h2>
+        <h2>Get In Touch</h2>
+        <p>Ready to transform your business? Let's discuss your project!</p>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <form action="">
-            <div><input type="text" placeholder="Name" /></div>
-            <div><input type="text" placeholder="Phone Number" /></div>
-            <div><input type="email" placeholder="Email" /></div>
-            <div><input type="text" class="message-box" placeholder="Message" /></div>
-            <div class="d-flex"><button>SEND</button></div>
+          <form action="" class="modern-form">
+            <div class="form-group">
+              <div class="input-wrapper">
+                <input type="text" placeholder="Your Full Name" required />
+                <i class="fas fa-user input-icon"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-wrapper">
+                <input type="tel" placeholder="Phone Number" required />
+                <i class="fas fa-phone input-icon"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-wrapper">
+                <input type="email" placeholder="Email Address" required />
+                <i class="fas fa-envelope input-icon"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-wrapper">
+                <textarea class="message-box" placeholder="Tell us about your project..." rows="5" required></textarea>
+                <i class="fas fa-comment input-icon"></i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
           </form>
         </div>
         <div class="col-md-6">
-          <div class="map_container">
+          <div class="map_container modern-map">
+            <div class="contact-info">
+              <h4>Visit Our Office</h4>
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>India - Your Location Here</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>+91 75XXXXXXX</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@sachiva.com</span>
+              </div>
+            </div>
             <div class="map">
-              <iframe src="https://www.google.com/maps/embed?pb=..." style="width:100%;height:100%;" allowfullscreen=""
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=..." 
+                      style="width:100%;height:300px;border-radius:15px;" 
+                      allowfullscreen="" loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -402,7 +735,7 @@
 
             <div class="footer-column footer-about">
                 <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    <img src="images/logo_blue.png" alt="Sachiva Company Logo" loading="lazy" width="60" height="60">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
@@ -466,9 +799,30 @@
     </footer>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+    <!-- Enhanced WhatsApp Floating Button -->
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp floating-btn" id="whatsappBtn">
         <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-tooltip">Chat with us!</span>
+        <div class="ripple-effect"></div>
     </a>
+
+    <!-- Floating Action Menu -->
+    <div class="floating-menu" id="floatingMenu">
+      <div class="floating-menu-toggle" id="menuToggle">
+        <i class="fas fa-plus"></i>
+      </div>
+      <div class="floating-menu-items">
+        <a href="#contact" class="floating-item" data-tooltip="Contact Us">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+917XXXXXXX" class="floating-item" data-tooltip="Call Us">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="#service" class="floating-item" data-tooltip="Our Services">
+          <i class="fas fa-cog"></i>
+        </a>
+      </div>
+    </div>
 
 </section>
 
@@ -492,11 +846,24 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
-  <!-- Scripts -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="js/custom.js"></script>
+  <!-- Scripts optimized for performance -->
+  <script src="js/performance.js" defer></script>
+  <script src="js/ui-enhancements.js" defer></script>
+  <script src="js/jquery-3.4.1.min.js" defer></script>
+  <script src="js/bootstrap.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+  <script src="js/custom.js" defer></script>
+  
+  <!-- Owl Carousel CSS loaded before its JS -->
+  <script>
+    // Load Owl Carousel CSS if not already loaded
+    if (!document.querySelector('link[href*="owl.carousel"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css';
+      document.head.appendChild(link);
+    }
+  </script>
 </body>
 
 </html>
