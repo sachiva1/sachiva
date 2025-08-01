@@ -34,7 +34,15 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.whatsapp:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .whatsapp i {
   font-size: 28px;
   color: white;
