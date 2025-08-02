@@ -12,7 +12,8 @@
   <meta name="keywords" content="Contact, Support, Sachiva" />
   <meta name="description" content="Contact us for any service or support related queries." />
   <meta name="author" content="Sachiva Team" />
-
+   
+  <link rel="icon" href="./images/logo_blue.png">
   <title>Contact Us - Sachiva</title>
 
   <!-- Font Awesome -->
@@ -84,8 +85,16 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
                 <li class="nav-item active"><a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a></li>
               </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
             </div>
           </nav>
         </div>
@@ -95,144 +104,121 @@
   <!-- End Header -->
 
   <!-- Contact Section -->
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Contact Us - Sachiva</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <!-- Custom Styles -->
-  <style>
-    body {
-      background: linear-gradient(135deg, #e0f7fa, #e1f5fe);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .contact-container {
-  background-color: rgba(0, 51, 102, 0.4); /* dark blue with translucency */
-  backdrop-filter: blur(12px); 
-  -webkit-backdrop-filter: blur(12px); 
-  border-radius: 25px;
-  padding: 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  color: white; /* optional if form text needs to be more visible */
-}
-
-
-
-    .contact-form {
-      flex: 1 1 48%;
-    }
-
-    .contact-form h2 {
-      font-weight: bold;
-      margin-bottom: 30px;
-      color: #006064;
-    }
-
-    .form-control {
-      border-radius: 25px;
-      padding-left: 40px;
-      margin-bottom: 20px;
-      border: 1px solid #b2ebf2;
-      background-color: #f1f8e9;
-    }
-
-    .form-group {
-      position: relative;
-    }
-
-    .form-group i {
-      position: absolute;
-      left: 15px;
-      top: 12px;
-      color: #4db6ac;
-    }
-
-    .btn-send {
-      border-radius: 25px;
-      background-color: #00796b;
-      color: white;
-      padding: 10px 30px;
-      font-weight: bold;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-send:hover {
-      background-color: #004d40;
-    }
-
-    .contact-image {
-      flex: 1 1 48%;
-      text-align: center;
-    }
-
-    .contact-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .alert {
-      margin-top: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .contact-form,
-      .contact-image {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container my-5">
-    <div class="contact-container">
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-          <div class="form-group">
-            <i class="fas fa-user"></i>
-            <input type="text" class="form-control" id="name" placeholder="Name" required>
-          </div>
-          <div class="form-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" class="form-control" id="email" placeholder="Email" required>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn-send">Send Message</button>
-          <div id="formAlert" class="alert d-none"></div>
-        </form>
-      </div>
-      <div class="contact-image">
-        <img src="images/contact_us_img.png" alt="Contact Illustration">
+  <section class="contact_section layout_padding">
+    <div class="container my-5">
+      <div class="contact-container">
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control" id="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-send">Send Message</button>
+            <div id="formAlert" class="alert d-none"></div>
+          </form>
+        </div>
+        <div class="contact-image">
+          <img src="images/contact_us_img.png" alt="Contact Illustration">
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
+
+  <!-- Footer -->
+  <section class="new-info-section">
+    <div class="new-container">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    </a>
+                <p class="footer-description">
+                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-services">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">App Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                </p>
+                
+            </div>
+
+        </div> 
+      </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="./">Sachiva</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</section>
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
   <script>
+    // Update year
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    
+    // Contact form validation
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const emailInput = document.getElementById('email');
