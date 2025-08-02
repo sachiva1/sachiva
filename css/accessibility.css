@@ -1,0 +1,194 @@
+/* ================================
+   WCAG 2.1 AA ACCESSIBILITY COMPLIANCE
+   ================================ */
+
+/* ================================
+   1. SKIP NAVIGATION LINKS
+   ================================ */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    z-index: 1000;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ================================
+   2. SCREEN READER SUPPORT
+   ================================ */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-only-focusable:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+}
+
+/* ================================
+   3. FOCUS INDICATORS (WCAG 2.1)
+   ================================ */
+/* Enhanced focus indicators with 3:1 contrast ratio */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 102, 204, 0.3);
+}
+
+/* High contrast focus for dark theme */
+[data-theme="dark"] a:focus,
+[data-theme="dark"] button:focus,
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] [tabindex]:focus {
+    outline: 3px solid #66b3ff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px rgba(102, 179, 255, 0.3);
+}
+
+/* ================================
+   4. WHATSAPP BUTTON WITH GLOW
+   ================================ */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.whatsapp:hover,
+.whatsapp:focus {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8),
+                0 0 40px rgba(37, 211, 102, 0.6),
+                0px 6px 12px rgba(0, 0, 0, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 3px;
+}
+
+.whatsapp i {
+    font-size: 32px;
+    color: white;
+}
+
+/* ================================
+   5. ANIMATION & MOTION PREFERENCES
+   ================================ */
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================
+   6. HIGH CONTRAST MODE SUPPORT
+   ================================ */
+@media (prefers-contrast: high) {
+    a {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    
+    button,
+    .btn {
+        border: 3px solid;
+        font-weight: bold;
+    }
+}
+
+/* ================================
+   7. CAROUSEL ACCESSIBILITY
+   ================================ */
+.owl-carousel .owl-nav button {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.owl-carousel .owl-nav button:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* ================================
+   8. PRINT ACCESSIBILITY
+   ================================ */
+@media print {
+    .skip-link {
+        display: none !important;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
+}

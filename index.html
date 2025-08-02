@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Sachiva - Reliable IT Solutions for Your Business. We specialize in web development, software solutions, and cybersecurity services." />
   <link rel="icon" href="./images/logo_blue.png">
-  <title>Sachiva</title>
+  <title>Sachiva - Reliable IT Solutions for Your Business</title>
 
   <!-- CSS links -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,42 +19,49 @@
   <link href="css/responsive.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
+  <link href="css/accessibility.css" rel="stylesheet" />
   <!-- Consolidated CSS links for maintainability -->
 </head>
 
 <body>
+  <!-- Skip navigation links for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+  
   <div class="hero_area">
 
     <!-- header section -->
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" id="navigation" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+              <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+              <span class="sr-only">Menu</span>
               <span class=""> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active fw-bold"><a class="nav-link" href="index.html">Home <span
-                      class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html"> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item active fw-bold" role="none"><a class="nav-link" href="index.html" role="menuitem" aria-current="page">Home <span
+                      class="sr-only">(current page)</span></a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="about.html" role="menuitem"> About</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="service.html" role="menuitem">Services</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="contributors.html" role="menuitem">Contributors</a></li>
+                <li class="nav-item contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                  <label class="switch theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
-                      <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
+                <li class="nav-item" role="none">
+                  <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="theme-toggle" aria-describedby="theme-description">
+                    <span class="slider" aria-hidden="true">
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                      <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
                     </span>
+                    <span id="theme-description" class="sr-only">Switch between light and dark themes</span>
                   </label>
                 </li>
               </ul>
@@ -64,13 +72,14 @@
     </header>
     <!-- end header section -->
 
+    <main id="main-content" role="main">
     <!-- slider section -->
-    <section class="slider_section ">
+    <section class="slider_section " aria-labelledby="hero-heading">
       <div class="container ">
         <div class="row">
           <div class="col-md-6 ">
             <div class="detail-box">
-              <h1>
+              <h1 id="hero-heading">
                 Reliable IT Solutions for <br> Your Business
               </h1>
               <p>
@@ -78,14 +87,14 @@
                 solutions, and cybersecurity. Our expert team ensures seamless
                 digital transformation for businesses of all sizes.
               </p>
-              <a href="contact.html">
+              <a href="contact.html" aria-label="Contact us for IT solutions">
                 Contact Us
               </a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+              <img src="images/maintenance.gif" alt="IT maintenance and solutions illustration">
             </div>
           </div>
         </div>
@@ -96,23 +105,23 @@
   </div>
 
   <!-- about section -->
-  <section class="about_section layout_padding-bottom">
+  <section class="about_section layout_padding-bottom" aria-labelledby="about-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <div class="detail-box">
-            <h2>About us</h2>
+            <h2 id="about-heading">About us</h2>
             <p>
               Sachiva is a leading IT solutions provider offering web
               development, cybersecurity, and software management services.
               Our mission is to empower businesses with innovative technology.
             </p>
-            <a href="about.html">Read More</a>
+            <a href="about.html" aria-label="Read more about Sachiva">Read More</a>
           </div>
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
+            <img src="images/about_us.gif" alt="About Sachiva - professional IT services team" loading="lazy">
           </div>
         </div>
       </div>
@@ -121,22 +130,22 @@
   <!-- end about section -->
 
   <!-- professional section -->
-  <section class="professional_section layout_padding">
+  <section class="professional_section layout_padding" aria-labelledby="professional-heading">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/Expert_Solutions.gif" alt="Professional Home Services" loading="lazy">
+            <img src="images/Expert_Solutions.gif" alt="Expert solutions for home and business services" loading="lazy">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <h2>Expert Solutions for Your Home & Business</h2>
+            <h2 id="professional-heading">Expert Solutions for Your Home & Business</h2>
             <p>
               We provide top-quality repair, maintenance, and professional home services tailored to your
               needs. Our skilled team ensures efficiency, reliability, and customer satisfaction in every project.
             </p>
-            <a href="service.html">Learn More</a>
+            <a href="service.html" aria-label="Learn more about our expert solutions">Learn More</a>
           </div>
         </div>
       </div>
@@ -145,17 +154,17 @@
   <!-- end professional section -->
 
   <!-- service section -->
-  <section class="service_section layout_padding">
+  <section class="service_section layout_padding" aria-labelledby="services-heading">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>Our Services</h2>
+        <h2 id="services-heading">Our Services</h2>
       </div>
       <div class="row">
         <!-- Each service -->
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os1.png" alt="" loading="lazy" />
+              <img src="images/os1.png" alt="Web Development Services" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Web Development</h5>
@@ -166,7 +175,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/s1.png" alt="" loading="lazy" />
+              <img src="images/s1.png" alt="Software Management Services" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Software Management</h5>
@@ -177,7 +186,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os3.png" alt="Google Ads" loading="lazy" />
+              <img src="images/os3.png" alt="Google Ads Services" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Google Ads</h5>
@@ -188,7 +197,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os4.png" alt="" loading="lazy" />
+              <img src="images/os4.png" alt="Cybersecurity Services" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Cybersecurity</h5>
@@ -198,23 +207,23 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="service.html">View More</a>
+        <a href="service.html" aria-label="View all our services">View More</a>
       </div>
     </div>
   </section>
   <!-- end service section -->
 
   <!-- Owner message -->
-  <section class="client_section">
+  <section class="client_section" aria-labelledby="owner-message-heading">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>Owner Message</h2>
+        <h2 id="owner-message-heading">Owner Message</h2>
       </div>
       <div class="item">
         <div class="box">
           <div class="client_id">
             <div class="img-box">
-              <img src="images/owner.png">
+              <img src="images/owner.png" alt="Shivani Sharma, Owner of Sachiva">
             </div>
             <div class="client_detail">
               <div class="client_info">
@@ -237,20 +246,20 @@
 
     <!-- client section -->
 
-    <section class="client_section mt-5">
+    <section class="client_section mt-5" aria-labelledby="testimonials-heading">
         <div class="container">
             <div class="heading_container heading_center">
-                <h2>
+                <h2 id="testimonials-heading">
                     What Our Clients Say
                 </h2>
             </div>
             <div class="carousel-wrap layout_padding2-top ">
-                <div class="owl-carousel">
+                <div class="owl-carousel" role="region" aria-label="Client testimonials carousel">
                     <div class="item">
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-              <img src="images/client-1.jpg" alt="" loading="lazy">
+              <img src="images/client-1.jpg" alt="Client testimonial photo" loading="lazy">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -279,7 +288,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="">
+                                    <img src="images/client-2.jpg" alt="Client testimonial photo">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -367,11 +376,14 @@
         </div>
     </section>
 
+  </main>
+  <!-- End main content -->
+
   <!-- Contact section -->
-  <section class="contact_section layout_padding">
+  <section class="contact_section layout_padding" aria-labelledby="contact-heading">
     <div class="container">
       <div class="heading_container">
-        <h2>Contact Us</h2>
+        <h2 id="contact-heading">Contact Us</h2>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -387,7 +399,7 @@
           <div class="map_container">
             <div class="map">
               <iframe src="https://www.google.com/maps/embed?pb=..." style="width:100%;height:100%;" allowfullscreen=""
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Company location map"></iframe>
             </div>
           </div>
         </div>
@@ -401,18 +413,18 @@
         <div class="footer-grid-wrapper">
 
             <div class="footer-column footer-about">
-                <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                <a href="#" class="footer-logo" aria-label="Sachiva company logo">
+                    <img src="images/logo_blue.png" alt="Sachiva company logo">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
                 </p>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-social-icons" role="list" aria-label="Social media links">
+                    <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -456,18 +468,18 @@
 
         </div> 
       </div>
-      <footer class="footer_section">
+      <footer class="footer_section" role="contentinfo">
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
+                <a href="./" aria-label="Sachiva homepage">Sachiva</a>
             </p>
         </div>
     </footer>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/75...." target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
 </section>
@@ -488,8 +500,8 @@
 <!-- footer section -->
 
 <!--top scroll-->
-<button id="backToTop" title="Go to top">
-  <i class="fas fa-arrow-up"></i>
+<button id="backToTop" title="Go to top" aria-label="Go back to top of page">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </button>
 
   <!-- Scripts -->
