@@ -11,12 +11,19 @@
   --dark-success: #43a047;
   --dark-icon: #b0b3b8;
   --dark-border: #333;
-  --transition-smooth: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  --transition-smooth: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Global Smooth Transitions */
-body, button, a, input, .box, .card, .contributor-card, .service_section .box {
+/* Global Smooth Transitions - Enhanced */
+body, button, a, input, .box, .card, .contributor-card, .service_section .box, 
+.whatsapp, .navbar, .footer, .contact_section input, .client_section .box {
   transition: var(--transition-smooth);
+}
+
+/* Body Dark Mode with smooth background transition */
+[data-theme="dark"] body {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
 }
 
 /* Contributors Page Dark Mode - Fixed */
@@ -382,16 +389,41 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
 
 /* Header and Navigation Enhancements */
 [data-theme="dark"] .header_section {
-  background-color: var(--dark-bg) !important;
-}
-
-[data-theme="dark"] .custom_nav-container {
   background-color: var(--dark-card-bg) !important;
   border-bottom: 1px solid var(--dark-border);
 }
 
+[data-theme="dark"] .custom_nav-container {
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .navbar-brand {
+  color: var(--dark-text) !important;
+}
+
+[data-theme="dark"] .navbar-brand span {
+  color: var(--dark-accent) !important;
+}
+
 [data-theme="dark"] .navbar-brand img {
   filter: brightness(1.2);
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+  color: var(--dark-text) !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link:hover {
+  color: var(--dark-accent) !important;
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .navbar-nav .nav-item.active .nav-link {
+  color: var(--dark-accent) !important;
+  background-color: rgba(0, 123, 255, 0.2) !important;
+  border-radius: 4px;
 }
 
 [data-theme="dark"] .navbar-toggler {
@@ -628,11 +660,13 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
 [data-theme="dark"] .whatsapp {
   background-color: #25D366 !important;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 [data-theme="dark"] .whatsapp:hover {
   background-color: #128C7E !important;
   transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4) !important;
 }
 
 /* Back to Top Button Dark Mode */
