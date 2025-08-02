@@ -9,16 +9,25 @@
   <title>Sachiva</title>
 
   <!-- CSS links -->
+  <!-- Design System (Must load first) -->
+  <link rel="stylesheet" type="text/css" href="css/design-system.css" />
+  <!-- Critical CSS for above-the-fold content -->
+  <link rel="stylesheet" type="text/css" href="css/critical.css" />
+  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- Framework and Base Styles -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Project Styles (in dependency order) -->
+  <link href="css/utilities.css" rel="stylesheet" />
+  <link href="css/components.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-  <!-- Consolidated CSS links for maintainability -->
+  <!-- Organized CSS architecture for better maintainability and performance -->
 </head>
 
 <body>

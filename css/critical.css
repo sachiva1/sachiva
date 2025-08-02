@@ -1,0 +1,307 @@
+/* =================================================================
+   SACHIVA CRITICAL CSS - ABOVE THE FOLD STYLES
+   ================================================================= */
+
+/* ==================== CRITICAL BASE STYLES ==================== */
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  color: var(--color-gray-900);
+  scroll-behavior: smooth;
+  background-color: var(--color-white);
+}
+
+/* ==================== HEADER COMPONENT ==================== */
+.header {
+  background: var(--header-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: var(--shadow-glass);
+  border-bottom: 1px solid var(--header-border);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-index-fixed);
+  transition: var(--transition-all);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  transition: var(--transition-transform);
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__brand:hover {
+  transform: scale(1.05);
+}
+
+.header__logo {
+  width: 60px;
+  height: auto;
+  transition: var(--transition-transform);
+}
+
+.header__nav-toggle {
+  min-height: var(--min-touch-target);
+  min-width: var(--min-touch-target);
+  padding: var(--space-2);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  padding: var(--space-16) 0;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  min-height: 75vh;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__content {
+  display: flex;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.hero__text h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-5);
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero__text p {
+  animation: fadeInUp 1s ease 0.6s both;
+  margin-bottom: var(--space-6);
+}
+
+.hero__cta {
+  animation: fadeInUp 1s ease 0.9s both;
+}
+
+.hero__image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+}
+
+.hero__image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition-transform);
+  transform: none;
+}
+
+.hero__image:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== BUTTON COMPONENT - CRITICAL ==================== */
+.btn--hero {
+  background: var(--color-brand-gradient);
+  color: var(--color-white);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-3xl);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition-all);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-weight: var(--font-weight-medium);
+}
+
+.btn--hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn--hero:hover::before {
+  left: 100%;
+}
+
+.btn--hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+/* ==================== SERVICE CARDS PREVIEW ==================== */
+.services-preview .card {
+  transition: var(--transition-all);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.services-preview .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ==================== SCROLL INDICATOR ==================== */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--color-brand-gradient);
+  z-index: var(--z-index-max);
+  transition: width var(--transition-base);
+}
+
+/* ==================== LOADING STATES ==================== */
+.page-loading {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.page-loaded {
+  opacity: 1;
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for all images to prevent scroll issues */
+.img-container img {
+  transform: none !important;
+}
+
+/* ==================== DARK MODE - CRITICAL ==================== */
+[data-theme="dark"] .header {
+  background: rgba(26, 26, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(135deg, var(--color-dark-bg-primary) 0%, var(--color-dark-bg-secondary) 100%);
+  color: var(--color-dark-text-primary);
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(-45deg, #2d3748, #4a5568, #2b6cb0, #3182ce);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* ==================== RESPONSIVE DESIGN - CRITICAL ==================== */
+@media (max-width: 768px) {
+  .header__nav-toggle {
+    min-height: var(--min-touch-target);
+    min-width: var(--min-touch-target);
+    padding: var(--space-2);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero__image-container {
+    min-height: 300px;
+    margin-top: var(--space-5);
+  }
+
+  .hero__text h1 {
+    font-size: var(--font-size-3xl) !important;
+    line-height: var(--line-height-tight);
+  }
+
+  .hero__image {
+    max-width: 90%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-12) 0;
+  }
+
+  .hero__content {
+    min-height: auto;
+  }
+
+  .services-preview .card {
+    margin-bottom: var(--space-5);
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .btn,
+  .floating-btn,
+  .nav-link {
+    min-height: var(--min-touch-target);
+    min-width: var(--min-touch-target);
+  }
+
+  .whatsapp.floating-btn {
+    width: 60px;
+    height: 60px;
+    bottom: var(--space-5);
+    right: var(--space-5);
+  }
+}
+
+/* ==================== KEYFRAMES ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
