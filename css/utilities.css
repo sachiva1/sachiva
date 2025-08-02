@@ -1,0 +1,313 @@
+/* 
+ * Sachiva Utility Classes - Enhanced Edition
+ * Additional utility classes that work alongside existing CSS
+ * Follows existing naming conventions while adding new capabilities
+ */
+
+/* ======================== 
+   Enhanced Layout Utilities (Compatible)
+   ======================== */
+
+/* Additional layout padding variants */
+.layout_padding-xs {
+  padding-top: var(--layout-padding-sm);
+  padding-bottom: var(--layout-padding-sm);
+}
+
+.layout_padding-xl {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+/* Section spacing helpers */
+.section-spacing {
+  padding: var(--layout-padding-section) 0;
+}
+
+.section-spacing-lg {
+  padding: var(--layout-padding-lg) 0;
+}
+
+/* ======================== 
+   Typography Utilities (Enhanced)
+   ======================== */
+
+/* Font Weight (Compatible with existing .fw-bold) */
+.text-light { font-weight: var(--font-weight-light); }
+.text-normal { font-weight: var(--font-weight-normal); }
+.text-medium { font-weight: var(--font-weight-medium); }
+.text-semibold { font-weight: var(--font-weight-semibold); }
+.text-bold { font-weight: var(--font-weight-bold); }
+.text-extrabold { font-weight: var(--font-weight-extrabold); }
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* Text Transform */
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+/* Text Colors (Enhanced) */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-brand { color: var(--color-brand-blue); }
+.text-accent { color: var(--color-accent-orange); }
+.text-white { color: var(--color-white); }
+
+/* ======================== 
+   Spacing Utilities (Enhanced)
+   ======================== */
+
+/* Margin utilities (extends existing .mt-5) */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-1); }
+.m-2 { margin: var(--spacing-2); }
+.m-3 { margin: var(--spacing-3); }
+.m-4 { margin: var(--spacing-4); }
+.m-6 { margin: var(--spacing-6); }
+.m-8 { margin: var(--spacing-8); }
+
+/* Margin Top (enhances existing) */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-1); }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-3 { margin-top: var(--spacing-3); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-6 { margin-top: var(--spacing-6); }
+.mt-8 { margin-top: var(--spacing-8); }
+
+/* Margin Bottom */
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-1); }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-3 { margin-bottom: var(--spacing-3); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.mb-5 { margin-bottom: var(--spacing-5); }
+.mb-6 { margin-bottom: var(--spacing-6); }
+.mb-8 { margin-bottom: var(--spacing-8); }
+
+/* Margin Left & Right */
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Padding Utilities */
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+.p-3 { padding: var(--spacing-3); }
+.p-4 { padding: var(--spacing-4); }
+.p-5 { padding: var(--spacing-5); }
+.p-6 { padding: var(--spacing-6); }
+
+/* ======================== 
+   Display Utilities (Enhanced)
+   ======================== */
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+
+/* Flexbox Utilities (Enhanced) */
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+/* Flex Alignment */
+.justify-content-start { justify-content: flex-start; }
+.justify-content-center { justify-content: center; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+
+.align-items-start { align-items: flex-start; }
+.align-items-center { align-items: center; }
+.align-items-end { align-items: flex-end; }
+.align-items-stretch { align-items: stretch; }
+
+/* ======================== 
+   Enhanced Component Classes (BEM-like but compatible)
+   ======================== */
+
+/* Enhanced Box Component (works with existing .box) */
+.box-elevated {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.box-bordered {
+  border: 1px solid var(--border-color);
+}
+
+/* Enhanced Button Styles (works with existing buttons) */
+.btn-enhanced {
+  transition: var(--transition-smooth);
+  border-radius: var(--border-radius-md);
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card enhancements */
+.card-enhanced {
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-smooth);
+}
+
+.card-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ======================== 
+   Animation & Interaction Utilities
+   ======================== */
+
+/* Hover effects */
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-shadow:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Transition utilities */
+.transition-fast { transition: var(--transition-fast); }
+.transition-normal { transition: var(--transition-normal); }
+.transition-slow { transition: var(--transition-slow); }
+.transition-smooth { transition: var(--transition-smooth); }
+
+/* ======================== 
+   Accessibility Utilities
+   ======================== */
+
+/* Focus states */
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* ======================== 
+   Responsive Utilities (Enhanced)
+   ======================== */
+
+/* Responsive display classes */
+@media (max-width: 767px) {
+  .d-mobile-none { display: none !important; }
+  .d-mobile-block { display: block !important; }
+  .d-mobile-flex { display: flex !important; }
+}
+
+@media (min-width: 768px) {
+  .d-desktop-block { display: block !important; }
+  .d-desktop-flex { display: flex !important; }
+  .d-mobile-only { display: none !important; }
+}
+
+@media (max-width: 991px) {
+  .d-tablet-none { display: none !important; }
+}
+
+/* Responsive spacing */
+@media (max-width: 767px) {
+  .mt-mobile-0 { margin-top: 0 !important; }
+  .mb-mobile-0 { margin-bottom: 0 !important; }
+  .p-mobile-2 { padding: var(--spacing-2) !important; }
+}
+
+/* ======================== 
+   Performance Utilities
+   ======================== */
+
+/* GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth scrolling */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-lazy {
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.img-lazy.loaded {
+  opacity: 1;
+}
+
+/* ======================== 
+   Print Utilities
+   ======================== */
+
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+  
+  .print-visible {
+    display: block !important;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+}

@@ -1,0 +1,407 @@
+/* 
+ * Sachiva Dark Mode Enhancements
+ * Refactored to use design system variables and BEM methodology
+ */
+
+/* ======================== 
+   Global Dark Theme Transitions
+   ======================== */
+
+/* Apply smooth transitions to all interactive elements */
+body, 
+.box, 
+.card, 
+.service__box, 
+.client__box,
+.contact__input,
+.btn-base,
+button, 
+a, 
+input {
+  transition: var(--transition-smooth);
+}
+
+/* ======================== 
+   Contributors Section Dark Mode
+   ======================== */
+
+[data-theme="dark"] .contributors-section {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .contributor-card {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .contributor-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .contributor-name {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .contributor-role {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .contributors-section .heading-container__title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .contributors-section .heading-container__subtitle {
+  color: var(--text-secondary) !important;
+}
+
+/* ======================== 
+   Service Cards Dark Mode
+   ======================== */
+
+[data-theme="dark"] .service {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .service__box {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .service__box:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.3) !important;
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .service__box:hover .service__icon img {
+  filter: brightness(1.2) invert(0.9);
+}
+
+[data-theme="dark"] .service__title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .service__description {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .service__box:hover .service__title,
+[data-theme="dark"] .service__box:hover .service__description {
+  color: var(--color-white) !important;
+}
+
+/* ======================== 
+   Contact Form Dark Mode
+   ======================== */
+
+[data-theme="dark"] .contact {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .contact__input {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .contact__input:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .contact__input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .contact__submit {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+
+[data-theme="dark"] .contact__submit:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+/* ======================== 
+   Client Testimonials Dark Mode
+   ======================== */
+
+[data-theme="dark"] .client {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .client__box {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .client__name {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .client__text {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .client__quote-icon {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .client__carousel .owl-nav button {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+
+[data-theme="dark"] .client__carousel .owl-nav button:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+/* ======================== 
+   Navigation Dark Mode
+   ======================== */
+
+[data-theme="dark"] .header {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .nav__item {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .nav__item:hover,
+[data-theme="dark"] .nav__item--active {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .nav-toggle__bar,
+[data-theme="dark"] .nav-toggle__bar::before,
+[data-theme="dark"] .nav-toggle__bar::after {
+  background-color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .logo__text {
+  color: var(--color-primary) !important;
+}
+
+/* ======================== 
+   Hero/Slider Section Dark Mode
+   ======================== */
+
+[data-theme="dark"] .hero-area {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .slider__title {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .slider__text {
+  color: var(--text-secondary) !important;
+}
+
+/* ======================== 
+   About Section Dark Mode
+   ======================== */
+
+[data-theme="dark"] .about {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .about__title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .about__text {
+  color: var(--text-secondary) !important;
+}
+
+/* ======================== 
+   Professional Section Dark Mode
+   ======================== */
+
+[data-theme="dark"] .professional {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .professional__title {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .professional__text {
+  color: var(--text-secondary) !important;
+}
+
+/* ======================== 
+   Footer Dark Mode
+   ======================== */
+
+[data-theme="dark"] .footer {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer__link {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .footer__link:hover {
+  color: var(--color-primary-hover) !important;
+}
+
+/* ======================== 
+   Info Section (Enhanced Footer) Dark Mode
+   ======================== */
+
+[data-theme="dark"] .info-section {
+  background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-card) 100%);
+}
+
+[data-theme="dark"] .info-section__column h5 {
+  color: var(--color-white) !important;
+}
+
+[data-theme="dark"] .info-section__column ul li a {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .info-section__column ul li a:hover {
+  color: var(--color-white) !important;
+}
+
+[data-theme="dark"] .info-section__social a {
+  background-color: var(--bg-secondary) !important;
+  color: var(--color-white) !important;
+}
+
+[data-theme="dark"] .info-section__social a:hover {
+  background-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .info-section__description {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .info-section__contact p {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .info-section__contact a {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .info-section__contact a:hover {
+  color: var(--color-white) !important;
+}
+
+/* ======================== 
+   Buttons Dark Mode
+   ======================== */
+
+[data-theme="dark"] .btn--primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  border-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .btn--primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+[data-theme="dark"] .btn--outline {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .btn--outline:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+
+/* CTA buttons */
+[data-theme="dark"] .slider__cta,
+[data-theme="dark"] .about__cta,
+[data-theme="dark"] .professional__cta,
+[data-theme="dark"] .service__btn {
+  border-color: currentColor !important;
+}
+
+/* ======================== 
+   Form Elements Dark Mode
+   ======================== */
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+}
+
+/* ======================== 
+   Utility Overrides for Dark Mode
+   ======================== */
+
+[data-theme="dark"] .bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .text-primary {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .border-color {
+  border-color: var(--border-color) !important;
+}
+
+/* ======================== 
+   Scrollbar Dark Mode
+   ======================== */
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--color-gray-600);
+  border-radius: var(--border-radius-sm);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
