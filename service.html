@@ -23,11 +23,189 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+  <link rel="stylesheet" href="css/accessibility.css" />
 
   <!-- Custom Styles -->
 <style>
   .fw-bold {
     font-weight: bolder;
+  }
+
+  /* Fix navigation bar gaps and alignment */
+  .header_section {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+  }
+
+  .custom_nav-container {
+    padding: 0;
+    min-height: 70px;
+  }
+
+  .custom_nav-container .navbar-nav {
+    margin-left: auto;
+    align-items: center;
+    gap: 0;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    padding: 15px 20px;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin: 0 2px;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+  .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #0056b3;
+    background-color: rgba(0, 86, 179, 0.1);
+  }
+
+  /* Fix theme toggle button styling and positioning */
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 15px;
+    vertical-align: middle;
+  }
+
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .theme-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 4px;
+  }
+
+  .theme-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .theme-switch input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  .theme-switch input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .theme-switch .sun-icon,
+  .theme-switch .moon-icon {
+    font-size: 14px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .theme-switch .sun-icon {
+    color: #ffb347;
+    opacity: 1;
+  }
+
+  .theme-switch .moon-icon {
+    color: #f4f4f4;
+    opacity: 0;
+  }
+
+  .theme-switch input:checked + .slider .sun-icon {
+    opacity: 0;
+  }
+
+  .theme-switch input:checked + .slider .moon-icon {
+    opacity: 1;
+  }
+
+  /* Fix navbar brand alignment */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-right: 20px;
+  }
+
+  .navbar-brand .main-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .navbar-brand span {
+    color: #0355cc;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  /* Dark mode navigation styles */
+  [data-theme="dark"] .header_section {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+  }
+
+  [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
+    color: #e0e0e0;
+  }
+
+  [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+  [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #66b3ff;
+    background-color: rgba(102, 179, 255, 0.1);
+  }
+
+  [data-theme="dark"] .navbar-brand span {
+    color: #66b3ff;
+  }
+
+  /* Mobile navbar fixes */
+  @media (max-width: 991px) {
+    .theme-switch {
+      margin: 10px 0;
+      margin-left: 0;
+    }
+    
+    .custom_nav-container .navbar-nav {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+    
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+      padding: 10px 15px;
+    }
   }
 
   .whatsapp {
@@ -76,35 +254,55 @@
 </head>
 
 <body>
+  <!-- Skip navigation links for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <!-- Header -->
   <div class="hero_area">
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" id="navigation" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+              <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+              <span class="sr-only">Menu</span>
+              <span class="navbar-toggler-icon"> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item active fw-bold"><a class="nav-link" href="service.html">Services <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="about.html" role="menuitem">About</a>
+                </li>
+                <li class="nav-item active fw-bold" role="none">
+                  <a class="nav-link" href="service.html" role="menuitem" aria-current="page">Services 
+                    <span class="sr-only">(current page)</span>
+                  </a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="contributors.html" role="menuitem">Contributors</a>
+                </li>
+                <li class="nav-item contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="theme-toggle" aria-describedby="theme-description">
+                    <span class="slider" aria-hidden="true">
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                      <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
+                    </span>
+                    <span id="theme-description" class="sr-only">Switch between light and dark themes</span>
+                  </label>
+                </li>
               </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
             </div>
           </nav>
         </div>
@@ -112,6 +310,9 @@
     </header>
   </div>
   <!-- End Header -->
+
+  <!-- Main content wrapper -->
+  <main id="main-content" role="main">
 
   <!-- Services Section -->
   <section class="about_section_layout_padding">

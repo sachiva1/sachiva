@@ -22,10 +22,9 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+  <link rel="stylesheet" href="css/accessibility.css" />
 
   <style>
-
-
     .fw-bold {
       font-weight: bolder;
     }
@@ -33,6 +32,163 @@
     .feature_section {
       position: relative;
       top: 60px;
+    }
+
+    /* Fix navigation bar gaps and alignment */
+    .header_section {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .custom_nav-container {
+      padding: 0;
+      min-height: 70px;
+    }
+
+    .custom_nav-container .navbar-nav {
+      margin-left: auto;
+      align-items: center;
+      gap: 0;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item {
+      margin: 0;
+      padding: 0;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+      padding: 15px 20px;
+      color: #1a1a1a;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 0 2px;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+    .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      color: #0056b3;
+      background-color: rgba(0, 86, 179, 0.1);
+    }
+
+    /* Fix theme toggle button styling and positioning */
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .theme-switch .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+    }
+
+    .theme-switch .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .theme-switch input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    .theme-switch input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .theme-switch .sun-icon,
+    .theme-switch .moon-icon {
+      font-size: 14px;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-switch .sun-icon {
+      color: #ffb347;
+      opacity: 1;
+    }
+
+    .theme-switch .moon-icon {
+      color: #f4f4f4;
+      opacity: 0;
+    }
+
+    .theme-switch input:checked + .slider .sun-icon {
+      opacity: 0;
+    }
+
+    .theme-switch input:checked + .slider .moon-icon {
+      opacity: 1;
+    }
+
+    /* Fix navbar brand alignment */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      margin-right: 20px;
+    }
+
+    .navbar-brand .main-logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      color: #0355cc;
+      font-weight: bold;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    /* Mobile navbar fixes */
+    @media (max-width: 991px) {
+      .theme-switch {
+        margin: 10px 0;
+        margin-left: 0;
+      }
+      
+      .custom_nav-container .navbar-nav {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      
+      .custom_nav-container .navbar-nav .nav-item .nav-link {
+        padding: 10px 15px;
+      }
     }
 
     .whatsapp {
@@ -78,13 +234,31 @@
 
     body.dark-mode .contributor-card {
       background-color: #2c2c2c;
-     
       border-color: #444;
     }
 
     body.dark-mode .contributor-stats {
       background: linear-gradient(135deg, #444, #555);
-    
+    }
+
+    /* Dark mode navigation styles */
+    [data-theme="dark"] .header_section {
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+    }
+
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      color: #66b3ff;
+      background-color: rgba(102, 179, 255, 0.1);
+    }
+
+    [data-theme="dark"] .navbar-brand span {
+      color: #66b3ff;
     }
 
     .contributor-card {
@@ -235,42 +409,50 @@
 </head>
 
 <body>
-  <header class="header_section">
+  <!-- Skip navigation links for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
+  <header class="header_section" role="banner">
     <div class="header_bottom">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="./">
-            <img src="images/logo_blue.png" alt="Logo" class="main-logo" />
+        <nav class="navbar navbar-expand-lg custom_nav-container" id="navigation" role="navigation" aria-label="Main navigation">
+          <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+            <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo" />
             <span>sachiva</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+            <span class="sr-only">Menu</span>
+            <span class="navbar-toggler-icon"> </span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+            <ul class="navbar-nav" role="menubar">
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="index.html" role="menuitem">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="about.html" role="menuitem">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">Services</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="service.html" role="menuitem">Services</a>
               </li>
-              <li class="nav-item active fw-bold">
-                <a class="nav-link" href="contributors.html">Contributors <span class="sr-only">(current)</span></a>
+              <li class="nav-item active fw-bold" role="none">
+                <a class="nav-link" href="contributors.html" role="menuitem" aria-current="page">Contributors 
+                  <span class="sr-only">(current page)</span>
+                </a>
               </li>
-              <li class="nav-item contact-highlight">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+              <li class="nav-item contact-highlight" role="none">
+                <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
               </li>
-              <li class="nav-item">
-                <label class="switch theme-switch">
-                  <input type="checkbox" id="theme-toggle" />
-                  <span class="slider">
-                    <i class="fas fa-sun sun-icon"></i>
-                    <i class="fas fa-moon moon-icon"></i>
+              <li class="nav-item" role="none">
+                <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+                  <input type="checkbox" id="theme-toggle" aria-describedby="theme-description" />
+                  <span class="slider" aria-hidden="true">
+                    <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
                   </span>
+                  <span id="theme-description" class="sr-only">Switch between light and dark themes</span>
                 </label>
               </li>
             </ul>
@@ -280,141 +462,161 @@
     </div>
   </header>
 
-  <section class="hero-section">
+  <!-- Main content wrapper -->
+  <main id="main-content" role="main">
+
+  <section class="hero-section" role="banner" aria-labelledby="contributors-hero-heading">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1><i class="fab fa-github github-icon"></i>Our Contributors</h1>
+          <h1 id="contributors-hero-heading">
+            <i class="fab fa-github github-icon" aria-hidden="true"></i>Our Contributors
+          </h1>
           <p>
             Meet the amazing people who contribute to making Sachiva better
             every day
           </p>
-          <a href="https://github.com/sachiva1/sachiva" target="_blank" class="contributor-link">
-            <i class="fab fa-github"></i> View on GitHub
+          <a href="https://github.com/sachiva1/sachiva" target="_blank" rel="noopener noreferrer" 
+             class="contributor-link" aria-label="View Sachiva project on GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="contributors-section">
+  <section class="contributors-section" aria-labelledby="contributors-main-heading">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2 class="contributors-heading">Our Amazing Contributors</h2>
+        <h2 id="contributors-main-heading" class="contributors-heading">Our Amazing Contributors</h2>
         <p class="contributors-subtext">
           Thank you to all the wonderful people who have contributed to this
           project!
         </p>
       </div>
 
-      <div id="loading" class="loading-spinner">
+      <div id="loading" class="loading-spinner" role="status" aria-live="polite">
         <div class="spinner-border" role="status">
           <span class="sr-only">Loading contributors...</span>
         </div>
         <p class="mt-3">Fetching contributors from GitHub...</p>
       </div>
 
-      <div id="error" class="error-message" style="display: none">
-        <h4>
-          <i class="fas fa-exclamation-triangle"></i> Unable to Load
+      <div id="error" class="error-message" style="display: none" role="alert">
+        <h3>
+          <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Unable to Load
           Contributors
-        </h4>
+        </h3>
         <p>
           We're having trouble fetching the contributors list from GitHub.
           Please try again later or visit our
-          <a href="https://github.com/sachiva1/sachiva" target="_blank">GitHub repository</a>
+          <a href="https://github.com/sachiva1/sachiva" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           directly.
         </p>
       </div>
 
-      <div id="contributors-grid" class="row" style="display: none"></div>
+      <div id="contributors-grid" class="row" style="display: none" role="list" aria-label="List of project contributors"></div>
     </div>
   </section>
+
+  </main>
+  <!-- End main content -->
 
   <section class="new-info-section">
     <div class="new-container">
       <div class="footer-grid-wrapper">
         <div class="footer-column footer-about">
-          <a href="#" class="footer-logo">
-            <img src="images/logo_blue.png" alt="Your Company Logo" />
+          <a href="#" class="footer-logo" aria-label="Sachiva company logo">
+            <img src="images/logo_blue.png" alt="Sachiva company logo" />
           </a>
           <p class="footer-description">
             Crafting innovative solutions for a digital world. We provide
             cutting-edge services to help your business thrive.
           </p>
-          <div class="footer-social-icons">
-            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i
-                class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i
-                class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i
-                class="fab fa-youtube"></i></a>
-            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i
-                class="fab fa-linkedin-in"></i></a>
+          <div class="footer-social-icons" role="list" aria-label="Social media links">
+            <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" 
+               aria-label="Follow us on Facebook" role="listitem">
+               <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
+               aria-label="Follow us on Twitter" role="listitem">
+               <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
+               aria-label="Subscribe to our YouTube channel" role="listitem">
+               <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"
+               aria-label="Follow us on Instagram" role="listitem">
+               <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/yourcompany" target="_blank" rel="noopener noreferrer"
+               aria-label="Connect with us on LinkedIn" role="listitem">
+               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
 
         <div class="footer-column footer-links">
-          <h5 class="footer-heading">Quick Links</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="contributors.html">Contributors</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul role="list" aria-label="Quick navigation links">
+            <li role="listitem"><a href="index.html">Home</a></li>
+            <li role="listitem"><a href="about.html">About Us</a></li>
+            <li role="listitem"><a href="service.html">Services</a></li>
+            <li role="listitem"><a href="contributors.html">Contributors</a></li>
+            <li role="listitem"><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
         <div class="footer-column footer-services">
-          <h5 class="footer-heading">Our Services</h5>
-          <ul>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">App Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">Digital Marketing</a></li>
-            <li><a href="#">Cloud Solutions</a></li>
+          <h3 class="footer-heading">Our Services</h3>
+          <ul role="list" aria-label="Services we offer">
+            <li role="listitem"><a href="service.html#web-development">Web Development</a></li>
+            <li role="listitem"><a href="service.html#app-development">App Development</a></li>
+            <li role="listitem"><a href="service.html#ui-ux-design">UI/UX Design</a></li>
+            <li role="listitem"><a href="service.html#digital-marketing">Digital Marketing</a></li>
+            <li role="listitem"><a href="service.html#cloud-solutions">Cloud Solutions</a></li>
           </ul>
         </div>
 
         <div class="footer-column footer-contact">
-          <h5 class="footer-heading">Get In Touch</h5>
-          <p>
-            <i class="fas fa-map-marker-alt"></i> India (Your detailed address
-            here if needed)
-          </p>
-          <p>
-            <i class="fas fa-phone-alt"></i>
-            <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-          </p>
-          <p>
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
-          </p>
+          <h3 class="footer-heading">Get In Touch</h3>
+          <address>
+            <p>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>India (Your detailed address here if needed)</span>
+            </p>
+            <p>
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <a href="tel:+9175XXXXXXX" aria-label="Call us at +91 75XXXXXXX">+91 75XXXXXXX</a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:sumit.......X@gmail.com" aria-label="Send email to sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+            </p>
+          </address>
         </div>
       </div>
     </div>
-    </div>
-      <footer class="footer_section">
+      <footer class="footer_section" role="contentinfo">
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
+                <a href="./" aria-label="Sachiva homepage">Sachiva</a>
             </p>
         </div>
     </footer>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-      <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/75...." target="_blank" rel="noopener noreferrer" class="whatsapp"
+       aria-label="Contact us on WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
   </section>
 
-
-
-  <button id="backToTop" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
+  <!-- Back to top button -->
+  <button id="backToTop" title="Go to top" aria-label="Go back to top of page">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -456,6 +658,21 @@
           const contributorCard = createContributorCard(contributor);
           gridElement.appendChild(contributorCard);
         });
+
+        // Announce successful loading to screen readers
+        const announcement = document.createElement("div");
+        announcement.setAttribute("aria-live", "polite");
+        announcement.setAttribute("aria-atomic", "true");
+        announcement.className = "sr-only";
+        announcement.textContent = `Successfully loaded ${contributors.length} contributors`;
+        document.body.appendChild(announcement);
+        
+        // Remove announcement after it's read
+        setTimeout(() => {
+          if (document.body.contains(announcement)) {
+            document.body.removeChild(announcement);
+          }
+        }, 1000);
       } catch (error) {
         console.error("Error fetching contributors:", error);
 
@@ -468,21 +685,22 @@
     function createContributorCard(contributor) {
       const colDiv = document.createElement("div");
       colDiv.className = "col-lg-3 col-md-4 col-sm-6 col-12";
+      colDiv.setAttribute("role", "listitem");
 
       colDiv.innerHTML = `
-        <div class="contributor-card">
+        <div class="contributor-card" role="article" aria-labelledby="contributor-${contributor.id}">
           <div class="contributor-avatar">
-            <img src="${contributor.avatar_url}" alt="${contributor.login
-        }" loading="lazy">
+            <img src="${contributor.avatar_url}" alt="Avatar of ${contributor.login}" loading="lazy">
           </div>
-          <h3 class="contributor-name">${contributor.login}</h3>
-          <div class="contributor-stats">
-            <i class="fas fa-code-branch"></i> ${contributor.contributions
+          <h3 id="contributor-${contributor.id}" class="contributor-name">${contributor.login}</h3>
+          <div class="contributor-stats" aria-label="${contributor.contributions} contributions">
+            <i class="fas fa-code-branch" aria-hidden="true"></i> ${contributor.contributions
         } contribution${contributor.contributions !== 1 ? "s" : ""}
           </div>
           <a href="${contributor.html_url
-        }" target="_blank" class="contributor-link">
-            <i class="fab fa-github"></i> View Profile
+        }" target="_blank" rel="noopener noreferrer" class="contributor-link" 
+             aria-label="View ${contributor.login}'s GitHub profile">
+            <i class="fab fa-github" aria-hidden="true"></i> View Profile
           </a>
         </div>
       `;

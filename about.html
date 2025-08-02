@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+  <link rel="stylesheet" href="css/accessibility.css" />
 
   <!-- Custom Styles -->
   <style>
@@ -33,6 +34,183 @@
     .feature_section {
       position: relative;
       top: 60px;
+    }
+
+    /* Fix navigation bar gaps and alignment */
+    .header_section {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .custom_nav-container {
+      padding: 0;
+      min-height: 70px;
+    }
+
+    .custom_nav-container .navbar-nav {
+      margin-left: auto;
+      align-items: center;
+      gap: 0;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item {
+      margin: 0;
+      padding: 0;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+      padding: 15px 20px;
+      color: #1a1a1a;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 0 2px;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+    .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      color: #0056b3;
+      background-color: rgba(0, 86, 179, 0.1);
+    }
+
+    /* Fix theme toggle button styling and positioning */
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .theme-switch .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+    }
+
+    .theme-switch .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .theme-switch input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    .theme-switch input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .theme-switch .sun-icon,
+    .theme-switch .moon-icon {
+      font-size: 14px;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-switch .sun-icon {
+      color: #ffb347;
+      opacity: 1;
+    }
+
+    .theme-switch .moon-icon {
+      color: #f4f4f4;
+      opacity: 0;
+    }
+
+    .theme-switch input:checked + .slider .sun-icon {
+      opacity: 0;
+    }
+
+    .theme-switch input:checked + .slider .moon-icon {
+      opacity: 1;
+    }
+
+    /* Fix navbar brand alignment */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      margin-right: 20px;
+    }
+
+    .navbar-brand .main-logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      color: #0355cc;
+      font-weight: bold;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    /* Dark mode navigation styles */
+    [data-theme="dark"] .header_section {
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+    }
+
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+    [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      color: #66b3ff;
+      background-color: rgba(102, 179, 255, 0.1);
+    }
+
+    [data-theme="dark"] .navbar-brand span {
+      color: #66b3ff;
+    }
+
+    /* Mobile navbar fixes */
+    @media (max-width: 991px) {
+      .theme-switch {
+        margin: 10px 0;
+        margin-left: 0;
+      }
+      
+      .custom_nav-container .navbar-nav {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      
+      .custom_nav-container .navbar-nav .nav-item .nav-link {
+        padding: 10px 15px;
+      }
     }
 
     .whatsapp {
@@ -60,35 +238,55 @@
 </head>
 
 <body>
+  <!-- Skip navigation links for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <!-- Header -->
   <div class="hero_area">
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" id="navigation" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+              <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+              <span class="sr-only">Menu</span>
+              <span class="navbar-toggler-icon"> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item active fw-bold"><a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item active fw-bold" role="none">
+                  <a class="nav-link" href="about.html" role="menuitem" aria-current="page">About 
+                    <span class="sr-only">(current page)</span>
+                  </a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="service.html" role="menuitem">Services</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="contributors.html" role="menuitem">Contributors</a>
+                </li>
+                <li class="nav-item contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="theme-toggle" aria-describedby="theme-description">
+                    <span class="slider" aria-hidden="true">
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                      <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
+                    </span>
+                    <span id="theme-description" class="sr-only">Switch between light and dark themes</span>
+                  </label>
+                </li>
               </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
             </div>
           </nav>
         </div>
@@ -97,13 +295,16 @@
   </div>
   <!-- End Header -->
 
+  <!-- Main content wrapper -->
+  <main id="main-content" role="main">
+
   <!-- About Section -->
-  <section class="about_section layout_padding">
+  <section class="about_section layout_padding" aria-labelledby="about-main-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <div class="detail-box">
-            <h2>About Us</h2>
+            <h1 id="about-main-heading">About Us</h1>
             <p style="text-align: justify;">
               At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
               needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
@@ -114,12 +315,12 @@
               commitment to quality, innovation, and customer care sets us apart, making us the preferred
               choice for thousands of satisfied clients.
             </p>
-            <a href="service.html">Explore Our Services</a>
+            <a href="service.html" class="btn btn-primary" role="button" aria-label="Explore our services">Explore Our Services</a>
           </div>
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/maintenance.gif" alt="About Sachiva">
+            <img src="images/maintenance.gif" alt="About Sachiva - professional home services and maintenance" loading="lazy">
           </div>
         </div>
       </div>
@@ -127,81 +328,109 @@
   </section>
   <!-- End About Section -->
 
+  </main>
+  <!-- End main content -->
+
   <!-- Footer -->
   <section class="new-info-section">
     <div class="new-container">
         <div class="footer-grid-wrapper">
             <div class="footer-column footer-about">
-                <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                <a href="#" class="footer-logo" aria-label="Sachiva company logo">
+                    <img src="images/logo_blue.png" alt="Sachiva company logo">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
                 </p>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-social-icons" role="list" aria-label="Social media links">
+                    <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" 
+                       aria-label="Follow us on Facebook" role="listitem">
+                       <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
+                       aria-label="Follow us on Twitter" role="listitem">
+                       <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
+                       aria-label="Subscribe to our YouTube channel" role="listitem">
+                       <i class="fab fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"
+                       aria-label="Follow us on Instagram" role="listitem">
+                       <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" rel="noopener noreferrer"
+                       aria-label="Connect with us on LinkedIn" role="listitem">
+                       <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
             <div class="footer-column footer-links">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul role="list" aria-label="Quick navigation links">
+                    <li role="listitem"><a href="index.html">Home</a></li>
+                    <li role="listitem"><a href="about.html">About Us</a></li>
+                    <li role="listitem"><a href="service.html">Services</a></li>
+                    <li role="listitem"><a href="contributors.html">Contributors</a></li>
+                    <li role="listitem"><a href="#portfolio">Portfolio</a></li>
+                    <li role="listitem"><a href="#blog">Blog</a></li>
+                    <li role="listitem"><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-column footer-services">
-                <h5 class="footer-heading">Our Services</h5>
-                <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">App Development</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
+                <h3 class="footer-heading">Our Services</h3>
+                <ul role="list" aria-label="Services we offer">
+                    <li role="listitem"><a href="service.html#web-development">Web Development</a></li>
+                    <li role="listitem"><a href="service.html#app-development">App Development</a></li>
+                    <li role="listitem"><a href="service.html#ui-ux-design">UI/UX Design</a></li>
+                    <li role="listitem"><a href="service.html#digital-marketing">Digital Marketing</a></li>
+                    <li role="listitem"><a href="service.html#cloud-solutions">Cloud Solutions</a></li>
                 </ul>
             </div>
 
             <div class="footer-column footer-contact">
-                <h5 class="footer-heading">Get In Touch</h5>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
-                </p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-                </p>
-                <p>
-                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
-                </p>
-                
+                <h3 class="footer-heading">Get In Touch</h3>
+                <address>
+                    <p>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>India (Your detailed address here if needed)</span>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <a href="tel:+9175XXXXXXX" aria-label="Call us at +91 75XXXXXXX">+91 75XXXXXXX</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:sumit.......X@gmail.com" aria-label="Send email to sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                    </p>
+                </address>
             </div>
 
         </div> 
       </div>
-      <footer class="footer_section">
+      <footer class="footer_section" role="contentinfo">
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
+                <a href="./" aria-label="Sachiva homepage">Sachiva</a>
             </p>
         </div>
     </footer>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/75...." target="_blank" rel="noopener noreferrer" class="whatsapp"
+       aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
 </section>
+
+  <!-- Back to top button -->
+  <button id="backToTop" title="Go to top" aria-label="Go back to top of page">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
   <!-- JS Scripts -->
   <script src="js/jquery-3.4.1.min.js"></script>

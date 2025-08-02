@@ -1,0 +1,641 @@
+/* WCAG 2.1 AA Accessibility Compliance CSS for Sachiva */
+/* This file implements comprehensive accessibility features for better user experience */
+
+/* ================================
+   1. SKIP NAVIGATION LINKS
+   ================================ */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000000;
+    color: #ffffff;
+    padding: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #ffdd00;
+    outline-offset: 2px;
+}
+
+/* ================================
+   2. FOCUS INDICATORS
+   ================================ */
+/* Enhanced focus indicators for all interactive elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus,
+.nav-link:focus,
+.navbar-toggler:focus,
+#theme-toggle:focus,
+.whatsapp:focus {
+    outline: 3px solid #0066cc !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.3) !important;
+    border-radius: 4px;
+}
+
+/* Ensure focus is visible even on dark backgrounds */
+.header_section a:focus,
+.footer_section a:focus {
+    outline-color: #ffdd00 !important;
+    box-shadow: 0 0 0 4px rgba(255, 221, 0, 0.4) !important;
+}
+
+/* ================================
+   3. TOUCH TARGET SIZES (WCAG 2.5.5)
+   ================================ */
+/* Ensure all interactive elements meet minimum touch target size */
+a, button, input, select, textarea, 
+.nav-link, .navbar-toggler, .theme-switch,
+.social-link, .whatsapp {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+}
+
+/* Adjust for mobile devices */
+@media (max-width: 768px) {
+    a, button, input, select, textarea,
+    .nav-link, .navbar-toggler, .theme-switch,
+    .social-link, .whatsapp {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* ================================
+   4. COLOR CONTRAST IMPROVEMENTS
+   ================================ */
+/* Ensure all text meets WCAG AA contrast ratios (4.5:1) */
+
+/* High contrast text colors */
+.high-contrast-text {
+    color: #1a1a1a !important;
+}
+
+.high-contrast-bg {
+    background-color: #ffffff !important;
+}
+
+/* Improve link contrast */
+a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    color: #004494;
+    text-decoration: none;
+}
+
+/* Navigation link improvements */
+.custom_nav-container .navbar-nav .nav-item .nav-link {
+    color: #1a1a1a !important;
+    font-weight: 500;
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #0056b3 !important;
+    background-color: rgba(0, 86, 179, 0.1);
+    border-radius: 4px;
+}
+
+/* Button contrast improvements */
+button, .btn {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: 2px solid #0056b3;
+    font-weight: 600;
+}
+
+button:hover, .btn:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
+
+/* Form input contrast */
+input, textarea, select {
+    border: 2px solid #666666;
+    color: #1a1a1a;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #0056b3;
+}
+
+/* ================================
+   5. DARK MODE ACCESSIBILITY
+   ================================ */
+/* Dark mode with proper contrast ratios */
+[data-theme="dark"] {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] a {
+    color: #66b3ff;
+}
+
+[data-theme="dark"] a:hover,
+[data-theme="dark"] a:focus {
+    color: #99ccff;
+}
+
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #66b3ff !important;
+    background-color: rgba(102, 179, 255, 0.1);
+}
+
+[data-theme="dark"] button,
+[data-theme="dark"] .btn {
+    background-color: #66b3ff;
+    color: #121212;
+    border-color: #66b3ff;
+}
+
+[data-theme="dark"] button:hover,
+[data-theme="dark"] .btn:hover {
+    background-color: #99ccff;
+    border-color: #99ccff;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #666666;
+}
+
+/* ================================
+   6. MOTION PREFERENCES
+   ================================ */
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================
+   7. HIGH CONTRAST MODE SUPPORT
+   ================================ */
+/* Support for Windows High Contrast mode */
+@media (prefers-contrast: high) {
+    a {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    
+    button, .btn {
+        border: 3px solid;
+        font-weight: bold;
+    }
+    
+    input, textarea, select {
+        border: 3px solid;
+    }
+}
+
+/* ================================
+   8. SEMANTIC STRUCTURE SUPPORT
+   ================================ */
+/* Ensure proper semantic structure */
+main {
+    outline: none;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* ================================
+   9. FORM ACCESSIBILITY
+   ================================ */
+/* Improve form accessibility */
+form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Error states */
+.form-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ================================
+   10. KEYBOARD NAVIGATION
+   ================================ */
+/* Improve keyboard navigation */
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.5);
+}
+
+/* Ensure all interactive elements are keyboard accessible */
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
+/* Theme toggle accessibility */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 70px; /* Increased width for better proportion */
+    height: 36px; /* Slightly increased height */
+    top: 0; /* Reset any positioning from other CSS */
+    margin-left: 10px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    min-width: 0;
+    min-height: 0;
+    position: absolute; /* Ensure input is properly hidden */
+}
+
+.theme-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #003DA5;
+    transition: 0.4s;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 8px;
+    box-sizing: border-box;
+}
+
+.theme-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 28px; /* Increased height for better proportion */
+    width: 28px; /* Increased width for better proportion */
+    left: 4px; /* Adjusted position */
+    top: 4px; /* Adjusted position */
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: #2196F3;
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(34px); /* Adjusted for new width */
+}
+
+/* Icons inside the toggle */
+.theme-switch .sun-icon, 
+.theme-switch .moon-icon {
+    font-size: 14px; /* Increased icon size for better visibility */
+    z-index: 1;
+    transition: opacity 0.4s;
+    color: white;
+    pointer-events: none;
+}
+
+.theme-switch .sun-icon {
+    margin-left: 4px; /* Adjusted for new proportions */
+}
+
+.theme-switch .moon-icon {
+    margin-right: 4px; /* Adjusted for new proportions */
+}
+
+.theme-switch input:checked + .slider .sun-icon {
+    opacity: 0.5;
+}
+
+.theme-switch input:not(:checked) + .slider .moon-icon {
+    opacity: 0.5;
+}
+
+.theme-switch input:focus + .slider {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.3);
+}
+
+/* ================================
+   11. RESPONSIVE ACCESSIBILITY
+   ================================ */
+/* Ensure accessibility across all screen sizes */
+@media (max-width: 768px) {
+    .skip-link {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    /* Ensure text remains readable when zoomed to 200% */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+/* ================================
+   12. LOADING AND STATUS INDICATORS
+   ================================ */
+/* Loading states for screen readers */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: "Loading...";
+    position: absolute;
+    left: -9999px;
+}
+
+/* Status messages */
+.status-message {
+    padding: 12px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-weight: 500;
+}
+
+.status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* ================================
+   13. IMAGE ACCESSIBILITY
+   ================================ */
+/* Ensure images are accessible */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Decorative images should have empty alt text */
+img[alt=""] {
+    /* These are decorative images - no additional styling needed */
+    display: inline-block;
+}
+
+/* ================================
+   14. TABLE ACCESSIBILITY
+   ================================ */
+/* If tables are added later */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #666666;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+[data-theme="dark"] th {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    border-color: #666666;
+}
+
+/* ================================
+   15. PRINT ACCESSIBILITY
+   ================================ */
+@media print {
+    .skip-link,
+    .whatsapp,
+    #backToTop,
+    .theme-switch {
+        display: none !important;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
+}
+
+/* ================================
+   16. THEME TOGGLE OVERRIDE FIXES
+   ================================ */
+/* Force proper theme toggle styles to override conflicts */
+.theme-switch {
+    position: relative !important;
+    top: 0 !important;
+    vertical-align: middle !important;
+}
+
+.theme-switch input {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.theme-switch .slider:before {
+    height: 28px !important; /* Updated to match new proportions */
+    width: 28px !important; /* Updated to match new proportions */
+    top: 4px !important; /* Updated to match new proportions */
+    left: 4px !important; /* Updated to match new proportions */
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(34px) !important; /* Updated for new width */
+}
+
+/* ================================
+   17. WHATSAPP BUTTON ACCESSIBILITY & EFFECTS
+   ================================ */
+/* WhatsApp floating button with accessibility improvements */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px; /* Increased for better touch target */
+    height: 60px; /* Increased for better touch target */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.whatsapp:hover,
+.whatsapp:focus {
+    background-color: #128C7E; /* Darker green on hover */
+    transform: scale(1.1); /* Slight scale effect */
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), /* Green glow */
+                0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    color: white; /* Ensure text stays white */
+    text-decoration: none;
+}
+
+.whatsapp:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8),
+                0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp i {
+    font-size: 32px; /* Increased icon size */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.whatsapp:hover i,
+.whatsapp:focus i {
+    color: white;
+    transform: rotate(15deg); /* Slight rotation on hover */
+}
+
+/* Enhanced focus for accessibility */
+.whatsapp:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 3px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .whatsapp {
+        width: 65px;
+        height: 65px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp i {
+        font-size: 36px;
+    }
+}
+
+/* Dark mode compatibility */
+[data-theme="dark"] .whatsapp {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .whatsapp:hover,
+[data-theme="dark"] .whatsapp:focus {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8),
+                0px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure theme toggle works in all themes */
+[data-theme="dark"] .theme-switch .slider {
+    background-color: #404040 !important;
+}
+
+[data-theme="dark"] .theme-switch input:checked + .slider {
+    background-color: #66b3ff !important;
+}

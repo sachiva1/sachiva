@@ -35,11 +35,136 @@
   <link href="css/responsive.css" rel="stylesheet" />
   
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
+  
+  <link href="css/accessibility.css" rel="stylesheet" />
    
   <style>
-    .fw-bold {
-      font-weight: bolder;
+    /* Theme toggle styling and navigation fixes */
+    /* Navigation bar fixes for proper spacing and alignment */
+    .custom_nav-container {
+      padding: 15px 0;
+      position: relative;
     }
+
+    .navbar-brand {
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+      margin-right: 20px;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+      margin: 0 10px;
+    }
+
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin-left: 10px;
+    }
+
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background-color: white;
+      transition: 0.4s;
+      z-index: 2;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+
+    .sun-icon, .moon-icon {
+      font-size: 12px;
+      z-index: 1;
+      transition: opacity 0.4s;
+    }
+
+    .sun-icon {
+      color: #ffeb3b;
+      margin-left: 4px;
+    }
+
+    .moon-icon {
+      color: #ffffff;
+      margin-right: 4px;
+    }
+
+    input:checked + .slider .sun-icon {
+      opacity: 0.5;
+    }
+
+    input:not(:checked) + .slider .moon-icon {
+      opacity: 0.5;
+    }
+
+    /* Responsive navigation */
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        margin: 20px 0;
+      }
+      
+      .theme-switch {
+        margin: 10px 0;
+        align-self: flex-start;
+      }
+    }
+
+    /* Focus styles for accessibility */
+    .theme-switch input:focus + .slider {
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+      outline: 2px solid transparent;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+      outline: 2px solid transparent;
+    }
+
+    .nav-link:focus {
+      outline: 2px solid #2196F3;
+      outline-offset: 2px;
+    }
+
+    /* Contact form specific styles */
 
     .whatsapp {
       position: fixed;
@@ -66,69 +191,99 @@
 </head>
 
 <body>
+  <!-- Skip navigation links for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
 
-
+  <!-- Header -->
   <div class="hero_area">
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Sachiva Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" id="navigation" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+              <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo">
               <span>sachiva</span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class=""> </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+              <span class="sr-only">Menu</span>
+              <span class="navbar-toggler-icon"> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a></li>
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="about.html" role="menuitem">About</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="service.html" role="menuitem">Services</a>
+                </li>
+                <li class="nav-item" role="none">
+                  <a class="nav-link" href="contributors.html" role="menuitem">Contributors</a>
+                </li>
+                <li class="nav-item active fw-bold contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem" aria-current="page">Contact Us
+                    <span class="sr-only">(current page)</span>
+                  </a>
+                </li>
+                <li class="nav-item" role="none">
+                  <label class="switch theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="theme-toggle" aria-describedby="theme-description">
+                    <span class="slider" aria-hidden="true">
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                      <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
+                    </span>
+                    <span id="theme-description" class="sr-only">Switch between light and dark themes</span>
+                  </label>
+                </li>
               </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
             </div>
           </nav>
         </div>
       </div>
     </header>
   </div>
+  <!-- End Header -->
 
+  <!-- Main content wrapper -->
+  <main id="main-content" role="main">
 
-
-  <section class="contact_section layout_padding">
+  <section class="contact_section layout_padding" aria-labelledby="contact-main-heading">
     <div class="container my-5">
       <div class="contact-container">
         <div class="contact-form">
-          <h2>Contact Us</h2>
-          <form id="contactForm">
+          <h1 id="contact-main-heading">Contact Us</h1>
+          <form id="contactForm" role="form" aria-labelledby="contact-main-heading" novalidate>
             <div class="form-group">
-              <i class="fas fa-user"></i>
-              <input type="text" class="form-control" id="name" placeholder="Name" required>
+              <label for="name" class="sr-only">Your Name</label>
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" 
+                     required aria-describedby="name-error" autocomplete="name">
+              <div id="name-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
             <div class="form-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email" class="form-control" id="email" placeholder="Email" required>
+              <label for="email" class="sr-only">Email Address</label>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" 
+                     required aria-describedby="email-error" autocomplete="email">
+              <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea>
+              <label for="message" class="sr-only">Your Message</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Message" 
+                        rows="4" required aria-describedby="message-error"></textarea>
+              <div id="message-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
-            <button type="submit" class="btn-send">Send Message</button>
-            <div id="formAlert" class="alert d-none"></div>
+            <button type="submit" class="btn-send" aria-describedby="form-status">Send Message</button>
+            <div id="formAlert" class="alert d-none" role="status" aria-live="polite"></div>
+            <div id="form-status" class="status-message" role="status" aria-live="polite"></div>
           </form>
         </div>
         <div class="contact-image">
-          <img src="images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
+          <img src="images/contact_us_img.png" alt="Contact us illustration showing communication and support" loading="lazy">
         </div>
       </div>
     </div>
