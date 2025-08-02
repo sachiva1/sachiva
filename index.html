@@ -204,6 +204,22 @@
   </section>
   <!-- end service section -->
 
+
+ <!-- === Recommendation Section === -->
+<section id="smart-recommender" class="container my-5">
+  <h2 class="text-center mb-4">Not Sure What You Need?</h2>
+  <div class="d-flex justify-content-center flex-wrap gap-3">
+    <button class="btn btn-outline-primary" onclick="recommend('business')">Grow My Business</button>
+    <button class="btn btn-outline-success" onclick="recommend('home')">Fix My Home</button>
+    <button class="btn btn-outline-warning" onclick="recommend('design')">Need Design Help</button>
+    <button class="btn btn-outline-info" onclick="recommend('other')">Something Else</button>
+  </div>
+
+  <div class="mt-4" id="recommendationResult"></div>
+</section>
+
+
+
   <!-- Owner message -->
   <section class="client_section">
     <div class="container">
@@ -497,6 +513,51 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
+  <script>
+  const recommendations = {
+    business: [
+      { title: "Digital Marketing", desc: "Promote your business online.", icon: "📈" },
+      { title: "Business Strategy", desc: "Plan and grow your company.", icon: "📊" }
+    ],
+    home: [
+      { title: "Plumbing", desc: "Fix leaks and pipes.", icon: "🚰" },
+      { title: "Electricians", desc: "Get electrical work done.", icon: "💡" }
+    ],
+    design: [
+      { title: "Logo Design", desc: "Create a unique brand logo.", icon: "🎨" },
+      { title: "UI/UX", desc: "Design engaging user experiences.", icon: "📱" }
+    ],
+    other: [
+      { title: "Custom Consulting", desc: "Let’s talk and find the right solution.", icon: "🧠" }
+    ]
+  };
+
+  document.querySelectorAll(".recommend-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const type = btn.getAttribute("data-type");
+      const services = recommendations[type];
+
+      let output = `<div class="row justify-content-center">`;
+
+      services.forEach(service => {
+        output += `
+          <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title">${service.icon} ${service.title}</h5>
+                <p class="card-text">${service.desc}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      output += `</div>`;
+      document.getElementById("recommendationResult").innerHTML = output;
+    });
+  });
+</script>
+
 </body>
 
 </html>
