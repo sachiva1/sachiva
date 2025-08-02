@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+  <link rel="stylesheet" href="css/design-system.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
 
   <!-- Custom Styles -->
 <style>
@@ -114,7 +116,7 @@
   <!-- End Header -->
 
   <!-- Services Section -->
-  <section class="about_section_layout_padding">
+  <section class="about_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>Our Services</h2>
@@ -124,7 +126,7 @@
         <div class="col-md-4 mb-4">
           <div id = "card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
-            <h5 class="fw-bold-1">Home Maintenance</h5>
+            <h5 class="fw-bold">Home Maintenance</h5>
             <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
           </div>
         </div>
@@ -132,18 +134,14 @@
           <div id = "card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-broom fa-3x mb-3 text-success" ></i>
             <h5 class="fw-bold">Cleaning Services</h5>
-            <div class="mt-4">
             <p>Professional deep cleaning for homes and offices, ensuring hygiene and comfort.</p>
-            </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div id = "card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
             <h5 class="fw-bold">Renovation & Painting</h5>
-            <div class="mt-4">
             <p>Give your home a fresh look with our expert painting and renovation solutions.</p>
-            </div>
           </div>
         </div>
       </div>
@@ -153,27 +151,21 @@
           <div id = "card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
             <h5 class="fw-bold">Appliance Repair</h5>
-            <div class="mt-4">
             <p>We repair all major home appliances quickly and affordably at your convenience.</p>
-            </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div id = "card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
             <h5 class="fw-bold">IT & Network Setup</h5>
-            <div class="mt-4">
             <p>Need help setting up your Wi-Fi, printer, or office tech? We've got your back.</p>
-            </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div id = "card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
             <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
-            <h5 class="fw-bold-2">Security Systems</h5>
-            <div class="mt-4">
-            <p class="adjust-p">Installation of cameras, alarms, and smart home security solutions.</p>
-            </div>
+            <h5 class="fw-bold">Security Systems</h5>
+            <p>Installation of cameras, alarms, and smart home security solutions.</p>
           </div>
         </div>
       </div>
@@ -193,12 +185,12 @@
         <!-- FAQ 1 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="faqOneH">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne"
+            <button class="accordion-button" type="button" data-toggle="collapse" data-target="#faqOne"
               aria-expanded="true" aria-controls="faqOne">
               Do you provide same-day service for urgent home maintenance issues?
             </button>
           </h2>
-          <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneH" data-bs-parent="#serviceFaqs">
+          <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneH" data-parent="#serviceFaqs">
             <div class="accordion-body">
               Yes! We offer same-day slots for plumbing leaks, electrical problems, and minor repairs. Early booking improves availability for urgent cases.
             </div>
@@ -207,12 +199,12 @@
         <!-- FAQ 2 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="faqTwoH">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#faqTwo"
               aria-expanded="false" aria-controls="faqTwo">
               What’s included in your deep cleaning service?
             </button>
           </h2>
-          <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoH" data-bs-parent="#serviceFaqs">
+          <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoH" data-parent="#serviceFaqs">
             <div class="accordion-body">
               Our deep cleaning service covers every room, including bathrooms, kitchens, appliances (external), carpets, and windows. Add-ons like sofa shampooing or inside-appliance cleaning can be requested.
             </div>
@@ -221,12 +213,12 @@
         <!-- FAQ 3 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="faqThreeH">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#faqThree"
               aria-expanded="false" aria-controls="faqThree">
               How do you estimate the cost for renovation and painting work?
             </button>
           </h2>
-          <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeH" data-bs-parent="#serviceFaqs">
+          <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeH" data-parent="#serviceFaqs">
             <div class="accordion-body">
               We begin with a free on-site assessment to measure the area and check wall condition. A clear estimate is then shared with labor, paint, and material costs.
             </div>
@@ -235,12 +227,12 @@
         <!-- FAQ 4 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="faqFourH">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#faqFour"
               aria-expanded="false" aria-controls="faqFour">
               Can you repair all types of home appliances?
             </button>
           </h2>
-          <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourH" data-bs-parent="#serviceFaqs">
+          <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourH" data-parent="#serviceFaqs">
             <div class="accordion-body">
               Yes, we service all major brands and types, including ACs, washing machines, refrigerators, and microwaves. All repairs come with a service warranty.
             </div>
@@ -249,12 +241,12 @@
         <!-- FAQ 5 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="faqFiveH">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#faqFive"
               aria-expanded="false" aria-controls="faqFive">
               Do you help with IT network setup for small offices and homes?
             </button>
           </h2>
-          <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveH" data-bs-parent="#serviceFaqs">
+          <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveH" data-parent="#serviceFaqs">
             <div class="accordion-body">
               Absolutely! We handle Wi-Fi setup, printer installation, and basic network configuration. We can also suggest the best hardware for your needs.
             </div>

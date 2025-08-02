@@ -1,0 +1,227 @@
+/* 
+ * Sachiva Design System - Enhanced Variables
+ * Provides CSS custom properties to enhance existing styles without breaking UI
+ * Works alongside existing CSS for better maintainability
+ */
+
+/* ======================== 
+   Enhanced CSS Custom Properties (Design Tokens)
+   Extends existing color scheme and maintains compatibility
+   ======================== */
+
+:root {
+  /* Original Colors (Enhanced) */
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --success-color: #28a745;
+  --whatsapp-color: #25D366;
+  --border-radius: 15px;
+  --font-main: 'Roboto', sans-serif;
+  --footer-bg: #f8f9fa;
+  --footer-text: #2c3e50;
+  
+  /* Extended Color Palette (Compatible with existing) */
+  --color-primary: var(--primary-color);
+  --color-primary-hover: var(--secondary-color);
+  --color-primary-light: #d1e3ff;
+  --color-secondary: #6c757d;
+  --color-success: var(--success-color);
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-info: #17a2b8;
+  
+  /* Brand Colors (Matching existing theme) */
+  --color-brand-blue: #0355cc;
+  --color-accent-orange: #ff8a1d;
+  --color-whatsapp: var(--whatsapp-color);
+  
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #040000;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  
+  /* Dark Theme Colors */
+  --color-dark-bg: #181a20;
+  --color-dark-card: #23272f;
+  --color-dark-text: #e0e0e0;
+  --color-dark-border: #333333;
+  --color-dark-icon: #b0b3b8;
+  
+  /* Typography (Compatible with existing fonts) */
+  --font-family-primary: "Lato", sans-serif;
+  --font-family-heading: "Merriweather Sans", sans-serif;
+  --font-family-monospace: "Courier New", monospace;
+  
+  /* Font Sizes (rem-based for scalability) */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Spacing Scale (Compatible with existing layout) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;    /* 4px */
+  --spacing-2: 0.5rem;     /* 8px */
+  --spacing-3: 0.75rem;    /* 12px */
+  --spacing-4: 1rem;       /* 16px */
+  --spacing-5: 1.25rem;    /* 20px */
+  --spacing-6: 1.5rem;     /* 24px */
+  --spacing-8: 2rem;       /* 32px */
+  --spacing-10: 2.5rem;    /* 40px */
+  --spacing-12: 3rem;      /* 48px */
+  --spacing-16: 4rem;      /* 64px */
+  --spacing-20: 5rem;      /* 80px */
+  --spacing-24: 6rem;      /* 96px */
+  --spacing-32: 8rem;      /* 128px */
+  
+  /* Layout Padding (Matching existing values) */
+  --layout-padding-sm: 5rem;        /* 80px */
+  --layout-padding-md: 6rem;        /* 96px */
+  --layout-padding-lg: 7.5rem;      /* 120px - matches layout_padding */
+  --layout-padding-section: 2.8125rem; /* 45px - matches layout_padding2 */
+  
+  /* Border Radius (Compatible with existing) */
+  --border-radius-sm: 0.25rem;    /* 4px */
+  --border-radius-md: 0.375rem;   /* 6px */
+  --border-radius-lg: 0.5rem;     /* 8px */
+  --border-radius-xl: 0.75rem;    /* 12px */
+  --border-radius-2xl: 1rem;      /* 16px */
+  --border-radius-full: 9999px;   /* Full circle */
+  --border-radius-default: var(--border-radius); /* 15px - existing default */
+  
+  /* Shadows (Enhanced) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-whatsapp: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions (Enhanced) */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+  --transition-smooth: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Z-Index Scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* Breakpoints (for reference) */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+  
+  /* Component Specific (Compatible with existing) */
+  --nav-link-padding: 10px 25px; /* Matches existing nav-link padding */
+  --logo-width: 60px;            /* Matches main-logo width */
+  --whatsapp-size: 50px;         /* Matches existing whatsapp button */
+  --header-height: 80px;
+}
+
+/* ======================== 
+   Theme Variables (Enhanced for Dark Mode)
+   ======================== */
+
+/* Light Theme (Default - maintains existing colors) */
+:root {
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--footer-bg);
+  --bg-hero: var(--color-primary-light);
+  --text-primary: var(--color-dark);
+  --text-secondary: var(--color-gray-600);
+  --text-muted: var(--color-gray-500);
+  --border-color: var(--color-gray-300);
+  --nav-text-color: var(--color-dark);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: var(--color-dark-bg);
+  --bg-secondary: var(--color-dark-card);
+  --bg-hero: var(--color-dark-bg);
+  --text-primary: var(--color-dark-text);
+  --text-secondary: var(--color-dark-icon);
+  --text-muted: var(--color-gray-400);
+  --border-color: var(--color-dark-border);
+  --nav-text-color: var(--color-dark-text);
+  --footer-bg: var(--color-dark-card);
+  --footer-text: var(--color-dark-text);
+}
+
+/* ======================== 
+   Enhanced Base Styles (Non-breaking)
+   ======================== */
+
+/* Only add enhancements, don't override existing styles */
+
+/* Enhanced smooth transitions for interactive elements */
+.box,
+.btn,
+.nav-link,
+.whatsapp,
+#backToTop,
+input,
+button {
+  transition: var(--transition-smooth);
+}
+
+/* Enhanced focus states for accessibility */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced hover effects */
+.box:hover {
+  transform: translateY(-2px);
+}
+
+/* Print optimizations */
+@media print {
+  .whatsapp,
+  #backToTop,
+  .navbar-toggler {
+    display: none !important;
+  }
+  
+  * {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+}

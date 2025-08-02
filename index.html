@@ -13,12 +13,20 @@
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+  <!-- Bootstrap & Base Styles -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link href="css/responsive.css" rel="stylesheet" />
+  
+  <!-- Design System (Load First) -->
+  <link href="css/design-system.css" rel="stylesheet" />
+  <link href="css/utilities.css" rel="stylesheet" />
+  
+  <!-- Main Styles (Enhanced with Design System) -->
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-  <!-- Consolidated CSS links for maintainability -->
+  
+  <!-- Refactored CSS architecture with design system maintaining original UI -->
 </head>
 
 <body>
@@ -52,7 +60,7 @@
                     <input type="checkbox" id="theme-toggle">
                     <span class="slider">
                       <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
+                      <i class="fas fa-moon moon-icon"></i>
                     </span>
                   </label>
                 </li>
@@ -85,7 +93,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+              <img src="images/maintenance.gif" alt="IT Solutions">
             </div>
           </div>
         </div>
@@ -112,7 +120,7 @@
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
+            <img src="images/about_us.gif" alt="About Sachiva" loading="lazy">
           </div>
         </div>
       </div>
@@ -155,7 +163,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os1.png" alt="" loading="lazy" />
+              <img src="images/os1.png" alt="Web Development" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Web Development</h5>
@@ -166,7 +174,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/s1.png" alt="" loading="lazy" />
+              <img src="images/s1.png" alt="Software Management" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Software Management</h5>
@@ -188,7 +196,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os4.png" alt="" loading="lazy" />
+              <img src="images/os4.png" alt="Cybersecurity" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Cybersecurity</h5>

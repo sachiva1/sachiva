@@ -1,0 +1,405 @@
+/* 
+ * Sachiva Responsive Styles
+ * Mobile-first responsive design using design system variables
+ */
+
+/* ======================== 
+   Large Desktop (1200px+)
+   ======================== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+/* ======================== 
+   Desktop (992px - 1199px)
+   ======================== */
+@media (max-width: 1199px) {
+  .layout-padding {
+    padding-top: var(--layout-padding-md);
+    padding-bottom: var(--layout-padding-md);
+  }
+  
+  .layout-padding--top {
+    padding-top: var(--layout-padding-md);
+  }
+  
+  .layout-padding--bottom {
+    padding-bottom: var(--layout-padding-md);
+  }
+}
+
+/* ======================== 
+   Tablet Landscape (992px - 1119px)
+   ======================== */
+@media (max-width: 1119px) {
+  .hero-area {
+    height: auto;
+  }
+  
+  .header .main_nav {
+    flex: 1;
+  }
+  
+  #navbarSupportedContent {
+    margin-top: var(--spacing-4);
+  }
+  
+  .slider {
+    padding-top: var(--spacing-12);
+  }
+  
+  .service__box {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+  
+  .service__icon {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* ======================== 
+   Tablet Portrait (768px - 991px)
+   ======================== */
+@media (max-width: 991px) {
+  .layout-padding {
+    padding-top: var(--layout-padding-sm);
+    padding-bottom: var(--layout-padding-sm);
+  }
+  
+  .layout-padding--top {
+    padding-top: var(--layout-padding-sm);
+  }
+  
+  .layout-padding--bottom {
+    padding-bottom: var(--layout-padding-sm);
+  }
+  
+  .slider__detail {
+    padding-bottom: var(--spacing-12);
+  }
+  
+  .service__container {
+    flex-direction: column;
+  }
+  
+  .service__box {
+    padding: var(--spacing-8) var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .about__detail {
+    margin-bottom: var(--spacing-12);
+  }
+  
+  .professional__image {
+    display: none;
+  }
+  
+  .contact__form {
+    margin-bottom: var(--spacing-12);
+  }
+  
+  .info-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+  }
+  
+  /* Navigation adjustments */
+  .nav__item + .nav__item {
+    margin-left: var(--spacing-4);
+  }
+  
+  .nav__item {
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+}
+
+/* ======================== 
+   Mobile Landscape (576px - 767px)
+   ======================== */
+@media (max-width: 767px) {
+  .layout-padding {
+    padding-top: 4.5rem; /* 72px */
+    padding-bottom: 4.5rem;
+  }
+  
+  .layout-padding--top {
+    padding-top: 4.5rem;
+  }
+  
+  .layout-padding--bottom {
+    padding-bottom: 4.5rem;
+  }
+  
+  .slider__detail {
+    padding-bottom: var(--spacing-12);
+  }
+  
+  .service__container {
+    flex-direction: column;
+  }
+  
+  .service__box {
+    padding: var(--spacing-6) var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .about__detail {
+    margin-bottom: var(--spacing-12);
+  }
+  
+  .professional__image {
+    display: none;
+  }
+  
+  .contact__form {
+    margin-bottom: var(--spacing-12);
+  }
+  
+  .info-section__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .info-section {
+    padding: var(--spacing-16) 0 var(--spacing-8);
+  }
+  
+  /* Typography adjustments */
+  .slider__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h1 { font-size: var(--font-size-3xl); }
+  h2 { font-size: var(--font-size-2xl); }
+  h3 { font-size: var(--font-size-xl); }
+  
+  /* Header adjustments */
+  .header__container {
+    padding-right: var(--spacing-4);
+    padding-left: var(--spacing-4);
+  }
+  
+  /* Navigation becomes vertical stack */
+  .nav__list {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav__item + .nav__item {
+    margin-left: 0;
+    margin-top: var(--spacing-2);
+  }
+  
+  /* Client testimonials stack */
+  .client__info {
+    flex-direction: column;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .client__avatar {
+    margin-right: 0;
+    margin-bottom: var(--spacing-4);
+    width: 80px;
+    min-width: 80px;
+  }
+  
+  /* Contact form adjustments */
+  .contact__input {
+    height: 45px;
+    margin-bottom: var(--spacing-4);
+    padding-left: var(--spacing-4);
+  }
+  
+  .contact__textarea {
+    height: 100px;
+  }
+}
+
+/* ======================== 
+   Mobile Portrait (480px - 575px)
+   ======================== */
+@media (max-width: 575px) {
+  .slider__title {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+  }
+  
+  .about__title,
+  .professional__title,
+  .service__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .service__box {
+    padding: var(--spacing-5) var(--spacing-3);
+  }
+  
+  .info-section__container {
+    padding: 0 var(--spacing-3);
+  }
+  
+  .info-section__social {
+    justify-content: center;
+  }
+  
+  /* Smaller button padding */
+  .slider__cta,
+  .about__cta,
+  .professional__cta {
+    padding: var(--spacing-2) var(--spacing-8);
+    font-size: var(--font-size-sm);
+  }
+  
+  .contact__submit {
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-6);
+  }
+  
+  /* WhatsApp button adjustment */
+  .whatsapp-float {
+    bottom: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 45px;
+    height: 45px;
+  }
+  
+  .whatsapp-float__icon {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* ======================== 
+   Small Mobile (400px - 479px)
+   ======================== */
+@media (max-width: 479px) {
+  .slider__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .service__box {
+    padding: var(--spacing-4) var(--spacing-2);
+  }
+  
+  .service__icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .client__box {
+    margin: var(--spacing-2);
+    padding: var(--spacing-4);
+  }
+  
+  .info-section__container {
+    padding: 0 var(--spacing-2);
+  }
+}
+
+/* ======================== 
+   Extra Small Mobile (360px and below)
+   ======================== */
+@media (max-width: 359px) {
+  .header__container {
+    padding-right: var(--spacing-2);
+    padding-left: var(--spacing-2);
+  }
+  
+  .slider__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .slider__cta,
+  .about__cta,
+  .professional__cta {
+    padding: var(--spacing-2) var(--spacing-6);
+    font-size: var(--font-size-xs);
+  }
+  
+  .service__box {
+    padding: var(--spacing-3) var(--spacing-2);
+  }
+  
+  .whatsapp-float {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .whatsapp-float__icon {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ======================== 
+   Utility Classes for Responsive Design
+   ======================== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .d-mobile-none {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+@media (min-width: 768px) {
+  .d-mobile-only {
+    display: none !important;
+  }
+}
+
+/* Hide on tablet */
+@media (max-width: 991px) and (min-width: 768px) {
+  .d-tablet-none {
+    display: none !important;
+  }
+}
+
+/* Show only on tablet */
+@media (max-width: 767px), (min-width: 992px) {
+  .d-tablet-only {
+    display: none !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 992px) {
+  .d-desktop-none {
+    display: none !important;
+  }
+}
+
+/* Show only on desktop */
+@media (max-width: 991px) {
+  .d-desktop-only {
+    display: none !important;
+  }
+}
+
+/* ======================== 
+   Print Styles
+   ======================== */
+@media print {
+  .header,
+  .whatsapp-float,
+  .back-to-top,
+  .nav-toggle {
+    display: none !important;
+  }
+  
+  .hero-area {
+    background: none !important;
+  }
+  
+  .slider {
+    margin-top: 0;
+  }
+  
+  * {
+    box-shadow: none !important;
+  }
+}
