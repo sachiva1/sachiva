@@ -61,3 +61,34 @@ window.onscroll = function () {
 document.getElementById("backToTop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+function recommend(type) {
+  const services = {
+    business: ["Business Website", "SEO Optimization", "Marketing Consultation"],
+    home: ["Home Repair", "Interior Design", "Plumbing Services"],
+    design: ["Logo Design", "UI/UX Services", "Brand Kit"],
+    other: ["Custom Consultation", "Talk to Support"]
+  };
+
+  const results = services[type] || [];
+  let html = '<div class="row">';
+
+  results.forEach(service => {
+    html += `
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">${service}</h5>
+            <p class="card-text">Learn more about our ${service} services.</p>
+           <a href="#" class="btn btn-sm btn-primary">Explore</a>
+
+          </div>
+        </div>
+      </div>`;
+  });
+  
+
+  html += '</div>';
+  document.getElementById("recommendationResult").innerHTML = html;
+}
+
+
