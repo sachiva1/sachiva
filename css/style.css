@@ -91,6 +91,8 @@ a:focus {
   top: 0;
   z-index: 100;
   width: 100%;
+ 
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .header_section .container-fluid {
@@ -123,7 +125,12 @@ a:focus {
 .header_section .header_bottom {
   padding: 10px 0;
 }
-
+.header_section.scrolled {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+  }
+body.dark-mode .header_section.scrolled {
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.35); /* subtle white glow */
+}
 .navbar-brand {
   padding: 0;
   margin: 0;
