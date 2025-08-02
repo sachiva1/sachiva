@@ -1,0 +1,282 @@
+/* WCAG 2.1 Accessibility Improvements */
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 9999;
+  font-size: 14px;
+  font-weight: bold;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Enhanced focus indicators for keyboard navigation */
+.nav-link:focus,
+.btn:focus,
+.accordion-button:focus,
+.whatsapp:focus,
+.footer-social-icons a:focus,
+.card:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #0355cc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(3, 85, 204, 0.3);
+}
+
+/* Remove default outline and use custom focus */
+*:focus {
+  outline: none;
+}
+
+/* Ensure sufficient color contrast */
+:root {
+  --primary-color: #0355cc;
+  --primary-contrast: #ffffff;
+  --secondary-color: #6c757d;
+  --secondary-contrast: #ffffff;
+  --text-color: #212529;
+  --bg-color: #ffffff;
+  --border-color: #dee2e6;
+}
+
+/* Dark mode color adjustments for better contrast */
+[data-theme="dark"] {
+  --text-color: #ffffff;
+  --bg-color: #212529;
+  --border-color: #495057;
+  --secondary-color: #adb5bd;
+}
+
+/* Improve text contrast ratios */
+.text-muted {
+  color: var(--secondary-color) !important;
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Enhanced interactive element accessibility */
+.card[tabindex="0"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Better button accessibility */
+.btn {
+  min-height: 44px; /* WCAG minimum touch target size */
+  min-width: 44px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation accessibility improvements */
+.navbar-nav .nav-link {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+/* Add proper spacing between navigation items */
+.navbar-nav .nav-item {
+  margin-right: 8px;
+}
+
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
+/* Accordion accessibility */
+.accordion-button {
+  min-height: 48px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(3, 85, 204, 0.1);
+  border-color: var(--primary-color);
+}
+
+/* Form accessibility improvements */
+input, textarea, select {
+  min-height: 44px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+}
+
+/* Label accessibility */
+label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--text-color);
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .nav-link {
+    border-bottom: 1px solid transparent;
+  }
+  
+  .nav-link:hover, .nav-link:focus {
+    border-bottom-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* WhatsApp button accessibility */
+.whatsapp {
+  min-height: 50px;
+  min-width: 50px;
+}
+
+/* Footer accessibility */
+.footer-social-icons a {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+/* Theme toggle accessibility */
+.theme-switch {
+  position: relative;
+  margin-left: 15px; /* Add space between Contact Us and theme switch */
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  cursor: pointer;
+  /* Remove conflicting dimensions to use original styles */
+  transition: background-color 0.3s;
+}
+
+/* Focus indicator for theme toggle */
+.theme-switch input:focus + .slider {
+  outline: 3px solid #0355cc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(3, 85, 204, 0.3);
+}
+
+/* Better error and success message accessibility */
+.alert {
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+/* Ensure proper heading hierarchy */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Mobile accessibility improvements */
+@media (max-width: 768px) {
+  .btn, .nav-link, input, textarea {
+    min-height: 48px; /* Larger touch targets on mobile */
+  }
+  
+  .footer-social-icons a {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .whatsapp {
+    min-height: 56px;
+    min-width: 56px;
+  }
+  
+  /* Ensure proper spacing on mobile for theme switch */
+  .theme-switch {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 4px; /* Reduce spacing on mobile */
+  }
+}
