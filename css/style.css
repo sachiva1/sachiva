@@ -133,6 +133,8 @@ a:focus {
   top: 0;
   z-index: 100;
   width: 100%;
+   background: white;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .header_section .container-fluid {
@@ -324,6 +326,19 @@ a:focus {
 .quote_btn-container a:hover {
   color: #ff8a1d;
 }
+ /* Light Mode Strong Shadow */
+  .header_section.scrolled {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Dark Mode Soft Glow */
+  body.dark-mode .header_section {
+    background-color: #222; /* Dark background */
+  }
+
+  body.dark-mode .header_section.scrolled {
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.12);
+  }
 
 /*end header section*/
 /* slider section */
