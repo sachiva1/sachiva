@@ -24,8 +24,6 @@
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
 
   <style>
-
-
     .fw-bold {
       font-weight: bolder;
     }
@@ -62,7 +60,7 @@
       background: #f8f9fa;
     }
 
-  
+
     body.dark-mode .contributors-section {
       background-color: #1a1a1a;
     }
@@ -78,13 +76,13 @@
 
     body.dark-mode .contributor-card {
       background-color: #2c2c2c;
-     
+
       border-color: #444;
     }
 
     body.dark-mode .contributor-stats {
       background: linear-gradient(135deg, #444, #555);
-    
+
     }
 
     .contributor-card {
@@ -194,15 +192,15 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-   
+
     .contributors-heading {
       color: #212529;
-     
+
     }
 
     .contributors-subtext {
       color: #212529;
-      
+
     }
 
 
@@ -396,13 +394,13 @@
       </div>
     </div>
     </div>
-      <footer class="footer_section">
-        <div class="container">
-            <p>
-                &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
-            </p>
-        </div>
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayDateYear"></span> All Rights Reserved By
+          <a href="./">Sachiva</a>
+        </p>
+      </div>
     </footer>
     </div>
 
@@ -423,12 +421,12 @@
   <script src="js/custom.js"></script>
 
   <script>
-  document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
 
-  // When DOM is ready, fetch contributors
-  document.addEventListener("DOMContentLoaded", function () {
-    fetchContributors();
-  });
+    // When DOM is ready, fetch contributors
+    document.addEventListener("DOMContentLoaded", function () {
+      fetchContributors();
+    });
 
     async function fetchContributors() {
       const loadingElement = document.getElementById("loading");
@@ -529,14 +527,16 @@
       // So, wait for DOM change if it's done elsewhere
       setTimeout(updateContributorsSectionTheme, 100);
     });
-  </script>
-
-
-
-
-
 
   </script>
+
+
+
+
+
+
+  </script>
+  <script src="js/navbar.js"></script>
 </body>
 
 </html>

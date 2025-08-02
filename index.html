@@ -513,6 +513,7 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
+
   <script>
   const recommendations = {
     business: [
@@ -558,6 +559,13 @@
   });
 </script>
 
+     <script src="js/navbar.js"></script>
+     <script>
+       document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector(".header_section");
+      console.log("Header found? ", header); // ✅ should NOT be null
+    });
+     </script>
 </body>
 
 </html>
