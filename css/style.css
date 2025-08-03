@@ -771,6 +771,30 @@ a:focus {
   height: 100%;
 }
 
+.contact_section input[type="text"],
+.contact_section input[type="email"],
+.contact_section textarea {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 12px 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact_section input[type="text"]:hover,
+.contact_section input[type="email"]:hover,
+.contact_section textarea:hover,
+.contact_section input[type="text"]:focus,
+.contact_section input[type="email"]:focus,
+.contact_section textarea:focus {
+  border: 2px solid rgba(0, 123, 255, 0.5); /* blue glow */
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .info_section {
   padding: 75px 0;
   background-color: #0a0f43;
