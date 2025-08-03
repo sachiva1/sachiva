@@ -10,6 +10,9 @@
   --footer-text: #2c3e50;
 }
 
+
+
+
 /* Utility Classes */
 .fw-bold {
   font-weight: bolder;
@@ -88,6 +91,16 @@ body {
   align-items: flex-start;
 }
 
+
+html {
+  scroll-padding-top: 100px; /* Navbar ka height jitna ya thoda zyada */
+}
+
+.about_section_layout_padding {
+  scroll-margin-top: 100px; /* Jab scroll hota hai toh section thoda neeche dikhe */
+  padding-top: 100px;        /* Extra space to prevent cropping */
+}
+
 .heading_container h2 {
   font-weight: bold;
   display: -webkit-box;
@@ -136,6 +149,10 @@ a:focus {
    background: white;
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+
+
+
 
 .header_section .container-fluid {
   padding-right: 25px;
@@ -342,8 +359,9 @@ a:focus {
 
 /*end header section*/
 /* slider section */
+
 .slider_section {
-  margin-top: 78px;
+  margin-top: 80px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -357,11 +375,18 @@ a:focus {
   background-position: bottom;
 }
 
+.slider_section .detail-box h1 {
+  margin-top: 50px; /* Adjust this value as needed */
+}
+
+
 .slider_section .row {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
+
+
 
 .slider_section #customCarousel1 {
   width: 100%;
@@ -657,6 +682,23 @@ a:focus {
   color: #0355cc;
 }
 
+
+.filter-buttons .filter-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-buttons .filter-btn.active {
+  background-color: #0066cc;
+  color: white;
+}
+
+
+
 .about_section_layout_padding h2{
   padding-top: 60px;
 }
@@ -688,6 +730,8 @@ a:focus {
 }
 
 .client_section .heading_container {
+  
+   padding: 30px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -695,10 +739,35 @@ a:focus {
 }
 
 .client_section .box {
+  border-radius: 15px;
+  background: linear-gradient(-45deg,#a8aaac,#eef0f3,#bfe0ec);
   margin: 15px;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   padding: 25px;
+  transition: transform 0.8s ease, box-shadow 0.3s ease, background 0.8s ease;
+}
+
+.client_section .box:hover {
+  background: linear-gradient(-45deg,#bfe0ec,#eef0f3,#a8aaac);
+  transform: translateY(-10px);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+
+[data-theme="dark"] .client_section .box{
+  background: rgb(22, 21, 21);
+  box-shadow: 0 0 15px 0 rgba(195, 192, 192, 0.6);
+}
+
+[data-theme="dark"] .client_section .box:hover{
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(255, 0, 255, 0.2);
 }
 
 .client_section .box .client_id {
@@ -735,11 +804,14 @@ a:focus {
 }
 
 .client_section .box .client_id .client_detail .client_info h6 {
+  color: #0056b3;
+  font-weight: 600;
+  font-size: 1.2rem;
   margin-bottom: 0;
 }
 
 .client_section .box .client_id .client_detail .client_info i {
-  color: #fbaf5d;
+  color:#ffcc00;
 }
 
 .client_section .box .client_text {
@@ -759,11 +831,19 @@ a:focus {
 .client_section .owl-carousel .owl-nav button {
   width: 50px;
   height: 50px;
-  background-color: #0355cc;
+  border-radius: 10px;
+  background:linear-gradient(#62b8c7,#004d40) ;
+  box-shadow: 0 4px 12px rgb(61, 59, 59);
   outline: none;
   margin: 0 20px;
   color: #ffffff;
+  transition: transform 0.2s ease-in-out;
 }
+
+.client_section .owl-carousel .owl-nav button:hover{
+   transform: scale(1.2);
+}
+
 
 .heading_container {
   margin-bottom: 30px;
