@@ -56,10 +56,266 @@
       font-size: 28px;
       color: white;
     }
+    .more-content {
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
+}
+
+.card .btn {
+  transition: background-color 0.3s ease;
+}
+ /* === Hero Section with Animated Gradient and Glow === */
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #dbe6f6, #2c1a97);
+  transition: background 0.3s ease;
+  animation: fadeInHero 1s ease-out both;
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* HERO CONTENT LAYOUT */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* LEFT + RIGHT HALVES */
+.half {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* TEXT */
+.half h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #2d2d2d;
+}
+
+[data-theme="dark"] .half h1 {
+  color: #ffffff;
+}
+
+.half p {
+  font-size: 1.2rem;
+  max-width: 450px;
+  margin: auto;
+  color: #444;
+}
+
+[data-theme="dark"] .half p {
+  color: #ccc;
+}
+
+/* IMAGE */
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+
+/* Portfolio Section Enhancements */
+/* Main section */
+.portfolio-section {
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
+  color: #222;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+[data-theme="dark"] .portfolio-section {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Section header */
+.portfolio-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-header p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+[data-theme="dark"] .portfolio-header p {
+  color: #aaa;
+}
+
+/* Grid layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Portfolio card */
+.portfolio-card {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+[data-theme="dark"] .portfolio-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Card hover */
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.portfolio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Content inside card */
+.portfolio-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.portfolio-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #00bfa6;
+}
+
+[data-theme="dark"] .portfolio-content h3 {
+  color: #30e0c0;
+}
+
+.portfolio-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+[data-theme="dark"] .portfolio-content p {
+  color: #ccc;
+}
+
+/* Tick list */
+.tick-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.tick-list li {
+  position: relative;
+  padding-left: 1.8em;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+[data-theme="dark"] .tick-list li {
+  color: #ccc;
+}
+
+.tick-list li::before {
+  content: '✔️';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1em;
+  color: #28a745;
+}
+
+
+
+
   </style>
+  <!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- WOW.js for animation trigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
 </head>
 
+
+
 <body>
+
   <!-- Header -->
   <div class="hero_area">
     <header class="header_section">
@@ -97,40 +353,81 @@
       </div>
     </header>
   </div>
-  <!-- End Header -->
 
-  <!-- About Section -->
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
-            <h2>About Us</h2>
-            <p style="text-align: justify;">
-              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
-              needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
-              affordable solutions for your home and workspace.
-            </p>
-            <p style="text-align: justify;">
-              With years of experience in the industry, we have built a reputation for excellence. Our
-              commitment to quality, innovation, and customer care sets us apart, making us the preferred
-              choice for thousands of satisfied clients.
-            </p>
-            <a href="service.html">Explore Our Services</a>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/maintenance.gif" alt="About Sachiva">
-          </div>
-        </div>
+  <main>
+<!-- Hero Section -->
+<!-- Sachiva Hero Section (Split View with GIFs) -->
+ <!-- Hero Section -->
+  <section class="hero">
+  <div class="hero-content">
+    <div class="half">
+      <h1>Designer</h1>
+      <p>UI/UX enthusiast bringing creativity into every pixel. Specialized in clean interfaces and aesthetic visuals.</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://media.giphy.com/media/jRf5fsn8G6YaogAWxn/giphy.gif" alt="Designer Coder" style=" height:250px; width: 200px;">
+    </div>
+    <div class="half">
+      <h1>Web Developer</h1>
+      <p>Building responsive websites and scalable platforms using modern frameworks to bring businesses online efficiently.
+</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!--Portfolio-->
+<section class="portfolio-section">
+  <div class="portfolio-header">
+    <h2>Works Done by Sachiva</h2>
+    <p>We tackle meaningful challenges with technology and innovation. Here’s how we solve impact-driven problems.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card fade-in-up">
+<img src="https://i.gifer.com/74pZ.gif" alt="AI Healthcare GIF">
+      <div class="portfolio-content">
+        <h3>AI in Healthcare Diagnosis</h3>
+        <ul class="tick-list">
+          <li><strong>Problem:</strong> Diagnosis delays in rural hospitals.</li>
+          <li><strong>Solution:</strong> AI-powered X‑ray analysis boosting accuracy by 30%.</li>
+          <li><strong>Impact:</strong> Diagnosis time halved; supports offline use.</li>
+        </ul>
       </div>
     </div>
-  </section>
-  <!-- End About Section -->
 
-  <!-- Footer -->
-  <section class="new-info-section">
+    <div class="portfolio-card fade-in-up">
+      <img src="https://i.gifer.com/2mVW.gif" alt="Education Technology Animation">
+      <div class="portfolio-content">
+        <h3>Interactive EdTech for Rural Schools</h3>
+        <ul class="tick-list">
+          <li><strong>Problem:</strong> Students lacked engaging learning tools.</li>
+          <li><strong>Solution:</strong> Gamified mobile-first PWA with quizzes and stories.</li>
+          <li><strong>Impact:</strong> 12,000+ users and 40% improvement in learning.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio-card fade-in-up">
+      <img src="https://i.gifer.com/8opi.gif" alt="Startup Branding Animation">
+      <div class="portfolio-content">
+        <h3>Startup Branding & Pitch Design</h3>
+        <ul class="tick-list">
+          <li><strong>Problem:</strong> No cohesive brand identity.</li>
+          <li><strong>Solution:</strong> Custom logos, UI designs & pitch decks.</li>
+          <li><strong>Impact:</strong> Helped 10+ startups attract funding and clients.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+
+<section class="new-info-section">
     <div class="new-container">
         <div class="footer-grid-wrapper">
             <div class="footer-column footer-about">
@@ -156,8 +453,8 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -214,7 +511,7 @@
     // Display current year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
-     <script src="js/navbar.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 
 </html>

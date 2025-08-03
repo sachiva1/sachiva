@@ -56,7 +56,29 @@
       font-size: 28px;
       color: white;
     }
+    .more-content {
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
+}
+
+.card .btn {
+  transition: background-color 0.3s ease;
+}
+
   </style>
+  <!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- WOW.js for animation trigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
 </head>
 
 <body>
@@ -99,35 +121,94 @@
   </div>
   <!-- End Header -->
 
-  <!-- About Section -->
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
-            <h2>About Us</h2>
-            <p style="text-align: justify;">
-              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
-              needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
-              affordable solutions for your home and workspace.
-            </p>
-            <p style="text-align: justify;">
-              With years of experience in the industry, we have built a reputation for excellence. Our
-              commitment to quality, innovation, and customer care sets us apart, making us the preferred
-              choice for thousands of satisfied clients.
-            </p>
-            <a href="service.html">Explore Our Services</a>
+<!-- BLOG SECTION -->
+<section class="blog_section layout_padding" id="blog">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2 class="wow animate__animated animate__fadeInDown">Our Latest <span>Blog</span></h2>
+      <p class="wow animate__animated animate__fadeIn">Explore insightful reads and stories from our team.</p>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Blog Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0s">
+          <i class="fa fa-shield-alt fa-3x mb-3 text-secondary" style="display: flex; justify-content:center"></i>
+          <div class="card-body">
+            <h5 class="card-title">Smart Homes, Smarter Lives</h5>
+            <p class="card-text short">Discover how Sachiva transforms everyday living with cutting-edge smart home automation services.</p>
+            <div class="more-content d-none">
+              <ul>
+                <li>✔️ Voice-controlled appliances integration</li>
+                <li>✔️ Smart lighting & energy-saving systems</li>
+                <li>✔️ Hassle-free automation customized for your home</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" style="display: flex; justify-content:center">Read More</a>
           </div>
         </div>
-        <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/maintenance.gif" alt="About Sachiva">
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+          <i class="fa fa-network-wired fa-3x mb-3 text-info" style="display: flex; justify-content:center"></i>
+          <div class="card-body">
+            <h5 class="card-title">Tech Woes? We’ve Got You</h5>
+            <p class="card-text short">Unplug the stress. Sachiva’s doorstep IT services solve your laptop, network, and software issues – fast.</p>
+            <div class="more-content d-none">
+              <ul>
+                <li>✔️ Instant tech support at your doorstep</li>
+                <li>✔️ Laptop, printer, Wi-Fi, and setup assistance</li>
+                <li>✔️ Affordable & professional IT solutions</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" style="display: flex; justify-content:center">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
+          <i class="fa fa-wrench fa-3x mb-3 text-primary" style="display: flex; justify-content:center"></i>
+          <div class="card-body">
+            <h5 class="card-title">Home Maintenance Simplified</h5>
+            <p class="card-text short">Leaky faucets? Flickering lights? Get it all fixed with a single tap. Discover our trusted repair solutions.</p>
+            <div class="more-content d-none">
+              <ul>
+                <li>✔️ Instant plumbing & electrical support</li>
+                <li>✔️ Deep cleaning & appliance repair</li>
+                <li>✔️ Verified service professionals</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" >Read More</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- End About Section -->
+  </div>
+</section>
+
+<!-- Script to toggle Read More -->
+<script>
+  document.querySelectorAll(".read-more-btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const card = btn.closest(".card-body");
+      const moreContent = card.querySelector(".more-content");
+      moreContent.classList.toggle("d-none");
+
+      if (btn.textContent.includes("Read More")) {
+        btn.textContent = "Show Less";
+      } else {
+        btn.textContent = "Read More";
+      }
+    });
+  });
+</script>
+
+
 
   <!-- Footer -->
   <section class="new-info-section">
@@ -156,8 +237,8 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -214,7 +295,8 @@
     // Display current year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
-     <script src="js/navbar.js"></script>
+  <script src="js/navbar.js"></script>
+  
 </body>
 
 </html>
