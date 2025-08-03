@@ -10,9 +10,6 @@
   --footer-text: #2c3e50;
 }
 
-
-
-
 /* Utility Classes */
 .fw-bold {
   font-weight: bolder;
@@ -91,16 +88,6 @@ body {
   align-items: flex-start;
 }
 
-
-html {
-  scroll-padding-top: 100px; /* Navbar ka height jitna ya thoda zyada */
-}
-
-.about_section_layout_padding {
-  scroll-margin-top: 100px; /* Jab scroll hota hai toh section thoda neeche dikhe */
-  padding-top: 100px;        /* Extra space to prevent cropping */
-}
-
 .heading_container h2 {
   font-weight: bold;
   display: -webkit-box;
@@ -149,10 +136,6 @@ a:focus {
    background: white;
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-
-
-
-
 
 .header_section .container-fluid {
   padding-right: 25px;
@@ -359,9 +342,8 @@ a:focus {
 
 /*end header section*/
 /* slider section */
-
 .slider_section {
-  margin-top: 80px;
+  margin-top: 78px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -375,18 +357,11 @@ a:focus {
   background-position: bottom;
 }
 
-.slider_section .detail-box h1 {
-  margin-top: 50px; /* Adjust this value as needed */
-}
-
-
 .slider_section .row {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
-
-
 
 .slider_section #customCarousel1 {
   width: 100%;
@@ -514,29 +489,81 @@ a:focus {
 
 .about_section .detail-box h2 {
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
+  font-family: serif;
+    color: #003DA5;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #9f9b9d, 0 0 10px #898588;
 }
 
 .about_section .detail-box p {
-  margin-top: 10px;
+font-size: 1rem;
+line-height: 1.6;
+ margin-top: 10px;
 }
 
-.about_section .detail-box a {
-  margin-top: 15px;
-  display: inline-block;
-  font-family: "Merriweather Sans", sans-serif;
-  text-transform: uppercase;
-  padding: 10px 45px;
-  background-color: #0355cc;
-  border: 1px solid #0355cc;
-  border-radius: 2px;
-  color: #ffffff;
+.about_section .text-content{
+  padding: 20px;
+  display: flex;
+  text-align: justify;
+  width: 35vw;
+  height: 25vh;
+  overflow: hidden;
+  border-radius: 30px;
+  background: linear-gradient(#bae2ca ,#accad0);
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+  margin: 20px ;
 }
 
-.about_section .detail-box a:hover {
-  background-color: transparent;
-  color: #0355cc;
+@media (max-width: 768px) {
+  .about_section .text-content {
+    width: 90vw;
+    height: auto;
+    transform: translateX(-10px); /* Negative moves left */
+  }
 }
+
+.about_section button {
+  border: none;
+ color: #fff;
+ background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+ border-radius: 25px;
+ background-size: 100% auto;
+ font-family: inherit;
+ font-size: 17px;
+ padding: 0.6em 1.5em;
+}
+
+.about_section button:hover{
+  background-position: right center;
+ background-size: 200% auto;
+ -webkit-animation: pulse 2s infinite;
+ animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+ 0% {
+  box-shadow: 0 0 0 0 #05bada66;
+ }
+
+ 70% {
+  box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+ }
+
+ 100% {
+  box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+ }
+}
+
+[data-theme="dark"] .about_section .text-content {
+  background:linear-gradient(45deg,#040221, #043638);
+  box-shadow: 10px 10px 10px #343333,
+             -10px -5px 10px #5b5959;
+}
+
+
 
 .about_section .img-box img {
   width: 100%;
@@ -681,23 +708,6 @@ a:focus {
   background-color: transparent;
   color: #0355cc;
 }
-
-
-.filter-buttons .filter-btn {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  background-color: #eee;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.filter-buttons .filter-btn.active {
-  background-color: #0066cc;
-  color: white;
-}
-
-
 
 .about_section_layout_padding h2{
   padding-top: 60px;
