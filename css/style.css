@@ -360,6 +360,26 @@ a:focus {
 /*end header section*/
 /* slider section */
 
+  #typing-text {
+    font-size: 36px;
+    font-weight: bold;
+    white-space: pre-line;
+    border-right: 2px solid #000;
+    display: inline-block;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+
+
 .slider_section {
   margin-top: 80px;
   -webkit-box-flex: 1;
