@@ -2,70 +2,38 @@
 <html lang="en">
 
 <head>
-  
-
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <meta name="keywords" content="Contact, Support, Sachiva" />
   <meta name="description" content="Contact us for any service or support related queries." />
   <meta name="author" content="Sachiva Team" />
-   
   <link rel="icon" href="./images/logo_blue.png">
   <title>Contact Us - Sachiva</title>
-
-
-   
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
- 
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-
   <link href="css/style.css" rel="stylesheet" />
-  
   <link href="css/responsive.css" rel="stylesheet" />
-  
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-   
+
   <style>
-    .fw-bold {
-      font-weight: bolder;
-    }
-
+    .fw-bold { font-weight: bolder; }
     .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
+      position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
+      width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); z-index: 1000; cursor: pointer;
     }
-
-    .whatsapp i {
-      font-size: 28px;
-      color: white;
-    }
+    .whatsapp i { font-size: 28px; color: white; }
 
     /* Enhanced Contact Form Styles */
     .contact-main-container {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, #8bb5d1 0%, #a8c8e1 100%);
       border-radius: 25px;
       padding: 50px 40px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -74,126 +42,115 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
-
     [data-theme="dark"] .contact-main-container {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+      background: linear-gradient(135deg, #6a8ca8 0%, #7a9bb8 100%);
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
-
     .contact-form-wrapper {
       display: flex;
       gap: 40px;
       align-items: center;
       flex-wrap: wrap;
     }
-
-    .contact-form-section {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .contact-image-section {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-    }
-
+    .contact-form-section { flex: 1; min-width: 300px; }
+    .contact-image-section { flex: 1; min-width: 300px; text-align: center; }
     .contact-form-section h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 30px;
-      color: #0355cc;
-      text-align: center;
-      position: relative;
+      font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #0355cc; text-align: center; position: relative;
     }
-
-    [data-theme="dark"] .contact-form-section h2 {
-      color: #4a9eff;
-    }
-
+    [data-theme="dark"] .contact-form-section h2 { color: #4a9eff; }
     .contact-form-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(90deg, #0355cc, #007bff);
-      border-radius: 2px;
+      content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 3px; background: linear-gradient(90deg, #0355cc, #007bff); border-radius: 2px;
     }
-
-    .form-group-enhanced {
-      position: relative;
-      margin-bottom: 25px;
-    }
-
+    .form-group-enhanced { position: relative; margin-bottom: 25px; }
     .form-control-enhanced {
       width: 100%;
-      padding: 15px 20px;
-      border: 2px solid #e9ecef;
+      padding: 15px 20px 15px 55px; 
+      border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 15px;
       font-size: 16px;
       transition: all 0.3s ease;
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      color: #222 !important; 
+      height: 52px;
+      box-sizing: border-box;
     }
-
+    .form-control-enhanced::placeholder { color: #666; font-weight: 400; }
     [data-theme="dark"] .form-control-enhanced {
-      background-color: #2c2c2c;
-      border-color: #444;
-      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #222 !important;
     }
-
+    [data-theme="dark"] .form-control-enhanced::placeholder { color: #555; }
     .form-control-enhanced:focus {
       outline: none;
-      border-color: #0355cc;
-      box-shadow: 0 0 0 3px rgba(3, 85, 204, 0.1);
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
+      color: #222 !important;
     }
-
-    .form-control-enhanced::placeholder {
-      color: #6c757d;
-      font-weight: 400;
-    }
-
-    [data-theme="dark"] .form-control-enhanced::placeholder {
-      color: #aaa;
-    }
-
-    .phone-input-group {
+    .form-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+      font-size: 20px;
+      z-index: 2;
+      pointer-events: none;
+      height: 24px;
+      width: 24px;
       display: flex;
-      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-left: 0;
+      margin-right: 0;
     }
-
+    [data-theme="dark"] .form-icon { color: #444; }
+    .input-icon-wrapper {
+      position: relative;
+      height: 52px; 
+      box-sizing: border-box;
+    }
+    .form-control-with-icon {
+      padding-left: 45px !important; /
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .textarea-enhanced { min-height: 120px; resize: vertical; width: 100%; max-width: 100%; }
+    .form-group-enhanced textarea {
+      margin-top: -10px;
+    }
+    .phone-input-group { display: flex; gap: 10px; align-items: stretch; margin-bottom: 25px; }
     .country-code-select {
-      width: 120px;
+      width: 140px;
       padding: 15px 10px;
-      border: 2px solid #e9ecef;
+      border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 15px;
       font-size: 16px;
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.9);
       cursor: pointer;
       transition: all 0.3s ease;
+      color: #222;
+      height: 52px;
+      box-sizing: border-box;
     }
-
     [data-theme="dark"] .country-code-select {
-      background-color: #2c2c2c;
-      border-color: #444;
-      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #222;
     }
-
     .country-code-select:focus {
       outline: none;
-      border-color: #0355cc;
-      box-shadow: 0 0 0 3px rgba(3, 85, 204, 0.1);
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
     }
-
-    .phone-number-input {
-      flex: 1;
-    }
-
+    .phone-number-input { flex: 1; }
     .btn-send-enhanced {
       background: linear-gradient(135deg, #0355cc 0%, #007bff 100%);
       color: white;
@@ -209,101 +166,56 @@
       margin: 30px auto 0;
       min-width: 200px;
     }
-
     .btn-send-enhanced:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 25px rgba(3, 85, 204, 0.4);
       background: linear-gradient(135deg, #007bff 0%, #0355cc 100%);
     }
-
-    .btn-send-enhanced:active {
-      transform: translateY(-1px);
-    }
-
-    .error-message {
-      color: #dc3545;
+    .btn-send-enhanced:active { transform: translateY(-1px); }
+    .error-message, .success-message {
       font-size: 14px;
       margin-top: 5px;
-      display: none;
+      margin-left: 0;
+      display: none; 
       animation: fadeIn 0.3s ease;
+      min-height: 18px; 
+      color: #dc3545; 
+      opacity: 1;
+      transition: opacity 0.3s ease;
     }
-
-    [data-theme="dark"] .error-message {
-      color: #ff6b6b;
+    .error-message { color: #dc3545; }
+    [data-theme="dark"] .error-message { color: #ff6b6b; }
+    .success-message { color: #28a745; }
+    [data-theme="dark"] .success-message { color: #51cf66; }
+    .error-message.hidden, .success-message.hidden {
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: none !important;
     }
-
-    .success-message {
-      color: #28a745;
-      font-size: 14px;
-      margin-top: 5px;
-      display: none;
-      animation: fadeIn 0.3s ease;
-    }
-
-    [data-theme="dark"] .success-message {
-      color: #51cf66;
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .contact-image-section img {
       max-width: 100%;
       height: auto;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-
-    .form-icon {
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #6c757d;
-      font-size: 18px;
-      z-index: 2;
-    }
-
-    .form-control-with-icon {
-      padding-left: 50px;
-    }
-
-    .textarea-enhanced {
-      min-height: 120px;
-      resize: vertical;
-    }
-
     @media (max-width: 768px) {
-      .contact-main-container {
-        padding: 30px 20px;
-        margin: 20px;
-      }
-      
-      .contact-form-wrapper {
-        flex-direction: column;
-        gap: 30px;
-      }
-      
-      .contact-form-section h2 {
-        font-size: 2rem;
-      }
-      
-      .phone-input-group {
-        flex-direction: column;
-      }
-      
-      .country-code-select {
-        width: 100%;
-      }
+      .contact-main-container { padding: 30px 20px; margin: 20px; }
+      .contact-form-wrapper { flex-direction: column; gap: 30px; }
+      .contact-form-section h2 { font-size: 2rem; }
+      .phone-input-group { flex-direction: column; gap: 15px; }
+      .country-code-select { width: 100%; }
     }
   </style>
 </head>
 
 <body>
-
-
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
@@ -342,76 +254,67 @@
     </header>
   </div>
 
-
-
   <section class="contact_section layout_padding">
     <div class="container">
       <div class="contact-main-container">
         <div class="contact-form-wrapper">
           <div class="contact-form-section">
             <h2>Contact Us</h2>
-            <form id="contactForm">
+            <form id="contactForm" autocomplete="off">
               <div class="form-group-enhanced">
-                <i class="fas fa-user form-icon"></i>
-                <input type="text" class="form-control-enhanced form-control-with-icon" id="name" placeholder="Full Name" required>
+                <div class="input-icon-wrapper" style="position: relative;">
+                  <i class="fas fa-user form-icon"></i>
+                  <input type="text" class="form-control-enhanced form-control-with-icon" id="name" placeholder="Full Name" required autocomplete="off">
+                </div>
                 <div class="error-message" id="nameError"></div>
               </div>
-              
               <div class="form-group-enhanced">
-                <i class="fas fa-envelope form-icon"></i>
-                <input type="email" class="form-control-enhanced form-control-with-icon" id="email" placeholder="Email Address" required>
+                <div class="input-icon-wrapper" style="position: relative;">
+                  <i class="fas fa-envelope form-icon"></i>
+                  <input type="email" class="form-control-enhanced form-control-with-icon" id="email" placeholder="Email Address" required autocomplete="off">
+                </div>
                 <div class="error-message" id="emailError"></div>
                 <div class="success-message" id="emailSuccess"></div>
               </div>
-              
               <div class="form-group-enhanced">
                 <div class="phone-input-group">
                   <select class="country-code-select" id="countryCode">
-                    <option value="+91" data-flag="🇮🇳">🇮🇳 IND +91</option>
-                    <option value="+1" data-flag="🇺🇸">🇺🇸 USA +1</option>
-                    <option value="+44" data-flag="🇬🇧">🇬🇧 UK +44</option>
-                    <option value="+86" data-flag="🇨🇳">🇨🇳 CHN +86</option>
-                    <option value="+81" data-flag="🇯🇵">🇯🇵 JPN +81</option>
-                    <option value="+49" data-flag="🇩🇪">🇩🇪 GER +49</option>
-                    <option value="+33" data-flag="🇫🇷">🇫🇷 FRA +33</option>
-                    <option value="+39" data-flag="🇮🇹">🇮🇹 ITA +39</option>
-                    <option value="+34" data-flag="🇪🇸">🇪🇸 ESP +34</option>
-                    <option value="+7" data-flag="🇷🇺">🇷🇺 RUS +7</option>
-                    <option value="+55" data-flag="🇧🇷">🇧🇷 BRA +55</option>
-                    <option value="+61" data-flag="🇦🇺">🇦🇺 AUS +61</option>
-                    <option value="+82" data-flag="🇰🇷">🇰🇷 KOR +82</option>
-                    <option value="+65" data-flag="🇸🇬">🇸🇬 SGP +65</option>
-                    <option value="+60" data-flag="🇲🇾">🇲🇾 MYS +60</option>
-                    <option value="+66" data-flag="🇹🇭">🇹🇭 THA +66</option>
-                    <option value="+84" data-flag="🇻🇳">🇻🇳 VNM +84</option>
-                    <option value="+62" data-flag="🇮🇩">🇮🇩 IDN +62</option>
-                    <option value="+63" data-flag="🇵🇭">🇵🇭 PHL +63</option>
-                    <option value="+971" data-flag="🇦🇪">🇦🇪 UAE +971</option>
-                    <option value="+966" data-flag="🇸🇦">🇸🇦 SAU +966</option>
-                    <option value="+27" data-flag="🇿🇦">🇿🇦 ZAF +27</option>
-                    <option value="+20" data-flag="🇪🇬">🇪🇬 EGY +20</option>
-                    <option value="+52" data-flag="🇲🇽">🇲🇽 MEX +52</option>
-                    <option value="+54" data-flag="🇦🇷">🇦🇷 ARG +54</option>
+                    <option value="+91">India +91</option>
+                    <option value="+1">United States +1</option>
+                    <option value="+44">United Kingdom +44</option>
+                    <option value="+61">Australia +61</option>
+                    <option value="+81">Japan +81</option>
+                    <option value="+49">Germany +49</option>
+                    <option value="+33">France +33</option>
+                    <option value="+86">China +86</option>
+                    <option value="+7">Russia +7</option>
+                    <option value="+39">Italy +39</option>
+                    <option value="+55">Brazil +55</option>
+                    <option value="+27">South Africa +27</option>
+                    <option value="+82">South Korea +82</option>
+                    <option value="+34">Spain +34</option>
+                    <option value="+31">Netherlands +31</option>
+                    <option value="+64">New Zealand +64</option>
+                    <option value="+90">Turkey +90</option>
+                    <option value="+52">Mexico +52</option>
+                    <option value="+41">Switzerland +41</option>
+                    <option value="+46">Sweden +46</option>
                   </select>
-                  <input type="tel" class="form-control-enhanced phone-number-input" id="phone" placeholder="Phone Number" required>
+                  <input type="tel" class="form-control-enhanced phone-number-input" id="phone" placeholder="Phone Number" required autocomplete="off">
                 </div>
                 <div class="error-message" id="phoneError"></div>
               </div>
-              
               <div class="form-group-enhanced">
-                <textarea class="form-control-enhanced textarea-enhanced" id="message" placeholder="Your Message" rows="5" required></textarea>
+                <textarea class="form-control-enhanced textarea-enhanced" id="message" placeholder="Your Message" rows="5" required autocomplete="off"></textarea>
                 <div class="error-message" id="messageError"></div>
               </div>
-              
               <button type="submit" class="btn-send-enhanced">
                 <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
                 Send Message
               </button>
-              
               <div id="formAlert" class="alert d-none" style="margin-top: 20px; text-align: center;"></div>
             </form>
           </div>
-          
           <div class="contact-image-section">
             <img src="images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
           </div>
@@ -420,83 +323,72 @@
     </div>
   </section>
 
-
-
   <section class="new-info-section">
     <div class="new-container">
-        <div class="footer-grid-wrapper">
-            <div class="footer-column footer-about">
-                <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
-                    </a>
-                <p class="footer-description">
-                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
-                </p>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-column footer-links">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column footer-services">
-                <h5 class="footer-heading">Our Services</h5>
-                <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">App Development</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column footer-contact">
-                <h5 class="footer-heading">Get In Touch</h5>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
-                </p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-                </p>
-                <p>
-                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
-                </p>
-                
-            </div>
-
-        </div> 
+      <div class="footer-grid-wrapper">
+        <div class="footer-column footer-about">
+          <a href="#" class="footer-logo">
+            <img src="images/logo_blue.png" alt="Your Company Logo">
+          </a>
+          <p class="footer-description">
+            Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column footer-links">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-services">
+          <h5 class="footer-heading">Our Services</h5>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">App Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-contact">
+          <h5 class="footer-heading">Get In Touch</h5>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+          </p>
+        </div>
       </div>
       <footer class="footer_section">
         <div class="container">
-            <p>
-                &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
-            </p>
+          <p>
+            &copy; <span id="displayDateYear"></span> All Rights Reserved By
+            <a href="./">Sachiva</a>
+          </p>
         </div>
-    </footer>
+      </footer>
     </div>
-
     <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
-
-</section>
-
+  </section>
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
@@ -505,7 +397,7 @@
   <script>
     // Update year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-    
+
     // Enhanced Contact form validation with real-time feedback
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -518,7 +410,7 @@
       // Reset all error messages
       document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.success-message').forEach(el => el.style.display = 'none');
-      
+
       let isValid = true;
 
       // Name validation
@@ -551,9 +443,9 @@
 
       // Phone validation
       const phoneValue = phoneInput.value.trim();
-      const phonePattern = /^[0-9]{7,15}$/;
+      const phonePattern = /^[0-9]{10}$/;
       if (!phonePattern.test(phoneValue)) {
-        document.getElementById('phoneError').textContent = 'Please enter a valid phone number (7-15 digits)';
+        document.getElementById('phoneError').textContent = 'Please enter exactly 10 digits';
         document.getElementById('phoneError').style.display = 'block';
         isValid = false;
       }
@@ -579,11 +471,11 @@
     });
 
     // Real-time email validation
-    document.getElementById('email').addEventListener('input', function() {
+    document.getElementById('email').addEventListener('input', function () {
       const emailValue = this.value.trim();
       const emailError = document.getElementById('emailError');
       const emailSuccess = document.getElementById('emailSuccess');
-      
+
       if (emailValue.length > 0 && !emailValue.includes('@')) {
         emailError.textContent = 'Please add @ in your email address';
         emailError.style.display = 'block';
@@ -606,25 +498,26 @@
     });
 
     // Real-time phone validation
-    document.getElementById('phone').addEventListener('input', function() {
+    document.getElementById('phone').addEventListener('input', function () {
       const phoneValue = this.value.trim();
       const phoneError = document.getElementById('phoneError');
-      
+
       // Remove non-numeric characters
       this.value = phoneValue.replace(/[^0-9]/g, '');
-      
-      if (this.value.length > 0 && this.value.length < 7) {
-        phoneError.textContent = 'Phone number too short';
+
+      if (this.value.length > 0 && this.value.length < 10) {
+        phoneError.textContent = 'Please enter exactly 10 digits';
         phoneError.style.display = 'block';
-      } else if (this.value.length > 15) {
-        phoneError.textContent = 'Phone number too long';
+      } else if (this.value.length > 10) {
+        phoneError.textContent = 'Please enter exactly 10 digits';
         phoneError.style.display = 'block';
+      } else if (this.value.length === 10) {
+        phoneError.style.display = 'none';
       } else {
         phoneError.style.display = 'none';
       }
     });
   </script>
-     <script src="js/navbar.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
-
 </html>
