@@ -342,30 +342,6 @@ a:focus {
 
 /*end header section*/
 /* slider section */
-<<<<<<< HEAD
-=======
-
-  #typing-text {
-    font-size: 36px;
-    font-weight: bold;
-    white-space: pre-line;
-    border-right: 2px solid #000;
-    display: inline-block;
-    overflow: hidden;
-    animation: blink-caret 0.75s step-end infinite;
-  }
-
-  @keyframes blink-caret {
-    from, to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: black;
-    }
-  }
-
-
->>>>>>> 01f43a3b6bd65f0c538aa2ce5b103ad73c1e73c2
 .slider_section {
   margin-top: 78px;
   -webkit-box-flex: 1;
