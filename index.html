@@ -19,6 +19,27 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
   <!-- Consolidated CSS links for maintainability -->
+
+  <style>
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+    }
+    #booking{          /*Adding styling to booking*/
+      background-color: greenyellow;
+      margin: 10px;
+      color: white;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    #booking:hover{
+      transform: scale(1.1);
+      background-color: rgb(69, 187, 33);
+    }
+  </style>
 </head>
 
 <body>
@@ -49,6 +70,9 @@
                 <li class="nav-item contact-highlight">
                   <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
+                <li class="nav-item">      
+                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+                </li>
                 <li class="nav-item">
                   <label class="switch theme-switch">
                     <input type="checkbox" id="theme-toggle">
@@ -71,7 +95,7 @@
       <div class="container ">
         <div class="row">
           <div class="col-md-6 ">
-            <div class="detail-box">
+            <div class="detail-box" style="margin-top: 100px;">
               <h1>
                 <span id="typing-text"></span>
               </h1>
