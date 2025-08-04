@@ -11,7 +11,7 @@
   <meta name="author" content="Sachiva Team" />
 
    <link rel="icon" href="./images/logo_blue.png">
-  <title>About Us - Sachiva</title>
+  <title>Portfolio - Sachiva</title>
 
   <!-- CSS & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -295,6 +295,72 @@
   top: 0;
   font-size: 1.1em;
   color: #28a745;
+}
+
+/* === ACCESSIBILITY IMPROVEMENTS === */
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus indicators for all interactive elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.navbar-toggler:focus,
+.theme-switch input:focus + .slider {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Enhanced focus for navigation links */
+.nav-link:focus {
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 4px;
+}
+
+/* Better contrast for dark mode text */
+[data-theme="dark"] .portfolio-header p {
+  color: #e0e0e0; /* Improved from #aaa */
+}
+
+[data-theme="dark"] .tick-list li {
+  color: #e0e0e0; /* Improved from #ccc */
+}
+
+[data-theme="dark"] .half p {
+  color: #e0e0e0; /* Improved from #ccc */
+}
+
+[data-theme="dark"] .portfolio-content p {
+  color: #e0e0e0; /* Improved from #ccc */
+}
+
+/* Improved focus for cards */
+.portfolio-card:focus-within {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Better contrast for WhatsApp button */
+.whatsapp:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
 }
 
 

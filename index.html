@@ -19,42 +19,96 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
   <!-- Consolidated CSS links for maintainability -->
+  
+  <!-- Accessibility Styles -->
+  <style>
+    /* === ACCESSIBILITY IMPROVEMENTS === */
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 9999;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Focus indicators for all interactive elements */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus,
+    select:focus,
+    .navbar-toggler:focus,
+    .theme-switch input:focus + .slider {
+      outline: 3px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    /* Enhanced focus for navigation links */
+    .nav-link:focus {
+      background-color: rgba(0, 102, 204, 0.1);
+      border-radius: 4px;
+    }
+
+    /* Better contrast for dark mode text */
+    [data-theme="dark"] .text-muted {
+      color: #e0e0e0 !important;
+    }
+
+    /* Improved focus for cards and interactive elements */
+    .card:focus-within,
+    .service_box:focus-within {
+      outline: 3px solid #0066cc;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="hero_area">
 
     <!-- header section -->
-    <header class="header_section">
+    <header class="header_section" role="banner">
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <nav class="navbar navbar-expand-lg custom_nav-container" role="navigation" aria-label="Main navigation">
+            <a class="navbar-brand" href="./" aria-label="Sachiva homepage">
+              <img src="images/logo_blue.png" alt="Sachiva logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
               <span class=""> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active fw-bold"><a class="nav-link" href="index.html">Home <span
+              <ul class="navbar-nav" role="menubar">
+                <li class="nav-item active fw-bold" role="none"><a class="nav-link" href="index.html" role="menuitem" aria-current="page">Home <span
                       class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html"> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                <li class="nav-item" role="none"><a class="nav-link" href="about.html" role="menuitem"> About</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="service.html" role="menuitem">Services</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="contributors.html" role="menuitem">Contributors</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="./blog.html" role="menuitem">Blog</a></li>
+                <li class="nav-item" role="none"><a class="nav-link" href="./portfolio.html" role="menuitem">Portfolio</a></li>
+                <li class="nav-item contact-highlight" role="none">
+                  <a class="nav-link" href="contact.html" role="menuitem">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <label class="switch theme-switch">
-                    <input type="checkbox" id="theme-toggle">
+                  <label class="switch theme-switch" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="theme-toggle" aria-label="Dark mode toggle">
                     <span class="slider">
-                      <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
+                      <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                  <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
                     </span>
                   </label>
                 </li>
@@ -67,12 +121,12 @@
     <!-- end header section -->
 
     <!-- slider section -->
-    <section class="slider_section ">
-      <div class="container ">
+    <section class="slider_section">
+      <div class="container">
         <div class="row">
-          <div class="col-md-6 ">
+          <div class="col-md-6">
             <div class="detail-box">
-              <h1>
+              <h1 id="main-content">
                 <span id="typing-text"></span>
               </h1>
               <p>
@@ -87,7 +141,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+              <img src="images/maintenance.gif" alt="Animated illustration showing home maintenance and repair services">
             </div>
           </div>
         </div>
@@ -114,7 +168,7 @@
         </div>
         <div class="col-lg-7 col-md-6">
           <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
+            <img src="images/about_us.gif" alt="Animated illustration representing our company's about us story and services" loading="lazy">
           </div>
         </div>
       </div>
@@ -157,7 +211,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os1.png" alt="" loading="lazy" />
+              <img src="images/os1.png" alt="Web development service icon showing responsive website design" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Web Development</h5>
@@ -168,7 +222,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/s1.png" alt="" loading="lazy" />
+              <img src="images/s1.png" alt="Mobile app development service icon showing smartphone applications" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Software Management</h5>
@@ -190,7 +244,7 @@
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/os4.png" alt="" loading="lazy" />
+              <img src="images/os4.png" alt="Digital marketing service icon showing SEO and online promotion strategies" loading="lazy" />
             </div>
             <div class="detail-box">
               <h5>Cybersecurity</h5>
@@ -232,7 +286,7 @@
         <div class="box">
           <div class="client_id">
             <div class="img-box">
-              <img src="images/owner.png">
+              <img src="images/owner.png" alt="Portrait of company owner or founder">
             </div>
             <div class="client_detail">
               <div class="client_info">
@@ -268,7 +322,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-              <img src="images/client-1.jpg" alt="" loading="lazy">
+              <img src="images/client-1.jpg" alt="Testimonial photo of satisfied client" loading="lazy">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -297,7 +351,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="">
+                                    <img src="images/client-2.jpg" alt="Testimonial photo of satisfied client">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -326,7 +380,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-1.jpg" alt="">
+                                    <img src="images/client-1.jpg" alt="Testimonial photo of satisfied client">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -355,7 +409,7 @@
                         <div class="box">
                             <div class="client_id">
                                 <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="" loading="lazy">
+                                    <img src="images/client-2.jpg" alt="Testimonial photo of satisfied client" loading="lazy">
                                 </div>
                                 <div class="client_detail">
                                     <div class="client_info">
@@ -420,7 +474,7 @@
 
             <div class="footer-column footer-about">
                 <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    <img src="images/logo_blue.png" alt="Sachiva company logo">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
@@ -484,8 +538,8 @@
     </footer>
     </div>
 
-    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
 </section>

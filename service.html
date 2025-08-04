@@ -3,7 +3,58 @@
 
 <head>
   <!-- Basic Meta -->
-  <meta charset="utf-8" />
+  <meta    #card6:hover{
+      background: linear-gradient(rgba(255, 193, 7, 0.295), lightyellow);
+    }
+
+    /* === ACCESSIBILITY IMPROVEMENTS === */
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 9999;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Focus indicators for all interactive elements */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus,
+    select:focus,
+    .navbar-toggler:focus,
+    .theme-switch input:focus + .slider {
+      outline: 3px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    /* Enhanced focus for navigation links */
+    .nav-link:focus {
+      background-color: rgba(0, 102, 204, 0.1);
+      border-radius: 4px;
+    }
+
+    /* Better contrast for WhatsApp button */
+    .whatsapp:focus {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>t="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="keywords" content="Home services, Sachiva, Repairs, Cleaning, Renovation" />
