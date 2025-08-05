@@ -2,43 +2,37 @@
 <html lang="en">
 
 <head>
-  
-
+  <!-- Basic Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-  <meta name="keywords" content="Contact, Support, Sachiva" />
-  <meta name="description" content="Contact us for any service or support related queries." />
+  <meta name="keywords" content="Sachiva, Home Services, IT Solutions, Maintenance" />
+  <meta name="description" content="Learn more about Sachiva's home and IT service solutions." />
   <meta name="author" content="Sachiva Team" />
-   
-  <link rel="icon" href="./images/logo_blue.png">
-  <title>Contact Us - Sachiva</title>
 
+   <link rel="icon" href="../images/logo_blue.png">
+  <title>About Us - Sachiva</title>
 
-   
-
+  <!-- CSS & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../css/bootstrap.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
 
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
- 
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-
-  <link href="css/style.css" rel="stylesheet" />
-  
-  <link href="css/responsive.css" rel="stylesheet" />
-  
-  <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-   
+  <!-- Custom Styles -->
   <style>
     .fw-bold {
       font-weight: bolder;
+    }
+
+    .feature_section {
+      position: relative;
+      top: 60px;
     }
 
     .whatsapp {
@@ -66,31 +60,29 @@
 </head>
 
 <body>
-
-
+  <!-- Header -->
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Sachiva Logo" class="main-logo">
+            <a class="navbar-brand" href="../">
+              <img src="../images/logo_blue.png" alt="Logo" class="main-logo">
               <span>sachiva</span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item active fw-bold"><a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
-                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
               </ul>
               <label class="switch theme-switch">
                 <input type="checkbox" id="theme-toggle">
@@ -105,45 +97,47 @@
       </div>
     </header>
   </div>
+  <!-- End Header -->
 
-
-
-  <section class="contact_section layout_padding">
-    <div class="container my-5">
-      <div class="contact-container">
-        <div class="contact-form">
-          <h2>Contact Us</h2>
-          <form id="contactForm">
-            <div class="form-group">
-              <i class="fas fa-user"></i>
-              <input type="text" class="form-control" id="name" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email" class="form-control" id="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-send">Send Message</button>
-            <div id="formAlert" class="alert d-none"></div>
-          </form>
+  <!-- About Section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-6">
+          <div class="detail-box">
+            <h2>About Us</h2>
+            <div class="text-content"><p style="text-align: justify;">
+              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
+              needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
+              affordable solutions for your home and workspace.
+            </p></div>
+            
+            <div class="text-content"><p style="text-align: justify;">
+              With years of experience in the industry, we have built a reputation for excellence. Our
+              commitment to quality, innovation, and customer care sets us apart, making us the preferred
+              choice for thousands of satisfied clients.
+            </p></div>
+            
+           <button onclick="location.href='service.html'">Explore Our Services</button>
+          </div>
         </div>
-        <div class="contact-image">
-          <img src="images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
+        <div class="col-lg-7 col-md-6">
+          <div class="img-box">
+            <img src="../images/maintenance.gif" alt="About Sachiva">
+          </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- End About Section -->
 
-
-
+  <!-- Footer -->
   <section class="new-info-section">
     <div class="new-container">
         <div class="footer-grid-wrapper">
             <div class="footer-column footer-about">
                 <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    <img src="../images/logo_blue.png" alt="Your Company Logo">
                     </a>
                 <p class="footer-description">
                     Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
@@ -160,12 +154,12 @@
             <div class="footer-column footer-links">
                 <h5 class="footer-heading">Quick Links</h5>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -201,7 +195,7 @@
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
+                <a href="../">Sachiva</a>
             </p>
         </div>
     </footer>
@@ -213,51 +207,16 @@
 
 </section>
 
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <!-- JS Scripts -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
   <script>
-    // Update year
+    // Display current year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-    
-    // Contact form validation
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const emailInput = document.getElementById('email');
-      const nameInput = document.getElementById('name');
-      const messageInput = document.getElementById('message');
-      const alertBox = document.getElementById('formAlert');
-
-      const validDomains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "aol.com", "icloud.com", "zoho.com", "gmx.com"];
-      const emailValue = emailInput.value.trim();
-      const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
-
-      if (!emailPattern.test(emailValue)) {
-        alertBox.className = 'alert alert-danger';
-        alertBox.textContent = "Please enter a valid email address.";
-        return;
-      }
-
-      const domain = emailValue.split('@')[1].toLowerCase();
-      if (!validDomains.includes(domain)) {
-        alertBox.className = 'alert alert-danger';
-        alertBox.textContent = "Please enter an email from an allowed domain.";
-        return;
-      }
-
-      alertBox.className = 'alert alert-success';
-      alertBox.textContent = "Message sent successfully!";
-
-      setTimeout(() => {
-        alertBox.className = 'alert d-none';
-        alertBox.textContent = "";
-        document.getElementById('contactForm').reset();
-      }, 2500);
-    });
   </script>
-     <script src="js/navbar.js"></script>
+     <script src="../js/navbar.js"></script>
 </body>
 
 </html>
