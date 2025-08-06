@@ -69,6 +69,24 @@
   transition: background-color 0.3s ease;
 }
 
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+    }
+    #booking{          /*Adding styling to booking*/
+      background-color: greenyellow;
+      margin: 10px;
+      color: white;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    #booking:hover{
+      transform: scale(1.1);
+      background-color: rgb(69, 187, 33);
+    }
   </style>
   <!-- Animate.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -105,6 +123,9 @@
                 <li class="nav-item active fw-bold"><a class="nav-link" href="blog.html">Blog <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                 <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item">      
+                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+                </li>      
               </ul>
               <label class="switch theme-switch">
                 <input type="checkbox" id="theme-toggle">

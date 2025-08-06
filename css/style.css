@@ -859,7 +859,7 @@ line-height: 1.6;
   margin-bottom: 30px;
 }
 
-.contact_section input {
+.contact_section input , .contact_section select{
   width: 100%;
   border: none;
   height: 50px;
@@ -867,7 +867,6 @@ line-height: 1.6;
   padding-left: 25px;
   background-color: #ffffff;
   outline: none;
-  color: #ffffff;
   -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
 }
@@ -908,6 +907,45 @@ line-height: 1.6;
 .contact_section button:hover {
   background-color: transparent;
   color: #0355cc;
+}
+
+.contact_section .book {
+  border: none;
+  display: inline-block;
+  font-family: "Merriweather Sans", sans-serif;
+  text-transform: uppercase;
+  padding: 10px 55px;
+  background-color: #74c40d;
+  border: 1px solid #80df03;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+.contact_section .book:hover {
+  background-color: transparent;
+  color: green;
+  border-color: green;
+}
+
+.contact_section #downloadPDF {
+  border: none;
+  display: inline-block;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 55px;
+  background-color: #810dc4;
+  border: 1px solid #ba03df;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+.contact_section #downloadPDF:hover {
+  background-color: transparent;
+  color: rgb(117, 0, 128);
+  border-color: rgb(124, 0, 128);
 }
 
 .contact_section .map_container {
@@ -1067,7 +1105,7 @@ line-height: 1.6;
 }
 
 /* Contact Form Styles */
-.contact-container {
+.contact-container, .booking-container {
   background-color: rgba(0, 51, 102, 0.4);
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
@@ -1081,17 +1119,21 @@ line-height: 1.6;
   color: white;
 }
 
-.contact-form {
+.booking-container{
+  background-color: rgba(0, 142, 167, 0.4);
+}
+
+.contact-form, .bookingForm {
   flex: 1 1 48%;
 }
 
-.contact-form h2 {
+.contact-form h2, .bookingForm h2 {
   font-weight: bold;
   margin-bottom: 30px;
   color: #006064;
 }
 
-.contact-form .form-control {
+.contact-form .form-control, .bookingForm .form-control{
   border-radius: 25px;
   padding-left: 40px;
   margin-bottom: 20px;
@@ -1099,18 +1141,18 @@ line-height: 1.6;
   background-color: #f1f8e9;
 }
 
-.contact-form .form-group {
+.contact-form .form-group , .bookingForm .form-group{
   position: relative;
 }
 
-.contact-form .form-group i {
+.contact-form .form-group i , .bookingForm .form-group i{
   position: absolute;
   left: 15px;
   top: 12px;
   color: #4db6ac;
 }
 
-.btn-send {
+.btn-send, .book {
   border-radius: 25px;
   background-color: #00796b;
   color: white;
@@ -1120,29 +1162,31 @@ line-height: 1.6;
   transition: background-color 0.3s ease;
 }
 
-.btn-send:hover {
+.btn-send:hover, .book:hover {
   background-color: #004d40;
 }
 
-.contact-image {
+.contact-image , .booking-image{
   flex: 1 1 48%;
   text-align: center;
 }
 
-.contact-image img {
+.contact-image img , .booking-image img{
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-  .contact-container {
+  .contact-container, .booking-container {
     flex-direction: column;
     padding: 20px;
   }
 
   .contact-form,
-  .contact-image {
+  .contact-image ,
+  .bookingForm,
+  .booking-image{
     flex: 1 1 100%;
   }
 }
