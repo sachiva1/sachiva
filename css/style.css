@@ -258,6 +258,7 @@ a:focus {
   top: 10px;
 }
 
+
 .nav-link{
   margin-right: 30px;
 }
@@ -339,6 +340,60 @@ a:focus {
   body.dark-mode .header_section.scrolled {
     box-shadow: 0 6px 25px rgba(255, 255, 255, 0.12);
   }
+  /* Specific styling only for Contact Us button in nav */
+.nav-item.contact-highlight .nav-link {
+  background-color: #0355cc;
+  color: white;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 10px 24px !important;     /* More vertical + horizontal padding */
+  line-height: 1.4 !important;       /* Give vertical breathing room */
+  display: inline-flex !important;   /* Fix vertical align */
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px;
+  box-sizing: border-box !important;
+}
+
+
+.nav-item.contact-highlight .nav-link:hover {
+  background-color: #023a8a;
+  color: #fff;
+}
+/* Fix spacing for nav items */
+.custom_nav-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.custom_nav-container .navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.custom_nav-container .navbar-nav .nav-link {
+  padding: 10px 0 !important; /* consistent vertical padding */
+}
+
+/* Quote button and toggle spacing */
+.quote_btn-container {
+  display: flex !important; 
+  align-items: center !important; 
+  gap: 20px !important; 
+}
+
+
+.nav-link {
+  margin-right: 0 !important;
+}
+
+
 
 /*end header section*/
 /* slider section */
