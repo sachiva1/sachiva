@@ -9,17 +9,13 @@
   <meta name="keywords" content="Sachiva, Home Services, IT Solutions, Maintenance" />
   <meta name="description" content="Learn more about Sachiva's home and IT service solutions." />
   <meta name="author" content="Sachiva Team" />
-
-   <link rel="icon" href="./images/logo_blue.png">
+  <link rel="icon" href="./images/logo_blue.png">
   <title>About Us - Sachiva</title>
 
   <!-- CSS & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/dark-mode-fixes.css" />
@@ -55,6 +51,27 @@
     .whatsapp i {
       font-size: 28px;
       color: white;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn i {
+      transition: margin-left 0.3s ease;
+    }
+
+    .btn:hover i {
+      margin-left: 8px;
     }
   </style>
 </head>
@@ -102,28 +119,28 @@
   <!-- About Section -->
   <section class="about_section layout_padding">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-lg-5 col-md-6">
           <div class="detail-box">
             <h2>About Us</h2>
-            <div class="text-content"><p style="text-align: justify;">
-              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
+            <p style="text-align: justify;">
+              At <strong>Sachiva</strong>, we specialize in delivering high-quality home services tailored to your
               needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
               affordable solutions for your home and workspace.
-            </p></div>
-            
-            <div class="text-content"><p style="text-align: justify;">
+            </p>
+            <p style="text-align: justify;">
               With years of experience in the industry, we have built a reputation for excellence. Our
               commitment to quality, innovation, and customer care sets us apart, making us the preferred
               choice for thousands of satisfied clients.
-            </p></div>
-            
-           <button onclick="location.href='service.html'">Explore Our Services</button>
+            </p>
+            <a href="service.html" class="btn btn-primary mt-3 px-4 py-2 rounded-pill">
+              Explore Our Services <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
         <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/maintenance.gif" alt="About Sachiva">
+          <div class="img-box text-center">
+            <img src="images/maintenance.gif" alt="About Sachiva" class="img-fluid" loading="lazy">
           </div>
         </div>
       </div>
@@ -134,89 +151,75 @@
   <!-- Footer -->
   <section class="new-info-section">
     <div class="new-container">
-        <div class="footer-grid-wrapper">
-            <div class="footer-column footer-about">
-                <a href="#" class="footer-logo">
-                    <img src="images/logo_blue.png" alt="Your Company Logo">
-                    </a>
-                <p class="footer-description">
-                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
-                </p>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-column footer-links">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="contributors.html">Contributors</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column footer-services">
-                <h5 class="footer-heading">Our Services</h5>
-                <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">App Development</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column footer-contact">
-                <h5 class="footer-heading">Get In Touch</h5>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
-                </p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-                </p>
-                <p>
-                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
-                </p>
-                
-            </div>
-
-        </div> 
-      </div>
-      <footer class="footer_section">
-        <div class="container">
-            <p>
-                &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="./">Sachiva</a>
-            </p>
+      <div class="footer-grid-wrapper">
+        <div class="footer-column footer-about">
+          <a href="#" class="footer-logo">
+            <img src="images/logo_blue.png" alt="Your Company Logo">
+          </a>
+          <p class="footer-description">
+            Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+          </p>
+          <div class="footer-social-icons">
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
-    </footer>
+
+        <div class="footer-column footer-links">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-services">
+          <h5 class="footer-heading">Our Services</h5>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">App Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Cloud Solutions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <h5 class="footer-heading">Get In Touch</h5>
+          <p><i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)</p>
+          <p><i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a></p>
+        </div>
+      </div>
     </div>
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayDateYear"></span> All Rights Reserved By <a href="./">Sachiva</a></p>
+      </div>
+    </footer>
 
     <a href="https://wa.me/75...." target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
-
-</section>
+  </section>
 
   <!-- JS Scripts -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="js/navbar.js"></script>
   <script>
-    // Display current year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
-     <script src="js/navbar.js"></script>
 </body>
 
 </html>

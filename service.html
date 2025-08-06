@@ -76,6 +76,98 @@
     #card6:hover{
       background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
     }
+    /* Enhanced Buttons */
+.filter-buttons .btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.filter-buttons .btn.active,
+.filter-buttons .btn:hover {
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* Service Cards */
+.card {
+  border: none;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons inside cards */
+.card i {
+  transition: transform 0.3s ease;
+}
+.card:hover i {
+  transform: scale(1.2);
+}
+
+/* Adjust service card text */
+.card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Heading enhancement */
+.heading_container h2.heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0d6efd;
+  position: relative;
+  display: inline-block;
+}
+.heading_container h2.heading::after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: #0d6efd;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* FAQ Accordion */
+.accordion-button {
+  font-weight: 600;
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  color: #0d6efd;
+}
+.accordion-body {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* WhatsApp Button Hover */
+.whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+}
+
+/* Dark mode support improvement (optional) */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+body.dark-mode .card p {
+  color: #ccc;
+}
+
   </style>
 </head>
 

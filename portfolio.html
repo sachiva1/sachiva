@@ -296,6 +296,41 @@
   font-size: 1.1em;
   color: #28a745;
 }
+/* Fade-in-Up Animation for Portfolio Cards */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .half h1 {
+    font-size: 2rem;
+  }
+
+  .half p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .hero-image {
+    max-width: 300px;
+    height: auto;
+  }
+}
+.portfolio-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 191, 166, 0.2);
+  transform: translateY(-5px);
+  border: 1px solid rgba(0, 191, 166, 0.25);
+}
 
 
 
@@ -511,6 +546,22 @@
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
   <script src="js/navbar.js"></script>
+
+  <script>
+    const cards = document.querySelectorAll('.fade-in-up');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    cards.forEach(card => observer.observe(card));
+  </script>
+  
 </body>
 
 </html>

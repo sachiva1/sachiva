@@ -68,6 +68,53 @@
 .card .btn {
   transition: background-color 0.3s ease;
 }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #343a40;
+}
+
+body.dark-mode .card-title {
+  color: #ffffff;
+}
+
+.card-body ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 0.4em;
+}
+
+.card-body ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+}
+@media (max-width: 767px) {
+  .card-body ul {
+    font-size: 0.95rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+.more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.more-content.show {
+  max-height: 200px; /* adjust based on content length */
+  opacity: 1;
+}
 
   </style>
   <!-- Animate.css -->
@@ -296,6 +343,22 @@
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
   <script src="js/navbar.js"></script>
+  <script>
+    document.querySelectorAll(".read-more-btn").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const card = btn.closest(".card-body");
+        const moreContent = card.querySelector(".more-content");
+  
+        moreContent.classList.toggle("show");
+        moreContent.classList.toggle("d-none");
+  
+        btn.textContent = moreContent.classList.contains("show")
+          ? "Show Less"
+          : "Read More";
+      });
+    });
+  </script>
   
 </body>
 

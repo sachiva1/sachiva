@@ -19,132 +19,452 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
   <!-- Consolidated CSS links for maintainability -->
-</head>
 
-<body>
+  
+</head>
+<style>
+  .navbar-nav .nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd; /* Bootstrap primary */
+}
+
+.contact-highlight {
+  font-weight: 600;
+}
+
+.theme-switch .slider {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid #ddd;
+}
+
+.theme-switch input[type="checkbox"] {
+  display: none;
+}
+
+.sun-icon, .moon-icon {
+  font-size: 16px;
+}
+
+.sun-icon {
+  color: #f39c12;
+}
+
+.moon-icon {
+  color: #2c3e50;
+}
+/*Slider*/
+.slider_section {
+  background: linear-gradient(to right, #f8fbff, #e0f7fa);
+}
+
+.detail-box h1 {
+  color: #2c3e50;
+}
+
+.detail-box p {
+  color: #555;
+}
+
+.img-box img {
+  max-width: 100%;
+  height: auto;
+  animation: floatUp 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+/*ABOUT*/
+.about_section {
+  background: #f9f9f9;
+}
+
+.detail-box h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
+
+.detail-box p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.img-box img {
+  animation: floatFade 3s ease-in-out infinite alternate;
+  border-radius: 12px;
+}
+
+@keyframes floatFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+/**/
+.professional_section {
+  background-color: #fff;
+}
+
+.img-box img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.img-box img:hover {
+  transform: scale(1.03);
+}
+
+.detail-box h2 {
+  color: #2c3e50;
+}
+
+.detail-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+/* Flip Card Container */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  text-align: center;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.flip-card-front .img-box img {
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.flip-card-back h3,
+.flip-card-back p,
+.flip-card-back .overview-item,
+.flip-card-back .overview-label,
+.flip-card-back .overview-value,
+.flip-card-back i {
+  color: #000000 !important;
+}
+
+
+/* Service Overview Style */
+.service-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.overview-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overview-item i {
+  color: #0d6efd;
+}
+
+.overview-label {
+  font-weight: 600;
+}
+
+/* Section Heading */
+.heading_container h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* CTA Button */
+.btn-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-box a {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-box a:hover {
+  background-color: #084298;
+}
+#smart-recommender .btn {
+  min-width: 200px;
+  font-weight: 500;
+}
+
+#recommendationResult {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.client_section .box {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.client_text {
+  animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+input, .message-box {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.whatsapp:hover {
+  background: #20b858;
+}
+
+</style>
+<body data-page="home">
   <div class="hero_area">
 
-    <!-- header section -->
-    <header class="header_section">
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
-              <span>sachiva</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active fw-bold"><a class="nav-link" href="index.html">Home <span
-                      class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html"> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <label class="switch theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
-                      <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                    </span>
-                  </label>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <!-- Header Section -->
+      <header class="header_section shadow-sm">
+        <div class="header_bottom py-2">
+          <div class="container-fluid px-4">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              
+              <!-- Brand -->
+              <a class="navbar-brand d-flex align-items-center" href="./">
+                <img src="images/logo_blue.png" alt="Sachiva Logo" class="main-logo me-2" style="height: 45px;">
+                <span class="fw-bold fs-4 text-primary">Sachiva</span>
+              </a>
+    
+              <!-- Toggler -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <!-- Nav Links -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center gap-2">
+    
+                  <li class="nav-item">
+                    <a class="nav-link active fw-bold text-primary" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contributors.html">Contributors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary px-3 py-1 rounded-pill contact-highlight" href="contact.html">
+                      Contact Us
+                    </a>
+                  </li>
+    
+                  <!-- Dark Mode Toggle -->
+                  <li class="nav-item ms-3">
+                    <label class="switch theme-switch d-flex align-items-center" title="Toggle Dark Mode">
+                      <input type="checkbox" id="theme-toggle">
+                      <span class="slider rounded-pill">
+                        <i class="fas fa-sun sun-icon me-1"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                      </span>
+                    </label>
+                  </li>
+    
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
+    
     <!-- end header section -->
 
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="detail-box">
-              <h1>
-                <span id="typing-text"></span>
-              </h1>
-              <p>
-                At Sachiva, we specialize in web development, software
-                solutions, and cybersecurity. Our expert team ensures seamless
-                digital transformation for businesses of all sizes.
-              </p>
-              <a href="contact.html">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
-            </div>
-          </div>
+    <!-- Slider Section -->
+<section class="slider_section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Text Content -->
+      <div class="col-md-6">
+        <div class="detail-box text-center text-md-start mb-4 mb-md-0">
+          <h1 class="fw-bold display-5 mb-3">
+            <span id="typing-text">Empowering Digital Innovation</span>
+          </h1>
+          <p class="lead text-muted mb-4">
+            At <strong>Sachiva</strong>, we specialize in web development, software
+            solutions, and cybersecurity. Our expert team ensures seamless
+            digital transformation for businesses of all sizes.
+          </p>
+          <a href="contact.html" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm">
+            Contact Us
+          </a>
         </div>
       </div>
-    </section>
-    <!-- end slider section -->
+
+      <!-- Image -->
+      <div class="col-md-6 text-center">
+        <div class="img-box">
+          <img src="images/maintenance.gif" alt="Development" class="img-fluid rounded-4 shadow-sm">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Slider Section -->
 
   </div>
 
-  <!-- about section -->
-  <section class="about_section layout_padding-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
-            <h2>About us</h2>
-            <p>
-              Sachiva is a leading IT solutions provider offering web
-              development, cybersecurity, and software management services.
-              Our mission is to empower businesses with innovative technology.
-            </p>
-            <a href="about.html">Read More</a>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end about section -->
+  <!-- About Section -->
+<section class="about_section py-5 bg-light" id="about">
+  <div class="container">
+    <div class="row align-items-center">
 
-  <!-- professional section -->
-  <section class="professional_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/Expert_Solutions.gif" alt="Professional Home Services" loading="lazy">
-          </div>
+      <!-- Text Content -->
+      <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+        <div class="detail-box">
+          <h2 class="fw-bold mb-3">About Us</h2>
+          <p class="text-muted mb-4">
+            <strong>Sachiva</strong> is a leading IT solutions provider offering top-notch
+            services in <em>web development</em>, <em>cybersecurity</em>, and <em>software management</em>.
+            Our mission is to empower businesses with cutting-edge technology and reliable support.
+          </p>
+          <a href="about.html" class="btn btn-outline-primary rounded-pill px-4 py-2">
+            Read More
+          </a>
         </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2>Expert Solutions for Your Home & Business</h2>
-            <p>
-              We provide top-quality repair, maintenance, and professional home services tailored to your
-              needs. Our skilled team ensures efficiency, reliability, and customer satisfaction in every project.
-            </p>
-            <a href="service.html">Learn More</a>
-          </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-lg-7 col-md-6 text-center">
+        <div class="img-box">
+          <img src="images/about_us.gif" alt="About Sachiva" class="img-fluid rounded-4 shadow" loading="lazy">
         </div>
       </div>
     </div>
-  </section>
-  <!-- end professional section -->
+  </div>
+</section>
+<!-- End About Section -->
+
+
+  <!-- Professional Section -->
+<section class="professional_section py-5 bg-white" id="professional">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      
+      <!-- Image Column -->
+      <div class="col-md-6 text-center">
+        <div class="img-box">
+          <img src="images/Expert_Solutions.gif" alt="Expert Solutions" class="img-fluid rounded-3 shadow-sm" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h2 class="fw-bold mb-3">Expert Solutions for Your Home & Business</h2>
+          <p class="text-muted mb-4">
+            At Sachiva, we deliver high-quality <strong>repair, maintenance,</strong> and 
+            <strong>professional services</strong> customized to your requirements. Our experienced
+            team ensures <em>efficiency</em>, <em>reliability</em>, and <em>customer satisfaction</em>
+            in every project we undertake.
+          </p>
+          <a href="service.html" class="btn btn-primary rounded-pill px-4 py-2">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Professional Section -->
+
 
   <!-- service section -->
 <section class="service_section layout_padding">
@@ -710,6 +1030,10 @@
   <script src="js/slidersection.js"></script>
 
   <script>
+    document.getElementById("displayDateYear").innerText = new Date().getFullYear();
+  </script>
+  
+  <script>
   const recommendations = {
     business: [
       { title: "Digital Marketing", desc: "Promote your business online.", icon: "📈" },
@@ -760,7 +1084,72 @@
       const header = document.querySelector(".header_section");
       console.log("Header found? ", header); // ✅ should NOT be null
     });
-     </script>
+</script>
+<script>
+  const texts = ["Web Development", "Cybersecurity", "Custom Software"];
+  let index = 0;
+  let charIndex = 0;
+  const typingText = document.getElementById("typing-text");
+
+  function type() {
+    if (charIndex < texts[index].length) {
+      typingText.innerHTML += texts[index].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 1500);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typingText.innerHTML = texts[index].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      index = (index + 1) % texts.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
+</script>
+<script>
+  function recommend(option) {
+    const result = document.getElementById("recommendationResult");
+
+    let message = "";
+    switch (option) {
+      case "business":
+        message = `
+          <div class="alert alert-primary">
+            <strong>Recommendation:</strong> Check out our <a href="service.html">Web Development</a> and <a href="service.html">Google Ads</a> services to boost your business.
+          </div>`;
+        break;
+      case "home":
+        message = `
+          <div class="alert alert-success">
+            <strong>Recommendation:</strong> Explore our <a href="service.html">Home & Software Management</a> services for professional support.
+          </div>`;
+        break;
+      case "design":
+        message = `
+          <div class="alert alert-warning">
+            <strong>Recommendation:</strong> Let us help with custom <a href="service.html">UI/UX design</a> and branding tailored for you.
+          </div>`;
+        break;
+      case "other":
+        message = `
+          <div class="alert alert-info">
+            <strong>Tell us more!</strong> Use our <a href="contact.html">contact form</a> and we’ll find the best solution for you.
+          </div>`;
+        break;
+    }
+
+    result.innerHTML = message;
+  }
+</script>
+
 </body>
 
 </html>
