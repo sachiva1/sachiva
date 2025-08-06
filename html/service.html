@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Home services, Sachiva, Repairs, Cleaning, Renovation" />
+  <meta name="description" content="Our reliable and professional home services at Sachiva." />
+  <meta name="author" content="Sachiva Team" />
+    
+  <link rel="icon" href="../images/logo_blue.png">
+  <title>Our Services - Sachiva</title>
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../css/bootstrap.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
+
+  <!-- Custom Styles -->
+<style>
+  .fw-bold {
+    font-weight: bolder;
+  }
+
+  .heading{
+    margin-top: 50px;
+  }
+
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+
+    .whatsapp i {
+      font-size: 28px;
+      color: white;
+    }
+
+    /*Adding styles on hover for card elements*/
+    #card1:hover{
+      background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
+    }
+    #card2:hover{
+      background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+    }
+    #card3:hover{
+      background: linear-gradient(rgba(245, 235, 101, 0.295), rgb(255, 255, 122));
+    }
+    #card4:hover{
+      background: linear-gradient(rgba(255, 76, 225, 0.336), lightpink);
+    }
+    #card5:hover{
+      background: linear-gradient(rgba(57, 225, 255, 0.295), lightblue);
+    }
+    #card6:hover{
+      background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
+    }
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+    }
+    #booking{          /*Adding styling to booking*/
+      background-color: greenyellow;
+      margin: 10px;
+      color: white;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    #booking:hover{
+      transform: scale(1.1);
+      background-color: rgb(69, 187, 33);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="../">
+              <img src="../images/logo_blue.png" alt="Logo" class="main-logo">
+              <span>sachiva</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item active fw-bold"><a class="nav-link" href="service.html">Services <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item">      
+                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+                </li>
+              </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- End Header -->
+
+
+
+  <!-- Services Section -->
+<section class="about_section_layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2 class="heading">Our Services</h2>
+
+      <div class="filter-buttons mb-4 text-center">
+        <button id="all-btn" class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+        <button id="business-btn" class="btn btn-outline-primary filter-btn" data-filter="business">Business</button>
+        <button id="home-btn" class="btn btn-outline-primary filter-btn" data-filter="home">Home</button>
+      </div>
+
+      <p>We offer a range of professional services designed to keep your home or workspace running smoothly.</p>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Home Maintenance -->
+      <div class="col-md-4 mb-4 home-service">
+        <div id="card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
+          <h5 class="fw-bold-1">Home Maintenance</h5>
+          <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
+        </div>
+      </div>
+
+      <!-- Cleaning Services -->
+      <div class="col-md-4 mb-4 home-service">
+        <div id="card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-broom fa-3x mb-3 text-success"></i>
+          <h5 class="fw-bold">Cleaning Services</h5>
+          <div class="mt-4">
+            <p>Professional deep cleaning for homes and offices, ensuring hygiene and comfort.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Renovation & Painting -->
+      <div class="col-md-4 mb-4 home-service">
+        <div id="card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
+          <h5 class="fw-bold">Renovation & Painting</h5>
+          <div class="mt-4">
+            <p>Give your home a fresh look with our expert painting and renovation solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <!-- Appliance Repair -->
+      <div class="col-md-4 mb-4 home-service">
+        <div id="card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
+          <h5 class="fw-bold">Appliance Repair</h5>
+          <div class="mt-4">
+            <p>We repair all major home appliances quickly and affordably at your convenience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IT & Network Setup -->
+      <div class="col-md-4 mb-4 business-service">
+        <div id="card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
+          <h5 class="fw-bold">IT & Network Setup</h5>
+          <div class="mt-4">
+            <p>Need help setting up your Wi-Fi, printer, or office tech? We've got your back.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Systems -->
+      <div class="col-md-4 mb-4 business-service">
+        <div id="card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+          <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
+          <h5 class="fw-bold-2">Security Systems</h5>
+          <div class="mt-4">
+            <p class="adjust-p">Installation of cameras, alarms, and smart home security solutions.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Pest Control -->
+<div class="col-md-4 mb-4 home-service">
+  <div id="card7" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+    <i class="fa fa-bug fa-3x mb-3 text-success"></i>
+    <h5 class="fw-bold">Pest Control</h5>
+    <div class="mt-4">
+      <p>Protect your home from insects and rodents with our expert pest control services.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Home Automation -->
+<div class="col-md-4 mb-4 business-service">
+  <div id="card8" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+    <i class="fa fa-home fa-3x mb-3 text-primary"></i>
+    <h5 class="fw-bold">Smart Home Automation</h5>
+    <div class="mt-4">
+      <p>Automate lights, security, and more with cutting-edge smart home technology.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Gardening & Landscaping -->
+<div class="col-md-4 mb-4 home-service">
+  <div id="card9" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+    <i class="fa fa-seedling fa-3x mb-3 text-success"></i>
+    <h5 class="fw-bold">Gardening & Landscaping</h5>
+    <div class="mt-4">
+      <p>Bring your outdoors to life with our expert gardening and landscaping services.</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+<!-- Filtering Logic -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const homeCards = document.querySelectorAll('.home-service');
+    const businessCards = document.querySelectorAll('.business-service');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        if (filter === 'all') {
+          homeCards.forEach(card => card.style.display = 'block');
+          businessCards.forEach(card => card.style.display = 'block');
+        } else if (filter === 'home') {
+          homeCards.forEach(card => card.style.display = 'block');
+          businessCards.forEach(card => card.style.display = 'none');
+        } else if (filter === 'business') {
+          homeCards.forEach(card => card.style.display = 'none');
+          businessCards.forEach(card => card.style.display = 'block');
+        }
+      });
+    });
+  });
+</script>
+
+
+
+   <!-- FAQ Section -->
+  <section class="faq_section mt-5 mb-5">
+    <div class="container">
+      <div class="heading_container">
+        <h2>Service FAQs</h2>
+        <p>Here are some common questions we receive about our services.</p>
+      </div>
+
+      <div class="accordion mt-4" id="serviceFaqs">
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOneH">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne"
+              aria-expanded="true" aria-controls="faqOne">
+              Do you provide same-day service for urgent home maintenance issues?
+            </button>
+          </h2>
+          <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              Yes! We offer same-day slots for plumbing leaks, electrical problems, and minor repairs. Early booking improves availability for urgent cases.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwoH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo"
+              aria-expanded="false" aria-controls="faqTwo">
+              What’s included in your deep cleaning service?
+            </button>
+          </h2>
+          <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              Our deep cleaning service covers every room, including bathrooms, kitchens, appliances (external), carpets, and windows. Add-ons like sofa shampooing or inside-appliance cleaning can be requested.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThreeH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree"
+              aria-expanded="false" aria-controls="faqThree">
+              How do you estimate the cost for renovation and painting work?
+            </button>
+          </h2>
+          <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              We begin with a free on-site assessment to measure the area and check wall condition. A clear estimate is then shared with labor, paint, and material costs.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFourH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour"
+              aria-expanded="false" aria-controls="faqFour">
+              Can you repair all types of home appliances?
+            </button>
+          </h2>
+          <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              Yes, we service all major brands and types, including ACs, washing machines, refrigerators, and microwaves. All repairs come with a service warranty.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFiveH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive"
+              aria-expanded="false" aria-controls="faqFive">
+              Do you help with IT network setup for small offices and homes?
+            </button>
+          </h2>
+          <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              Absolutely! We handle Wi-Fi setup, printer installation, and basic network configuration. We can also suggest the best hardware for your needs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End FAQ Section -->
+   
+  <!-- Footer -->
+  <section class="new-info-section">
+    <div class="new-container">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="../images/logo_blue.png" alt="Your Company Logo">
+                    </a>
+                <p class="footer-description">
+                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-services">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">App Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                </p>
+                
+            </div>
+
+        </div> 
+      </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="../">Sachiva</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</section>
+
+  <!-- JS Scripts -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="../js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    // Display current year
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+  </script>
+     <script src="../js/navbar.js"></script>
+
+
+
+
+
+
+
+
+     
+
+     <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filterValue = button.getAttribute('data-filter');
+
+        // Remove active from all, add to clicked
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Show/hide cards
+        cards.forEach(card => {
+          if (filterValue === 'all') {
+            card.style.display = 'flex';
+          } else if (card.classList.contains(`${filterValue}-service`)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+<script src="../js/service.js"></script>
+
+
+</body>
+</html>

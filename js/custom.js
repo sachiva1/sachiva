@@ -30,3 +30,65 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
+
+// Theme Toggle Functionality
+const toggleCheckbox = document.getElementById('theme-toggle');
+console.log("clicked");
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    toggleCheckbox.checked = (theme === 'dark');
+  }
+
+applyTheme(currentTheme);
+
+toggleCheckbox.addEventListener('change', () => {
+    const theme = toggleCheckbox.checked ? 'dark' : 'light';
+    applyTheme(theme);
+});
+
+window.onscroll = function () {
+  const btn = document.getElementById("backToTop");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+document.getElementById("backToTop").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+function recommend(type) {
+  const services = {
+    business: ["Business Website", "SEO Optimization", "Marketing Consultation"],
+    home: ["Home Repair", "Interior Design", "Plumbing Services"],
+    design: ["Logo Design", "UI/UX Services", "Brand Kit"],
+    other: ["Custom Consultation", "Talk to Support"]
+  };
+
+  const results = services[type] || [];
+  let html = '<div class="row">';
+
+  results.forEach(service => {
+    html += `
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">${service}</h5>
+            <p class="card-text">Learn more about our ${service} services.</p>
+           <a href="#" class="btn btn-sm btn-primary">Explore</a>
+
+          </div>
+        </div>
+      </div>`;
+  });
+  
+
+  html += '</div>';
+  document.getElementById("recommendationResult").innerHTML = html;
+}
+
+
