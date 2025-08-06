@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link href="https://fonts.googleapis.com/css2?family=Felipa&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="../css/bootstrap.css" />
   <link rel="stylesheet" href="../css/font-awesome.min.css" />
@@ -90,15 +92,38 @@
  /* === Hero Section with Animated Gradient and Glow === */
 /* HERO SECTION */
 .hero {
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #dbe6f6, #2c1a97);
+  background: linear-gradient(135deg, #8da6cc, #8476c9, #615f5f, #3970c4, #86ade8);
   transition: background 0.3s ease;
   animation: fadeInHero 1s ease-out both;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: rgb(188, 180, 180);
+  border: none;
+  box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(134, 173, 232, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 10;
 }
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 [data-theme="dark"] .hero {
   background: linear-gradient(135deg, #121212, #1f1f1f);
@@ -159,9 +184,11 @@
 
 /* TEXT */
 .half h1 {
+  font-family: "Felipa", serif;
+  font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #2d2d2d;
+  color: #d49595;
 }
 
 [data-theme="dark"] .half h1 {
@@ -169,14 +196,18 @@
 }
 
 .half p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 450px;
   margin: auto;
-  color: #444;
+  color: #f6ebeb;
 }
 
-[data-theme="dark"] .half p {
-  color: #ccc;
+[data-theme="dark"] .hero{
+  background: linear-gradient(135deg,rgb(47, 45, 45), rgb(85, 95, 102));
+  box-shadow:
+            0 20px 40px rgba(126, 123, 123, 0.6),
+            0 0 30px rgba(120, 142, 176, 0.4);
+
 }
 
 /* IMAGE */
@@ -205,14 +236,26 @@
 }
 
 /* Section header */
+.portfolio-header{
+  margin-top: 5vh;
+  margin-bottom: 17vh;
+}
 .portfolio-header h2 {
+  padding:2rem;
+  background: linear-gradient(to right, red, blue);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 600;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .portfolio-header p {
+  padding: 1rem;
+  background: rgba(57, 112, 196,0.4);
+  border-radius: 25px;
   font-size: 1rem;
-  color: #666;
+  color: #2c2a2a;
   max-width: 700px;
   margin: 0 auto 2rem;
 }
