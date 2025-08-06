@@ -1226,6 +1226,21 @@ line-height: 1.6;
 .card:hover i {
   transform: scale(1.1);
 }
+#card7:hover {
+  background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
+  color: #000;
+}
+
+#card8:hover {
+  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+  color: #000;
+}
+
+#card9:hover {
+  background: linear-gradient(to bottom right, #f1f8e9, #dcedc8);
+  color: #000;
+}
+
 
 /*# sourceMappingURL=style.css.map */
 .new-info-section {
