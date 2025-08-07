@@ -715,3 +715,20 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
+
+[data-theme="dark"] .smart-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  margin: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .smart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
