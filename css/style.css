@@ -2026,7 +2026,7 @@ body,
   display: none;
   position: fixed;
   bottom: 30px;
-  left: 30px;
+  right: 40px;
   z-index: 999;
   background-color: #00bfff;
   color: white;
