@@ -181,6 +181,7 @@ a:focus {
       &.active {
         .nav-link {
           color: $primary1;
+          font-weight: 900;
         }
       }
     }
