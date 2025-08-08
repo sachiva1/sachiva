@@ -359,7 +359,51 @@
   color: #28a745;
 }
 
+.client-content1, .client-content2, .client-content3{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  background: linear-gradient(to right,#aeeda8 , rgb(253, 253, 112));
+  transition: transform 0.5s ease;
+  cursor:  pointer;
+}
 
+.client-content1, .client-content3{
+  margin-top: 50px;
+}
+
+.client-content1{
+  background: linear-gradient(to right,#d4f1f9, #7bc3d1);
+}
+
+.client-content3{
+  background: linear-gradient(to right, rgb(142, 232, 255), rgb(255, 122, 255));
+}
+
+.client-content1:hover, .client-content2:hover, .client-content3:hover{
+  transform: scale(1.05);
+}
+
+.client-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+.client-img img{
+  border-radius: 180px;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.client-feedback, .client-rating, .client-date{
+  margin: 5px;
+}
 
 
   </style>
@@ -458,6 +502,26 @@
           <li><strong>Solution:</strong> AI-powered X‑ray analysis boosting accuracy by 30%.</li>
           <li><strong>Impact:</strong> Diagnosis time halved; supports offline use.</li>
         </ul>
+        <div class="client-content1">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="../images/hospital.jpg">
+            </div>
+            <div class="client-name">
+              <h5>SEVA Health Clinic</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“The AI tool has been a game-changer for our diagnostics—accurate, fast, and works even with poor internet.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (4.9 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> March 2025 – May 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -470,6 +534,26 @@
           <li><strong>Solution:</strong> Gamified mobile-first PWA with quizzes and stories.</li>
           <li><strong>Impact:</strong> 12,000+ users and 40% improvement in learning.</li>
         </ul>
+        <div class="client-content2">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="../images/school.jpeg">
+            </div>
+            <div class="client-name">
+              <h5>Ashok School</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“Our students are now more engaged and excited to learn. The stories and quizzes have made a big difference.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> Janurary 2025 – April 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -482,6 +566,26 @@
           <li><strong>Solution:</strong> Custom logos, UI designs & pitch decks.</li>
           <li><strong>Impact:</strong> Helped 10+ startups attract funding and clients.</li>
         </ul>
+        <div class="client-content3">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="https://randomuser.me/api/portraits/men/51.jpg">
+            </div>
+            <div class="client-name">
+              <h5>Sunflower Blooms</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“We secured funding within weeks. The branding truly represented our vision.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> February 2025 – March 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
