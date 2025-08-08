@@ -340,15 +340,15 @@ body.dark-mode .header_section.scrolled {
   box-shadow: 0 6px 25px rgba(255, 255, 255, 0.12);
 }
 /* Specific styling only for Contact Us button in nav */
-.nav-item.contact-highlight .nav-link {
+/*.nav-item.contact-highlight .nav-link {
   background-color: #0355cc;
   color: white;
   border-radius: 12px !important;
   font-weight: 600 !important;
   font-size: 13px !important;
-  padding: 10px 24px !important; /* More vertical + horizontal padding */
-  line-height: 1.4 !important; /* Give vertical breathing room */
-  display: inline-flex !important; /* Fix vertical align */
+  padding: 10px 24px !important; 
+  line-height: 1.4 !important;
+  display: inline-flex !important; 
   align-items: center !important;
   justify-content: center !important;
   margin-left: 12px !important;
@@ -356,12 +356,12 @@ body.dark-mode .header_section.scrolled {
   text-transform: uppercase !important;
   letter-spacing: 0.5px;
   box-sizing: border-box !important;
-}
+}*/
 
-.nav-item.contact-highlight .nav-link:hover {
+/*.nav-item.contact-highlight .nav-link:hover {
   background-color: #023a8a;
   color: #fff;
-}
+}*/
 /* Fix spacing for nav items */
 .custom_nav-container {
   display: flex !important;
@@ -755,7 +755,7 @@ body.dark-mode .header_section.scrolled {
   color: #0355cc;
 }
 
-<<<<<<< HEAD ======= .about_section_layout_padding h2 {
+.about_section_layout_padding h2 {
   padding-top: 60px;
 }
 
@@ -784,7 +784,6 @@ body.dark-mode .header_section.scrolled {
 .about_section_layout_padding .container {
   cursor: pointer;
 }
->>>>>>>ba9c3b8821f099eb712adb1422a9672e39911ca9
   .client_section
   .heading_container {
   padding: 30px;
@@ -1225,7 +1224,7 @@ body.dark-mode .header_section.scrolled {
   }
 }
 
-<<<<<<< HEAD ======= .footer_section a {
+ .footer_section a {
   color: #ffffff !important;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -1350,13 +1349,12 @@ body.dark-mode .header_section.scrolled {
     flex: 1 1 100%;
   }
 }
->>>>>>> ba9c3b8821f099eb712adb1422a9672e39911ca9
 
 /* end footer section*/
 
 /* Contact Us Highlight Styles */
 
-.contact-highlight .nav-link {
+/*.contact-highlight .nav-link {
   background-color: #0a6ba3;
   color: white !important;
   border-radius: 12px;
@@ -1364,13 +1362,13 @@ body.dark-mode .header_section.scrolled {
   font-size: 20px;
   transition: all 0.3s ease;
   padding: 10px 20px;
-}
+}*/
 
-.contact-highlight .nav-link:hover {
+/*.contact-highlight .nav-link:hover {
   background-color: #023e99;
   transform: scale(1.05);
   color: #ffffff !important;
-}
+}*/
 
 /* enhancing service section */
 .card:hover {

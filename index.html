@@ -21,20 +21,80 @@
   <!-- Consolidated CSS links for maintainability -->
 
   <style>
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 120px;
+     
+    .header_section{
+      border-radius: 100px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+      width: calc(100% - 40px); /* Account for margin */
     }
+    .navbar-nav{
+      display: flex;
+      /*justify-content: space-between;*/
+      padding-right: 100px;
+
+    }
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      /*display: flex;
+      justify-content: center;
+      align-items: center;*/
+      font-weight: bold;
+      color: rgb(56, 56, 56);
+      position: relative;
+      margin-right: 0px;
+      padding: 8px;
+      margin: 2px;
+      transition: all 0.5s ease;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: rgb(0, 132, 255);
+      width: 0;
+    }
+
+    .nav-item:hover::after {
+      animation: slideUnderline 0.5s forwards;
+    }
+    .nav-item:hover{
+      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes slideUnderline {
+      from { width: 0; height: 0px;}
+      to { width: 100%; height: 3px;}
+    }
+
     #booking{          /*Adding styling to booking*/
       background-color: greenyellow;
       margin: 10px;
+      font-weight:900;
+      padding: 10px !important;
       color: white;
       border-radius: 12px;
-      font-weight: bold;
+      animation: pulseShadow 2s infinite;
       transition: transform 0.5s ease, background-color 0.5s ease;
     }
+    @keyframes pulseShadow {
+        0% {
+            box-shadow: 0 0 0 0 greenyellow;
+        }
+        70% {
+            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+        }
+    }
+
     #booking:hover{
       transform: scale(1.1);
       background-color: rgb(69, 187, 33);
@@ -70,19 +130,17 @@
                 <li class="nav-item contact-highlight">
                   <a class="nav-link" href="html/contact.html">Contact Us</a>
                 </li>
-                <li class="nav-item">      
+                <li class="nav-item1">      
                   <a class="nav-link" id="booking" href="html/booking.html">Book a Service</a>
                 </li>
-                <li class="nav-item">
-                  <label class="switch theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
-                      <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                    </span>
-                  </label>
-                </li>
               </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
             </div>
           </nav>
         </div>
@@ -91,9 +149,9 @@
     <!-- end header section -->
 
     <!-- slider section -->
-    <section class="slider_section ">
-      <div class="container ">
-        <div class="row">
+    <section class="slider_section " style="margin-top: 0px;">
+      <div class="container " style="margin-top: 80px;">
+        <div class="row" >
           <div class="col-md-6 ">
             <div class="detail-box" style="margin-top: 100px;">
               <h1>
@@ -611,7 +669,7 @@
         and will be happy to discuss your queries and needs.<br>
         We’ll also bring in the right people when needed.
       </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
+      <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
     </div>
     <div class="footer-right">
       <ul class="contact-list">
