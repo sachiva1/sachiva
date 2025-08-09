@@ -11,13 +11,13 @@
 ## 📸 Screenshots
 
 ### 💻 Hero Section + About
-![Hero section](image.png)
+![Hero section](https://github.com/sachiva1/sachiva/blob/main/images/image.png)
 
 ### 🛠 IT & Digital Services
-![IT Services](image-2.png)
+![IT Services](https://github.com/sachiva1/sachiva/blob/main/images/image-2.png)
 
 ### 🧹 Home Services Grid
-![Home Services](image-1.png)
+![Home Services](https://github.com/lohi-cell/sachiva/blob/main/image-1.png)
 
 ---
 
