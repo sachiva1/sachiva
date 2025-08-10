@@ -91,7 +91,11 @@
 
 @media (max-width: 480px) {}
 
-@media (max-width: 400px) {}
+@media (max-width: 400px) {
+    .about_section button{
+        align-items: center;
+    }
+}
 
 @media (max-width: 360px) {}
 
