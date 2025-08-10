@@ -28,6 +28,93 @@
 
   <!-- Custom Styles -->
   <style>
+
+.header_section{
+      border-radius: 100px;
+      margin: 20px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      width: calc(100% - 40px); /* Account for margin */
+    }
+    .navbar-nav{
+      display: flex;
+      /*justify-content: space-between;*/
+      padding-right: 100px;
+
+    }
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      /*display: flex;
+      justify-content: center;
+      align-items: center;*/
+      font-weight: bold;
+      position: relative;
+      margin-right: 0px;
+      padding: 8px;
+      margin: 2px;
+      transition: all 0.5s ease;
+    }
+
+    .nav-item:hover{
+      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: rgb(0, 132, 255);
+      width: 0;
+    }
+
+    .nav-item:hover::after {
+      animation: slideUnderline 0.5s forwards;
+    }
+
+    @keyframes slideUnderline {
+      from { width: 0; height: 0px;}
+      to { width: 100%; height: 3px;}
+    }
+
+    #booking{          /*Adding styling to booking*/
+      background-color: greenyellow;
+      margin: 10px;
+      font-weight:900;
+      padding: 10px !important;
+      color: white;
+      border-radius: 12px;
+      animation: pulseShadow 2s infinite;
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    @keyframes pulseShadow {
+        0% {
+            box-shadow: 0 0 0 0 greenyellow;
+        }
+        70% {
+            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+        }
+    }
+
+    .fw-bold {
+      font-weight: bolder;
+    }
+
+    .feature_section {
+      position: relative;
+      top: 60px;
+    }
+    
+    #booking:hover{
+      transform: scale(1.1);
+      background-color: rgb(69, 187, 33);
+    }
     .fw-bold {
       font-weight: bolder;
     }
@@ -62,25 +149,6 @@
   transition: all 0.4s ease;
   overflow: hidden;
 }
-
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 120px;
-    }
-    #booking{          /*Adding styling to booking*/
-      background-color: greenyellow;
-      margin: 10px;
-      color: white;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: transform 0.5s ease, background-color 0.5s ease;
-    }
-    #booking:hover{
-      transform: scale(1.1);
-      background-color: rgb(69, 187, 33);
-    }
 
 .card-body p {
   margin-bottom: 0.5rem;
@@ -444,7 +512,7 @@
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item active fw-bold"><a class="nav-link" href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item">      
+                <li class="nav-item1">      
                   <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
                 </li>
               </ul>
