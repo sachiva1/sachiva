@@ -28,6 +28,93 @@
 
   <!-- Custom Styles -->
   <style>
+
+.header_section{
+      border-radius: 100px;
+      margin: 20px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      width: calc(100% - 40px); /* Account for margin */
+    }
+    .navbar-nav{
+      display: flex;
+      /*justify-content: space-between;*/
+      padding-right: 100px;
+
+    }
+    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+      /*display: flex;
+      justify-content: center;
+      align-items: center;*/
+      font-weight: bold;
+      position: relative;
+      margin-right: 0px;
+      padding: 8px;
+      margin: 2px;
+      transition: all 0.5s ease;
+    }
+
+    .nav-item:hover{
+      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: rgb(0, 132, 255);
+      width: 0;
+    }
+
+    .nav-item:hover::after {
+      animation: slideUnderline 0.5s forwards;
+    }
+
+    @keyframes slideUnderline {
+      from { width: 0; height: 0px;}
+      to { width: 100%; height: 3px;}
+    }
+
+    #booking{          /*Adding styling to booking*/
+      background-color: greenyellow;
+      margin: 10px;
+      font-weight:900;
+      padding: 10px !important;
+      color: white;
+      border-radius: 12px;
+      animation: pulseShadow 2s infinite;
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    @keyframes pulseShadow {
+        0% {
+            box-shadow: 0 0 0 0 greenyellow;
+        }
+        70% {
+            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+        }
+    }
+
+    .fw-bold {
+      font-weight: bolder;
+    }
+
+    .feature_section {
+      position: relative;
+      top: 60px;
+    }
+    
+    #booking:hover{
+      transform: scale(1.1);
+      background-color: rgb(69, 187, 33);
+    }
     .fw-bold {
       font-weight: bolder;
     }
@@ -63,22 +150,24 @@
   overflow: hidden;
 }
 
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 120px;
-    }
-    #booking {
-  background-color: #3c91e6; /* Change to your desired color */
+.nav-item { /* Prevent navbar items from overflowing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+
+#booking {
+  background-color: #3c91e6; /* Main button color */
   color: #fff !important;
   padding: 6px 16px;
   border-radius: 50px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #booking:hover {
-  background-color: #2a6bbf;
+  background-color: rgb(69, 187, 33); /* Hover color from other branch */
+  transform: scale(1.1); /* Smooth zoom effect */
 }
 
 .card-body p {
@@ -358,7 +447,51 @@
   color: #28a745;
 }
 
+.client-content1, .client-content2, .client-content3{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  background: linear-gradient(to right,#aeeda8 , rgb(253, 253, 112));
+  transition: transform 0.5s ease;
+  cursor:  pointer;
+}
 
+.client-content1, .client-content3{
+  margin-top: 50px;
+}
+
+.client-content1{
+  background: linear-gradient(to right,#d4f1f9, #7bc3d1);
+}
+
+.client-content3{
+  background: linear-gradient(to right, rgb(142, 232, 255), rgb(255, 122, 255));
+}
+
+.client-content1:hover, .client-content2:hover, .client-content3:hover{
+  transform: scale(1.05);
+}
+
+.client-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+.client-img img{
+  border-radius: 180px;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.client-feedback, .client-rating, .client-date{
+  margin: 5px;
+}
 
 
   </style>
@@ -392,43 +525,46 @@
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-  
-            <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto align-items-center gap-3">
-                <li class="nav-item">
-                  <a class="nav-link active fw-semibold" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" href="service.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" href="contributors.html">Contributors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" href="blog.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn  contact-btn" href="contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-semibold" id="booking" href="booking.html">Book a Service</a>
-                </li>
-                <li class="nav-item">
-                  <div class="theme-toggle-wrapper d-flex align-items-center">
-                    <label class="switch theme-switch mb-0">
-                      <input type="checkbox" id="theme-toggle">
-                      <span class="slider round">
-                        <i class="fas fa-sun sun-icon"></i>
-                        <i class="fas fa-moon moon-icon"></i>
-                      </span>
-                    </label>
-                  </div>
+<div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarSupportedContent">
+  <ul class="navbar-nav ms-auto align-items-center gap-3">
+    <li class="nav-item">
+      <a class="nav-link active fw-semibold" href="../index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" href="about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" href="service.html">Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" href="contributors.html">Contributors</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" href="blog.html">Blog</a>
+    </li>
+    <li class="nav-item active fw-bold">
+      <a class="nav-link" href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item contact-highlight">
+      <a class="nav-link btn contact-btn" href="contact.html">Contact Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" id="booking" href="booking.html">Book a Service</a>
+    </li>
+    <li class="nav-item">
+      <div class="theme-toggle-wrapper d-flex align-items-center">
+        <label class="switch theme-switch mb-0">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider round">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </span>
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
                 </li>
               </ul>
             </div>
@@ -479,6 +615,26 @@
           <li><strong>Solution:</strong> AI-powered X‑ray analysis boosting accuracy by 30%.</li>
           <li><strong>Impact:</strong> Diagnosis time halved; supports offline use.</li>
         </ul>
+        <div class="client-content1">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="../images/hospital.jpg">
+            </div>
+            <div class="client-name">
+              <h5>SEVA Health Clinic</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“The AI tool has been a game-changer for our diagnostics—accurate, fast, and works even with poor internet.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (4.9 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> March 2025 – May 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -491,6 +647,26 @@
           <li><strong>Solution:</strong> Gamified mobile-first PWA with quizzes and stories.</li>
           <li><strong>Impact:</strong> 12,000+ users and 40% improvement in learning.</li>
         </ul>
+        <div class="client-content2">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="../images/school.jpeg">
+            </div>
+            <div class="client-name">
+              <h5>Ashok School</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“Our students are now more engaged and excited to learn. The stories and quizzes have made a big difference.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> Janurary 2025 – April 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -503,6 +679,26 @@
           <li><strong>Solution:</strong> Custom logos, UI designs & pitch decks.</li>
           <li><strong>Impact:</strong> Helped 10+ startups attract funding and clients.</li>
         </ul>
+        <div class="client-content3">
+          <div class="client-info">
+            <div class="client-img">
+              <img src="https://randomuser.me/api/portraits/men/51.jpg">
+            </div>
+            <div class="client-name">
+              <h5>Sunflower Blooms</h5>
+            </div>
+          </div>
+          <div class = "client-feedback">
+            <p>“We secured funding within weeks. The branding truly represented our vision.”</p>
+          </div>
+          <div class="client-rating">
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+          </div>
+          <div class="client-date">
+            <p><strong>Duration:</strong> February 2025 – March 2025</p>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -556,7 +752,10 @@
 </div>
 
 </footer>
-
+<button id="backToTop" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
   <!-- JS Scripts -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
