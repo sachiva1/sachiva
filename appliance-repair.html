@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Appliance Repair, AC Repair, Washing Machine, Refrigerator, Sachiva" />
+  <meta name="description" content="Professional appliance repair services for all major home appliances." />
+  <meta name="author" content="Sachiva Team" />
+  
+  <link rel="icon" href="./images/logo_blue.png">
+  <title>Appliance Repair Services - Sachiva</title>
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      color: white;
+      padding: 120px 0 80px;
+      margin-top: 78px;
+    }
+    
+    .service-hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .service-hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .service-badges {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .badge-item {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .availability-checker {
+      background: linear-gradient(135deg, #ff6b9d, #c44569);
+      border-radius: 20px;
+      padding: 30px;
+      color: white;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .availability-checker h3 {
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .form-group-custom {
+      margin-bottom: 20px;
+    }
+    
+    .form-control-custom {
+      border-radius: 15px;
+      padding: 12px 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
+    
+    .form-control-custom:focus {
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+    
+    .btn-check-availability {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      color: white;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-check-availability:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+    }
+    
+    .contractor-result {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 20px;
+      color: #333;
+      display: none;
+    }
+    
+    .contractor-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .contractor-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .contractor-info h4 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .contractor-info p {
+      margin: 0;
+      color: #666;
+    }
+    
+    .rating {
+      color: #ffc107;
+    }
+    
+    .service-details {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    [data-theme="dark"] .service-details {
+      background: #1a1a1a;
+    }
+    
+    .appliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .appliance-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .appliance-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    [data-theme="dark"] .appliance-card {
+      background: #2c2c2c;
+      color: white;
+    }
+    
+    .appliance-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 2rem;
+    }
+    
+    .pricing-section {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: #333;
+      padding: 60px 0;
+    }
+    
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff6b9d;
+      margin: 20px 0;
+    }
+    
+    .work-gallery {
+      padding: 60px 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .work-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .work-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    [data-theme="dark"] .work-card {
+      background: #2c2c2c;
+    }
+    
+    .work-image {
+      height: 200px;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    
+    .work-content {
+      padding: 20px;
+    }
+    
+    .work-content h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    
+    [data-theme="dark"] .work-content h4 {
+      color: white;
+    }
+    
+    .work-meta {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    [data-theme="dark"] .work-meta {
+      color: #ccc;
+    }
+    
+    .reviews-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    [data-theme="dark"] .reviews-section {
+      background: #1a1a1a;
+    }
+    
+    .review-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    [data-theme="dark"] .review-card {
+      background: #2c2c2c;
+      color: white;
+    }
+    
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      cursor: pointer;
+    }
+    
+    .whatsapp i {
+      font-size: 28px;
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .service-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contractor-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .appliance-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="./">
+              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+              <span>sachiva</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Service Hero Section -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1><i class="fas fa-tools"></i> Appliance Repair Services</h1>
+          <p>Expert repair services for all major home appliances including AC, washing machines, refrigerators, and more.</p>
+          <div class="service-badges">
+            <span class="badge-item">All Major Brands</span>
+            <span class="badge-item">Certified Technicians</span>
+            <span class="badge-item">6 Month Warranty</span>
+            <span class="badge-item">Same Day Service</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <i class="fas fa-cogs" style="font-size: 8rem; opacity: 0.3;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Availability Checker -->
+  <section class="container">
+    <div class="availability-checker">
+      <h3><i class="fas fa-search"></i> Check Repair Service Availability</h3>
+      <form id="availabilityForm">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="customerName" placeholder="Your Name" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="customerAddress" placeholder="Full Address" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="pincode" placeholder="PIN Code" maxlength="6" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group-custom">
+              <select class="form-control-custom" id="applianceType" required>
+                <option value="">Select Appliance Type</option>
+                <option value="ac">Air Conditioner</option>
+                <option value="washing-machine">Washing Machine</option>
+                <option value="refrigerator">Refrigerator</option>
+                <option value="microwave">Microwave</option>
+                <option value="dishwasher">Dishwasher</option>
+                <option value="water-heater">Water Heater</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="applianceBrand" placeholder="Brand (e.g., LG, Samsung)" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group-custom">
+              <textarea class="form-control-custom" id="issueDescription" rows="3" placeholder="Describe the problem with your appliance" required></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn-check-availability">
+          <i class="fas fa-search"></i> Find Repair Technician & Get Quote
+        </button>
+      </form>
+      
+      <div id="contractorResult" class="contractor-result">
+        <div class="contractor-card">
+          <div class="contractor-avatar" id="contractorAvatar">MK</div>
+          <div class="contractor-info">
+            <h4 id="contractorName">Manoj Kumar</h4>
+            <p><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i> 4.9 (89 reviews)</p>
+            <p><i class="fas fa-phone"></i> <span id="contractorPhone">+91 98765-43220</span></p>
+            <p><i class="fas fa-clock"></i> Expected Time: <span id="expectedTime">1-3 hours</span></p>
+            <p><i class="fas fa-certificate"></i> Specializes in: <span id="specialization">AC & Refrigerator Repair</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5><i class="fas fa-rupee-sign"></i> Estimated Cost</h5>
+            <p class="price" id="estimatedCost">₹500 - ₹1,200</p>
+            <small>*Includes diagnosis + basic repair</small>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fas fa-calendar"></i> Available Slots</h5>
+            <p><strong>Today:</strong> 11:00 AM, 3:00 PM</p>
+            <p><strong>Tomorrow:</strong> 9:00 AM, 1:00 PM, 5:00 PM</p>
+          </div>
+        </div>
+        <button class="btn-check-availability" onclick="bookService()">
+          <i class="fas fa-calendar-check"></i> Book Repair Service
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details -->
+  <section class="service-details">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Appliances We Repair</h2>
+        <p>Professional repair services for all major home appliances</p>
+      </div>
+      
+      <div class="appliance-grid">
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h4>Air Conditioners</h4>
+          <p>AC repair, gas refilling, compressor issues, and maintenance for all brands.</p>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <h4>Washing Machines</h4>
+          <p>Drum repair, motor issues, water leakage, and spin problems for all models.</p>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h4>Refrigerators</h4>
+          <p>Cooling issues, compressor repair, ice maker problems, and temperature control.</p>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h4>Microwaves</h4>
+          <p>Heating issues, turntable problems, door repair, and control panel fixes.</p>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h4>Dishwashers</h4>
+          <p>Water drainage, spray arm issues, door seal repair, and cleaning cycles.</p>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h4>Water Heaters</h4>
+          <p>Heating element replacement, thermostat repair, and tank maintenance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Repair Service Pricing</h2>
+        <p>Transparent pricing with no hidden charges</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Diagnosis & Minor Repair</h4>
+            <div class="price">₹300</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Problem diagnosis</li>
+              <li>Minor component repair</li>
+              <li>Basic maintenance</li>
+              <li>1 month warranty</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Standard Repair</h4>
+            <div class="price">₹800</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Component replacement</li>
+              <li>Major repairs</li>
+              <li>Performance optimization</li>
+              <li>3 months warranty</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Complete Overhaul</h4>
+            <div class="price">₹1,500</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Complete appliance service</li>
+              <li>Multiple part replacement</li>
+              <li>Deep cleaning & maintenance</li>
+              <li>6 months warranty</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Work Gallery -->
+  <section class="work-gallery">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Our Repair Work</h2>
+        <p>See our professional appliance repair services in action</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <div class="work-content">
+            <h4>AC Compressor Repair</h4>
+            <p class="work-meta">Gwalior - Completed in 2 hours</p>
+            <p>Complete AC compressor replacement and gas refilling for Samsung 1.5 ton AC.</p>
+          </div>
+        </div>
+        
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <div class="work-content">
+            <h4>Washing Machine Motor Fix</h4>
+            <p class="work-meta">Indore - Completed in 1.5 hours</p>
+            <p>Motor replacement and drum alignment for LG front-load washing machine.</p>
+          </div>
+        </div>
+        
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-cube"></i>
+          </div>
+          <div class="work-content">
+            <h4>Refrigerator Cooling Issue</h4>
+            <p class="work-meta">Bhopal - Completed in 3 hours</p>
+            <p>Compressor repair and thermostat replacement for Whirlpool double-door refrigerator.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Customer Reviews</h2>
+        <p>What our customers say about our appliance repair services</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">SK</div>
+              <div>
+                <h5>Suresh Kumar</h5>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <small>Gwalior</small>
+              </div>
+            </div>
+            <p>"Amazing service! My AC was not cooling properly and they fixed it within 2 hours. Very professional technician."</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">AS</div>
+              <div>
+                <h5>Anita Sharma</h5>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <small>Indore</small>
+              </div>
+            </div>
+            <p>"My washing machine was making noise and not spinning. They replaced the motor and now it works perfectly!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="new-info-section">
+    <div class="new-container">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    </a>
+                <p class="footer-description">
+                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-services">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul>
+                    <li><a href="home-maintenance.html">Home Maintenance</a></li>
+                    <li><a href="appliance-repair.html">Appliance Repair</a></li>
+                    <li><a href="cleaning-services.html">Cleaning Services</a></li>
+                    <li><a href="it-network-setup.html">IT & Network Setup</a></li>
+                    <li><a href="security-systems.html">Security Systems</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                </p>
+            </div>
+        </div> 
+      </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="./">Sachiva</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</section>
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/navbar.js"></script>
+  
+  <script>
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    
+    // Appliance repair contractor database by pincode
+    const contractorDatabase = {
+      '474001': { // Gwalior
+        name: 'Manoj Kumar',
+        avatar: 'MK',
+        phone: '+91 98765-43220',
+        rating: '4.9',
+        reviews: '89',
+        expectedTime: '1-3 hours',
+        cost: '₹500 - ₹1,200',
+        specialization: 'AC & Refrigerator Repair'
+      },
+      '452001': { // Indore
+        name: 'Deepak Singh',
+        avatar: 'DS',
+        phone: '+91 98765-43221',
+        rating: '4.8',
+        reviews: '156',
+        expectedTime: '2-4 hours',
+        cost: '₹400 - ₹1,000',
+        specialization: 'Washing Machine & Microwave'
+      },
+      '462001': { // Bhopal
+        name: 'Ravi Patel',
+        avatar: 'RP',
+        phone: '+91 98765-43222',
+        rating: '4.7',
+        reviews: '203',
+        expectedTime: '1-2 hours',
+        cost: '₹600 - ₹1,500',
+        specialization: 'All Appliances'
+      },
+      '110001': { // Delhi
+        name: 'Arjun Sharma',
+        avatar: 'AS',
+        phone: '+91 98765-43223',
+        rating: '4.9',
+        reviews: '278',
+        expectedTime: '1-3 hours',
+        cost: '₹800 - ₹2,000',
+        specialization: 'Premium Appliances'
+      },
+      '400001': { // Mumbai
+        name: 'Kiran Mehta',
+        avatar: 'KM',
+        phone: '+91 98765-43224',
+        rating: '4.8',
+        reviews: '189',
+        expectedTime: '2-4 hours',
+        cost: '₹1,000 - ₹2,500',
+        specialization: 'High-end Appliances'
+      }
+    };
+    
+    document.getElementById('availabilityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const pincode = document.getElementById('pincode').value;
+      const name = document.getElementById('customerName').value;
+      const address = document.getElementById('customerAddress').value;
+      const applianceType = document.getElementById('applianceType').value;
+      const brand = document.getElementById('applianceBrand').value;
+      const issue = document.getElementById('issueDescription').value;
+      
+      if (pincode.length !== 6) {
+        alert('Please enter a valid 6-digit PIN code');
+        return;
+      }
+      
+      const contractor = contractorDatabase[pincode];
+      const resultDiv = document.getElementById('contractorResult');
+      
+      if (contractor) {
+        // Update contractor details
+        document.getElementById('contractorAvatar').textContent = contractor.avatar;
+        document.getElementById('contractorName').textContent = contractor.name;
+        document.getElementById('contractorPhone').textContent = contractor.phone;
+        document.getElementById('expectedTime').textContent = contractor.expectedTime;
+        document.getElementById('estimatedCost').textContent = contractor.cost;
+        document.getElementById('specialization').textContent = contractor.specialization;
+        
+        // Show result
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Sorry, we currently don\'t have appliance repair technicians available in your area. We\'ll expand to your location soon!');
+      }
+    });
+    
+    function bookService() {
+      const name = document.getElementById('customerName').value;
+      const applianceType = document.getElementById('applianceType').value;
+      const brand = document.getElementById('applianceBrand').value;
+      const phone = document.getElementById('contractorPhone').textContent;
+      const message = `Hi! I need appliance repair service. My name is ${name}. Appliance: ${applianceType} (${brand}). Please confirm the appointment.`;
+      const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+    
+    // PIN code validation
+    document.getElementById('pincode').addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+  </script>
+</body>
+</html>
