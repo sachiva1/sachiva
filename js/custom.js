@@ -61,12 +61,61 @@ window.onscroll = function () {
 document.getElementById("backToTop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
 function recommend(type) {
   const services = {
-    business: ["Business Website", "SEO Optimization", "Marketing Consultation"],
-    home: ["Home Repair", "Interior Design", "Plumbing Services"],
-    design: ["Logo Design", "UI/UX Services", "Brand Kit"],
-    other: ["Custom Consultation", "Talk to Support"]
+    business: [
+      {
+        name: "Business Website",
+        description: "Professional websites that drive results and showcase your brand effectively."
+      },
+      {
+        name: "SEO Optimization", 
+        description: "Boost your online visibility and rank higher on search engines."
+      },
+      {
+        name: "Marketing Consultation",
+        description: "Strategic marketing advice to grow your business and reach more customers."
+      }
+    ],
+    home: [
+      {
+        name: "Home Repair",
+        description: "Reliable repair services to keep your home in perfect condition."
+      },
+      {
+        name: "Interior Design",
+        description: "Transform your space with creative and functional design solutions."
+      },
+      {
+        name: "Plumbing Services",
+        description: "Expert plumbing solutions for all your residential needs."
+      }
+    ],
+    design: [
+      {
+        name: "Logo Design",
+        description: "Create a memorable brand identity with professional logo design."
+      },
+      {
+        name: "UI/UX Services",
+        description: "Design intuitive user experiences that engage and convert visitors."
+      },
+      {
+        name: "Brand Kit",
+        description: "Complete branding package including colors, fonts, and style guides."
+      }
+    ],
+    other: [
+      {
+        name: "Custom Consultation",
+        description: "Personalized advice tailored to your specific requirements and goals."
+      },
+      {
+        name: "Talk to Support",
+        description: "Get immediate help from our friendly customer support team."
+      }
+    ]
   };
 
   const results = services[type] || [];
@@ -77,15 +126,14 @@ function recommend(type) {
       <div class="col-md-4 mb-3">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">${service}</h5>
-            <p class="card-text">Learn more about our ${service} services.</p>
-           <a href="#" class="btn btn-sm btn-primary">Explore</a>
-
+            <h5 class="card-title">${service.name}</h5>
+            <p class="card-text">${service.description}</p>
+            <a href="#" class="btn btn-sm btn-primary">Explore</a>
           </div>
         </div>
       </div>`;
   });
-  
+
 
   html += '</div>';
   document.getElementById("recommendationResult").innerHTML = html;

@@ -566,6 +566,10 @@ body.dark-mode .header_section.scrolled {
   margin: 20px;
 }
 
+explore-btn{
+
+}
+
 @media (max-width: 768px) {
   .about_section .text-content {
     width: 90vw;
@@ -583,6 +587,7 @@ body.dark-mode .header_section.scrolled {
   font-family: inherit;
   font-size: 17px;
   padding: 0.6em 1.5em;
+  margin: 20px; 
 }
 
 .about_section button:hover {
@@ -1113,12 +1118,12 @@ body.dark-mode .header_section.scrolled {
   border-top: 2px solid #233454;
 }
 .footer-container {
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 10 24px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .footer-left {
   flex: 1 1 360px;
@@ -1162,7 +1167,7 @@ body.dark-mode .header_section.scrolled {
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin-right: 50px;
 }
 .contact-list {
   list-style: none;
@@ -1180,9 +1185,10 @@ body.dark-mode .header_section.scrolled {
   margin-right: 8px;
 }
 .contact-list a {
+  display: flex;
   color: #22a0ef;
   text-decoration: none;
-  word-break: break-all;
+  white-space: nowrap; /* Prevents line breaking */
   font-weight: 500;
   font-size: 1.05rem;
   transition: color 0.15s;
@@ -2049,17 +2055,57 @@ body,
   pointer-events: none;
 }
 
-/* Style For FAQ Section */
+/* FAQ Section Header Styling */
+.faq_section .heading_container h2 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .faq_section .heading_container p {
   font-size: 20px;
+  background: linear-gradient(135deg, #374151 0%, #6b7280 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
 }
+
+/* Dark mode header styling */
+[data-theme="dark"] .faq_section .heading_container h2 {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .faq_section .heading_container p {
+  background: linear-gradient(135deg, #d1d5db 0%, #f3f4f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Style For FAQ Section */
 .faq_section .accordion-item {
-  border: 1px solid #e9ecef;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 14px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+.faq_section .accordion-item:hover {
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.25);
+  transform: translateY(-2px);
 }
 
 .faq_section .accordion-header {
@@ -2079,24 +2125,26 @@ body,
   font-weight: 700;
   font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
   line-height: 1.35;
-  background-color: #fff;
-  color: #212529;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+  color: #1e293b;
   box-shadow: none !important;
   outline: 0 !important;
   background-image: none !important;
+  transition: all 0.2s ease;
 }
 
 /* Entire bar should feel interactive on hover*/
 .faq_section .accordion-button:hover {
-  background-color: #f6f9ff;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #93c5fd 100%);
+  color: #0c4a6e;
 }
 
 .faq_section .accordion-button:focus-visible {
-  outline: 2px solid rgba(13, 110, 253, 0.35);
+  outline: 2px solid rgba(59, 130, 246, 0.5);
   outline-offset: 2px;
 }
 
-/*Remove Bootstrap’s chevron entirely*/
+/*Remove Bootstrap's chevron entirely*/
 .faq_section .accordion-button::after {
   display: none !important;
   content: none !important;
@@ -2104,16 +2152,51 @@ body,
 
 /*Active (open) state*/
 .faq_section .accordion-button:not(.collapsed) {
-  border-bottom: 1px solid rgba(13, 110, 253, 0.15);
-  /* box-shadow: none !important; */
+  background: linear-gradient(135deg, #bae6fd 0%, #93c5fd 50%, #60a5fa 100%);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  color: #0c4a6e;
 }
 
 /*Body (answer)*/
 .faq_section .accordion-body {
-  background: #fff;
-  color: #495057;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: #272f3c;
   padding: 1rem 1.25rem;
   line-height: 1.6;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .faq_section .accordion-item {
+  background: linear-gradient(135deg, #1e293b 0%, #374151 50%, #4b5563 100%);
+  border: 1px solid #4b5563;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .faq_section .accordion-item:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .faq_section .accordion-button {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 50%, #6b7280 100%);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .faq_section .accordion-button:hover {
+  background: linear-gradient(135deg, #475569 0%, #64748b 50%, #78716c 100%);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .faq_section .accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #64748b 0%, #78716c 50%, #a8a29e 100%);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .faq_section .accordion-body {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #e2e8f0;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 /*Transition on collapse*/
@@ -2132,7 +2215,6 @@ body,
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-/* Style For FAQ Section END*/
 /*service section with flip cards*/
 
 :root {
