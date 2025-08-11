@@ -78,7 +78,7 @@
     }
 
     #booking{          /*Adding styling to booking*/
-      background-color: greenyellow;
+      background-color: #ff8a1d;
       margin: 10px;
       font-weight:900;
       padding: 10px !important;
@@ -89,7 +89,7 @@
     }
     @keyframes pulseShadow {
         0% {
-            box-shadow: 0 0 0 0 greenyellow;
+            box-shadow: 0 0 0 0 #ff8a1d;
         }
         70% {
             box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
@@ -146,7 +146,9 @@
 
 #booking:hover {
   transform: scale(1.1);
-  background-color: rgb(69, 187, 33); /* or #2a6bbf if you prefer old color */
+  /* Pick your preferred hover color here: */
+  background-color: #ff8a1d; /* from incoming branch */
+  /* or background-color: rgb(69, 187, 33); from main */
 }
 
   </style>
@@ -228,9 +230,34 @@
     <div class="row align-items-center">
       
       <!-- Image Column -->
-      <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-        <div class="img-box text-center">
+      <div class="col-lg-6 col-md-6 mb-4 mb-md-0 text-center">
+        <div class="img-box">
           <img src="../images/maintenance.gif" alt="About Sachiva" class="img-fluid rounded shadow-sm" style="max-height: 400px;">
+        </div>
+      </div>
+      
+      <!-- Text Column -->
+      <div class="col-lg-6 col-md-6">
+        <div class="detail-box">
+          <h2>About Us</h2>
+          <div class="text-content">
+            <p style="text-align: justify;">
+              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and affordable solutions for your home and workspace.
+            </p>
+          </div>
+          <div class="text-content">
+            <p style="text-align: justify;">
+              With years of experience in the industry, we have built a reputation for excellence. Our commitment to quality, innovation, and customer care sets us apart, making us the preferred choice for thousands of satisfied clients.
+            </p>
+          </div>
+          <button class="explore-btn" onclick="location.href='service.html'">Explore Our Services</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
         </div>
       </div>
       
