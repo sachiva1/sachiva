@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Google Ads, Digital Marketing, PPC, Online Advertising, Sachiva" />
+  <meta name="description" content="Professional Google Ads management and digital marketing services to grow your business online." />
+  <meta name="author" content="Sachiva Team" />
+  
+  <link rel="icon" href="./images/logo_blue.png">
+  <title>Google Ads Services - Sachiva</title>
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/dark-mode-fixes.css" />
+
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+      color: white;
+      padding: 120px 0 80px;
+      margin-top: 78px;
+    }
+    
+    .service-hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .service-hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .service-badges {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .badge-item {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .availability-checker {
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      border-radius: 20px;
+      padding: 30px;
+      color: white;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .availability-checker h3 {
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .form-group-custom {
+      margin-bottom: 20px;
+    }
+    
+    .form-control-custom {
+      border-radius: 15px;
+      padding: 12px 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
+    
+    .form-control-custom:focus {
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+    
+    .btn-check-availability {
+      background: linear-gradient(135deg, #dc3545, #c82333);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      color: white;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-check-availability:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+    }
+    
+    .contractor-result {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 20px;
+      color: #333;
+      display: none;
+    }
+    
+    .contractor-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .contractor-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .contractor-info h4 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .contractor-info p {
+      margin: 0;
+      color: #666;
+    }
+    
+    .rating {
+      color: #ffc107;
+    }
+    
+    .service-details {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    [data-theme="dark"] .service-details {
+      background: #1a1a1a;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    [data-theme="dark"] .feature-card {
+      background: #2c2c2c;
+      color: white;
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 2rem;
+    }
+    
+    .pricing-section {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      color: #333;
+      padding: 60px 0;
+    }
+    
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff6b35;
+      margin: 20px 0;
+    }
+    
+    .work-gallery {
+      padding: 60px 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .work-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .work-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    [data-theme="dark"] .work-card {
+      background: #2c2c2c;
+    }
+    
+    .work-image {
+      height: 200px;
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    
+    .work-content {
+      padding: 20px;
+    }
+    
+    .work-content h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    
+    [data-theme="dark"] .work-content h4 {
+      color: white;
+    }
+    
+    .work-meta {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    [data-theme="dark"] .work-meta {
+      color: #ccc;
+    }
+    
+    .reviews-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    [data-theme="dark"] .reviews-section {
+      background: #1a1a1a;
+    }
+    
+    .review-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    [data-theme="dark"] .review-card {
+      background: #2c2c2c;
+      color: white;
+    }
+    
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      cursor: pointer;
+    }
+    
+    .whatsapp i {
+      font-size: 28px;
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .service-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contractor-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .feature-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="./">
+              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+              <span>sachiva</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Service Hero Section -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1><i class="fab fa-google"></i> Google Ads Services</h1>
+          <p>Maximize your online visibility and drive targeted traffic with our expert Google Ads management and optimization services.</p>
+          <div class="service-badges">
+            <span class="badge-item">Certified Experts</span>
+            <span class="badge-item">ROI Focused</span>
+            <span class="badge-item">Weekly Reports</span>
+            <span class="badge-item">Campaign Optimization</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <i class="fas fa-bullseye" style="font-size: 8rem; opacity: 0.3;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Availability Checker -->
+  <section class="container">
+    <div class="availability-checker">
+      <h3><i class="fas fa-search"></i> Check Marketing Expert Availability</h3>
+      <form id="availabilityForm">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="customerName" placeholder="Your Name" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="customerAddress" placeholder="Business Address" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group-custom">
+              <input type="text" class="form-control-custom" id="pincode" placeholder="PIN Code" maxlength="6" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group-custom">
+              <select class="form-control-custom" id="campaignType" required>
+                <option value="">Select Campaign Type</option>
+                <option value="search">Search Ads</option>
+                <option value="display">Display Ads</option>
+                <option value="shopping">Shopping Ads</option>
+                <option value="video">YouTube Ads</option>
+                <option value="local">Local Business Ads</option>
+                <option value="remarketing">Remarketing Campaign</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group-custom">
+              <select class="form-control-custom" id="monthlyBudget" required>
+                <option value="">Monthly Ad Budget</option>
+                <option value="small">₹10,000 - ₹25,000</option>
+                <option value="medium">₹25,000 - ₹50,000</option>
+                <option value="large">₹50,000 - ₹1,00,000</option>
+                <option value="enterprise">₹1,00,000+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group-custom">
+              <textarea class="form-control-custom" id="businessDescription" rows="3" placeholder="Describe your business and marketing goals" required></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn-check-availability">
+          <i class="fas fa-search"></i> Find Marketing Expert & Get Quote
+        </button>
+      </form>
+      
+      <div id="contractorResult" class="contractor-result">
+        <div class="contractor-card">
+          <div class="contractor-avatar" id="contractorAvatar">AK</div>
+          <div class="contractor-info">
+            <h4 id="contractorName">Ankit Kumar</h4>
+            <p><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i><i class="fas fa-star rating"></i> 4.8 (78 campaigns)</p>
+            <p><i class="fas fa-phone"></i> <span id="contractorPhone">+91 98765-43270</span></p>
+            <p><i class="fas fa-clock"></i> Setup Time: <span id="expectedTime">1-2 weeks</span></p>
+            <p><i class="fas fa-chart-line"></i> Specializes in: <span id="specialization">Search & Display Ads</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5><i class="fas fa-rupee-sign"></i> Management Fee</h5>
+            <p class="price" id="estimatedCost">₹8,999/month</p>
+            <small>*Plus your ad spend budget</small>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fas fa-calendar"></i> Available Slots</h5>
+            <p><strong>This Week:</strong> Available for consultation</p>
+            <p><strong>Campaign Start:</strong> Within 1-2 weeks</p>
+          </div>
+        </div>
+        <button class="btn-check-availability" onclick="bookService()">
+          <i class="fas fa-calendar-check"></i> Book Marketing Consultation
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details -->
+  <section class="service-details">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>What We Offer</h2>
+        <p>Complete Google Ads management and digital marketing solutions</p>
+      </div>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h4>Search Campaigns</h4>
+          <p>Target customers actively searching for your products or services on Google.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h4>Display Advertising</h4>
+          <p>Reach potential customers across millions of websites with visual banner ads.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h4>Shopping Ads</h4>
+          <p>Showcase your products directly in Google search results with product images and prices.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4>Performance Tracking</h4>
+          <p>Detailed analytics and reporting to track ROI and optimize campaign performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Google Ads Management Packages</h2>
+        <p>Choose the right package for your advertising needs</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Starter Package</h4>
+            <div class="price">₹5,999</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Campaign setup</li>
+              <li>Keyword research</li>
+              <li>Basic optimization</li>
+              <li>Monthly reporting</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Professional Package</h4>
+            <div class="price">₹12,999</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Multiple campaigns</li>
+              <li>Advanced targeting</li>
+              <li>A/B testing</li>
+              <li>Weekly optimization</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4>Enterprise Package</h4>
+            <div class="price">₹25,999</div>
+            <ul style="text-align: left; padding-left: 20px;">
+              <li>Full account management</li>
+              <li>Advanced analytics</li>
+              <li>Conversion tracking</li>
+              <li>Dedicated account manager</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Work Gallery -->
+  <section class="work-gallery">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Our Previous Campaigns</h2>
+        <p>See the successful Google Ads campaigns we've managed</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="work-content">
+            <h4>Restaurant Marketing Campaign</h4>
+            <p class="work-meta">Gwalior - 300% increase in orders</p>
+            <p>Local restaurant Google Ads campaign that increased online orders and foot traffic significantly.</p>
+          </div>
+        </div>
+        
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <div class="work-content">
+            <h4>eCommerce Shopping Ads</h4>
+            <p class="work-meta">Indore - 250% ROI improvement</p>
+            <p>Shopping ads campaign for fashion eCommerce store with significant sales growth.</p>
+          </div>
+        </div>
+        
+        <div class="work-card">
+          <div class="work-image">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="work-content">
+            <h4>B2B Lead Generation</h4>
+            <p class="work-meta">Bhopal - 400% lead increase</p>
+            <p>Search and display campaign for B2B services generating high-quality business leads.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Customer Reviews</h2>
+        <p>What our clients say about our Google Ads services</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">MG</div>
+              <div>
+                <h5>Mohan Gupta</h5>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <small>Gwalior</small>
+              </div>
+            </div>
+            <p>"Our restaurant's online orders increased by 300% after their Google Ads campaign. Excellent ROI and professional service!"</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">SS</div>
+              <div>
+                <h5>Sunita Sharma</h5>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <small>Indore</small>
+              </div>
+            </div>
+            <p>"They managed our eCommerce ads perfectly. Sales doubled within 2 months. Great communication and results!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="new-info-section">
+    <div class="new-container">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column footer-about">
+                <a href="#" class="footer-logo">
+                    <img src="images/logo_blue.png" alt="Your Company Logo">
+                    </a>
+                <p class="footer-description">
+                    Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-services">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul>
+                    <li><a href="home-maintenance.html">Home Maintenance</a></li>
+                    <li><a href="appliance-repair.html">Appliance Repair</a></li>
+                    <li><a href="cleaning-services.html">Cleaning Services</a></li>
+                    <li><a href="it-network-setup.html">IT & Network Setup</a></li>
+                    <li><a href="google-ads.html">Google Ads</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+                </p>
+            </div>
+        </div> 
+      </div>
+      <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayDateYear"></span> All Rights Reserved By
+                <a href="./">Sachiva</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</section>
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/navbar.js"></script>
+  
+  <script>
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    
+    // Marketing expert database by pincode
+    const contractorDatabase = {
+      '474001': { // Gwalior
+        name: 'Ankit Kumar',
+        avatar: 'AK',
+        phone: '+91 98765-43270',
+        rating: '4.8',
+        reviews: '78',
+        expectedTime: '1-2 weeks',
+        cost: '₹8,999/month',
+        specialization: 'Search & Display Ads'
+      },
+      '452001': { // Indore
+        name: 'Deepak Singh',
+        avatar: 'DS',
+        phone: '+91 98765-43271',
+        rating: '4.9',
+        reviews: '89',
+        expectedTime: '1-2 weeks',
+        cost: '₹7,999/month',
+        specialization: 'Local Business Marketing'
+      },
+      '462001': { // Bhopal
+        name: 'Ravi Patel',
+        avatar: 'RP',
+        phone: '+91 98765-43272',
+        rating: '4.7',
+        reviews: '156',
+        expectedTime: '1-3 weeks',
+        cost: '₹12,999/month',
+        specialization: 'eCommerce & Shopping Ads'
+      },
+      '110001': { // Delhi
+        name: 'Pradeep Sharma',
+        avatar: 'PS',
+        phone: '+91 98765-43273',
+        rating: '4.9',
+        reviews: '203',
+        expectedTime: '1-2 weeks',
+        cost: '₹15,999/month',
+        specialization: 'Enterprise Marketing'
+      },
+      '400001': { // Mumbai
+        name: 'Kiran Mehta',
+        avatar: 'KM',
+        phone: '+91 98765-43274',
+        rating: '4.8',
+        reviews: '234',
+        expectedTime: '1-2 weeks',
+        cost: '₹18,999/month',
+        specialization: 'Advanced Campaign Management'
+      }
+    };
+    
+    document.getElementById('availabilityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const pincode = document.getElementById('pincode').value;
+      const name = document.getElementById('customerName').value;
+      const address = document.getElementById('customerAddress').value;
+      const campaignType = document.getElementById('campaignType').value;
+      const budget = document.getElementById('monthlyBudget').value;
+      const description = document.getElementById('businessDescription').value;
+      
+      if (pincode.length !== 6) {
+        alert('Please enter a valid 6-digit PIN code');
+        return;
+      }
+      
+      const contractor = contractorDatabase[pincode];
+      const resultDiv = document.getElementById('contractorResult');
+      
+      if (contractor) {
+        // Update contractor details
+        document.getElementById('contractorAvatar').textContent = contractor.avatar;
+        document.getElementById('contractorName').textContent = contractor.name;
+        document.getElementById('contractorPhone').textContent = contractor.phone;
+        document.getElementById('expectedTime').textContent = contractor.expectedTime;
+        document.getElementById('estimatedCost').textContent = contractor.cost;
+        document.getElementById('specialization').textContent = contractor.specialization;
+        
+        // Show result
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Sorry, we currently don\'t have marketing experts available in your area. We\'ll expand to your location soon!');
+      }
+    });
+    
+    function bookService() {
+      const name = document.getElementById('customerName').value;
+      const campaignType = document.getElementById('campaignType').value;
+      const phone = document.getElementById('contractorPhone').textContent;
+      const message = `Hi! I need Google Ads service. My name is ${name}. Campaign: ${campaignType}. Please confirm the consultation.`;
+      const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+    
+    // PIN code validation
+    document.getElementById('pincode').addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+  </script>
+</body>
+</html>
