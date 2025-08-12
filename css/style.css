@@ -531,6 +531,102 @@ body.dark-mode .header_section.scrolled {
   fill: #ffffff;
 }
 
+/* Forum section styling */
+.container{
+  padding: 10px;
+
+}
+
+.container h2{
+  font-weight: bold;
+  color: #0056b3;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 30px;
+
+}
+
+.forum-thread{
+  padding: 20px; 
+  margin: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+
+}
+
+.forum-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.forum-info span{
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  box-shadow: 2px 2px 10px black;
+
+}
+
+.forum-category{
+  background-color: rgb(0, 174, 255);
+}
+
+.forum-replies{
+  background-color: palevioletred;
+}
+
+.forum-date{
+  background-color: burlywood;
+}
+
+.forum-replies-list {
+    display: none; /* Hide replies by default */
+}
+
+.forum-thread h4:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+  color: #00bfff;
+}
+
+
+
+.forum-replies-list{
+  padding: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+  background: linear-gradient(to right, yellowgreen, rgba(200, 255, 0, 0.534), rgba(0, 128, 0, 0.562));
+}
+
+.services-sec{
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 2px 2px 20px rgb(255, 251, 0);
+  border-radius: 20px;
+  color: green;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.service-btn{
+  padding: 8px;
+  border-radius: 28px;
+  background: linear-gradient(to right, rgb(255, 238, 0), rgb(168, 247, 79));
+  border: none;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.service-btn:hover{
+  transform: scale(1.15);
+
+}
+
+
 .about_section .row {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2147,7 +2243,7 @@ body,
 }
 
 /* Header button */
-.faq_section .accordion-button {
+.accordion-button {
   display: flex !important;
   align-items: center;
   width: 100% !important;
@@ -2168,31 +2264,31 @@ body,
 }
 
 /* Entire bar should feel interactive on hover*/
-.faq_section .accordion-button:hover {
+.accordion-button:hover {
   background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #93c5fd 100%);
   color: #0c4a6e;
 }
 
-.faq_section .accordion-button:focus-visible {
+.accordion-button:focus-visible {
   outline: 2px solid rgba(59, 130, 246, 0.5);
   outline-offset: 2px;
 }
 
 /*Remove Bootstrap's chevron entirely*/
-.faq_section .accordion-button::after {
+.accordion-button::after {
   display: none !important;
   content: none !important;
 }
 
 /*Active (open) state*/
-.faq_section .accordion-button:not(.collapsed) {
+.accordion-button:not(.collapsed) {
   background: linear-gradient(135deg, #bae6fd 0%, #93c5fd 50%, #60a5fa 100%);
   border-bottom: 1px solid rgba(59, 130, 246, 0.3);
   color: #0c4a6e;
 }
 
 /*Body (answer)*/
-.faq_section .accordion-body {
+.accordion-body {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   color: #272f3c;
   padding: 1rem 1.25rem;
@@ -2201,33 +2297,33 @@ body,
 }
 
 /* Dark Mode Styles */
-[data-theme="dark"] .faq_section .accordion-item {
+[data-theme="dark"] .accordion-item {
   background: linear-gradient(135deg, #1e293b 0%, #374151 50%, #4b5563 100%);
   border: 1px solid #4b5563;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-[data-theme="dark"] .faq_section .accordion-item:hover {
+[data-theme="dark"] .accordion-item:hover {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark"] .faq_section .accordion-button {
+[data-theme="dark"] .accordion-button {
   background: linear-gradient(135deg, #374151 0%, #4b5563 50%, #6b7280 100%);
   color: #f1f5f9;
 }
 
-[data-theme="dark"] .faq_section .accordion-button:hover {
+[data-theme="dark"] .accordion-button:hover {
   background: linear-gradient(135deg, #475569 0%, #64748b 50%, #78716c 100%);
   color: #ffffff;
 }
 
-[data-theme="dark"] .faq_section .accordion-button:not(.collapsed) {
+[data-theme="dark"] .accordion-button:not(.collapsed) {
   background: linear-gradient(135deg, #64748b 0%, #78716c 50%, #a8a29e 100%);
   border-bottom: 1px solid rgba(148, 163, 184, 0.4);
   color: #ffffff;
 }
 
-[data-theme="dark"] .faq_section .accordion-body {
+[data-theme="dark"] .accordion-body {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   color: #e2e8f0;
   border-top: 1px solid rgba(148, 163, 184, 0.3);
@@ -2235,17 +2331,17 @@ body,
 
 /*Transition on collapse*/
 @media (prefers-reduced-motion: no-preference) {
-  .faq_section .accordion-collapse {
+   .accordion-collapse {
     transition: height 0.2s ease;
   }
 }
 
 /*Small visual polish for first/last items*/
-.faq_section .accordion-item:first-child .accordion-button {
+ .accordion-item:first-child .accordion-button {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
-.faq_section .accordion-item:last-child .accordion-button.collapsed {
+ .accordion-item:last-child .accordion-button.collapsed {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
