@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Booking Confirmation, Sachiva" />
+  <meta name="description" content="Your booking confirmation details." />
+  <meta name="author" content="Sachiva Team" />
+   
+  <link rel="icon" href="../images/logo_blue.png">
+  <title>Booking Confirmation - Sachiva</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
+  <link href="../css/dark-mode-fixes.css" rel="stylesheet" />
+   
+  <style>
+    .header_section{
+      border-radius: 100px;
+      margin: 20px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      width: calc(100% - 40px);
+    }
+    .navbar-nav{
+      display: flex;
+      padding-right: 100px;
+    }
+    .nav-item{
+      font-weight: bold;
+      position: relative;
+      margin-right: 0px;
+      padding: 8px;
+      margin: 2px;
+      transition: all 0.5s ease;
+    }
+
+    .nav-item:hover{
+      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: rgb(0, 132, 255);
+      width: 0;
+    }
+
+    .nav-item:hover::after {
+      animation: slideUnderline 0.5s forwards;
+    }
+
+    @keyframes slideUnderline {
+      from { width: 0; height: 0px;}
+      to { width: 100%; height: 3px;}
+    }
+    
+    .fw-bold {
+      font-weight: bolder;
+    }
+
+    #booking{
+      background-color: rgb(0, 153, 255);
+      margin: 10px;
+      font-weight:900;
+      padding: 10px !important;
+      color: white;
+      border-radius: 12px;
+    }
+
+    /* Confirmation Page Specific Styles */
+         .confirmation-container {
+       background-color: rgba(0, 142, 167, 0.4);
+       backdrop-filter: blur(12px);
+       -webkit-backdrop-filter: blur(12px);
+       border-radius: 25px;
+       padding: 40px;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+       color: white;
+       max-width: 1200px;
+       margin: 0 auto;
+     }
+
+    .confirmation-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .confirmation-header h2 {
+      color: #006064;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+         .details-container {
+       display: flex;
+       gap: 50px;
+       margin-bottom: 30px;
+     }
+
+     .booking-details {
+       background-color: rgba(255, 255, 255, 0.1);
+       border-radius: 15px;
+       padding: 50px;
+       flex: 2;
+       min-height: 500px;
+     }
+
+     .booking-details h3 {
+       color: #006064;
+       margin-bottom: 30px;
+       font-weight: bold;
+       font-size: 1.4em;
+     }
+
+         .detail-row {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 16px 0;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+     }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+         .detail-label {
+       font-weight: bold;
+       color: #e0f2f1;
+       font-size: 1.1em;
+     }
+
+     .detail-value {
+       color: #ffffff;
+       text-align: right;
+       font-size: 1.1em;
+     }
+
+    .booking-id {
+      background: linear-gradient(45deg, #00796b, #004d40);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+         .action-buttons {
+       display: flex;
+       gap: 20px;
+       justify-content: center;
+       flex-wrap: wrap;
+       margin-top: 30px;
+       align-items: center;
+       align-content: center;
+     }
+
+         .btn-confirmation {
+       border-radius: 25px !important;
+       padding: 15px 25px !important;
+       font-weight: bold !important;
+       border: none !important;
+       transition: all 0.3s ease !important;
+       text-decoration: none !important;
+       display: inline-flex !important;
+       align-items: center !important;
+       justify-content: center !important;
+       gap: 8px !important;
+       min-width: 180px !important;
+       height: 50px !important;
+       font-size: 14px !important;
+       box-sizing: border-box !important;
+       vertical-align: middle !important;
+       line-height: 1 !important;
+       margin: 0 !important;
+       flex-shrink: 0 !important;
+     }
+
+         .btn-primary-custom {
+       background-color: #094c9d !important;
+       color: white !important;
+     }
+
+     .btn-primary-custom:hover {
+       background-color: #030960 !important;
+       color: white !important;
+       transform: translateY(-2px);
+     }
+
+     .btn-secondary-custom {
+       background-color: #094c9d !important;
+       color: white !important;
+     }
+
+     .btn-secondary-custom:hover {
+       background-color: #030960 !important;
+       color: white !important;
+       transform: translateY(-2px);
+     }
+
+     .btn-secondary-custom {
+       font-size: 16px !important;
+     }
+
+     .btn-success-custom {
+       background-color: #094c9d !important;
+       color: white !important;
+     }
+
+     .btn-success-custom:hover {
+       background-color: #030960 !important;
+       color: white !important;
+       transform: translateY(-2px);
+     }
+
+         .next-steps {
+       background-color: rgba(255, 255, 255, 0.1);
+       border-radius: 15px;
+       padding: 50px;
+       flex: 1;
+       min-height: 500px;
+     }
+
+         .next-steps h4 {
+       color: #006064;
+       margin-bottom: 25px;
+       font-weight: bold;
+       font-size: 1.4em;
+     }
+
+    .next-steps ul {
+      list-style: none;
+      padding: 0;
+    }
+
+         .next-steps li {
+       padding: 12px 0;
+       position: relative;
+       padding-left: 30px;
+       font-size: 1.1em;
+     }
+
+    .next-steps li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+         @media (max-width: 768px) {
+       .confirmation-container {
+         margin: 20px;
+         padding: 20px;
+       }
+       
+       .details-container {
+         flex-direction: column;
+         gap: 20px;
+       }
+       
+       .detail-row {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 5px;
+       }
+       
+       .detail-value {
+         text-align: left;
+       }
+       
+       .action-buttons {
+         flex-direction: column;
+       }
+       
+       .btn-confirmation {
+         width: 100%;
+         justify-content: center;
+       }
+     }
+  </style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="../">
+              <img src="../images/logo_blue.png" alt="Sachiva Logo" class="main-logo">
+              <span>sachiva</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item1 active">      
+                  <a class="nav-link" id="booking" href="booking.html">Book a Service</a>
+                </li>
+              </ul>
+              <label class="switch theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                  <i class="fas fa-sun sun-icon"></i>
+                  <i class="fas fa-moon moon-icon"></i>
+                </span>
+              </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <section class="contact_section layout_padding">
+    <div class="container my-5">
+      <div class="confirmation-container">
+        <div class="confirmation-header">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Booking Confirmed! 🎉</h2>
+          <p>Thank you for choosing Sachiva. Your service has been successfully booked.</p>
+        </div>
+
+        <div class="details-container">
+          <div class="booking-details">
+            <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+            <div class="detail-row">
+              <span class="detail-label">Booking ID:</span>
+              <span class="detail-value booking-id" id="bookingId">BK12345678</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Customer Name:</span>
+              <span class="detail-value" id="customerName">John Doe</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Email:</span>
+              <span class="detail-value" id="customerEmail">john@example.com</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Phone:</span>
+              <span class="detail-value" id="customerPhone">+91 9876543210</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Location:</span>
+              <span class="detail-value" id="customerLocation">Bangalore, Karnataka</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Service:</span>
+              <span class="detail-value" id="serviceType">🛠️ Home Maintenance</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Date:</span>
+              <span class="detail-value" id="serviceDate">December 25, 2024</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Time:</span>
+              <span class="detail-value" id="serviceTime">10:00 AM</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Total Cost:</span>
+              <span class="detail-value" id="totalCost">₹1,500</span>
+            </div>
+          </div>
+
+          <div class="next-steps">
+            <h4><i class="fas fa-info-circle"></i> What's Next?</h4>
+            <ul>
+              <li>You will receive a confirmation email with all the details</li>
+              <li>Our team will contact you within 24 hours to confirm the appointment</li>
+              <li>Please ensure someone is available at the specified location and time</li>
+              <li>For any changes, please contact us at least 24 hours in advance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-confirmation btn-success-custom" id="printConfirmation">
+            <i class="fas fa-print"></i> Print Confirmation
+          </button>
+          <button class="btn-confirmation btn-primary-custom" id="downloadPDF">
+            <i class="fas fa-download"></i> Download PDF
+          </button>
+          <a href="../index.html" class="btn-confirmation btn-secondary-custom">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2>Let's Talk</h2>
+        <p>
+          Every high-quality home service starts with a chat.<br> Our team leads client conversations
+          and will be happy to discuss your queries and needs.<br>
+          We'll also bring in the right people when needed.
+        </p>
+        <a href="contact.html" class="cta-btn">Tell us about your Query</a>
+      </div>
+      <div class="footer-right">
+        <ul class="contact-list">
+          <li>
+            <span>Email</span>
+            <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+          </li>
+          <li>
+            <span>Phone</span>
+            <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+          </li>
+          <li>
+            <span>Address</span>
+            <a href="https://maps.google.com" target="_blank">
+              Church Street,
+              Bangalore, Karnataka, 1234
+            </a>
+          </li>
+        </ul>
+        <div class="footer-social-icons">
+          <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
+      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+    </div>
+  </footer>
+
+  <button id="backToTop" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="../js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    // Update year
+    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    
+    // Get booking data from URL parameters or localStorage
+    function getBookingData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingData = {
+        bookingId: urlParams.get('bookingId') || localStorage.getItem('bookingId') || 'BK' + Date.now().toString().slice(-8),
+        name: urlParams.get('name') || localStorage.getItem('bookingName') || 'John Doe',
+        email: urlParams.get('email') || localStorage.getItem('bookingEmail') || 'john@example.com',
+        phone: urlParams.get('phone') || localStorage.getItem('bookingPhone') || '+91 9876543210',
+        location: urlParams.get('location') || localStorage.getItem('bookingLocation') || 'Bangalore, Karnataka',
+        service: urlParams.get('service') || localStorage.getItem('bookingService') || '🛠️ Home Maintenance',
+        date: urlParams.get('date') || localStorage.getItem('bookingDate') || new Date().toLocaleDateString(),
+        time: urlParams.get('time') || localStorage.getItem('bookingTime') || '10:00 AM',
+        cost: urlParams.get('cost') || localStorage.getItem('bookingCost') || '₹1,500'
+      };
+      
+      return bookingData;
+    }
+    
+    // Populate booking details
+    function populateBookingDetails() {
+      const bookingData = getBookingData();
+      
+      document.getElementById('bookingId').textContent = bookingData.bookingId;
+      document.getElementById('customerName').textContent = bookingData.name;
+      document.getElementById('customerEmail').textContent = bookingData.email;
+      document.getElementById('customerPhone').textContent = bookingData.phone;
+      document.getElementById('customerLocation').textContent = bookingData.location;
+      document.getElementById('serviceType').textContent = bookingData.service;
+      document.getElementById('serviceDate').textContent = bookingData.date;
+      document.getElementById('serviceTime').textContent = bookingData.time;
+      document.getElementById('totalCost').textContent = bookingData.cost;
+    }
+    
+    // Print confirmation
+    document.getElementById('printConfirmation').addEventListener('click', function() {
+      window.print();
+    });
+    
+    // Download PDF
+    document.getElementById('downloadPDF').addEventListener('click', function() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const bookingData = getBookingData();
+      
+      // Add logo and title
+      doc.setFontSize(24);
+      doc.setTextColor(0, 123, 255);
+      doc.text('SACHIVA', 105, 30, { align: 'center' });
+      
+      doc.setFontSize(16);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Booking Confirmation', 105, 45, { align: 'center' });
+      
+      // Add booking details
+      doc.setFontSize(12);
+      doc.text(`Booking ID: ${bookingData.bookingId}`, 20, 70);
+      doc.text(`Customer Name: ${bookingData.name}`, 20, 85);
+      doc.text(`Email: ${bookingData.email}`, 20, 100);
+      doc.text(`Phone: ${bookingData.phone}`, 20, 115);
+      doc.text(`Location: ${bookingData.location}`, 20, 130);
+      doc.text(`Service: ${bookingData.service}`, 20, 145);
+      doc.text(`Date: ${bookingData.date}`, 20, 160);
+      doc.text(`Time: ${bookingData.time}`, 20, 175);
+      doc.text(`Total Cost: ${bookingData.cost}`, 20, 190);
+      
+      // Add footer
+      doc.setFontSize(10);
+      doc.setTextColor(128, 128, 128);
+      doc.text('Thank you for choosing Sachiva!', 105, 220, { align: 'center' });
+      doc.text('For any queries, contact us at sachiva@gmail.com', 105, 230, { align: 'center' });
+      
+      doc.save(`Booking_${bookingData.bookingId}.pdf`);
+    });
+    
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      populateBookingDetails();
+    });
+  </script>
+  <script src="../js/navbar.js"></script>
+</body>
+
+</html>

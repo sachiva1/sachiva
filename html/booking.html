@@ -200,9 +200,6 @@
               </select>
             </div>          
             <button type="submit" class="book">Book Service</button>
-            <button type="button" class="pdf-download-btn" id="downloadPDF">
-              <i class="fas fa-download"></i>  Download PDF
-            </button>
             <div id="formAlert" class="alert d-none"></div>
 
           </form>
@@ -268,7 +265,6 @@
   <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="../js/custom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script>
     // Update year
@@ -332,39 +328,27 @@
         location: locationInput.value.trim() || 'Not specified',
         date: dateInput.value,
         service: serviceInput.options[serviceInput.selectedIndex].text,
-        bookingId: 'BK' + Date.now().toString().slice(-8)
+        bookingId: 'BK' + Date.now().toString().slice(-8),
+        time: '10:00 AM', // Default time
+        cost: '₹1,500' // Default cost
       };
 
-      alertBox.className = 'alert alert-success';
-      alertBox.textContent = "Booking done successfully!";
-      alertBox.classList.remove('d-none');
-      
-      document.getElementById('downloadPDF').style.display = 'inline-block';
+      // Store in localStorage for confirmation page
+      localStorage.setItem('bookingId', bookingData.bookingId);
+      localStorage.setItem('bookingName', bookingData.name);
+      localStorage.setItem('bookingEmail', bookingData.email);
+      localStorage.setItem('bookingPhone', bookingData.phone);
+      localStorage.setItem('bookingLocation', bookingData.location);
+      localStorage.setItem('bookingService', bookingData.service);
+      localStorage.setItem('bookingDate', new Date(bookingData.date).toLocaleDateString());
+      localStorage.setItem('bookingTime', bookingData.time);
+      localStorage.setItem('bookingCost', bookingData.cost);
+
+      // Redirect to confirmation page
+      window.location.href = 'booking-confirmation.html';
     });
 
-    // PDF Download
-    document.getElementById('downloadPDF').addEventListener('click', function() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
 
-      doc.setFontSize(20);
-      doc.text('SACHIVA - Booking Confirmation', 105, 30, { align: 'center' });
-
-      doc.setFontSize(12);
-      doc.text(`Booking ID: ${bookingData.bookingId}`, 20, 60);
-      doc.text(`Name: ${bookingData.name}`, 20, 75);
-      doc.text(`Email: ${bookingData.email}`, 20, 90);
-      doc.text(`Phone: ${bookingData.phone}`, 20, 105);
-      doc.text(`Location: ${bookingData.location}`, 20, 120);
-      doc.text(`Date: ${new Date(bookingData.date).toLocaleDateString()}`, 20, 135);
-      doc.text(`Service: ${bookingData.service}`, 20, 150);
-
-      doc.save(`Booking_${bookingData.bookingId}.pdf`);      
-
-      alertBox.className = 'alert alert-success';
-      alertBox.textContent = "Booking done successfully!";
-
-    });
   </script>
   <script src="js/navbar.js"></script>
 </body>
