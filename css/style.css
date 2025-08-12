@@ -566,10 +566,6 @@ body.dark-mode .header_section.scrolled {
   margin: 20px;
 }
 
-explore-btn{
-
-}
-
 @media (max-width: 768px) {
   .about_section .text-content {
     width: 90vw;
@@ -659,6 +655,44 @@ explore-btn{
 .professional_section .detail-box a:hover {
   background-color: transparent;
   color: #ff8a1d;
+}
+
+.blog_section p{
+  color:#555050;
+  font-style: italic;
+}
+
+.blog_section .container{
+  margin-top: 8vh;
+}
+
+.blog_section .card-title{
+  font-weight: 600; 
+  color: #3e3b3b;
+}
+
+[data-theme="dark"] .blog_section .card {
+  background: linear-gradient(145deg, rgba(62, 121, 75, 0.4),rgba(51, 50, 50,0.4), rgba(39, 6, 58, 0.4));
+  border-radius: 25px;
+  box-shadow: 0 0 5px 2px rgba(202, 199, 199, 0.5);
+}
+
+.blog_section .card .btn {
+  border-radius: 8px 95px;
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg,#2e62bb, #4ce3f7);
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 17px;
+  margin: 20px; 
+}
+
+.blog_section .card .btn:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
 }
 
 .service_section {
