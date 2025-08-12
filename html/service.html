@@ -159,21 +159,68 @@
     /*Adding styles on hover for card elements*/
     #card1:hover{
       background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
     #card2:hover{
       background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
     #card3:hover{
       background: linear-gradient(rgba(245, 235, 101, 0.295), rgb(255, 255, 122));
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
     #card4:hover{
       background: linear-gradient(rgba(255, 76, 225, 0.336), lightpink);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
     #card5:hover{
       background: linear-gradient(rgba(57, 225, 255, 0.295), lightblue);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
     #card6:hover{
       background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    #card7:hover{
+      background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    #card8:hover{
+      background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    #card9:hover{
+      background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Service card styling */
+    .service-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .service-card:hover {
+      border-color: #007bff;
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3) !important;
     }
 
 
@@ -244,7 +291,7 @@
     <div class="row mt-4">
       <!-- Home Maintenance -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
           <h5 class="fw-bold-1">Home Maintenance</h5>
           <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
@@ -253,7 +300,7 @@
 
       <!-- Cleaning Services -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-broom fa-3x mb-3 text-success"></i>
           <h5 class="fw-bold">Cleaning Services</h5>
           <div class="mt-4">
@@ -264,7 +311,7 @@
 
       <!-- Renovation & Painting -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
           <h5 class="fw-bold">Renovation & Painting</h5>
           <div class="mt-4">
@@ -277,7 +324,7 @@
     <div class="row mt-2">
       <!-- Appliance Repair -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
           <h5 class="fw-bold">Appliance Repair</h5>
           <div class="mt-4">
@@ -288,7 +335,7 @@
 
       <!-- IT & Network Setup -->
       <div class="col-md-4 mb-4 business-service">
-        <div id="card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
           <h5 class="fw-bold">IT & Network Setup</h5>
           <div class="mt-4">
@@ -299,7 +346,7 @@
 
       <!-- Security Systems -->
       <div class="col-md-4 mb-4 business-service">
-        <div id="card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+        <div id="card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
           <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
           <h5 class="fw-bold-2">Security Systems</h5>
           <div class="mt-4">
@@ -309,7 +356,7 @@
       </div>
       <!-- Pest Control -->
 <div class="col-md-4 mb-4 home-service">
-  <div id="card7" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+  <div id="card7" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
     <i class="fa fa-bug fa-3x mb-3 text-success"></i>
     <h5 class="fw-bold">Pest Control</h5>
     <div class="mt-4">
@@ -320,7 +367,7 @@
 
 <!-- Home Automation -->
 <div class="col-md-4 mb-4 business-service">
-  <div id="card8" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+  <div id="card8" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
     <i class="fa fa-home fa-3x mb-3 text-primary"></i>
     <h5 class="fw-bold">Smart Home Automation</h5>
     <div class="mt-4">
@@ -331,7 +378,7 @@
 
 <!-- Gardening & Landscaping -->
 <div class="col-md-4 mb-4 home-service">
-  <div id="card9" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between">
+  <div id="card9" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
     <i class="fa fa-seedling fa-3x mb-3 text-success"></i>
     <h5 class="fw-bold">Gardening & Landscaping</h5>
     <div class="mt-4">
@@ -351,6 +398,31 @@
     const filterButtons = document.querySelectorAll('.filter-btn');
     const homeCards = document.querySelectorAll('.home-service');
     const businessCards = document.querySelectorAll('.business-service');
+
+    // Service card mapping for booking form
+    const serviceMapping = {
+      'card1': '🛠️ Home Maintenance',
+      'card2': '🧹 Cleaning Service',
+      'card3': '🎨 Renovation and painting',
+      'card4': '🔧 Appliance Repair',
+      'card5': '🧑‍💻 It & Network',
+      'card6': '🛡️ Security Systems',
+      'card7': '🐛 Pest Control',
+      'card8': '🏠 Smart Home Automation',
+      'card9': '🌱 Gardening & Landscaping'
+    };
+
+    // Add click event listeners to service cards
+    Object.keys(serviceMapping).forEach(cardId => {
+      const card = document.getElementById(cardId);
+      if (card) {
+        card.addEventListener('click', function() {
+          const serviceName = serviceMapping[cardId];
+          const bookingUrl = `booking.html?service=${encodeURIComponent(serviceName)}`;
+          window.location.href = bookingUrl;
+        });
+      }
+    });
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {

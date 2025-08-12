@@ -198,6 +198,9 @@
                 <option>🔧 Appliance Repair</option>
                 <option>🧑‍💻 It & Network</option>
                 <option>🛡️ Security Systems</option>
+                <option>🐛 Pest Control</option>
+                <option>🏠 Smart Home Automation</option>
+                <option>🌱 Gardening & Landscaping</option>
               </select>
             </div>          
             <button type="submit" class="book">Book Service</button>
@@ -274,6 +277,28 @@
   <script>
     // Update year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
+    
+    // Handle URL parameters for pre-filling service
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+    
+    // Pre-fill service if provided in URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceParam = getUrlParameter('service');
+      if (serviceParam) {
+        const serviceSelect = document.getElementById('service');
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].text === serviceParam) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
     
     // Contact form validation
     document.getElementById('bookingForm').addEventListener('submit', function (e) {
