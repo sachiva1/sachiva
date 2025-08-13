@@ -637,10 +637,15 @@ body.dark-mode .header_section.scrolled {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
-  font-family: serif;
-  color: #003da5;
+  
+  color: #221165;
   font-size: 2.5rem;
-  text-shadow: 0 0 5px #9f9b9d, 0 0 10px #898588;
+border-bottom: 3px solid transparent;
+background-image: linear-gradient(to right, #101e52, #88b9ed);
+background-repeat: no-repeat;
+background-size: 100% 3px;
+background-position: bottom left;
+  /* text-shadow: 0 0 5px #000000, 0 0 10px #898588; */
 }
 
 .about_section .detail-box p {
@@ -657,8 +662,8 @@ body.dark-mode .header_section.scrolled {
   height: 25vh;
   overflow: hidden;
   border-radius: 30px;
-  background: linear-gradient(#bae2ca, #accad0);
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  background: linear-gradient(135deg, #6486b2, #ffffff);
+  box-shadow: 15px 15px 30px #282727f8, -15px -15px 30px #ffffff;
   margin: 20px;
 }
 
@@ -671,6 +676,9 @@ body.dark-mode .header_section.scrolled {
 }
 
 .about_section button {
+  display: block; /* makes it behave like a block element */
+  margin: 60px auto; /* centers it */
+  width: calc(100% - 100px); /* 50px space on both sides */
   border: none;
   color: #fff;
   background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
@@ -679,8 +687,9 @@ body.dark-mode .header_section.scrolled {
   font-family: inherit;
   font-size: 17px;
   padding: 0.6em 1.5em;
-  margin: 20px; 
+  box-sizing: border-box; /* ensures padding doesn't overflow width */
 }
+
 
 .about_section button:hover {
   background-position: right center;
@@ -709,6 +718,14 @@ body.dark-mode .header_section.scrolled {
 }
 
 .about_section .img-box img {
+border: 3px solid transparent;
+border-radius: 8px; /* optional for rounded edges */
+background-image: linear-gradient(#fff, #fff), 
+                  linear-gradient(to left, #101e52, #88e1ed, rgb(58, 132, 159), rgb(104, 167, 222));
+background-origin: border-box;
+background-clip: padding-box, border-box;
+  border-radius: 40px;
+  margin-left:50px;
   width: 100%;
 }
 
