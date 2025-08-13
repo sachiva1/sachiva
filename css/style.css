@@ -653,27 +653,76 @@ background-position: bottom left;
   line-height: 1.6;
   margin-top: 10px;
 }
+.about_section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+/* Ensure text and image scale nicely */
+.about_section .text-content,
+.about_section .img-box {
+  flex: 1 1 400px; /* grow/shrink with min width */
+  max-width: 600px;
+}
+
+/* Text box styles */
 .about_section .text-content {
   padding: 20px;
   display: flex;
+  flex-direction: column; /* ensures multiple paragraphs stack */
   text-align: justify;
   width: 35vw;
-  height: 25vh;
-  overflow: hidden;
+  height: auto; /* let it grow automatically */
+  min-height: 200px; /* optional for minimum height */
   border-radius: 30px;
   background: linear-gradient(135deg, #6486b2, #ffffff);
   box-shadow: 15px 15px 30px #282727f8, -15px -15px 30px #ffffff;
-  margin: 20px;
+  margin-bottom: 20px;
+  margin-left:10px;
 }
 
+/* Image box */
+/* */
+.about_section .img-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 0 40px;
+    border-right: 3px solid transparent;
+    /* border-top: 3px solid transparent; */
+    border-bottom: 3px solid transparent;
+
+
+
+  background-image: linear-gradient(#fff, #fff), 
+                    linear-gradient(to left, #101e52, #88e1ed, rgb(58, 132, 159), rgb(104, 167, 222));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  margin: 40px; /* remove left margin */
+}
+
+
+/* Small screens: stack vertically */
 @media (max-width: 768px) {
-  .about_section .text-content {
-    width: 90vw;
-    height: auto;
-    transform: translateX(-10px); /* Negative moves left */
+  .about_section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about_section .text-content,
+  .about_section .img-box {
+    width: 90%;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .about_section .img-box img {
+    max-width: 100%;
   }
 }
+
 
 .about_section button {
   display: block; /* makes it behave like a block element */
@@ -717,17 +766,17 @@ background-position: bottom left;
   box-shadow: 10px 10px 10px #343333, -10px -5px 10px #5b5959;
 }
 
-.about_section .img-box img {
+/* .about_section .img-box img {
 border: 3px solid transparent;
 border-radius: 8px; /* optional for rounded edges */
-background-image: linear-gradient(#fff, #fff), 
+/* background-image: linear-gradient(#fff, #fff), 
                   linear-gradient(to left, #101e52, #88e1ed, rgb(58, 132, 159), rgb(104, 167, 222));
 background-origin: border-box;
 background-clip: padding-box, border-box;
   border-radius: 40px;
   margin-left:50px;
   width: 100%;
-}
+}  */
 
 .professional_section {
   background-color: #d1e3ff;
