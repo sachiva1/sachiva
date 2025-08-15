@@ -532,57 +532,56 @@ body.dark-mode .header_section.scrolled {
 }
 
 /* Forum section styling */
-.container{
+.container {
   padding: 10px;
-
 }
 
-.container h2{
+.container h2 {
   font-weight: bold;
-  color: #0056b3;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin: 30px;
-
+  color: #0e4f95;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 30px auto; /* auto margins for block elements */
+  text-align: center; /* center text inside */
+  display: block; /* ensure it behaves like a block element */
+  width: 100%; /* span full width of container */
 }
 
-.forum-thread{
-  padding: 20px; 
+.forum-thread {
+  padding: 20px;
   margin: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
-
 }
 
-.forum-info{
+.forum-info {
   display: flex;
   justify-content: space-between;
   padding: 20px;
 }
 
-.forum-info span{
+.forum-info span {
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 30px;
   font-size: 0.8rem;
   box-shadow: 2px 2px 10px black;
-
 }
 
-.forum-category{
+.forum-category {
   background-color: rgb(0, 174, 255);
 }
 
-.forum-replies{
+.forum-replies {
   background-color: palevioletred;
 }
 
-.forum-date{
+.forum-date {
   background-color: burlywood;
 }
 
 .forum-replies-list {
-    display: none; /* Hide replies by default */
+  display: none; /* Hide replies by default */
 }
 
 .forum-thread h4:hover {
@@ -591,41 +590,41 @@ body.dark-mode .header_section.scrolled {
   color: #00bfff;
 }
 
-
-
-.forum-replies-list{
+.forum-replies-list {
   padding: 20px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
   border-radius: 30px;
-  background: linear-gradient(to right, yellowgreen, rgba(200, 255, 0, 0.534), rgba(0, 128, 0, 0.562));
+  background: linear-gradient(
+    to right,
+    yellowgreen,
+    rgba(200, 255, 0, 0.534),
+    rgba(0, 128, 0, 0.562)
+  );
 }
 
-.services-sec{
+.services-sec {
   display: inline-block;
   margin: 20px;
   padding: 20px;
   box-shadow: 2px 2px 20px rgb(255, 251, 0);
   border-radius: 20px;
   color: green;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.service-btn{
+.service-btn {
   padding: 8px;
   border-radius: 28px;
   background: linear-gradient(to right, rgb(255, 238, 0), rgb(168, 247, 79));
   border: none;
   font-weight: bold;
   transition: all 0.5s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.service-btn:hover{
+.service-btn:hover {
   transform: scale(1.15);
-
 }
-
 
 .about_section .row {
   -webkit-box-align: center;
@@ -637,14 +636,14 @@ body.dark-mode .header_section.scrolled {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
-  
+
   color: #221165;
   font-size: 2.5rem;
-border-bottom: 3px solid transparent;
-background-image: linear-gradient(to right, #101e52, #88b9ed);
-background-repeat: no-repeat;
-background-size: 100% 3px;
-background-position: bottom left;
+  border-bottom: 3px solid transparent;
+  background-image: linear-gradient(to right, #101e52, #88b9ed);
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: bottom left;
   /* text-shadow: 0 0 5px #000000, 0 0 10px #898588; */
 }
 
@@ -681,7 +680,7 @@ background-position: bottom left;
   background: linear-gradient(135deg, #6486b2, #ffffff);
   box-shadow: 15px 15px 30px #282727f8, -15px -15px 30px #ffffff;
   margin-bottom: 20px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 /* Image box */
@@ -690,19 +689,22 @@ background-position: bottom left;
   width: 100%;
   height: auto;
   border-radius: 0 40px;
-    border-right: 3px solid transparent;
-    /* border-top: 3px solid transparent; */
-    border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
+  /* border-top: 3px solid transparent; */
+  border-bottom: 3px solid transparent;
 
-
-
-  background-image: linear-gradient(#fff, #fff), 
-                    linear-gradient(to left, #101e52, #88e1ed, rgb(58, 132, 159), rgb(104, 167, 222));
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(
+      to left,
+      #101e52,
+      #88e1ed,
+      rgb(58, 132, 159),
+      rgb(104, 167, 222)
+    );
   background-origin: border-box;
   background-clip: padding-box, border-box;
   margin: 40px; /* remove left margin */
 }
-
 
 /* Small screens: stack vertically */
 @media (max-width: 768px) {
@@ -723,7 +725,6 @@ background-position: bottom left;
   }
 }
 
-
 .about_section button {
   display: block; /* makes it behave like a block element */
   margin: 60px auto; /* centers it */
@@ -738,7 +739,6 @@ background-position: bottom left;
   padding: 0.6em 1.5em;
   box-sizing: border-box; /* ensures padding doesn't overflow width */
 }
-
 
 .about_section button:hover {
   background-position: right center;
@@ -819,22 +819,27 @@ background-clip: padding-box, border-box;
   color: #ff8a1d;
 }
 
-.blog_section p{
-  color:#555050;
+.blog_section p {
+  color: #555050;
   font-style: italic;
 }
 
-.blog_section .container{
+.blog_section .container {
   margin-top: 8vh;
 }
 
-.blog_section .card-title{
-  font-weight: 600; 
+.blog_section .card-title {
+  font-weight: 600;
   color: #3e3b3b;
 }
 
 [data-theme="dark"] .blog_section .card {
-  background: linear-gradient(145deg, rgba(62, 121, 75, 0.4),rgba(51, 50, 50,0.4), rgba(39, 6, 58, 0.4));
+  background: linear-gradient(
+    145deg,
+    rgba(62, 121, 75, 0.4),
+    rgba(51, 50, 50, 0.4),
+    rgba(39, 6, 58, 0.4)
+  );
   border-radius: 25px;
   box-shadow: 0 0 5px 2px rgba(202, 199, 199, 0.5);
 }
@@ -843,11 +848,11 @@ background-clip: padding-box, border-box;
   border-radius: 8px 95px;
   border: none;
   color: #fff;
-  background-image: linear-gradient(30deg,#2e62bb, #4ce3f7);
+  background-image: linear-gradient(30deg, #2e62bb, #4ce3f7);
   background-size: 100% auto;
   font-family: inherit;
   font-size: 17px;
-  margin: 20px; 
+  margin: 20px;
 }
 
 .blog_section .card .btn:hover {
@@ -985,8 +990,7 @@ background-clip: padding-box, border-box;
 .about_section_layout_padding .container {
   cursor: pointer;
 }
-  .client_section
-  .heading_container {
+.client_section .heading_container {
   padding: 30px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1426,7 +1430,7 @@ background-clip: padding-box, border-box;
   }
 }
 
- .footer_section a {
+.footer_section a {
   color: #ffffff !important;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -2253,7 +2257,7 @@ body,
 
 /* FAQ Section Header Styling */
 .faq_section .heading_container h2 {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #2636c4 50%, #274bdb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2263,14 +2267,21 @@ body,
   margin-bottom: 1rem;
 }
 
+.faq_section .heading_container {
+  width: 100%; /* full width */
+  display: flex; /* enable flexbox */
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical alignment if needed */
+  text-align: center; /* fallback for multi-line text */
+}
+
 .faq_section .heading_container p {
-  font-size: 20px;
-  background: linear-gradient(135deg, #374151 0%, #6b7280 100%);
+  background: linear-gradient(135deg, #010102 0%, #192b50 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  text-align: center;
+  margin-bottom: 20px; /* remove default margins */
 }
 
 /* Dark mode header styling */
@@ -2294,7 +2305,7 @@ body,
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 14px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+  background: linear-gradient(135deg, #719afa 0%, #e0f2fe 50%, #9dbde8 100%);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
   transition: all 0.3s ease;
 }
@@ -2397,17 +2408,17 @@ body,
 
 /*Transition on collapse*/
 @media (prefers-reduced-motion: no-preference) {
-   .accordion-collapse {
+  .accordion-collapse {
     transition: height 0.2s ease;
   }
 }
 
 /*Small visual polish for first/last items*/
- .accordion-item:first-child .accordion-button {
+.accordion-item:first-child .accordion-button {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
- .accordion-item:last-child .accordion-button.collapsed {
+.accordion-item:last-child .accordion-button.collapsed {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -2469,12 +2480,15 @@ body,
 }
 
 .flip-card-front {
-  background-color: #fff;
+  background: linear-gradient(135deg, #a3bef6, #ffffff);
   z-index: 2;
+  border-radius: 30px;
+  border: 1px solid rgb(98, 159, 205);
 }
 
 [data-theme="dark"] .flip-card-front {
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a, #1a1a1a);
+
   color: #ffffff;
 }
 
@@ -2598,5 +2612,3 @@ h1 {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
-
