@@ -201,8 +201,14 @@
                 <option>🐛 Pest Control</option>
                 <option>🏠 Smart Home Automation</option>
                 <option>🌱 Gardening & Landscaping</option>
+                <option value = "other">🤔💭Other</option>
               </select>
-            </div>          
+            </div>  
+            <!--adding input when other from category is selected--> 
+            <div class="form-group other" style="display: none;" >
+              <i class="fa-solid fa-bell-concierge"></i>              
+              <input type="text" class="form-control" placeholder="Please enter the service you want :)" id = "other" required>
+            </div>                   
             <button type="submit" class="book">Book Service</button>
             <div id="formAlert" class="alert d-none"></div>
 
@@ -296,6 +302,16 @@
       }
     });
     
+    //adding logic to display other text input field
+    document.getElementById('service').addEventListener('change', function() {
+      const otherGroup = document.querySelector('.form-group.other');
+      if (this.value === 'other') {
+        otherGroup.style.display = 'block';
+      } else {
+        otherGroup.style.display = 'none';
+      }
+    });
+
     // Contact form validation
     document.getElementById('bookingForm').addEventListener('submit', function (e) {
       e.preventDefault();
