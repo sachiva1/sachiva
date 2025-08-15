@@ -153,8 +153,67 @@
 
 .card{
   border-radius: 12px;
-  background: linear-gradient(to right, rgba(213, 218, 110, 0.4),rgb(236, 231, 231), rgba(225, 230, 120,0.4));
 }
+
+
+/* Adding enhanced styling to cards*/
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 320px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.9s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back li{
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.flip-card-front, .flip-card-back {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background: #fff;
+}
+
+.flip-card-back {
+  background-color: #be006f;
+  transform: rotateY(180deg);
+}
+
+.cleaning .flip-card-front { background: linear-gradient(to bottom right, #39e8ff, #ff6e6e); }
+.pest .flip-card-front { background: linear-gradient(to bottom right, #fafd49, #a9ff46); }
+.paint .flip-card-front { background: linear-gradient(to bottom right, #ed78ff, #ff3884); }
+.plant .flip-card-front { background: linear-gradient(to bottom right, #31ff42, #199700); }
+.tech .flip-card-front { background: linear-gradient(to bottom right, #63fff7, #3b2e75); }
+.home .flip-card-front { background: linear-gradient(to bottom right, #ff77e8, #ff9046); }
+
 
   </style>
   <!-- Animate.css -->
@@ -213,72 +272,161 @@
   <!-- End Header -->
 
 <!-- BLOG SECTION -->
+<!-- Introducing flip card functinality in the cards to enhance UI-->
 <section class="blog_section layout_padding" id="blog">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2 class="wow animate__animated animate__fadeInDown">Our Latest Blog</h2>
-      <p class="wow animate__animated animate__fadeIn">Explore insightful reads and stories from our team.</p>
+<div class="container">
+  <div class="heading_container heading_center">
+    <h2 class="wow animate__animated animate__fadeInDown">Our Latest Blog</h2>
+    <p class="wow animate__animated animate__fadeIn">Explore insightful reads and stories from our team.</p>
+  </div>
+
+  <div class="row mt-4">
+
+    <!-- Flip Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card tech" data-wow-delay="0s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-shield-alt fa-5x mb-3 text-secondary"></i>
+            <h5>Smart Homes, Smarter Lives</h5>
+            <p>Discover how Sachiva transforms everyday living with cutting-edge smart home automation services.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Voice-controlled appliances integration</li>
+              <li>Smart lighting & energy-saving systems</li>
+              <li>Hassle-free automation customized for your home</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="row mt-4">
-      <!-- Blog Card 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0s">
-          <i class="fa fa-shield-alt fa-3x mb-3 text-secondary" style="display: flex; justify-content:center; margin-top: 20px"></i>
-          <div class="card-body">
-            <h5 class="card-title">Smart Homes, Smarter Lives</h5>
-            <p class="card-text short">Discover how Sachiva transforms everyday living with cutting-edge smart home automation services.</p>
-            <div class="more-content d-none">
-              <ul>
-                <li>✔️ Voice-controlled appliances integration</li>
-                <li>✔️ Smart lighting & energy-saving systems</li>
-                <li>✔️ Hassle-free automation customized for your home</li>
-              </ul>
-            </div>
-            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" style="display: flex; justify-content:center">Read More</a>
+<!-- Flip Card 4: Gardening -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card plant" data-wow-delay="0.6s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-seedling fa-5x mb-3 text-success"></i>
+            <h5>Green Spaces, Fresh Vibes</h5>
+            <p>Bring nature closer with our expert gardening and landscaping services.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Lawn maintenance & garden care</li>
+              <li>Landscape design & installation</li>
+              <li>Seasonal planting & upkeep</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Blog Card 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-          <i class="fa fa-network-wired fa-3x mb-3 text-info" style="display: flex; justify-content:center; margin-top: 20px"></i>
-          <div class="card-body">
-            <h5 class="card-title">Tech Works? We’ve Got You</h5>
-            <p class="card-text short">Unplug the stress. Sachiva’s doorstep IT services solve your laptop, network, and software issues – fast.</p>
-            <div class="more-content d-none">
-              <ul>
-                <li>✔️ Instant tech support at your doorstep</li>
-                <li>✔️ Laptop, printer, Wi-Fi, and setup assistance</li>
-                <li>✔️ Affordable & professional IT solutions</li>
-              </ul>
-            </div>
-            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" style="display: flex; justify-content:center">Read More</a>
+
+    <!-- Flip Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card tech" data-wow-delay="0.2s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-network-wired fa-5x mb-3 text-info"></i>
+            <h5>Tech Works? We’ve Got You</h5>
+            <p>Unplug the stress. Sachiva’s doorstep IT services solve your laptop, network, and software issues – fast.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Instant tech support at your doorstep</li>
+              <li>Laptop, printer, Wi-Fi, and setup assistance</li>
+              <li>Affordable & professional IT solutions</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Blog Card 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-lg wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
-          <i class="fa fa-wrench fa-3x mb-3 text-primary" style="display: flex; justify-content:center; margin-top: 20px"></i>
-          <div class="card-body">
-            <h5 class="card-title">Home Maintenance Simplified</h5>
-            <p class="card-text short">Leaky faucets? Flickering lights? Get it all fixed with a single tap. Discover our trusted repair solutions.</p>
-            <div class="more-content d-none">
-              <ul>
-                <li>✔️ Instant plumbing & electrical support</li>
-                <li>✔️ Deep cleaning & appliance repair</li>
-                <li>✔️ Verified service professionals</li>
-              </ul>
-            </div>
-            <a href="#" class="btn btn-outline-primary btn-sm read-more-btn" style="display: flex; justify-content:center ">Read More</a>
+    <!-- Flip Card 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card home" data-wow-delay="0.4s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-wrench fa-5x mb-3 text-primary"></i>
+            <h5>Home Maintenance Simplified</h5>
+            <p>Leaky faucets? Flickering lights? Get it all fixed with a single tap. Discover our trusted repair solutions.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Instant plumbing & electrical support</li>
+              <li>Deep cleaning & appliance repair</li>
+              <li>Verified service professionals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flip Card 6: Pest Control -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card pest" data-wow-delay="0.4s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-bug fa-5x mb-3 text-primary"></i>
+            <h5>Pest-Free, Peace of Mind</h5>
+            <p>Say goodbye to unwanted guests with our safe and effective pest control solutions.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Termite, cockroach & rodent control</li>
+              <li>Safe & eco-friendly chemicals</li>
+              <li>Long-lasting protection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Flip Card 5: Painting -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card paint" data-wow-delay="0.2s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-paint-roller fa-5x mb-3 text-info"></i>
+            <h5>Colors & Comfort, Your Way</h5>
+            <p>Transform your space with our painting and renovation services, tailored to your style.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Interior & exterior painting</li>
+              <li>Wall repairs & renovations</li>
+              <li>Premium quality materials</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Flip Card 7: Cleaning -->
+    <div class="col-md-4 mb-4">
+      <div class="flip-card cleaning" data-wow-delay="0s">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa fa-broom fa-5x mb-3 text-secondary"></i>
+            <h5>Sparkling Spaces, Stress-Free Living</h5>
+            <p>From homes to offices, our professional cleaning services keep your space spotless and fresh.</p>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li>Deep cleaning for homes & offices</li>
+              <li>Eco-friendly cleaning products</li>
+              <li>Flexible scheduling & quick service</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 </section>
 
 <!-- Script to toggle Read More -->
