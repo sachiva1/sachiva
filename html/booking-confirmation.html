@@ -395,7 +395,7 @@
             </div>
             <div class="detail-row">
               <span class="detail-label">Total Cost:</span>
-              <span class="detail-value" id="totalCost">₹1,500</span>
+              <span class="detail-value" id="totalCost">₹400–₹800 (Base Rate)</span>
             </div>
           </div>
 
@@ -495,7 +495,7 @@
         service: urlParams.get('service') || localStorage.getItem('bookingService') || '🛠️ Home Maintenance',
         date: urlParams.get('date') || localStorage.getItem('bookingDate') || new Date().toLocaleDateString(),
         time: urlParams.get('time') || localStorage.getItem('bookingTime') || '10:00 AM',
-        cost: urlParams.get('cost') || localStorage.getItem('bookingCost') || '₹1,500'
+        cost: urlParams.get('cost') || localStorage.getItem('bookingCost') || '₹400–₹800 (Base Rate)'
       };
       
       return bookingData;
