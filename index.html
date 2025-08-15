@@ -70,6 +70,60 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* adding styles for dropdown nav-item*/
+    .nav-item.main{
+      border: none;
+      background-color: white;
+      color: black;
+      width: 100px;
+
+    }
+
+    .nav-item:active, .nav-item:focus{
+      outline: none;
+    }
+    #grp1{
+      display: none;
+      position: absolute; /* to appear over content */
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 2px 2px 5px black;
+      padding: 10px;
+    }
+
+    .nav-item.item1{
+      margin: 1px;
+      padding: 5px;
+    }
+
+    .navbar{
+      padding: 0px;
+      border-radius: 100px;
+
+      overflow: hidden; /* so shine stays inside */
+    }
+
+    .navbar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 254, 178, 0.212) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine 5s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
     @keyframes slideUnderline {
       from { width: 0; height: 0px;}
       to { width: 100%; height: 3px;}
@@ -109,7 +163,6 @@
 
     <!-- header section -->
     <header class="header_section">
-      <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="./">
@@ -131,12 +184,20 @@
                 <li class="nav-item"><a class="nav-link" href="html/portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="html/forum.html">Forum</a></li>     <!--adding link for forum page-->
 
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="html/contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="html/feedback.html">Feedback</a>
-                </li>
+                <!--adding navigation link dropdown functinlaity-->
+                <div class="group-link">
+                  <button class="nav-item main" id="navDropdown">Support  <i class="fas fa-chevron-down"></i></button>
+                  <div id = "grp1">
+                    <li class="nav-item item1">
+                      <a class="nav-link" href="html/contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item item1">
+                      <a class="nav-link" href="html/feedback.html">Feedback</a>
+                    </li>
+                  </div>
+
+                </div>
+
                 <li class="nav-item1">      
                   <a class="nav-link" id="booking" href="html/booking.html">Book a Service</a>
                 </li>
@@ -151,7 +212,6 @@
             </div>
           </nav>
         </div>
-      </div>
     </header>
     <!-- end header section -->
 
@@ -778,6 +838,16 @@
 
      <script src="js/navbar.js"></script>
      <script>
+      //adding dropdown functinality
+      document.getElementById("navDropdown").addEventListener("click", () => {
+        const dropdownItem = document.getElementById("grp1");
+        
+  const isVisible = window.getComputedStyle(dropdownItem).display !== "none";
+  dropdownItem.style.display = isVisible ? "none" : "block";        
+      });
+
+
+
        document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector(".header_section");
       console.log("Header found? ", header); // ✅ should NOT be null
