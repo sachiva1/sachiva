@@ -2,42 +2,29 @@
 <html lang="en">
 
 <head>
-  
-
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <meta name="keywords" content="Contact, Support, Sachiva" />
   <meta name="description" content="Contact us for any service or support related queries." />
   <meta name="author" content="Sachiva Team" />
-   
-  <link rel="icon" href="../images/logo_blue.png">
+  <link rel="icon" href="./images/logo_blue.png">
   <title>Contact Us - Sachiva</title>
-
-
-   
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
- 
-  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/dark-mode-fixes.css" rel="stylesheet" />
 
-  <link href="../css/style.css" rel="stylesheet" />
-  
-  <link href="../css/responsive.css" rel="stylesheet" />
-  
-  <link href="../css/dark-mode-fixes.css" rel="stylesheet" />
-   
   <style>
-.header_section{
+    /* Fixed Navbar Styles from about.html */
+    .header_section{
       border-radius: 100px;
       margin: 20px;
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
@@ -45,15 +32,10 @@
     }
     .navbar-nav{
       display: flex;
-      /*justify-content: space-between;*/
       padding-right: 100px;
       padding-left: 30px;
-
     }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      /*display: flex;
-      justify-content: center;
-      align-items: center;*/
+    .nav-item{
       font-weight: bold;
       color: rgb(56, 56, 56);
       position: relative;
@@ -91,7 +73,7 @@
       to { width: 100%; height: 3px;}
     }
 
-    #booking{          /*Adding styling to booking*/
+    #booking{
       background-color: #ff8a1d;
       margin: 10px;
       font-weight:900;
@@ -113,58 +95,312 @@
         }
     }
 
-    .fw-bold {
-      font-weight: bolder;
-    }
-
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
-    
     #booking:hover{
       transform: scale(1.1);
       background-color: #ff8a1d;
     }
-    .fw-bold {
-      font-weight: bolder;
-    }
 
+    .fw-bold { font-weight: bolder; }
     .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
+      width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); z-index: 1000; cursor: pointer;
+    }
+    .whatsapp i { font-size: 28px; color: white; }
+
+    /* Enhanced Contact Form Styles */
+    .contact-main-container {
+      background: linear-gradient(135deg, #8bb5d1 0%, #a8c8e1 100%);
+      border-radius: 25px;
+      padding: 50px 40px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      max-width: 900px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    [data-theme="dark"] .contact-main-container {
+      background: var(--dark-card-bg);
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    .contact-form-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact-form-section { flex: 1; min-width: 300px; }
+    .contact-image-section { flex: 1; min-width: 300px; text-align: center; }
+    .contact-form-section h2 {
+      font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #007bff; text-align: center; position: relative;
+    }
+    [data-theme="dark"] .contact-form-section h2 { color: var(--dark-accent); }
+    .contact-form-section h2::after {
+      content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 3px; background: var(--dark-accent); border-radius: 2px;
+    }
+    .form-group-enhanced { position: relative; margin-bottom: 25px; }
+    .form-control-enhanced {
+      width: 100%;
+      padding: 15px 20px 15px 55px; 
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      color: #333333 !important; 
+      height: 52px;
+      box-sizing: border-box;
+    }
+    .form-control-enhanced::placeholder { 
+      color: #666666; 
+      font-weight: 400; 
+    }
+    [data-theme="dark"] .form-control-enhanced {
+      background-color: #2a2a2a;
+      border-color: #444444;
+      color: #ffffff !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    [data-theme="dark"] .form-control-enhanced::placeholder { 
+      color: #aaaaaa; 
+    }
+    .form-control-enhanced:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+      transform: translateY(-2px);
+    }
+    [data-theme="dark"] .form-control-enhanced:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+    .form-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666666;
+      font-size: 20px;
+      z-index: 2;
+      pointer-events: none;
+      height: 24px;
+      width: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
+      line-height: 1;
+      margin-left: 0;
+      margin-right: 0;
     }
-
-    .whatsapp i {
-      font-size: 28px;
-      color: white;
+    [data-theme="dark"] .form-icon { 
+      color: #aaaaaa; 
+    }
+    .input-icon-wrapper {
+      position: relative;
+      height: 52px; 
+      box-sizing: border-box;
+    }
+    .form-control-with-icon {
+      padding-left: 45px !important;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .textarea-enhanced { 
+      min-height: 120px; 
+      resize: vertical; 
+      width: 100%; 
+      max-width: 100%; 
+      background-color: #ffffff;
+      color: #333333;
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+    .textarea-enhanced::placeholder {
+      color: #666666;
+      font-weight: 400;
+    }
+    .textarea-enhanced:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+      transform: translateY(-2px);
+    }
+    [data-theme="dark"] .textarea-enhanced {
+      background-color: #2a2a2a;
+      border-color: #444444;
+      color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    [data-theme="dark"] .textarea-enhanced::placeholder {
+      color: #aaaaaa;
+    }
+    [data-theme="dark"] .textarea-enhanced:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+    .form-group-enhanced textarea {
+      margin-top: -10px;
     }
     
+    /* Fixed Phone Input Styles */
+   .phone-input-group { 
+    display: flex; 
+    gap: 10px; 
+    align-items: stretch; 
+    margin-bottom: 25px; 
+}
+
+.country-code-select {
+      width: 22%;
+      padding: 15px 8px;
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      font-size: 14px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #222;
+      height: 52px;
+      box-sizing: border-box;
+    }
+    [data-theme="dark"] .country-code-select {
+      background-color: #2a2a2a;
+      border-color: #444444;
+      color: #ffffff;
+    }
+    .country-code-select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+.phone-number-input { 
+    width: 78%;
+    padding: 15px 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    height: 52px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+[data-theme="dark"] .phone-number-input {
+  background-color: #2a2a2a;
+  border-color: #444444;
+  color: #ffffff;
+}
+.phone-number-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  transform: translateY(-2px);
+}
+    .btn-send-enhanced {
+      background: var(--dark-accent);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+      display: block;
+      margin: 30px auto 0;
+      min-width: 200px;
+    }
+    .btn-send-enhanced {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+      display: block;
+      margin: 30px auto 0;
+      min-width: 200px;
+    }
+    .btn-send-enhanced:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.4);
+      background: #0056b3;
+    }
+    .btn-send-enhanced:active { transform: translateY(-1px); }
+    .error-message, .success-message {
+      font-size: 14px;
+      margin-top: 5px;
+      margin-left: 0;
+      display: none; 
+      animation: fadeIn 0.3s ease;
+      min-height: 18px; 
+      color: #dc3545; 
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .error-message { color: #dc3545; }
+    [data-theme="dark"] .error-message { color: #ff6b6b; }
+    .success-message { color: #28a745; }
+    [data-theme="dark"] .success-message { color: #51cf66; }
+    .error-message.hidden, .success-message.hidden {
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: none !important;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .contact-image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .contact-main-container { padding: 30px 20px; margin: 20px; }
+      .contact-form-wrapper { flex-direction: column; gap: 30px; }
+      .contact-form-section h2 { font-size: 2rem; }
+      .phone-input-group { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .country-code-select { 
+        width: 100%; 
+    }
+    .phone-number-input {
+        width: 100%;
+    }
+}
   </style>
 </head>
 
 <body>
-
-
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="../">
-              <img src="../images/logo_blue.png" alt="Sachiva Logo" class="main-logo">
+            <a class="navbar-brand" href="./">
+              <img src="images/logo_blue.png" alt="Sachiva Logo" class="main-logo">
               <span>sachiva</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -174,16 +410,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
                 <li class="nav-item active"><a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item1">      
-                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+                  <a class="nav-link" id="booking" href="booking.html">Book a Service</a>
                 </li>
               </ul>
               <label class="switch theme-switch">
@@ -200,130 +436,270 @@
     </header>
   </div>
 
-
-
   <section class="contact_section layout_padding">
-    <div class="container my-5">
-      <div class="contact-container">
-        <div class="contact-form">
-          <h2>Contact Us</h2>
-          <form id="contactForm">
-            <div class="form-group">
-              <i class="fas fa-user"></i>
-              <input type="text" class="form-control" id="name" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email" class="form-control" id="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-send">Send Message</button>
-            <div id="formAlert" class="alert d-none"></div>
-          </form>
-        </div>
-        <div class="contact-image">
-                      <img src="../images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
+    <div class="container">
+      <div class="contact-main-container">
+        <div class="contact-form-wrapper">
+          <div class="contact-form-section">
+            <h2>Contact Us</h2>
+            <form id="contactForm" autocomplete="off">
+              <div class="form-group-enhanced">
+                <div class="input-icon-wrapper" style="position: relative;">
+                  <i class="fas fa-user form-icon"></i>
+                  <input type="text" class="form-control-enhanced form-control-with-icon" id="name" placeholder="Full Name" required autocomplete="off">
+                </div>
+                <div class="error-message" id="nameError"></div>
+              </div>
+              <div class="form-group-enhanced">
+                <div class="input-icon-wrapper" style="position: relative;">
+                  <i class="fas fa-envelope form-icon"></i>
+                  <input type="email" class="form-control-enhanced form-control-with-icon" id="email" placeholder="Email Address" required autocomplete="off">
+                </div>
+                <div class="error-message" id="emailError"></div>
+                <div class="success-message" id="emailSuccess"></div>
+              </div>
+              <div class="form-group-enhanced">
+                <div class="phone-input-group">
+                  <select class="country-code-select" id="countryCode">
+                    <option value="+91">India +91</option>
+                    <option value="+1">United States +1</option>
+                    <option value="+44">United Kingdom +44</option>
+                    <option value="+61">Australia +61</option>
+                    <option value="+81">Japan +81</option>
+                    <option value="+49">Germany +49</option>
+                    <option value="+33">France +33</option>
+                    <option value="+86">China +86</option>
+                    <option value="+7">Russia +7</option>
+                    <option value="+39">Italy +39</option>
+                    <option value="+55">Brazil +55</option>
+                    <option value="+27">South Africa +27</option>
+                    <option value="+82">South Korea +82</option>
+                    <option value="+34">Spain +34</option>
+                    <option value="+31">Netherlands +31</option>
+                    <option value="+64">New Zealand +64</option>
+                    <option value="+90">Turkey +90</option>
+                    <option value="+52">Mexico +52</option>
+                    <option value="+41">Switzerland +41</option>
+                    <option value="+46">Sweden +46</option>
+                  </select>
+                  <input type="tel" class="form-control-enhanced phone-number-input" id="phone" placeholder="Phone Number" required autocomplete="off">
+                </div>
+  <div class="error-message" id="phoneError"></div>
+</div>
+              <div class="form-group-enhanced">
+                <textarea class="form-control-enhanced textarea-enhanced" id="message" placeholder="Your Message" rows="5" required autocomplete="off"></textarea>
+                <div class="error-message" id="messageError"></div>
+              </div>
+              <button type="submit" class="btn-send-enhanced">
+                <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+                Send Message
+              </button>
+              <div id="formAlert" class="alert d-none" style="margin-top: 20px; text-align: center;"></div>
+            </form>
+          </div>
+          <div class="contact-image-section">
+            <img src="images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
+  <section class="new-info-section">
+    <div class="new-container">
+      <div class="footer-grid-wrapper">
+        <div class="footer-column footer-about">
+          <a href="#" class="footer-logo">
+            <img src="images/logo_blue.png" alt="Your Company Logo">
           </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+          <p class="footer-description">
+            Crafting innovative solutions for a digital world. We provide cutting-edge services to help your business thrive.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column footer-links">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-services">
+          <h5 class="footer-heading">Our Services</h5>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">App Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-contact">
+          <h5 class="footer-heading">Get In Touch</h5>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> India (Your detailed address here if needed)
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:sumit.......X@gmail.com">sumit.......X@gmail.com</a>
+          </p>
+        </div>
       </div>
+      <footer class="footer_section">
+        <div class="container">
+          <p>
+            &copy; <span id="displayDateYear"></span> All Rights Reserved By
+            <a href="./">Sachiva</a>
+          </p>
+        </div>
+      </footer>
     </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
+    <a href="https://wa.me/75...." target="_blank" class="whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </section>
 
-</footer>
-<button id="backToTop" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="../js/custom.js"></script>
+  <script src="js/custom.js"></script>
   <script>
     // Update year
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-    
-    // Contact form validation
+
+    // Enhanced Contact form validation with real-time feedback
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      const emailInput = document.getElementById('email');
       const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
       const messageInput = document.getElementById('message');
       const alertBox = document.getElementById('formAlert');
 
-      const validDomains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "aol.com", "icloud.com", "zoho.com", "gmx.com"];
+      // Reset all error messages
+      document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.success-message').forEach(el => el.style.display = 'none');
+
+      let isValid = true;
+
+      // Name validation
+      if (nameInput.value.trim().length < 2) {
+        document.getElementById('nameError').textContent = 'Name must be at least 2 characters long';
+        document.getElementById('nameError').style.display = 'block';
+        isValid = false;
+      }
+
+      // Email validation
       const emailValue = emailInput.value.trim();
       const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+      const validDomains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "aol.com", "icloud.com", "zoho.com", "gmx.com"];
 
       if (!emailPattern.test(emailValue)) {
-        alertBox.className = 'alert alert-danger';
-        alertBox.textContent = "Please enter a valid email address.";
-        return;
+        document.getElementById('emailError').textContent = 'Please add @ in your email address';
+        document.getElementById('emailError').style.display = 'block';
+        isValid = false;
+      } else {
+        const domain = emailValue.split('@')[1].toLowerCase();
+        if (!validDomains.includes(domain)) {
+          document.getElementById('emailError').textContent = 'Please use a valid email domain (gmail, yahoo, outlook, etc.)';
+          document.getElementById('emailError').style.display = 'block';
+          isValid = false;
+        } else {
+          document.getElementById('emailSuccess').textContent = '✓ Valid email address';
+          document.getElementById('emailSuccess').style.display = 'block';
+        }
       }
 
-      const domain = emailValue.split('@')[1].toLowerCase();
-      if (!validDomains.includes(domain)) {
-        alertBox.className = 'alert alert-danger';
-        alertBox.textContent = "Please enter an email from an allowed domain.";
-        return;
+      // Phone validation
+      const phoneValue = phoneInput.value.trim();
+      const phonePattern = /^[0-9]{10}$/;
+      if (!phonePattern.test(phoneValue)) {
+        document.getElementById('phoneError').textContent = 'Please enter exactly 10 digits';
+        document.getElementById('phoneError').style.display = 'block';
+        isValid = false;
       }
 
-      alertBox.className = 'alert alert-success';
-      alertBox.textContent = "Message sent successfully!";
+      // Message validation
+      if (messageInput.value.trim().length < 10) {
+        document.getElementById('messageError').textContent = 'Message must be at least 10 characters long';
+        document.getElementById('messageError').style.display = 'block';
+        isValid = false;
+      }
 
-      setTimeout(() => {
-        alertBox.className = 'alert d-none';
-        alertBox.textContent = "";
-        document.getElementById('contactForm').reset();
-      }, 2500);
+      if (isValid) {
+        alertBox.className = 'alert alert-success';
+        alertBox.textContent = "Message sent successfully! We'll get back to you soon.";
+        alertBox.style.display = 'block';
+
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+          document.getElementById('contactForm').reset();
+          document.querySelectorAll('.success-message').forEach(el => el.style.display = 'none');
+        }, 3000);
+      }
+    });
+
+    // Real-time email validation
+    document.getElementById('email').addEventListener('input', function () {
+      const emailValue = this.value.trim();
+      const emailError = document.getElementById('emailError');
+      const emailSuccess = document.getElementById('emailSuccess');
+
+      if (emailValue.length > 0 && !emailValue.includes('@')) {
+        emailError.textContent = 'Please add @ in your email address';
+        emailError.style.display = 'block';
+        emailSuccess.style.display = 'none';
+      } else if (emailValue.includes('@') && emailValue.split('@')[1]) {
+        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (emailPattern.test(emailValue)) {
+          emailError.style.display = 'none';
+          emailSuccess.textContent = '✓ Valid email format';
+          emailSuccess.style.display = 'block';
+        } else {
+          emailError.textContent = 'Please enter a complete email address';
+          emailError.style.display = 'block';
+          emailSuccess.style.display = 'none';
+        }
+      } else {
+        emailError.style.display = 'none';
+        emailSuccess.style.display = 'none';
+      }
+    });
+
+    // Real-time phone validation
+    document.getElementById('phone').addEventListener('input', function () {
+      const phoneValue = this.value.trim();
+      const phoneError = document.getElementById('phoneError');
+
+      // Remove non-numeric characters
+      this.value = phoneValue.replace(/[^0-9]/g, '');
+
+      if (this.value.length > 0 && this.value.length < 10) {
+        phoneError.textContent = 'Please enter exactly 10 digits';
+        phoneError.style.display = 'block';
+      } else if (this.value.length > 10) {
+        phoneError.textContent = 'Please enter exactly 10 digits';
+        phoneError.style.display = 'block';
+      } else if (this.value.length === 10) {
+        phoneError.style.display = 'none';
+      } else {
+        phoneError.style.display = 'none';
+      }
     });
   </script>
-     <script src="../js/navbar.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
-
 </html>
