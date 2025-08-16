@@ -1,280 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="keywords"
+      content="Sachiva, Home Services, IT Solutions, Maintenance"
+    />
+    <meta
+      name="description"
+      content="Learn more about Sachiva's home and IT service solutions."
+    />
+    <meta name="author" content="Sachiva Team" />
 
-<head>
-  <!-- Basic Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="Sachiva, Home Services, IT Solutions, Maintenance" />
-  <meta name="description" content="Learn more about Sachiva's home and IT service solutions." />
-  <meta name="author" content="Sachiva Team" />
+    <link rel="icon" href="../images/logo_blue.png" />
+    <title>About Us - Sachiva</title>
 
-   <link rel="icon" href="../images/logo_blue.png">
-  <title>About Us - Sachiva</title>
+    <!-- CSS & Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
+    <link rel="stylesheet" href="../css/about.css" />
 
-  <!-- CSS & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../css/bootstrap.css" />
-  <link rel="stylesheet" href="../css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
-
-  <!-- Custom Styles -->
-  <style>
-   .header_section{
-      border-radius: 100px;
-      margin: 20px;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      width: calc(100% - 40px); /* Account for margin */
-    }
-    .navbar-nav{
-      display: flex;
-      /*justify-content: space-between;*/
-      padding-right: 100px;
-      padding-left: 30px;
-
-    }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      /*display: flex;
+    <!-- Custom Styles -->
+    <style>
+      .header_section {
+        border-radius: 100px;
+        margin: 20px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        width: calc(100% - 40px); /* Account for margin */
+      }
+      .navbar-nav {
+        display: flex;
+        /*justify-content: space-between;*/
+        padding-right: 100px;
+        padding-left: 30px;
+      }
+      .nav-item {
+        /*Adding styling to nav bar as it was overflowing out of page*/
+        /*display: flex;
       justify-content: center;
       align-items: center;*/
-      font-weight: bold;
-      color: rgb(56, 56, 56);
-      position: relative;
-      margin-right: 0px;
-      padding: 8px;
-      margin: 2px;
-      transition: all 0.5s ease;
-      font-size: 0.95rem;
-    }
+        font-weight: bold;
+        color: rgb(56, 56, 56);
+        position: relative;
+        margin-right: 0px;
+        padding: 8px;
+        margin: 2px;
+        transition: all 0.5s ease;
+        font-size: 0.95rem;
+      }
 
-    .nav-item:hover{
-      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
+      .nav-item:hover {
+        background: linear-gradient(
+          120deg,
+          blue,
+          rgb(0, 247, 255),
+          rgb(0, 255, 0)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
 
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: rgb(0, 132, 255);
-      width: 0;
-    }
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: rgb(0, 132, 255);
+        width: 0;
+      }
 
-    .nav-item:hover::after {
-      animation: slideUnderline 0.5s forwards;
-    }
+      .nav-item:hover::after {
+        animation: slideUnderline 0.5s forwards;
+      }
 
-    @keyframes slideUnderline {
-      from { width: 0; height: 0px;}
-      to { width: 100%; height: 3px;}
-    }
+      @keyframes slideUnderline {
+        from {
+          width: 0;
+          height: 0px;
+        }
+        to {
+          width: 100%;
+          height: 3px;
+        }
+      }
 
-    #booking{          /*Adding styling to booking*/
-      background-color: #ff8a1d;
-      margin: 10px;
-      font-weight:900;
-      padding: 10px !important;
-      color: white;
-      border-radius: 12px;
-      animation: pulseShadow 2s infinite;
-      transition: transform 0.5s ease, background-color 0.5s ease;
-    }
-    @keyframes pulseShadow {
+      #booking {
+        /*Adding styling to booking*/
+        background-color: #ff8a1d;
+        margin: 10px;
+        font-weight: 900;
+        padding: 10px !important;
+        color: white;
+        border-radius: 12px;
+        animation: pulseShadow 2s infinite;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+      }
+      @keyframes pulseShadow {
         0% {
-            box-shadow: 0 0 0 0 #ff8a1d;
+          box-shadow: 0 0 0 0 #ff8a1d;
         }
         70% {
-            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
         }
-    }
+      }
 
-    .fw-bold {
-      font-weight: bolder;
-    }
+      .fw-bold {
+        font-weight: bolder;
+      }
 
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
+      .feature_section {
+        position: relative;
+        top: 60px;
+      }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
-    }
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        cursor: pointer;
+      }
 
-    .whatsapp i {
-      font-size: 28px;
-      color: white;
-    }
-    
-    #booking:hover{
-      transform: scale(1.1);
-      background-color: #ff8a1d;
-    }
-  </style>
-</head>
+      .whatsapp i {
+        font-size: 28px;
+        color: white;
+      }
 
-<body>
-  <!-- Header -->
-  <div class="hero_area">
-    <header class="header_section">
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="../">
-              <img src="../images/logo_blue.png" alt="Logo" class="main-logo">
-              <span>sachiva</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item active fw-bold"><a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
+      #booking:hover {
+        transform: scale(1.1);
+        background-color: #ff8a1d;
+      }
+    </style>
+  </head>
 
-                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item1">      
-                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
-                </li>
-              </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
+  <body>
+    <!-- Header -->
+    <div class="hero_area">
+      <header class="header_section">
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              <a class="navbar-brand" href="../">
+                <img
+                  src="../images/logo_blue.png"
+                  alt="Logo"
+                  class="main-logo"
+                />
+                <span>sachiva</span>
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class=""> </span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item active fw-bold">
+                    <a class="nav-link" href="about.html"
+                      >About <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contributors.html"
+                      >Contributors</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum</a>
+                  </li>
+
+                  <li class="nav-item contact-highlight">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item1">
+                    <a class="nav-link" id="booking" href="booking.html"
+                      >Book a Service</a
+                    >
+                  </li>
+                </ul>
+                <label class="switch theme-switch">
+                  <input type="checkbox" id="theme-toggle" />
+                  <span class="slider">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                  </span>
+                </label>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- End Header -->
+
+    <!-- About Section -->
+    <section class="about_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="detail-box">
+              <h2>About Us</h2>
+              <div class="text-content">
+                <p style="text-align: justify">
+                  At <i>Sachiva</i>, we specialize in delivering high-quality
+                  home services tailored to your needs. Our team of skilled
+                  professionals is dedicated to providing reliable, efficient,
+                  and affordable solutions for your home and workspace.
+                </p>
+              </div>
+
+              <div class="text-content">
+                <p style="text-align: justify">
+                  With years of experience in the industry, we have built a
+                  reputation for excellence. Our commitment to quality,
+                  innovation, and customer care sets us apart, making us the
+                  preferred choice for thousands of satisfied clients.
+                </p>
+              </div>
+
+              <button
+                class="explore-btn"
+                onclick="location.href='service.html'"
+              >
+                Explore Our Services
+              </button>
             </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-  </div>
-  <!-- End Header -->
-
-  <!-- About Section -->
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div>
-          <div class="detail-box">
-            <h2>About Us</h2>
-            <div class="text-content"><p style="text-align: justify;">
-              At <i>Sachiva</i>, we specialize in delivering high-quality home services tailored to your
-              needs. Our team of skilled professionals is dedicated to providing reliable, efficient, and
-              affordable solutions for your home and workspace.
-            </p></div>
-            
-            <div class="text-content"><p style="text-align: justify;">
-              With years of experience in the industry, we have built a reputation for excellence. Our
-              commitment to quality, innovation, and customer care sets us apart, making us the preferred
-              choice for thousands of satisfied clients.
-            </p></div>
-            
-           <button class="explore-btn" onclick="location.href='service.html'">Explore Our Services</button>
           </div>
-        </div>
-        <div>
-          <div class="img-box">
-            <img src="../images/maintenance.gif" alt="About Sachiva">
+          <div>
+            <div class="img-box">
+              <img src="../images/maintenance.gif" alt="About Sachiva" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- End About Section -->
 
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+      <div class="about-description">
+        <h1 class="title">About Detail Description</h1>
+        <div class="underLine"></div>
+        <div class="vision aboutAll">
+          <div class="vision-about about-content">
+            <h2><img id="logo" src="../images/Vision.png" alt="" /> Vision</h2>
+            <ul>
+              <li>
+                🌟To be a leading digital solutions partner that empowers
+                businesses with innovation
+              </li>
+              <li>
+                💡 Inspire innovation, creativity, and sustainability.
+              </li>
+              <li>
+                🔮 Shape the future of businesses with technology-driven growth.
+              </li>
+              <li>
+                🛡️ Security, and Create a world where every business thrives online.
+              </li>
+            </ul>
+          </div>
+          <div class="visulizer">
+            <img
+              src="../images/strategy.gif"
+              alt="Funny GIF" 
+            />
+          </div>
+        </div>
+        <div class="mission aboutAll">
+          <div class="mission-about about-content">
+            <h2>
+              <img id="logo" src="../images/Mission.png" alt="error" /> Mission
+            </h2>
+            <ul>
+              <li>
+                🚀 Deliver
+                <strong>high-quality, scalable, and secure</strong> IT solutions
+                tailored to client needs.
+              </li>
+              <li>
+                🤝 Build <strong>long-term partnerships</strong> through trust,
+                transparency, and excellence.
+              </li>
+              <li>
+                💡 Continuously <strong>innovate</strong> to stay ahead in web,
+                software, and cybersecurity services.
+              </li>
+              <li>
+                🌍 Make technology accessible for
+                <strong>businesses of all sizes</strong>.
+              </li>
+            </ul>
+          </div>
+          <div class="visulizer">
+            <img
+              src="../images/goals.gif"
+              alt="Funny GIF" 
+            />
+          </div>
+        </div>
+        <div class="team aboutAll">
+          <h2> <img id="logo" src="../images/business.png" alt=""> Meet Our Team</h2>
+          <div class="team-grid">
+            <!-- Team Member 1-->
+            <div class="team-card">
+              <img src="https://avatar.iran.liara.run/public/girl" alt="Shivani Sharma" />
+              <h3>Shivani Sharma</h3>
+              <p>Founder & CEO</p>
+              <p class="bio">
+                Visionary entrepreneur passionate about building
+                technology-driven solutions that simplify and secure businesses.
+              </p>
+            </div>
+            <!-- Team Member 2-->
+            <div class="team-card">
+              <img src="https://avatar.iran.liara.run/public/boy" alt="Web Developer" />
+              <h3>Rohit Khandelwal</h3>
+              <p>Frontend & Backend</p>
+              <p class="bio">
+                Crafting responsive, user-friendly websites and applications
+                tailored for business growth.
+              </p>
+            </div>
+            <!-- Team Member 3-->
+            <div class="team-card">
+              <img src="https://avatar.iran.liara.run/public/boy?username=Rohit" alt="Cybersecurity Expert" />
+              <h3>Robin Alli</h3>
+              <p>Cybersecurity Expert</p>
+              <p class="bio">
+                Protecting businesses with proactive monitoring, compliance, and
+                cutting-edge defense strategies.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
+    </section>
+    <!-- End About Section -->
 
-</footer>
-<button id="backToTop" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  
-  <!-- JS Scripts -->
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="../js/custom.js"></script>
-  <script>
-    // Display current year
-    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-  </script>
-     <script src="../js/navbar.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Let's Talk</h2>
+          <p>
+            Every high-quality home service starts with a chat.<br />
+            Our team leads client conversations and will be happy to discuss
+            your queries and needs.<br />
+            We’ll also bring in the right people when needed.
+          </p>
+          <a href="contact.html" class="cta-btn">Tell us about your Query</a>
+        </div>
+        <div class="footer-right">
+          <ul class="contact-list">
+            <li>
+              <span>Email</span>
+              <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+            </li>
+            <li>
+              <span>Address</span>
+              <a href="https://maps.google.com" target="_blank">
+                Church Street, Bangalore, Karnataka, 1234
+              </a>
+            </li>
+          </ul>
+          <div class="footer-social-icons">
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
 
+      <div
+        class="footer-copyright text-center"
+        style="margin-top: 32px; color: #c1cbe2; font-size: 1rem"
+      >
+        &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      </div>
+    </footer>
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JS Scripts -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/custom.js"></script>
+    <script>
+      // Display current year
+      document.getElementById("displayDateYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script src="../js/navbar.js"></script>
+  </body>
 </html>
