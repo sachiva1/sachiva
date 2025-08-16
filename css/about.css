@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 5rem;
+}
+.title {
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #221165;
+}
+.underLine {
+  position: relative;
+  bottom: 1rem;
+  width: 44ch;
+  height: 2px;
+  border: 3px solid #0a0322;
+}
+
+.aboutAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  gap: 1.3rem;
+  box-shadow: 0 4px 12px rgba(23, 67, 92, 0.45);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+}
+#logo {
+  width: 60px;
+  height: 60px;
+}
+
+/* vision */
+.about-content {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.about-content h2,
+.team h2 {
+  font-family: "Macondo", cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.about-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.about-content ul li {
+  list-style: none;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+}
+.visulizer img {
+  width: 400px;
+  height: 300px;
+}
+.team {
+  min-width: 1000px;
+  flex-direction: column;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin: 16px 0;
+}
+.team-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+.team-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+.team-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.team-card .bio {
+  font-size: 0.85rem;
+  color: #444;
+}
