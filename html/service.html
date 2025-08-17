@@ -156,58 +156,97 @@
       color: white;
     }
 
+    /* Card Flip Styles */
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 300px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .flip-card-front {
+      background: white;
+      color: black;
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #04314f);
+      color: white;
+      transform: rotateY(180deg);
+    }
+
     /*Adding styles on hover for card elements*/
-    #card1:hover{
+    #card1 .flip-card-front:hover{
       background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card2:hover{
+    #card2 .flip-card-front:hover{
       background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card3:hover{
+    #card3 .flip-card-front:hover{
       background: linear-gradient(rgba(245, 235, 101, 0.295), rgb(255, 255, 122));
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card4:hover{
+    #card4 .flip-card-front:hover{
       background: linear-gradient(rgba(255, 76, 225, 0.336), lightpink);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card5:hover{
+    #card5 .flip-card-front:hover{
       background: linear-gradient(rgba(57, 225, 255, 0.295), lightblue);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card6:hover{
+    #card6 .flip-card-front:hover{
       background: linear-gradient(rgba(32, 31, 37, 0.295), lightgrey);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card7:hover{
+    #card7 .flip-card-front:hover{
       background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card8:hover{
+    #card8 .flip-card-front:hover{
       background: linear-gradient(rgba(108, 96, 216, 0.295), lightblue);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
-    #card9:hover{
+    #card9 .flip-card-front:hover{
       background: linear-gradient(rgba(96, 216, 136, 0.295), lightgreen);
-      cursor: pointer;
       transform: translateY(-5px);
       transition: all 0.3s ease;
     }
@@ -223,6 +262,42 @@
       box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3) !important;
     }
 
+    /* Back card content styling */
+    .flip-card-back h5 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .flip-card-back p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .service-price {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 10px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .book-now-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .book-now-btn:hover {
+      background: white;
+      color: #667eea;
+      text-decoration: none;
+    }
 
   </style>
 </head>
@@ -291,31 +366,57 @@
     <div class="row mt-4">
       <!-- Home Maintenance -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card1" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
-          <h5 class="fw-bold-1">Home Maintenance</h5>
-          <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
+        <div id="card1" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-wrench fa-3x mb-3 text-primary"></i>
+              <h5 class="fw-bold-1">Home Maintenance</h5>
+              <p>From plumbing to electrical repairs, our experts ensure your home stays in perfect shape.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>Home Maintenance</h5>
+              <p class="service-price">Base Rate: ₹150–₹300 per hour</p>
+              <p class="service-price">Full Service: ₹500–₹900 per day</p>
+              <a href="booking.html?service=🛠️ Home Maintenance" class="book-now-btn">Book Now</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Cleaning Services -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card2" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-broom fa-3x mb-3 text-success"></i>
-          <h5 class="fw-bold">Cleaning Services</h5>
-          <div class="mt-4">
-            <p>Professional deep cleaning for homes and offices, ensuring hygiene and comfort.</p>
+        <div id="card2" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-broom fa-3x mb-3 text-success"></i>
+              <h5 class="fw-bold">Cleaning Services</h5>
+              <p>Professional deep cleaning for homes and offices, ensuring hygiene and comfort.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>Cleaning Services</h5>
+              <p class="service-price">Base Rate: ₹400–₹800 (1BHK)</p>
+              <p class="service-price">Full Service: ₹1,500–₹3,000 (2BHK+)</p>
+              <a href="booking.html?service=🧹 Cleaning Service" class="book-now-btn">Book Now</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Renovation & Painting -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card3" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
-          <h5 class="fw-bold">Renovation & Painting</h5>
-          <div class="mt-4">
-            <p>Give your home a fresh look with our expert painting and renovation solutions.</p>
+        <div id="card3" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-paint-roller fa-3x mb-3 text-warning"></i>
+              <h5 class="fw-bold">Renovation & Painting</h5>
+              <p>Give your home a fresh look with our expert painting and renovation solutions.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>Renovation & Painting</h5>
+              <p class="service-price">Base Rate: ₹10–₹15 per sq. ft. (Labour)</p>
+              <p class="service-price">Full Service: ₹2,000–₹4,000 per room</p>
+              <a href="booking.html?service=🎨 Renovation and painting" class="book-now-btn">Book Now</a>
+            </div>
           </div>
         </div>
       </div>
@@ -324,65 +425,111 @@
     <div class="row mt-2">
       <!-- Appliance Repair -->
       <div class="col-md-4 mb-4 home-service">
-        <div id="card4" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
-          <h5 class="fw-bold">Appliance Repair</h5>
-          <div class="mt-4">
-            <p>We repair all major home appliances quickly and affordably at your convenience.</p>
+        <div id="card4" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-tools fa-3x mb-3 text-danger"></i>
+              <h5 class="fw-bold">Appliance Repair</h5>
+              <p>We repair all major home appliances quickly and affordably at your convenience.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>Appliance Repair</h5>
+              <p class="service-price">Base Rate: ₹150–₹300 (Inspection Fee)</p>
+              <p class="service-price">Full Service: ₹300–₹1,000 (Repair + Parts)</p>
+              <a href="booking.html?service=🔧 Appliance Repair" class="book-now-btn">Book Now</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- IT & Network Setup -->
       <div class="col-md-4 mb-4 business-service">
-        <div id="card5" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
-          <h5 class="fw-bold">IT & Network Setup</h5>
-          <div class="mt-4">
-            <p>Need help setting up your Wi-Fi, printer, or office tech? We've got your back.</p>
+        <div id="card5" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-network-wired fa-3x mb-3 text-info"></i>
+              <h5 class="fw-bold">IT & Network Setup</h5>
+              <p>Need help setting up your Wi-Fi, printer, or office tech? We've got your back.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>IT & Network Setup</h5>
+              <p class="service-price">Starting from ₹500</p>
+              <a href="booking.html?service=🧑‍💻 It & Network" class="book-now-btn">Book Now</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Security Systems -->
       <div class="col-md-4 mb-4 business-service">
-        <div id="card6" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-          <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
-          <h5 class="fw-bold-2">Security Systems</h5>
-          <div class="mt-4">
-            <p class="adjust-p">Installation of cameras, alarms, and smart home security solutions.</p>
+        <div id="card6" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa fa-shield-alt fa-3x mb-3 text-secondary"></i>
+              <h5 class="fw-bold-2">Security Systems</h5>
+              <p class="adjust-p">Installation of cameras, alarms, and smart home security solutions.</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>Security Systems</h5>
+              <p class="service-price">Base Rate: ₹400–₹800 per camera</p>
+              <p class="service-price">Full Service: ₹1,500–₹3,000 (Full Home Setup)</p>
+              <a href="booking.html?service=🛡️ Security Systems" class="book-now-btn">Book Now</a>
+            </div>
           </div>
         </div>
       </div>
       <!-- Pest Control -->
 <div class="col-md-4 mb-4 home-service">
-  <div id="card7" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-    <i class="fa fa-bug fa-3x mb-3 text-success"></i>
-    <h5 class="fw-bold">Pest Control</h5>
-    <div class="mt-4">
-      <p>Protect your home from insects and rodents with our expert pest control services.</p>
+  <div id="card7" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <i class="fa fa-bug fa-3x mb-3 text-success"></i>
+        <h5 class="fw-bold">Pest Control</h5>
+        <p>Protect your home from insects and rodents with our expert pest control services.</p>
+      </div>
+      <div class="flip-card-back">
+        <h5>Pest Control</h5>
+        <p class="service-price">Base Rate: ₹500–₹1,200 (2BHK)</p>
+        <p class="service-price">Full Service: ₹1,500–₹2,500 (Big House/Full Package)</p>
+        <a href="booking.html?service=🐛 Pest Control" class="book-now-btn">Book Now</a>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Home Automation -->
 <div class="col-md-4 mb-4 business-service">
-  <div id="card8" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-    <i class="fa fa-home fa-3x mb-3 text-primary"></i>
-    <h5 class="fw-bold">Smart Home Automation</h5>
-    <div class="mt-4">
-      <p>Automate lights, security, and more with cutting-edge smart home technology.</p>
+  <div id="card8" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <i class="fa fa-home fa-3x mb-3 text-primary"></i>
+        <h5 class="fw-bold">Smart Home Automation</h5>
+        <p>Automate lights, security, and more with cutting-edge smart home technology.</p>
+      </div>
+      <div class="flip-card-back">
+        <h5>Smart Home Automation</h5>
+              <p class="service-price">Starting from ₹700</p>
+        <a href="booking.html?service=🏠 Smart Home Automation" class="book-now-btn">Book Now</a>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Gardening & Landscaping -->
 <div class="col-md-4 mb-4 home-service">
-  <div id="card9" class="card h-100 text-center p-3 shadow d-flex flex-column justify-content-between service-card">
-    <i class="fa fa-seedling fa-3x mb-3 text-success"></i>
-    <h5 class="fw-bold">Gardening & Landscaping</h5>
-    <div class="mt-4">
-      <p>Bring your outdoors to life with our expert gardening and landscaping services.</p>
+  <div id="card9" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <i class="fa fa-seedling fa-3x mb-3 text-success"></i>
+        <h5 class="fw-bold">Gardening & Landscaping</h5>
+        <p>Bring your outdoors to life with our expert gardening and landscaping services.</p>
+      </div>
+      <div class="flip-card-back">
+        <h5>Gardening & Landscaping</h5>
+        <p class="service-price">Base Rate: ₹300–₹700 per visit (Maintenance)</p>
+        <p class="service-price">Full Service: ₹1,500–₹3,000 (Small Project)</p>
+        <a href="booking.html?service=🌱 Gardening & Landscaping" class="book-now-btn">Book Now</a>
+      </div>
     </div>
   </div>
 </div>
@@ -398,6 +545,7 @@
     const filterButtons = document.querySelectorAll('.filter-btn');
     const homeCards = document.querySelectorAll('.home-service');
     const businessCards = document.querySelectorAll('.business-service');
+    const flipCards = document.querySelectorAll('.flip-card');
 
     // Service card mapping for booking form
     const serviceMapping = {
@@ -412,15 +560,32 @@
       'card9': '🌱 Gardening & Landscaping'
     };
 
-    // Add click event listeners to service cards
+    // Add click event listeners to flip cards
+    flipCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Don't flip if clicking on the "Book Now" button
+        if (e.target.classList.contains('book-now-btn')) {
+          return;
+        }
+        
+        // Toggle flip class
+        this.classList.toggle('flipped');
+      });
+    });
+
+    // Add click event listeners to "Book Now" buttons
     Object.keys(serviceMapping).forEach(cardId => {
       const card = document.getElementById(cardId);
       if (card) {
-        card.addEventListener('click', function() {
-          const serviceName = serviceMapping[cardId];
-          const bookingUrl = `booking.html?service=${encodeURIComponent(serviceName)}`;
-          window.location.href = bookingUrl;
-        });
+        const bookNowBtn = card.querySelector('.book-now-btn');
+        if (bookNowBtn) {
+          bookNowBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent card flip
+            const serviceName = serviceMapping[cardId];
+            const bookingUrl = `booking.html?service=${encodeURIComponent(serviceName)}`;
+            window.location.href = bookingUrl;
+          });
+        }
       }
     });
 
@@ -467,7 +632,11 @@
           </h2>
           <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneH" data-bs-parent="#serviceFaqs">
             <div class="accordion-body">
-              Yes! We offer same-day slots for plumbing leaks, electrical problems, and minor repairs. Early booking improves availability for urgent cases.
+              Yes! We offer same-day slots for plumbing leaks, electrical problems, and minor repairs. Early booking improves availability for urgent cases.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹150–₹300 per hour (Standard maintenance work)<br>
+              • Full Service: ₹500–₹900 per day (Extended projects and complex repairs)<br>
+              • Pricing varies based on work complexity and time required
             </div>
           </div>
         </div>
@@ -481,7 +650,11 @@
           </h2>
           <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoH" data-bs-parent="#serviceFaqs">
             <div class="accordion-body">
-              Our deep cleaning service covers every room, including bathrooms, kitchens, appliances (external), carpets, and windows. Add-ons like sofa shampooing or inside-appliance cleaning can be requested.
+              Our deep cleaning service covers every room, including bathrooms, kitchens, appliances (external), carpets, and windows. Add-ons like sofa shampooing or inside-appliance cleaning can be requested.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹400–₹800 for basic cleaning (1BHK)<br>
+              • Full Service: ₹1,500–₹3,000 for deep cleaning (2BHK and larger)<br>
+              • Pricing varies based on apartment size and cleaning requirements
             </div>
           </div>
         </div>
@@ -495,7 +668,11 @@
           </h2>
           <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeH" data-bs-parent="#serviceFaqs">
             <div class="accordion-body">
-              We begin with a free on-site assessment to measure the area and check wall condition. A clear estimate is then shared with labor, paint, and material costs.
+              We begin with a free on-site assessment to measure the area and check wall condition. A clear estimate is then shared with labor, paint, and material costs.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹10–₹15 per sq. ft. (Labour only)<br>
+              • Full Service: ₹2,000–₹4,000 per room (Complete renovation)<br>
+              • Pricing includes labor, materials, and paint costs
             </div>
           </div>
         </div>
@@ -509,7 +686,11 @@
           </h2>
           <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourH" data-bs-parent="#serviceFaqs">
             <div class="accordion-body">
-              Yes, we service all major brands and types, including ACs, washing machines, refrigerators, and microwaves. All repairs come with a service warranty.
+              Yes, we service all major brands and types, including ACs, washing machines, refrigerators, and microwaves. All repairs come with a service warranty.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹150–₹300 (Inspection and diagnosis fee)<br>
+              • Full Service: ₹300–₹1,000 (Repair cost including parts)<br>
+              • Final cost depends on the specific part needed and appliance type
             </div>
           </div>
         </div>
@@ -523,7 +704,83 @@
           </h2>
           <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveH" data-bs-parent="#serviceFaqs">
             <div class="accordion-body">
-              Absolutely! We handle Wi-Fi setup, printer installation, and basic network configuration. We can also suggest the best hardware for your needs.
+              Absolutely! We handle Wi-Fi setup, printer installation, and basic network configuration. We can also suggest the best hardware for your needs.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Starting from ₹500 for basic IT & Network setup<br>
+              • Pricing varies based on complexity and hardware requirements<br>
+              • Includes installation, configuration, and basic troubleshooting
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 6 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqSixH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix"
+              aria-expanded="false" aria-controls="faqSix">
+              What are the pricing options for security system installation?
+            </button>
+          </h2>
+          <div id="faqSix" class="accordion-collapse collapse" aria-labelledby="faqSixH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              We offer flexible security system installation options to meet different needs and budgets.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹400–₹800 per camera (Individual camera installation)<br>
+              • Full Service: ₹1,500–₹3,000 (Complete home security setup)<br>
+              • Pricing includes installation, basic configuration, and testing
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 7 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqSevenH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven"
+              aria-expanded="false" aria-controls="faqSeven">
+              What are the pricing options for pest control services?
+            </button>
+          </h2>
+          <div id="faqSeven" class="accordion-collapse collapse" aria-labelledby="faqSevenH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              We offer comprehensive pest control solutions for homes of all sizes.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹500–₹1,200 (Standard treatment for 2BHK apartments)<br>
+              • Full Service: ₹1,500–₹2,500 (Complete treatment for larger houses/full package)<br>
+              • Pricing includes inspection, treatment, and follow-up recommendations
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 8 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqEightH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight"
+              aria-expanded="false" aria-controls="faqEight">
+              What are the pricing options for gardening and landscaping services?
+            </button>
+          </h2>
+          <div id="faqEight" class="accordion-collapse collapse" aria-labelledby="faqEightH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              We offer flexible gardening and landscaping solutions for all types of outdoor spaces.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Base Rate: ₹300–₹700 per visit (Regular maintenance and upkeep)<br>
+              • Full Service: ₹1,500–₹3,000 (Small landscaping projects and design)<br>
+              • Pricing varies based on garden size, project scope, and materials needed
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 9 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqNineH">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqNine"
+              aria-expanded="false" aria-controls="faqNine">
+              What are the pricing options for smart home automation services?
+            </button>
+          </h2>
+          <div id="faqNine" class="accordion-collapse collapse" aria-labelledby="faqNineH" data-bs-parent="#serviceFaqs">
+            <div class="accordion-body">
+              We offer comprehensive smart home automation solutions to modernize your living space.<br><br>
+              <strong>Pricing Structure:</strong><br>
+              • Starting from ₹700 for basic smart home automation<br>
+              • Pricing varies based on the number of devices and automation complexity<br>
+              • Includes installation, setup, and basic configuration
             </div>
           </div>
         </div>

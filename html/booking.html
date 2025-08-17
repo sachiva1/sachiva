@@ -201,8 +201,14 @@
                 <option>🐛 Pest Control</option>
                 <option>🏠 Smart Home Automation</option>
                 <option>🌱 Gardening & Landscaping</option>
+                <option value = "other">🤔💭Other</option>
               </select>
-            </div>          
+            </div>  
+            <!--adding input when other from category is selected--> 
+            <div class="form-group other" style="display: none;" >
+              <i class="fa-solid fa-bell-concierge"></i>              
+              <input type="text" class="form-control" placeholder="Please enter the service you want :)" id = "other" required>
+            </div>                   
             <button type="submit" class="book">Book Service</button>
             <div id="formAlert" class="alert d-none"></div>
 
@@ -296,6 +302,16 @@
       }
     });
     
+    //adding logic to display other text input field
+    document.getElementById('service').addEventListener('change', function() {
+      const otherGroup = document.querySelector('.form-group.other');
+      if (this.value === 'other') {
+        otherGroup.style.display = 'block';
+      } else {
+        otherGroup.style.display = 'none';
+      }
+    });
+
     // Contact form validation
     document.getElementById('bookingForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -324,6 +340,30 @@
         return;
       }
 
+      // Determine cost based on service
+      let cost = '₹150–₹300 (Base Rate)'; // Default cost
+      const selectedService = serviceInput.options[serviceInput.selectedIndex].text;
+      
+             if (selectedService.includes('Maintenance')) {
+         cost = '₹150–₹300 (Base Rate)'; // For home maintenance
+       } else if (selectedService.includes('Cleaning')) {
+         cost = '₹400–₹800 (Base Rate)'; // For cleaning services
+       } else if (selectedService.includes('Renovation')) {
+         cost = '₹10–₹15 per sq. ft. (Base Rate)'; // For renovation services
+              } else if (selectedService.includes('Appliance')) {
+         cost = '₹150–₹300 (Base Rate)'; // For appliance repair
+              } else if (selectedService.includes('Network')) {
+         cost = '₹500+'; // For IT & Network services
+       } else if (selectedService.includes('Smart Home')) {
+         cost = '₹700+'; // For Smart Home Automation
+       } else if (selectedService.includes('Security')) {
+         cost = '₹400–₹800 (Base Rate)'; // For security systems
+       } else if (selectedService.includes('Pest')) {
+         cost = '₹500–₹1,200 (Base Rate)'; // For pest control
+       } else if (selectedService.includes('Gardening')) {
+         cost = '₹300–₹700 (Base Rate)'; // For gardening and landscaping
+       }
+
       // Store booking data
       bookingData = {
         name: nameInput.value.trim(),
@@ -334,7 +374,7 @@
         service: serviceInput.options[serviceInput.selectedIndex].text,
         bookingId: 'BK' + Date.now().toString().slice(-8),
         time: '10:00 AM', // Default time
-        cost: '₹1,500' // Default cost
+        cost: cost
       };
 
       // Store in localStorage for confirmation page
