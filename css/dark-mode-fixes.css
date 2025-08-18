@@ -128,10 +128,6 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   border: 1px solid var(--dark-border);
 }
 
-[data-theme="dark"] .contact-form h2 {
-  color: var(--dark-accent) !important;
-}
-
 [data-theme="dark"] .contact-form .form-control {
   background-color: var(--dark-card-bg) !important;
   color: var(--dark-text) !important;

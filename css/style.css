@@ -1104,6 +1104,18 @@ background-clip: padding-box, border-box;
   margin-bottom: 30px;
 }
 
+.contact-form .btn-send{
+  background: linear-gradient(45deg,rgb(83, 157, 110), rgb(92, 120, 165));
+  border: none;
+  border-radius: 8px 67px;
+
+}
+
+.contact-form .btn-send:hover{
+  color: rgb(211, 206, 206);
+  background:linear-gradient(45deg, rgb(92, 120, 165),rgb(83, 157, 110)); ;
+}
+
 .contact_section input,
 .contact_section select {
   width: 100%;
@@ -1461,7 +1473,14 @@ background-clip: padding-box, border-box;
 /* Contact Form Styles */
 .contact-container,
 .booking-container {
-  background-color: rgba(0, 51, 102, 0.4);
+background: linear-gradient(45deg,
+  rgba(15, 12, 41, 0.9) 0%,
+  rgba(133, 90, 112, 0.7) 35%,
+  rgba(40, 40, 94, 0.8) 65%,
+  rgba(79, 6, 83, 0.6) 100%
+);
+
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 25px;
@@ -1487,7 +1506,12 @@ background-clip: padding-box, border-box;
 .bookingForm h2 {
   font-weight: bold;
   margin-bottom: 30px;
-  color: #006064;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .contact-form h2,
+.bookingForm h2 {
+  color: white;
 }
 
 .contact-form .form-control,
@@ -1515,7 +1539,7 @@ background-clip: padding-box, border-box;
 .btn-send,
 .book {
   border-radius: 25px;
-  background-color: #00796b;
+  background-color: #0e2c28;
   color: white;
   padding: 10px 30px;
   font-weight: bold;
@@ -1525,7 +1549,7 @@ background-clip: padding-box, border-box;
 
 .btn-send:hover,
 .book:hover {
-  background-color: #004d40;
+  background-color: #0d342d;
 }
 
 .contact-image,
