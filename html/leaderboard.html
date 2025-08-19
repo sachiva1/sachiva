@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GSSoC'25 Leaderboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+    }
+    .stats {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .leaderboard {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .leaderboard-header,
+    .leaderboard-row {
+      display: grid;
+      grid-template-columns: 50px 1fr 150px;
+      padding: 0.75rem 1rem;
+      align-items: center;
+    }
+    .leaderboard-header {
+      background: #f3f4f6;
+      font-weight: bold;
+      color: #6b7280;
+    }
+    .leaderboard-row {
+      border-top: 1px solid #e5e7eb;
+    }
+    .leaderboard-row img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      margin-left: 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    .badge.prs { background: #dbeafe; color: #1e40af; }
+    .badge.points { background: #ede9fe; color: #5b21b6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏆 GSSoC'25 Leaderboard</h1>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <p>Contributors</p>
+        <h2 id="stat-contributors">...</h2>
+      </div>
+      <div class="stat-card">
+        <p>Pull Requests</p>
+        <h2 id="stat-prs">...</h2>
+      </div>
+      <div class="stat-card">
+        <p>Total Points</p>
+        <h2 id="stat-points">...</h2>
+      </div>
+    </div>
+
+    <div class="leaderboard">
+      <div class="leaderboard-header">
+        <div>#</div>
+        <div>Contributor</div>
+        <div>Contributions</div>
+      </div>
+      <div id="leaderboard-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const GITHUB_REPO = "sachiva1/sachiva"; // change if needed
+    const TOKEN = ""; // optional: GitHub token to increase rate limit
+
+    const POINTS = { level1: 3, level2: 7, level3: 10 };
+
+    async function fetchLeaderboard() {
+      let contributorsMap = {};
+      let page = 1, hasMore = true;
+
+      while (hasMore) {
+        const res = await fetch(
+          `https://api.github.com/repos/${GITHUB_REPO}/pulls?state=closed&per_page=100&page=${page}`,
+          { headers: TOKEN ? { Authorization: `token ${TOKEN}` } : {} }
+        );
+        const prs = await res.json();
+        if (prs.length === 0) { hasMore = false; break; }
+
+        prs.forEach(pr => {
+          if (!pr.merged_at) return;
+
+          const labels = pr.labels.map(l => l.name.toLowerCase());
+          if (!labels.includes("gssoc'25")) return;
+
+          const author = pr.user.login;
+          let points = 0;
+          labels.forEach(label => { if (POINTS[label]) points += POINTS[label]; });
+
+          if (!contributorsMap[author]) {
+            contributorsMap[author] = {
+              username: author,
+              avatar: pr.user.avatar_url,
+              profile: pr.user.html_url,
+              points: 0,
+              prs: 0
+            };
+          }
+
+          contributorsMap[author].points += points;
+          contributorsMap[author].prs += 1;
+        });
+        page++;
+      }
+
+      const contributors = Object.values(contributorsMap).sort((a,b) => b.points - a.points);
+
+      // Stats
+      document.getElementById("stat-contributors").textContent = contributors.length;
+      document.getElementById("stat-prs").textContent = contributors.reduce((s,c) => s+c.prs, 0);
+      document.getElementById("stat-points").textContent = contributors.reduce((s,c) => s+c.points, 0);
+
+      // Render leaderboard
+      const body = document.getElementById("leaderboard-body");
+      contributors.forEach((c, i) => {
+        const row = document.createElement("div");
+        row.className = "leaderboard-row";
+        row.innerHTML = `
+          <div>${i+1}</div>
+          <div class="user">
+            <img src="${c.avatar}" alt="${c.username}"/>
+            <a href="${c.profile}" target="_blank">${c.username}</a>
+          </div>
+          <div>
+            <span class="badge prs">${c.prs} PRs</span>
+            <span class="badge points">${c.points} pts</span>
+          </div>
+        `;
+        body.appendChild(row);
+      });
+    }
+
+    fetchLeaderboard();
+  </script>
+</body>
+</html>
