@@ -1,600 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="keywords"
+      content="Sachiva, Contributors, GitHub, Open Source"
+    />
+    <meta
+      name="description"
+      content="Meet the amazing contributors who help make Sachiva better."
+    />
+    <meta name="author" content="Sachiva Team" />
 
-<head>
-  <!-- Basic Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="Sachiva, Contributors, GitHub, Open Source" />
-  <meta name="description" content="Meet the amazing contributors who help make Sachiva better." />
-  <meta name="author" content="Sachiva Team" />
+    <link rel="icon" href="../images/logo_blue.png" />
+    <title>Contributors - Sachiva</title>
 
-  <link rel="icon" href="../images/logo_blue.png" />
-  <title>Contributors - Sachiva</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../css/bootstrap.css" />
-  <link rel="stylesheet" href="../css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
-
-  <style>
-.header_section{
-      border-radius: 100px;
-      margin: 20px;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      width: calc(100% - 40px); /* Account for margin */
-    }
-    .navbar-nav{
-      display: flex;
-      /*justify-content: space-between;*/
-      padding-right: 100px;
-      padding-left: 30px;
-
-    }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      /*display: flex;
+    <style>
+      .header_section {
+        border-radius: 100px;
+        margin: 20px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        width: calc(100% - 40px); /* Account for margin */
+      }
+      .navbar-nav {
+        display: flex;
+        /*justify-content: space-between;*/
+        padding-right: 100px;
+        padding-left: 30px;
+      }
+      .nav-item {
+        /*Adding styling to nav bar as it was overflowing out of page*/
+        /*display: flex;
       justify-content: center;
       align-items: center;*/
-      font-weight: bold;
-      color: rgb(56, 56, 56);
-      position: relative;
-      margin-right: 0px;
-      padding: 8px;
-      margin: 2px;
-      transition: all 0.5s ease;
-      font-size: 0.95rem;
-    }
+        font-weight: bold;
+        color: rgb(56, 56, 56);
+        position: relative;
+        margin-right: 0px;
+        padding: 8px;
+        margin: 2px;
+        transition: all 0.5s ease;
+        font-size: 0.95rem;
+      }
 
-    .nav-item:hover{
-      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
+      .nav-item:hover {
+        background: linear-gradient(
+          120deg,
+          blue,
+          rgb(0, 247, 255),
+          rgb(0, 255, 0)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
 
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: rgb(0, 132, 255);
-      width: 0;
-    }
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: rgb(0, 132, 255);
+        width: 0;
+      }
 
-    .nav-item:hover::after {
-      animation: slideUnderline 0.5s forwards;
-    }
+      .nav-item:hover::after {
+        animation: slideUnderline 0.5s forwards;
+      }
 
-    @keyframes slideUnderline {
-      from { width: 0; height: 0px;}
-      to { width: 100%; height: 3px;}
-    }
+      @keyframes slideUnderline {
+        from {
+          width: 0;
+          height: 0px;
+        }
+        to {
+          width: 100%;
+          height: 3px;
+        }
+      }
 
-    #booking{          /*Adding styling to booking*/
-      background-color: #ff8a1d;
-      margin: 10px;
-      font-weight:900;
-      padding: 10px !important;
-      color: white;
-      border-radius: 12px;
-      animation: pulseShadow 2s infinite;
-      transition: transform 0.5s ease, background-color 0.5s ease;
-    }
-    @keyframes pulseShadow {
+      #booking {
+        /*Adding styling to booking*/
+        background-color: #ff8a1d;
+        margin: 10px;
+        font-weight: 900;
+        padding: 10px !important;
+        color: white;
+        border-radius: 12px;
+        animation: pulseShadow 2s infinite;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+      }
+      @keyframes pulseShadow {
         0% {
-            box-shadow: 0 0 0 0 #ff8a1d;
+          box-shadow: 0 0 0 0 #ff8a1d;
         }
         70% {
-            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
         }
-    }
+      }
 
-    .fw-bold {
-      font-weight: bolder;
-    }
+      .fw-bold {
+        font-weight: bolder;
+      }
 
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
-    
-    #booking:hover{
-      transform: scale(1.1);
-      background-color: #ff8a1d;
-    }
+      .feature_section {
+        position: relative;
+        top: 60px;
+      }
 
-    .fw-bold {
-      font-weight: bolder;
-    }
+      #booking:hover {
+        transform: scale(1.1);
+        background-color: #ff8a1d;
+      }
 
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
+      .fw-bold {
+        font-weight: bolder;
+      }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
-    }
+      .feature_section {
+        position: relative;
+        top: 60px;
+      }
 
-    .whatsapp i {
-      font-size: 28px;
-      color: white;
-    }
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        cursor: pointer;
+      }
 
-    .contributors-section {
-      padding: 80px 0;
-      background: #f8f9fa;
-    }
+      .whatsapp i {
+        font-size: 28px;
+        color: white;
+      }
 
+      .contributors-section {
+        padding: 80px 0;
+        background: #f8f9fa;
+      }
 
-    body.dark-mode .contributors-section {
-      background-color: #1a1a1a;
-    }
+      body.dark-mode .contributors-section {
+        background-color: #1a1a1a;
+      }
 
+      body.dark-mode .contributors-section,
+      body.dark-mode .contributors-section h2,
+      body.dark-mode .contributors-section p,
+      body.dark-mode .contributor-name {
+        color: #ffffff !important;
+      }
 
+      body.dark-mode .contributor-card {
+        background-color: #2c2c2c;
 
-    body.dark-mode .contributors-section,
-    body.dark-mode .contributors-section h2,
-    body.dark-mode .contributors-section p,
-    body.dark-mode .contributor-name {
-      color: #ffffff !important;
-    }
+        border-color: #444;
+      }
 
-    body.dark-mode .contributor-card {
-      background-color: #2c2c2c;
-
-      border-color: #444;
-    }
-
-    body.dark-mode .contributor-stats {
-      background: linear-gradient(135deg, #444, #555);
-
-    }
-
-    .contributor-card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
-      border: 1px solid #e9ecef;
-    }
-
-    .contributor-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .contributor-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #007bff;
-      margin: 0 auto 20px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .contributor-card:hover .contributor-avatar {
-      border-color: #0056b3;
-      transform: scale(1.05);
-    }
-
-    .contributor-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .contributor-name {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-
-    .contributor-stats {
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      display: inline-block;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .contributor-link {
-      display: inline-block;
-      background: #28a745;
-      color: white;
-      padding: 10px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .contributor-link:hover {
-      background: #218838;
-      color: white;
-      text-decoration: none;
-      transform: translateY(-2px);
-    }
-
-    .loading-spinner {
-      text-align: center;
-      padding: 60px 0;
-    }
-
-    .spinner-border {
-      width: 3rem;
-      height: 3rem;
-      color: #007bff;
-    }
-
-    .error-message {
-      background: #f8d7da;
-      color: #721c24;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 40px 0;
-      border: 1px solid #f5c6cb;
-    }
-
-    .hero-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 100px 0 80px;
-      text-align: center;
-    }
-
-    .hero-section h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-
-    .contributors-heading {
-      color: #212529;
-
-    }
-
-    .contributors-subtext {
-      color: #212529;
-
-    }
-
-    body.dark-mode .contributors-heading,
-    body.dark-mode .contributors-subtext {
-      color: black !important;
-    }
-
-    .hero-section p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .github-icon {
-      font-size: 2rem;
-      margin-right: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2rem;
+      body.dark-mode .contributor-stats {
+        background: linear-gradient(135deg, #444, #555);
       }
 
       .contributor-card {
-        margin-bottom: 20px;
+        background: white;
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        border: 1px solid #e9ecef;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <header class="header_section">
-    <div class="header_bottom">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-                      <a class="navbar-brand" href="../">
+      .contributor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .contributor-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid #007bff;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .contributor-card:hover .contributor-avatar {
+        border-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      .contributor-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contributor-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .contributor-stats {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .contributor-link {
+        display: inline-block;
+        background: #28a745;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .contributor-link:hover {
+        background: #218838;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+
+      .loading-spinner {
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        color: #007bff;
+      }
+
+      .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 40px 0;
+        border: 1px solid #f5c6cb;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 100px 0 80px;
+        text-align: center;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .contributors-heading {
+        color: #212529;
+      }
+
+      .contributors-subtext {
+        color: #212529;
+      }
+
+      body.dark-mode .contributors-heading,
+      body.dark-mode .contributors-subtext {
+        color: black !important;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .github-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+
+        .contributor-card {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="../">
               <img src="../images/logo_blue.png" alt="Logo" class="main-logo" />
-            <span>sachiva</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">Services</a>
-              </li>
-              <li class="nav-item active fw-bold">
-                <a class="nav-link" href="contributors.html">Contributors <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="portfolio.html">Portfolio</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
-              <li class="nav-item contact-highlight">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-                <li class="nav-item1">      
-                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+              <span>sachiva</span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
                 </li>
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item active fw-bold">
+                  <a class="nav-link" href="contributors.html"
+                    >Contributors <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="forum.html">Forum</a>
+                </li>
+                <li class="nav-item contact-highlight">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item1">
+                  <a class="nav-link" id="booking" href="booking.html"
+                    >Book a Service</a
+                  >
+                </li>
+              </ul>
               <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
+                <input type="checkbox" id="theme-toggle" />
                 <span class="slider">
                   <i class="fas fa-sun sun-icon"></i>
                   <i class="fas fa-moon moon-icon"></i>
                 </span>
               </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 style="margin-top: 100px">
+              <i class="fab fa-github github-icon"></i>Our Contributors
+            </h1>
+            <p>
+              Meet the amazing people who contribute to making Sachiva better
+              every day
+            </p>
+            <a
+              href="https://github.com/sachiva1/sachiva"
+              target="_blank"
+              class="contributor-link"
+            >
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
           </div>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1  style="margin-top: 100px;"><i class="fab fa-github github-icon"></i>Our Contributors</h1>
-          <p>
-            Meet the amazing people who contribute to making Sachiva better
-            every day
-          </p>
-          <a href="https://github.com/sachiva1/sachiva" target="_blank" class="contributor-link">
-            <i class="fab fa-github"></i> View on GitHub
-          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section>
+      <div class="container-gssoc">
+        <h1>🏆 GSSoC'25 Leaderboard</h1>
 
-  <section class="contributors-section">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2 class="contributors-heading">Our Amazing Contributors</h2>
-        <p class="contributors-subtext">
-          Thank you to all the wonderful people who have contributed to this
-          project!
-        </p>
-      </div>
-
-      <div id="loading" class="loading-spinner">
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading contributors...</span>
+        <div class="stats">
+          <div class="stat-card">
+            <p>Contributors</p>
+            <h2 id="stat-contributors">...</h2>
+          </div>
+          <div class="stat-card">
+            <p>Pull Requests</p>
+            <h2 id="stat-prs">...</h2>
+          </div>
+          <div class="stat-card">
+            <p>Total Points</p>
+            <h2 id="stat-points">...</h2>
+          </div>
         </div>
-        <p class="mt-3">Fetching contributors from GitHub...</p>
+
+        <div class="leaderboard">
+          <div class="leaderboard-header">
+            <div>#</div>
+            <div>Contributor</div>
+            <div>Contributions</div>
+          </div>
+          <div id="leaderboard-body"></div>
+        </div>
       </div>
 
-      <div id="error" class="error-message" style="display: none">
-        <h4>
-          <i class="fas fa-exclamation-triangle"></i> Unable to Load
-          Contributors
-        </h4>
-        <p>
-          We're having trouble fetching the contributors list from GitHub.
-          Please try again later or visit our
-          <a href="https://github.com/sachiva1/sachiva" target="_blank">GitHub repository</a>
-          directly.
-        </p>
-      </div>
-
-      <div id="contributors-grid" class="row" style="display: none"></div>
-    </div>
-  </section>
-
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-<a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
-
-</footer>
-  <button id="backToTop" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="../js/custom.js"></script>
-
-  <script>
-    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-
-    // When DOM is ready, fetch contributors
-    document.addEventListener("DOMContentLoaded", function () {
-      fetchContributors();
-    });
-
-    async function fetchContributors() {
-      const loadingElement = document.getElementById("loading");
-      const errorElement = document.getElementById("error");
-      const gridElement = document.getElementById("contributors-grid");
-
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/sachiva1/sachiva/contributors"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+      <style>
+        .container-gssoc {
+          max-width: 1000px;
+          margin: 40px auto;
+          padding: 30px;
+          background: linear-gradient(135deg, #f0f7ff, #ffffff);
+          border-radius: 16px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #333;
         }
 
-        const contributors = await response.json();
+        .container-gssoc h1 {
+          text-align: center;
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: #000000;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          letter-spacing: 1px;
+        }
 
-        loadingElement.style.display = "none";
+        .leaderboard {
+          margin-top: 60px;
+          border: 1px solid #007bff;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        .leaderboard-header,
+        .leaderboard-row {
+          display: grid;
+          grid-template-columns: 50px 1fr 220px;
+          padding: 12px;
+          border-bottom: 1px solid #eee;
+          align-items: center;
+        }
+        .leaderboard-header {
+          background: #007bff;
+          color: white;
+          font-weight: bold;
+        }
+        .leaderboard-row:nth-child(even) {
+          background: #f9f9f9;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .user img {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+        }
+        .badge {
+          padding: 4px 10px;
+          border-radius: 12px;
+          font-size: 0.85rem;
+          margin-right: 6px;
+        }
+        .badge.prs {
+          background: #17a2b8;
+          color: white;
+        }
+        .badge.points {
+          background: #ffc107;
+          color: black;
+        }
+        .stats {
+          display: flex;
+          gap: 20px;
+          margin-top: 20px;
+          flex-wrap: wrap;
+        }
+        .stat-card {
+          flex: 1;
+          background: #c8e3ff;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+        }
+        .stat-card h2 {
+          font-size: 2rem;
+          margin: 0;
+          color: #007bff;
+        }
+      </style>
 
-        gridElement.style.display = "flex";
+      <script>
+        const GITHUB_REPO = "sachiva1/sachiva"; // replace with your repo
+        const TOKEN = ""; // optional GitHub token
 
-        gridElement.innerHTML = "";
+        // Correct points mapping
+        const POINTS = { level1: 3, level2: 7, level3: 10 };
 
-        contributors.forEach((contributor) => {
-          const contributorCard = createContributorCard(contributor);
-          gridElement.appendChild(contributorCard);
-        });
-      } catch (error) {
-        console.error("Error fetching contributors:", error);
+        function normalizeLabel(label) {
+          return label.toLowerCase().trim().replace(/\s+/g, "");
+        }
 
-        loadingElement.style.display = "none";
+        async function fetchLeaderboard() {
+          let contributorsMap = {};
+          let page = 1,
+            hasMore = true;
 
-        errorElement.style.display = "block";
+          while (hasMore) {
+            const res = await fetch(
+              `https://api.github.com/repos/${GITHUB_REPO}/pulls?state=closed&per_page=100&page=${page}`,
+              { headers: TOKEN ? { Authorization: `token ${TOKEN}` } : {} }
+            );
+            const prs = await res.json();
+            if (prs.length === 0 || prs.message) {
+              hasMore = false;
+              break;
+            }
+
+            prs.forEach((pr) => {
+              if (!pr.merged_at) return;
+
+              const labels = pr.labels.map((l) => normalizeLabel(l.name));
+
+              // Only include PRs with GSSoC25
+              if (!labels.includes("gssoc25")) return;
+
+              let points = 0;
+              if (labels.includes("level1")) points = POINTS.level1;
+              else if (labels.includes("level2")) points = POINTS.level2;
+              else if (labels.includes("level3")) points = POINTS.level3;
+
+              if (points === 0) return;
+
+              const author = pr.user.login;
+              if (!contributorsMap[author]) {
+                contributorsMap[author] = {
+                  username: author,
+                  avatar: pr.user.avatar_url,
+                  profile: pr.user.html_url,
+                  points: 0,
+                  prs: 0,
+                };
+              }
+
+              contributorsMap[author].points += points;
+              contributorsMap[author].prs += 1;
+            });
+
+            page++;
+          }
+
+          const contributors = Object.values(contributorsMap).sort(
+            (a, b) => b.points - a.points
+          );
+
+          // Stats
+          document.getElementById("stat-contributors").textContent =
+            contributors.length;
+          document.getElementById("stat-prs").textContent = contributors.reduce(
+            (s, c) => s + c.prs,
+            0
+          );
+          document.getElementById("stat-points").textContent =
+            contributors.reduce((s, c) => s + c.points, 0);
+
+          // Render leaderboard
+          const body = document.getElementById("leaderboard-body");
+          body.innerHTML = "";
+          contributors.forEach((c, i) => {
+            const row = document.createElement("div");
+            row.className = "leaderboard-row";
+            row.innerHTML = `
+        <div>${i + 1}</div>
+        <div class="user">
+          <img src="${c.avatar}" alt="${c.username}"/>
+          <a href="${c.profile}" target="_blank">${c.username}</a>
+        </div>
+        <div>
+          <span class="badge prs">${c.prs} PRs</span>
+          <span class="badge points">${c.points} pts</span>
+        </div>
+      `;
+            body.appendChild(row);
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchLeaderboard);
+      </script>
+    </section>
+
+    <section class="contributors-section">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2 class="contributors-heading">Our Amazing Contributors</h2>
+          <p class="contributors-subtext">
+            Thank you to all the wonderful people who have contributed to this
+            project!
+          </p>
+        </div>
+
+        <div id="loading" class="loading-spinner">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading contributors...</span>
+          </div>
+          <p class="mt-3">Fetching contributors from GitHub...</p>
+        </div>
+
+        <div id="error" class="error-message" style="display: none">
+          <h4>
+            <i class="fas fa-exclamation-triangle"></i> Unable to Load
+            Contributors
+          </h4>
+          <p>
+            We're having trouble fetching the contributors list from GitHub.
+            Please try again later or visit our
+            <a href="https://github.com/sachiva1/sachiva" target="_blank"
+              >GitHub repository</a
+            >
+            directly.
+          </p>
+        </div>
+
+        <div id="contributors-grid" class="row" style="display: none"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Let's Talk</h2>
+          <p>
+            Every high-quality home service starts with a chat.<br />
+            Our team leads client conversations and will be happy to discuss
+            your queries and needs.<br />
+            We’ll also bring in the right people when needed.
+          </p>
+          <a href="contact.html" class="cta-btn">Tell us about your Query</a>
+        </div>
+        <div class="footer-right">
+          <ul class="contact-list">
+            <li>
+              <span>Email</span>
+              <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+            </li>
+            <li>
+              <span>Address</span>
+              <a href="https://maps.google.com" target="_blank">
+                Church Street, Bangalore, Karnataka, 1234
+              </a>
+            </li>
+          </ul>
+          <div class="footer-social-icons">
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="footer-copyright text-center"
+        style="margin-top: 32px; color: #c1cbe2; font-size: 1rem"
+      >
+        &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      </div>
+    </footer>
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+      document.getElementById("displayDateYear").textContent =
+        new Date().getFullYear();
+
+      // When DOM is ready, fetch contributors
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchContributors();
+      });
+
+      async function fetchContributors() {
+        const loadingElement = document.getElementById("loading");
+        const errorElement = document.getElementById("error");
+        const gridElement = document.getElementById("contributors-grid");
+
+        try {
+          const response = await fetch(
+            "https://api.github.com/repos/sachiva1/sachiva/contributors"
+          );
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const contributors = await response.json();
+
+          loadingElement.style.display = "none";
+
+          gridElement.style.display = "flex";
+
+          gridElement.innerHTML = "";
+
+          contributors.forEach((contributor) => {
+            const contributorCard = createContributorCard(contributor);
+            gridElement.appendChild(contributorCard);
+          });
+        } catch (error) {
+          console.error("Error fetching contributors:", error);
+
+          loadingElement.style.display = "none";
+
+          errorElement.style.display = "block";
+        }
       }
-    }
 
-    function createContributorCard(contributor) {
-      const colDiv = document.createElement("div");
-      colDiv.className = "col-lg-3 col-md-4 col-sm-6 col-12";
+      function createContributorCard(contributor) {
+        const colDiv = document.createElement("div");
+        colDiv.className = "col-lg-3 col-md-4 col-sm-6 col-12";
 
-      colDiv.innerHTML = `
+        colDiv.innerHTML = `
         <div class="contributor-card">
           <div class="contributor-avatar">
-            <img src="${contributor.avatar_url}" alt="${contributor.login
+            <img src="${contributor.avatar_url}" alt="${
+          contributor.login
         }" loading="lazy">
           </div>
           <h3 class="contributor-name">${contributor.login}</h3>
           <div class="contributor-stats">
-            <i class="fas fa-code-branch"></i> ${contributor.contributions
-        } contribution${contributor.contributions !== 1 ? "s" : ""}
+            <i class="fas fa-code-branch"></i> ${
+              contributor.contributions
+            } contribution${contributor.contributions !== 1 ? "s" : ""}
           </div>
-          <a href="${contributor.html_url
-        }" target="_blank" class="contributor-link">
+          <a href="${
+            contributor.html_url
+          }" target="_blank" class="contributor-link">
             <i class="fab fa-github"></i> View Profile
           </a>
         </div>
       `;
 
-      return colDiv;
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      });
-    });
-
-  </script>
-
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const contributorsSection = document.querySelector('.contributors-section');
-    const navbar = document.querySelector('.navbar');
-
-    function updateContributorsSectionTheme() {
-      if (navbar.classList.contains('navbar-dark')) {
-        contributorsSection.classList.add('dark-bg');
-        contributorsSection.classList.remove('light-bg');
-      } else {
-        contributorsSection.classList.remove('dark-bg');
-        contributorsSection.classList.add('light-bg');
+        return colDiv;
       }
-    }
 
-    // Run once on page load
-    updateContributorsSectionTheme();
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
 
-    // On toggle (dark mode switch)
-    themeToggle.addEventListener('change', function () {
-      // Assuming navbar gets .navbar-dark or .navbar-light on toggle
-      // So, wait for DOM change if it's done elsewhere
-      setTimeout(updateContributorsSectionTheme, 100);
-    });
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const contributorsSection = document.querySelector(
+        ".contributors-section"
+      );
+      const navbar = document.querySelector(".navbar");
 
-  </script>
+      function updateContributorsSectionTheme() {
+        if (navbar.classList.contains("navbar-dark")) {
+          contributorsSection.classList.add("dark-bg");
+          contributorsSection.classList.remove("light-bg");
+        } else {
+          contributorsSection.classList.remove("dark-bg");
+          contributorsSection.classList.add("light-bg");
+        }
+      }
 
+      // Run once on page load
+      updateContributorsSectionTheme();
 
+      // On toggle (dark mode switch)
+      themeToggle.addEventListener("change", function () {
+        // Assuming navbar gets .navbar-dark or .navbar-light on toggle
+        // So, wait for DOM change if it's done elsewhere
+        setTimeout(updateContributorsSectionTheme, 100);
+      });
+    </script>
 
-
-
-
-  <script src="../js/navbar.js"></script>
-</body>
-
+    <script src="../js/navbar.js"></script>
+  </body>
 </html>
