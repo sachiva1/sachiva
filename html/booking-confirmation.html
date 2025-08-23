@@ -36,36 +36,64 @@
       display: flex;
       padding-right: 100px;
     }
-    .nav-item{
-      font-weight: bold;
-      position: relative;
-      margin-right: 0px;
-      padding: 8px;
-      margin: 2px;
-      transition: all 0.5s ease;
-    }
+    .nav-item {
+  /*Adding styling to nav bar as it was overflowing out of page*/
+  /*display: flex;
+justify-content: center;
+align-items: center;*/
+  font-weight: bold;
+  color: rgb(56, 56, 56);
+  position: relative;
+  margin-right: 0px;
+  padding: 8px;
+  margin: 2px;
+  transition: all 0.5s ease;
+  font-size: 0.95rem;
+}
 
-    .nav-item:hover{
-      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
+.nav-item .nav-link {
+  color: rgb(56, 56, 56);
+  transition: color 0.3s ease;
+}
 
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: rgb(0, 132, 255);
-      width: 0;
-    }
+.nav-item:hover .nav-link {
+  color: #0084ff;
+  background-color: transparent !important;
+}
 
-    .nav-item:hover::after {
-      animation: slideUnderline 0.5s forwards;
-    }
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: rgb(0, 132, 255);
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  height: 3px;
+}
+
+#booking {
+  /*Adding styling to booking*/
+  background-color: #ff8a1d;
+  margin: 10px;
+  font-weight: 900;
+  padding: 10px !important;
+  color: white !important;
+  border-radius: 12px;
+  animation: pulseShadow 2s infinite;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+#booking:hover {
+  transform: scale(1.1);
+  background-color: #ff8a1d !important;
+  color: white !important;
+}
 
     @keyframes slideUnderline {
       from { width: 0; height: 0px;}

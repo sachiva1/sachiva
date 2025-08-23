@@ -11,32 +11,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Listen for scroll
-  window.addEventListener("scroll", applyScrollShadow);
-
   // Load Theme from localStorage
-  if (localStorage.getItem("theme") === "dark") {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
-    if (themeToggle) themeToggle.checked = true;
+    themeToggle?.setAttribute("checked", "true");
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggle?.removeAttribute("checked");
   }
 
   // Toggle Theme
-  if (themeToggle) {
-    themeToggle.addEventListener("change", function () {
-      if (this.checked) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
-      }
-      applyScrollShadow(); // recheck shadow instantly
-    });
-  }
+  themeToggle?.addEventListener("change", function () {
+    if (this.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+    applyScrollShadow();
+  });
 
-  //  Run shadow check on page load
+  // Scroll Shadow
+  window.addEventListener("scroll", applyScrollShadow);
   applyScrollShadow();
 });
-
-
-
