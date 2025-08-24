@@ -431,32 +431,73 @@
   color: #28a745;
 }
 
-.client-content1, .client-content2, .client-content3{
+.client-content1,
+.client-content2,
+.client-content3 {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  background: linear-gradient(to right,#aeeda8 , rgb(253, 253, 112));
-  transition: transform 0.5s ease;
-  cursor:  pointer;
+  gap: 10px;
+  padding: 18px;
+  /* margin-top: 16px !important;   */
+  min-height: 220px;              
+  background: #ffffff;              
+  border: 1px solid #e6e8ef;       
+  border-radius: 16px;             
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  margin: 24px 0 0 !important;
 }
 
-.client-content1, .client-content3{
-  margin-top: 50px;
+.client-content1:hover,
+.client-content2:hover,
+.client-content3:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  border-color: #d7dbe6;
 }
 
-.client-content1{
-  background: linear-gradient(to right,#d4f1f9, #7bc3d1);
+.client-content1 h5,
+.client-content2 h5,
+.client-content3 h5 {
+  color: #1f2937;    
+  margin: 0;
 }
 
-.client-content3{
-  background: linear-gradient(to right, rgb(142, 232, 255), rgb(255, 122, 255));
+.client-content1 p,
+.client-content2 p,
+.client-content3 p {
+  color: #4b5563;  
+  margin: 0;
 }
 
-.client-content1:hover, .client-content2:hover, .client-content3:hover{
-  transform: scale(1.05);
+.client-img img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #dfe3eb;
 }
+
+/* dark mode version */
+[data-theme="dark"] .client-content1,
+[data-theme="dark"] .client-content2,
+[data-theme="dark"] .client-content3 {
+  background: #1e1f25;
+  border: 1px solid #2a2c34;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+[data-theme="dark"] .client-content1 h5,
+[data-theme="dark"] .client-content2 h5,
+[data-theme="dark"] .client-content3 h5 {
+  color: #e7eaf0;
+}
+
+[data-theme="dark"] .client-content1 p,
+[data-theme="dark"] .client-content2 p,
+[data-theme="dark"] .client-content3 p {
+  color: #b6bcc8;
+}
+
 
 .client-info{
   display: flex;
