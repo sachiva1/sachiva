@@ -59,6 +59,17 @@
   font-family: "Poppins";
   font-size: 1.3rem;
 }
+
+.detail-box h2::after {
+  content: " ";
+  display: block;
+  margin: 0.6rem auto 0;  /* space below the text */
+  width: 40%;
+  max-width: 280px;
+  height: 4px;
+  background: linear-gradient(90deg, #221165, #0a0322);
+  border-radius: 2px;
+}
 .visulizer img {
   width: 400px;
   height: 300px;
@@ -107,3 +118,4 @@
   font-size: 0.85rem;
   color: #444;
 }
+

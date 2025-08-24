@@ -293,14 +293,11 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   color: var(--dark-text) !important;
 }
 
-/* Navigation Enhancement */
-[data-theme="dark"] .custom_nav-container .navbar-nav .nav-item .nav-link {
-  color: var(--dark-text) !important;
-}
-
 [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
 [data-theme="dark"] .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-  color: var(--dark-accent) !important;
+   background: linear-gradient(120deg, #4f9cff, #00eaff, #30ff7f);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* Form Elements General */
