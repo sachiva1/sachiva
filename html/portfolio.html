@@ -1,731 +1,915 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="keywords"
+      content="Sachiva, Home Services, IT Solutions, Maintenance"
+    />
+    <meta
+      name="description"
+      content="Learn more about Sachiva's home and IT service solutions."
+    />
+    <meta name="author" content="Sachiva Team" />
 
-<head>
-  <!-- Basic Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="Sachiva, Home Services, IT Solutions, Maintenance" />
-  <meta name="description" content="Learn more about Sachiva's home and IT service solutions." />
-  <meta name="author" content="Sachiva Team" />
+    <link rel="icon" href="../images/logo_blue.png" />
+    <title>Portfolio - Sachiva</title>
 
-   <link rel="icon" href="../images/logo_blue.png">
-  <title>Portfolio - Sachiva</title>
+    <!-- CSS & Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Felipa&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- CSS & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
- <link href="https://fonts.googleapis.com/css2?family=Felipa&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../css/bootstrap.css" />
-  <link rel="stylesheet" href="../css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
-
-  <!-- Custom Styles -->
-  <style>
-
-.header_section{
-      border-radius: 100px;
-      margin: 20px;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      width: calc(100% - 40px); /* Account for margin */
-    }
-    .navbar-nav{
-      display: flex;
-      /*justify-content: space-between;*/
-      padding-right: 100px;
-      padding-left: 30px;
-
-    }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      /*display: flex;
+    <!-- Custom Styles -->
+    <style>
+      .header_section {
+        border-radius: 100px;
+        margin: 20px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        width: calc(100% - 40px); /* Account for margin */
+      }
+      .navbar-nav {
+        display: flex;
+        /*justify-content: space-between;*/
+        padding-right: 100px;
+        padding-left: 30px;
+      }
+      .nav-item {
+        /*Adding styling to nav bar as it was overflowing out of page*/
+        /*display: flex;
       justify-content: center;
       align-items: center;*/
-      font-weight: bold;
-      color: rgb(56, 56, 56);
-      position: relative;
-      margin-right: 0px;
-      padding: 8px;
-      margin: 2px;
-      transition: all 0.5s ease;
-      font-size: 0.95rem;
-    }
+        font-weight: bold;
+        color: rgb(56, 56, 56);
+        position: relative;
+        margin-right: 0px;
+        padding: 8px;
+        margin: 2px;
+        transition: all 0.5s ease;
+        font-size: 0.95rem;
+      }
 
-    .nav-item:hover{
-      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
+      /* Show dropdown on hover for desktop */
+      @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        }
+      }
+      /* Style the dropdown menu container */
+      .dropdown-menu {
+        background: rgba(255, 255, 255, 0.7); /* White with transparency */
+        backdrop-filter: blur(8px); /* Glass blur effect */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        padding: 8px 0; /* Space inside */
+        transition: all 0.3s ease;
+      }
+      /* Hover effect for dropdown links */
+      .dropdown-menu .dropdown-item {
+        padding: 10px 20px; /* More clickable area */
+        transition: all 0.2s ease;
+      }
+      .dropdown-menu .dropdown-item:hover {
+        border-radius: 10px;
+        color: #007bff; /* Bootstrap blue text */
+        transform: translateX(5px); /* subtle slide to the right */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        font-size: 1rem;
+      }
 
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: rgb(0, 132, 255);
-      width: 0;
-    }
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: rgb(0, 132, 255);
+        width: 0;
+      }
 
-    .nav-item:hover::after {
-      animation: slideUnderline 0.5s forwards;
-    }
+      .nav-item:hover::after {
+        animation: slideUnderline 0.5s forwards;
+      }
 
-    @keyframes slideUnderline {
-      from { width: 0; height: 0px;}
-      to { width: 100%; height: 3px;}
-    }
+      @keyframes slideUnderline {
+        from {
+          width: 0;
+          height: 0px;
+        }
+        to {
+          width: 100%;
+          height: 3px;
+        }
+      }
 
-    #booking{          /*Adding styling to booking*/
-      background-color: #ff8a1d;
-      margin: 10px;
-      font-weight:900;
-      padding: 10px !important;
-      color: white;
-      border-radius: 12px;
-      animation: pulseShadow 2s infinite;
-      transition: transform 0.5s ease, background-color 0.5s ease;
-    }
-    @keyframes pulseShadow {
+      #booking {
+        /*Adding styling to booking*/
+        background-color: #ff8a1d;
+        margin: 10px;
+        font-weight: 900;
+        padding: 10px !important;
+        color: white;
+        border-radius: 12px;
+        animation: pulseShadow 2s infinite;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+      }
+      @keyframes pulseShadow {
         0% {
-            box-shadow: 0 0 0 0 #ff8a1d;
+          box-shadow: 0 0 0 0 #ff8a1d;
         }
         70% {
-            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
         }
-    }
+      }
 
-    .fw-bold {
-      font-weight: bolder;
-    }
+      .fw-bold {
+        font-weight: bolder;
+      }
 
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
-    
-    #booking:hover{
-      transform: scale(1.1);
-      background-color: #ff8a1d;
-    }
-    .fw-bold {
-      font-weight: bolder;
-    }
+      .feature_section {
+        position: relative;
+        top: 60px;
+      }
 
-    .feature_section {
-      position: relative;
-      top: 60px;
-    }
+      #booking:hover {
+        transform: scale(1.1);
+        background-color: #ff8a1d;
+      }
+      .fw-bold {
+        font-weight: bolder;
+      }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      cursor: pointer;
-    }
+      .feature_section {
+        position: relative;
+        top: 60px;
+      }
 
-    .whatsapp i {
-      font-size: 28px;
-      color: white;
-    }
-    .more-content {
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        cursor: pointer;
+      }
 
-.card-body p {
-  margin-bottom: 0.5rem;
-}
+      .whatsapp i {
+        font-size: 28px;
+        color: white;
+      }
+      .more-content {
+        transition: all 0.4s ease;
+        overflow: hidden;
+      }
 
-.card .btn {
-  transition: background-color 0.3s ease;
-}
- /* === Hero Section with Animated Gradient and Glow === */
-/* HERO SECTION */
-.hero {
-  margin-top: 15vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, #8da6cc, #8476c9, #615f5f, #3970c4, #86ade8);
-  transition: background 0.3s ease;
-  animation: fadeInHero 1s ease-out both;
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: rgb(188, 180, 180);
-  border: none;
-  box-shadow:
-            0 20px 40px rgba(0, 0, 0, 0.6),
-            0 0 30px rgba(134, 173, 232, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  z-index: 10;
-}
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+      .card-body p {
+        margin-bottom: 0.5rem;
+      }
 
+      .card .btn {
+        transition: background-color 0.3s ease;
+      }
+      /* === Hero Section with Animated Gradient and Glow === */
+      /* HERO SECTION */
+      .hero {
+        margin-top: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          #8da6cc,
+          #8476c9,
+          #615f5f,
+          #3970c4,
+          #86ade8
+        );
+        transition: background 0.3s ease;
+        animation: fadeInHero 1s ease-out both;
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        color: rgb(188, 180, 180);
+        border: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+          0 0 30px rgba(134, 173, 232, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        z-index: 10;
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, #121212, #1f1f1f);
-}
+      [data-theme="dark"] .hero {
+        background: linear-gradient(135deg, #121212, #1f1f1f);
+      }
 
-/* ANIMATIONS */
-@keyframes fadeInHero {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      /* ANIMATIONS */
+      @keyframes fadeInHero {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+      @keyframes zoomIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-/* HERO CONTENT LAYOUT */
-.hero-content {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
-  justify-content: center;
-  gap: 2rem;
-}
+      /* HERO CONTENT LAYOUT */
+      .hero-content {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+      }
 
-/* LEFT + RIGHT HALVES */
-.half {
-  flex: 1;
-  min-width: 300px;
-  padding: 2rem;
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.3s;
-}
+      /* LEFT + RIGHT HALVES */
+      .half {
+        flex: 1;
+        min-width: 300px;
+        padding: 2rem;
+        animation: slideUp 1s ease forwards;
+        animation-delay: 0.3s;
+      }
 
-/* TEXT */
-.half h1 {
-  font-family: "Felipa", serif;
-  font-weight: 600;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #d49595;
-}
+      /* TEXT */
+      .half h1 {
+        font-family: "Felipa", serif;
+        font-weight: 600;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #d49595;
+      }
 
-[data-theme="dark"] .half h1 {
-  color: #ffffff;
-}
+      [data-theme="dark"] .half h1 {
+        color: #ffffff;
+      }
 
-.half p {
-  font-size: 1rem;
-  max-width: 450px;
-  margin: auto;
-  color: #f6ebeb;
-}
+      .half p {
+        font-size: 1rem;
+        max-width: 450px;
+        margin: auto;
+        color: #f6ebeb;
+      }
 
-[data-theme="dark"] .hero{
-  background: linear-gradient(135deg,rgb(47, 45, 45), rgb(85, 95, 102));
-  box-shadow:
-            0 20px 40px rgba(126, 123, 123, 0.6),
-            0 0 30px rgba(120, 142, 176, 0.4);
+      [data-theme="dark"] .hero {
+        background: linear-gradient(135deg, rgb(47, 45, 45), rgb(85, 95, 102));
+        box-shadow: 0 20px 40px rgba(126, 123, 123, 0.6),
+          0 0 30px rgba(120, 142, 176, 0.4);
+      }
 
-}
+      /* IMAGE */
+      .hero-image {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        animation: zoomIn 1s ease forwards;
+        animation-delay: 0.5s;
+      }
 
-/* IMAGE */
-.hero-image {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  animation: zoomIn 1s ease forwards;
-  animation-delay: 0.5s;
-}
+      /* Portfolio Section Enhancements */
+      /* Main section */
+      .portfolio-section {
+        padding: 4rem 2rem;
+        background-color: #f4f4f4;
+        color: #222;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+      }
 
+      [data-theme="dark"] .portfolio-section {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
 
-/* Portfolio Section Enhancements */
-/* Main section */
-.portfolio-section {
-  padding: 4rem 2rem;
-  background-color: #f4f4f4;
-  color: #222;
-  text-align: center;
-  transition: background 0.3s, color 0.3s;
-}
+      /* Section header */
+      .portfolio-header {
+        margin-top: 5vh;
+        margin-bottom: 17vh;
+      }
+      .portfolio-header h2 {
+        padding: 2rem;
+        background: linear-gradient(to right, red, blue);
+        color: transparent;
+        -webkit-background-clip: text;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
 
-[data-theme="dark"] .portfolio-section {
-  background-color: #121212;
-  color: #f0f0f0;
-}
+      .portfolio-header p {
+        padding: 1rem;
+        background: rgba(57, 112, 196, 0.4);
+        border-radius: 25px;
+        font-size: 1rem;
+        color: #2c2a2a;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
 
-/* Section header */
-.portfolio-header{
-  margin-top: 5vh;
-  margin-bottom: 17vh;
-}
-.portfolio-header h2 {
-  padding:2rem;
-  background: linear-gradient(to right, red, blue);
-  color: transparent;
-  -webkit-background-clip: text;
-  font-weight: 600;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
+      [data-theme="dark"] .portfolio-header p {
+        color: #aaa;
+      }
 
-.portfolio-header p {
-  padding: 1rem;
-  background: rgba(57, 112, 196,0.4);
-  border-radius: 25px;
-  font-size: 1rem;
-  color: #2c2a2a;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-}
+      /* Grid layout */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+      }
 
-[data-theme="dark"] .portfolio-header p {
-  color: #aaa;
-}
+      /* Portfolio card */
+      .portfolio-card {
+        background-color: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
-/* Grid layout */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-}
+      [data-theme="dark"] .portfolio-card {
+        background-color: #1e1e1e;
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+      }
 
-/* Portfolio card */
-.portfolio-card {
-  background-color: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+      /* Card hover */
+      .portfolio-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      }
 
-[data-theme="dark"] .portfolio-card {
-  background-color: #1e1e1e;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
-}
+      /* Card image */
+      .portfolio-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
 
-/* Card hover */
-.portfolio-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-}
+      /* Content inside card */
+      .portfolio-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
 
-/* Card image */
-.portfolio-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+      .portfolio-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: #00bfa6;
+      }
 
-/* Content inside card */
-.portfolio-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-}
+      [data-theme="dark"] .portfolio-content h3 {
+        color: #30e0c0;
+      }
 
-.portfolio-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  color: #00bfa6;
-}
+      .portfolio-content p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #444;
+      }
 
-[data-theme="dark"] .portfolio-content h3 {
-  color: #30e0c0;
-}
+      [data-theme="dark"] .portfolio-content p {
+        color: #ccc;
+      }
 
-.portfolio-content p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #444;
-}
+      /* Tick list */
+      .tick-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0.5rem;
+      }
 
-[data-theme="dark"] .portfolio-content p {
-  color: #ccc;
-}
+      .tick-list li {
+        position: relative;
+        padding-left: 1.8em;
+        margin-bottom: 0.7rem;
+        line-height: 1.5;
+        color: #444;
+      }
 
-/* Tick list */
-.tick-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 0.5rem;
-}
+      [data-theme="dark"] .tick-list li {
+        color: #ccc;
+      }
 
-.tick-list li {
-  position: relative;
-  padding-left: 1.8em;
-  margin-bottom: 0.7rem;
-  line-height: 1.5;
-  color: #444;
-}
+      .tick-list li::before {
+        content: "✔️";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.1em;
+        color: #28a745;
+      }
 
-[data-theme="dark"] .tick-list li {
-  color: #ccc;
-}
+      .client-content1,
+      .client-content2,
+      .client-content3 {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        background: linear-gradient(to right, #aeeda8, rgb(253, 253, 112));
+        transition: transform 0.5s ease;
+        cursor: pointer;
+      }
 
-.tick-list li::before {
-  content: '✔️';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.1em;
-  color: #28a745;
-}
+      .client-content1,
+      .client-content3 {
+        margin-top: 50px;
+      }
 
-.client-content1, .client-content2, .client-content3{
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  background: linear-gradient(to right,#aeeda8 , rgb(253, 253, 112));
-  transition: transform 0.5s ease;
-  cursor:  pointer;
-}
+      .client-content1 {
+        background: linear-gradient(to right, #d4f1f9, #7bc3d1);
+      }
 
-.client-content1, .client-content3{
-  margin-top: 50px;
-}
+      .client-content3 {
+        background: linear-gradient(
+          to right,
+          rgb(142, 232, 255),
+          rgb(255, 122, 255)
+        );
+      }
 
-.client-content1{
-  background: linear-gradient(to right,#d4f1f9, #7bc3d1);
-}
+      .client-content1:hover,
+      .client-content2:hover,
+      .client-content3:hover {
+        transform: scale(1.05);
+      }
 
-.client-content3{
-  background: linear-gradient(to right, rgb(142, 232, 255), rgb(255, 122, 255));
-}
+      .client-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5px;
+      }
 
-.client-content1:hover, .client-content2:hover, .client-content3:hover{
-  transform: scale(1.05);
-}
+      .client-img img {
+        border-radius: 180px;
+        border: 1px solid black;
+        width: 70px;
+        height: 70px;
+        margin-right: 20px;
+      }
 
-.client-info{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 5px;
-}
+      .client-feedback,
+      .client-rating,
+      .client-date {
+        margin: 5px;
+      }
+    </style>
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
-.client-img img{
-  border-radius: 180px;
-  border: 1px solid black;
-  width: 70px;
-  height: 70px;
-  margin-right: 20px;
-}
+    <!-- WOW.js for animation trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </head>
 
-.client-feedback, .client-rating, .client-date{
-  margin: 5px;
-}
+  <body>
+    <!-- Header -->
+    <div class="hero_area">
+      <header class="header_section">
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              <a class="navbar-brand" href="../">
+                <img
+                  src="../images/logo_blue.png"
+                  alt="Logo"
+                  class="main-logo"
+                />
+                <span>sachiva</span>
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class=""> </span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                 <!-- Home Link -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <!-- Make dropdown menu for about and contributers -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >About</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="about.html">About </a>
+                        <a href="contributors.html" class="dropdown-item">
+                          Contributors
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Make dropdown for services , blog , portfolio -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Programs</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="service.html"
+                          >Services <span class="sr-only">(current)</span></a
+                        >
+                        <a href="blog.html" class="dropdown-item "> Blog</a>
+                        <a href="portfolio.html" class="dropdown-item active">
+                          Portfolio
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- make dropdown for forum , contact  -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Contacts</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item contact-highlight"
+                          href="contact.html"
+                          >Contact Us</a
+                        >
+                        <a href="forum.html" class="dropdown-item"> Forum </a>
+                      </li>
+                    </ul>
+                  </li> 
+                  <li class="nav-item1">
+                    <a class="nav-link" id="booking" href="booking.html"
+                      >Book a Service</a
+                    >
+                  </li>
+                </ul>
+                <label class="switch theme-switch">
+                  <input type="checkbox" id="theme-toggle" />
+                  <span class="slider">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                  </span>
+                </label>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </div>
 
+    <main>
+      <!-- Hero Section -->
+      <!-- Sachiva Hero Section (Split View with GIFs) -->
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="half">
+            <h1>Designer</h1>
+            <p>
+              UI/UX enthusiast bringing creativity into every pixel. Specialized
+              in clean interfaces and aesthetic visuals.
+            </p>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://media.giphy.com/media/jRf5fsn8G6YaogAWxn/giphy.gif"
+              alt="Designer Coder"
+              style="height: 250px; width: 200px"
+            />
+          </div>
+          <div class="half">
+            <h1>Web Developer</h1>
+            <p>
+              Building responsive websites and scalable platforms using modern
+              frameworks to bring businesses online efficiently.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  </style>
-  <!-- Animate.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <!--Portfolio-->
+      <section class="portfolio-section">
+        <div class="portfolio-header">
+          <h2>Works Done by Sachiva</h2>
+          <p>
+            We tackle meaningful challenges with technology and innovation.
+            Here’s how we solve impact-driven problems.
+          </p>
+        </div>
 
-<!-- WOW.js for animation trigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script>
-  new WOW().init();
-</script>
-
-</head>
-
-
-<body>
-
-  <!-- Header -->
-  <div class="hero_area">
-    <header class="header_section">
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="../">
-              <img src="../images/logo_blue.png" alt="Logo" class="main-logo">
-              <span>sachiva</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item active fw-bold"><a class="nav-link" href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
-                <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item1">      
-                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
+        <div class="portfolio-grid">
+          <div class="portfolio-card fade-in-up">
+            <img src="https://i.gifer.com/74pZ.gif" alt="AI Healthcare GIF" />
+            <div class="portfolio-content">
+              <h3>AI in Healthcare Diagnosis</h3>
+              <ul class="tick-list">
+                <li>
+                  <strong>Problem:</strong> Diagnosis delays in rural hospitals.
+                </li>
+                <li>
+                  <strong>Solution:</strong> AI-powered X‑ray analysis boosting
+                  accuracy by 30%.
+                </li>
+                <li>
+                  <strong>Impact:</strong> Diagnosis time halved; supports
+                  offline use.
                 </li>
               </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
+              <div class="client-content1">
+                <div class="client-info">
+                  <div class="client-img">
+                    <img src="../images/hospital.jpg" />
+                  </div>
+                  <div class="client-name">
+                    <h5>SEVA Health Clinic</h5>
+                  </div>
+                </div>
+                <div class="client-feedback">
+                  <p>
+                    “The AI tool has been a game-changer for our
+                    diagnostics—accurate, fast, and works even with poor
+                    internet.”
+                  </p>
+                </div>
+                <div class="client-rating">
+                  <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (4.9 / 5)</p>
+                </div>
+                <div class="client-date">
+                  <p><strong>Duration:</strong> March 2025 – May 2025</p>
+                </div>
+              </div>
             </div>
-          </nav>
+          </div>
+
+          <div class="portfolio-card fade-in-up">
+            <img
+              src="https://i.gifer.com/2mVW.gif"
+              alt="Education Technology Animation"
+            />
+            <div class="portfolio-content">
+              <h3>Interactive EdTech for Rural Schools</h3>
+              <ul class="tick-list">
+                <li>
+                  <strong>Problem:</strong> Students lacked engaging learning
+                  tools.
+                </li>
+                <li>
+                  <strong>Solution:</strong> Gamified mobile-first PWA with
+                  quizzes and stories.
+                </li>
+                <li>
+                  <strong>Impact:</strong> 12,000+ users and 40% improvement in
+                  learning.
+                </li>
+              </ul>
+              <div class="client-content2">
+                <div class="client-info">
+                  <div class="client-img">
+                    <img src="../images/school.jpeg" />
+                  </div>
+                  <div class="client-name">
+                    <h5>Ashok School</h5>
+                  </div>
+                </div>
+                <div class="client-feedback">
+                  <p>
+                    “Our students are now more engaged and excited to learn. The
+                    stories and quizzes have made a big difference.”
+                  </p>
+                </div>
+                <div class="client-rating">
+                  <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+                </div>
+                <div class="client-date">
+                  <p><strong>Duration:</strong> Janurary 2025 – April 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card fade-in-up">
+            <img
+              src="https://i.gifer.com/8opi.gif"
+              alt="Startup Branding Animation"
+            />
+            <div class="portfolio-content">
+              <h3>Startup Branding & Pitch Design</h3>
+              <ul class="tick-list">
+                <li><strong>Problem:</strong> No cohesive brand identity.</li>
+                <li>
+                  <strong>Solution:</strong> Custom logos, UI designs & pitch
+                  decks.
+                </li>
+                <li>
+                  <strong>Impact:</strong> Helped 10+ startups attract funding
+                  and clients.
+                </li>
+              </ul>
+              <div class="client-content3">
+                <div class="client-info">
+                  <div class="client-img">
+                    <img src="https://randomuser.me/api/portraits/men/51.jpg" />
+                  </div>
+                  <div class="client-name">
+                    <h5>Sunflower Blooms</h5>
+                  </div>
+                </div>
+                <div class="client-feedback">
+                  <p>
+                    “We secured funding within weeks. The branding truly
+                    represented our vision.”
+                  </p>
+                </div>
+                <div class="client-rating">
+                  <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
+                </div>
+                <div class="client-date">
+                  <p><strong>Duration:</strong> February 2025 – March 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Let's Talk</h2>
+          <p>
+            Every high-quality home service starts with a chat.<br />
+            Our team leads client conversations and will be happy to discuss
+            your queries and needs.<br />
+            We’ll also bring in the right people when needed.
+          </p>
+          <a href="contact.html" class="cta-btn">Tell us about your Query</a>
+        </div>
+        <div class="footer-right">
+          <ul class="contact-list">
+            <li>
+              <span>Email</span>
+              <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+            </li>
+            <li>
+              <span>Address</span>
+              <a href="https://maps.google.com" target="_blank">
+                Church Street, Bangalore, Karnataka, 1234
+              </a>
+            </li>
+          </ul>
+          <div class="footer-social-icons">
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
         </div>
       </div>
-    </header>
-  </div>
 
-  <main>
-<!-- Hero Section -->
-<!-- Sachiva Hero Section (Split View with GIFs) -->
- <!-- Hero Section -->
-  <section class="hero">
-  <div class="hero-content">
-    <div class="half">
-      <h1>Designer</h1>
-      <p>UI/UX enthusiast bringing creativity into every pixel. Specialized in clean interfaces and aesthetic visuals.</p>
-    </div>
-    <div class="hero-image">
-      <img src="https://media.giphy.com/media/jRf5fsn8G6YaogAWxn/giphy.gif" alt="Designer Coder" style=" height:250px; width: 200px;">
-    </div>
-    <div class="half">
-      <h1>Web Developer</h1>
-      <p>Building responsive websites and scalable platforms using modern frameworks to bring businesses online efficiently.
-</p>
-    </div>
-  </div>
-</section>
-
-
-
-<!--Portfolio-->
-<section class="portfolio-section">
-  <div class="portfolio-header">
-    <h2>Works Done by Sachiva</h2>
-    <p>We tackle meaningful challenges with technology and innovation. Here’s how we solve impact-driven problems.</p>
-  </div>
-
-  <div class="portfolio-grid">
-    <div class="portfolio-card fade-in-up">
-<img src="https://i.gifer.com/74pZ.gif" alt="AI Healthcare GIF">
-      <div class="portfolio-content">
-        <h3>AI in Healthcare Diagnosis</h3>
-        <ul class="tick-list">
-          <li><strong>Problem:</strong> Diagnosis delays in rural hospitals.</li>
-          <li><strong>Solution:</strong> AI-powered X‑ray analysis boosting accuracy by 30%.</li>
-          <li><strong>Impact:</strong> Diagnosis time halved; supports offline use.</li>
-        </ul>
-        <div class="client-content1">
-          <div class="client-info">
-            <div class="client-img">
-              <img src="../images/hospital.jpg">
-            </div>
-            <div class="client-name">
-              <h5>SEVA Health Clinic</h5>
-            </div>
-          </div>
-          <div class = "client-feedback">
-            <p>“The AI tool has been a game-changer for our diagnostics—accurate, fast, and works even with poor internet.”</p>
-          </div>
-          <div class="client-rating">
-            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (4.9 / 5)</p>
-          </div>
-          <div class="client-date">
-            <p><strong>Duration:</strong> March 2025 – May 2025</p>
-          </div>
-
-        </div>
+      <div
+        class="footer-copyright text-center"
+        style="margin-top: 32px; color: #c1cbe2; font-size: 1rem"
+      >
+        &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
       </div>
-    </div>
+    </footer>
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <div class="portfolio-card fade-in-up">
-      <img src="https://i.gifer.com/2mVW.gif" alt="Education Technology Animation">
-      <div class="portfolio-content">
-        <h3>Interactive EdTech for Rural Schools</h3>
-        <ul class="tick-list">
-          <li><strong>Problem:</strong> Students lacked engaging learning tools.</li>
-          <li><strong>Solution:</strong> Gamified mobile-first PWA with quizzes and stories.</li>
-          <li><strong>Impact:</strong> 12,000+ users and 40% improvement in learning.</li>
-        </ul>
-        <div class="client-content2">
-          <div class="client-info">
-            <div class="client-img">
-              <img src="../images/school.jpeg">
-            </div>
-            <div class="client-name">
-              <h5>Ashok School</h5>
-            </div>
-          </div>
-          <div class = "client-feedback">
-            <p>“Our students are now more engaged and excited to learn. The stories and quizzes have made a big difference.”</p>
-          </div>
-          <div class="client-rating">
-            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
-          </div>
-          <div class="client-date">
-            <p><strong>Duration:</strong> Janurary 2025 – April 2025</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="portfolio-card fade-in-up">
-      <img src="https://i.gifer.com/8opi.gif" alt="Startup Branding Animation">
-      <div class="portfolio-content">
-        <h3>Startup Branding & Pitch Design</h3>
-        <ul class="tick-list">
-          <li><strong>Problem:</strong> No cohesive brand identity.</li>
-          <li><strong>Solution:</strong> Custom logos, UI designs & pitch decks.</li>
-          <li><strong>Impact:</strong> Helped 10+ startups attract funding and clients.</li>
-        </ul>
-        <div class="client-content3">
-          <div class="client-info">
-            <div class="client-img">
-              <img src="https://randomuser.me/api/portraits/men/51.jpg">
-            </div>
-            <div class="client-name">
-              <h5>Sunflower Blooms</h5>
-            </div>
-          </div>
-          <div class = "client-feedback">
-            <p>“We secured funding within weeks. The branding truly represented our vision.”</p>
-          </div>
-          <div class="client-rating">
-            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5.0 / 5)</p>
-          </div>
-          <div class="client-date">
-            <p><strong>Duration:</strong> February 2025 – March 2025</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  </main>
-
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
-
-</footer>
-<button id="backToTop" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  
-  <!-- JS Scripts -->
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="../js/custom.js"></script>
-  <script>
-    // Display current year
-    document.getElementById("displayDateYear").textContent = new Date().getFullYear();
-  </script>
-  <script src="../js/navbar.js"></script>
-</body>
-
+    <!-- JS Scripts -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/custom.js"></script>
+    <script>
+      // Display current year
+      document.getElementById("displayDateYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script src="../js/navbar.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
