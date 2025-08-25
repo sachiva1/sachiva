@@ -119,3 +119,44 @@
   font-size: 0.85rem;
   color: #444;
 }
+
+@media (max-width: 768px) {
+  .container-fluid {
+    width: 80%;
+    margin: auto;
+  }
+
+  .about-description {
+
+    padding: 0;
+  }
+
+  .aboutAll {
+    flex-direction: column;
+    max-width: 500px;
+    padding: 0 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .team-grid {
+    flex-direction: column;
+  }
+
+  .team-grid {
+    display: flex;
+    gap: 18px;
+  }
+
+  .team-card {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .team {
+    min-width: 550px;
+    flex-direction: column;
+  }
+}

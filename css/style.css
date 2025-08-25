@@ -345,29 +345,6 @@ body.dark-mode .header_section.scrolled {
   box-shadow: 0 6px 25px rgba(255, 255, 255, 0.12);
 }
 
-/* Specific styling only for Contact Us button in nav */
-/*.nav-item.contact-highlight .nav-link {
-  background-color: #0355cc;
-  color: white;
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  font-size: 13px !important;
-  padding: 10px 24px !important; 
-  line-height: 1.4 !important;
-  display: inline-flex !important; 
-  align-items: center !important;
-  justify-content: center !important;
-  margin-left: 12px !important;
-  margin-right: 12px !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px;
-  box-sizing: border-box !important;
-}*/
-
-/*.nav-item.contact-highlight .nav-link:hover {
-  background-color: #023a8a;
-  color: #fff;
-}*/
 /* Fix spacing for nav items */
 .custom_nav-container {
   display: flex !important;
@@ -637,10 +614,9 @@ body.dark-mode .header_section.scrolled {
 }
 
 /* About page */
-.about_section .row {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
 }
 
 .about_section .about-heading {
@@ -743,9 +719,17 @@ body.dark-mode .header_section.scrolled {
 
 /* Small screens: stack vertically */
 @media (max-width: 768px) {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: content-box;
+  }
+
   .about_section {
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
   }
 
   .about_section .text-content {
@@ -755,11 +739,12 @@ body.dark-mode .header_section.scrolled {
   }
 
   .about_section .img-box img {
-    max-width: 100%;
+    width: 100%;
   }
+
   .about_section .detail-box {
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 
 @keyframes pulse512 {
@@ -1331,7 +1316,7 @@ body.dark-mode .header_section.scrolled {
 .custom-footer {
   background: #172945;
   color: #fff;
-  padding: 48px 0 0 0;
+  padding: 48px;
   font-family: "Lato", Arial, sans-serif;
   border-top: 2px solid #233454;
 }
