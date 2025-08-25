@@ -1,764 +1,941 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/logo_blue.png" />
+    <title>Sachiva</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" href="./images/logo_blue.png">
-  <title>Sachiva</title>
+    <!-- CSS links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/dark-mode-fixes.css" rel="stylesheet" />
+    <!-- Consolidated CSS links for maintainability -->
 
-  <!-- CSS links -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link href="css/responsive.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-  <!-- Consolidated CSS links for maintainability -->
-
-  <style>
-     
-    .header_section{
-      border-radius: 100px;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      margin: 20px;
-      width: calc(100% - 40px); /* Account for margin */
-    }
-    .navbar-nav{
-      display: flex;
-      /*justify-content: space-between;*/
-      padding-right: 100px;
-      padding-left: 30px;
-
-    }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
-      /*display: flex;
+    <style>
+      .header_section {
+        border-radius: 100px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        margin: 20px;
+        width: calc(100% - 40px); /* Account for margin */
+      }
+      .navbar-nav {
+        display: flex;
+        /*justify-content: space-between;*/
+        padding-right: 100px;
+        padding-left: 30px;
+      }
+      .nav-item {
+        /*Adding styling to nav bar as it was overflowing out of page*/
+        /*display: flex;
       justify-content: center;
       align-items: center;*/
-      font-weight: bold;
-      color: rgb(56, 56, 56);
-      position: relative;
-      margin-right: 0px;
-      padding: 8px;
-      margin: 2px;
-      transition: all 0.5s ease;
-      font-size: 0.95rem;
-    }
+        font-weight: bold;
+        color: rgb(56, 56, 56);
+        position: relative;
+        margin-right: 0px;
+        padding: 8px;
+        margin: 2px;
+        transition: all 0.5s ease;
+        font-size: 0.95rem;
+      }
 
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: rgb(0, 132, 255);
-      width: 0;
-    }
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: #0355cc;
+        width: 0;
+      }
+      /* Show dropdown on hover for desktop */
+      @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        }
+      }
+      /* Style the dropdown menu container */
+      .dropdown-menu {
+        background: rgba(255, 255, 255, 0.7); /* White with transparency */
+        backdrop-filter: blur(8px); /* Glass blur effect */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        padding: 8px 0; /* Space inside */
+        transition: all 0.3s ease;
+      }
+      /* Hover effect for dropdown links */
+      .dropdown-menu .dropdown-item {
+        padding: 10px 20px; /* More clickable area */
+        transition: all 0.2s ease;
+      }
+      .dropdown-menu .dropdown-item:hover {
+        border-radius: 10px; 
+        color: #007bff; /* Bootstrap blue text */
+        transform: translateX(5px); /* subtle slide to the right */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        font-size: 1rem;
+      }
 
-    .nav-item:hover::after {
-      animation: slideUnderline 0.5s forwards;
-    }
-    .nav-item:hover{
-      background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
+      .nav-item:hover::after {
+        animation: slideUnderline 0.5s forwards;
+      }
 
-    @keyframes slideUnderline {
-      from { width: 0; height: 0px;}
-      to { width: 100%; height: 3px;}
-    }
+      @keyframes slideUnderline {
+        from {
+          width: 0;
+          height: 0px;
+        }
+        to {
+          width: 100%;
+          height: 3px;
+        }
+      }
 
-    #booking{          /*Adding styling to booking*/
-      background-color: #ff8a1d;
-      margin: 10px;
-      font-weight:900;
-      padding: 10px !important;
-      color: white;
-      border-radius: 12px;
-      animation: pulseShadow 2s infinite;
-      transition: transform 0.5s ease, background-color 0.5s ease;
-    }
-    @keyframes pulseShadow {
+      #booking {
+        /*Adding styling to booking*/
+        background-color: #ff8a1d;
+        margin: 10px;
+        font-weight: 900;
+        padding: 10px !important;
+        color: white;
+        border-radius: 12px;
+        animation: pulseShadow 2s infinite;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+      }
+      @keyframes pulseShadow {
         0% {
-            box-shadow: 0 0 0 0 #ff8a1d;
+          box-shadow: 0 0 0 0 #ff8a1d;
         }
         70% {
-            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+          box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
         }
-    }
+      }
 
-    #booking:hover{
-      transform: scale(1.1);
-      background-color: #ff8a1d;
-    }
-  </style>
-</head>
+      #booking:hover {
+        transform: scale(1.1);
+        background-color: #ff8a1d;
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="hero_area">
-
-    <!-- header section -->
-    <header class="header_section">
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="./">
-              <img src="images/logo_blue.png" alt="Logo" class="main-logo">
-              <span>sachiva</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active fw-bold"><a class="nav-link" href="index.html">Home <span
-                      class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="html/about.html"> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="html/service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="html/contributors.html">Contributors</a></li>
-                <li class="nav-item"><a class="nav-link" href="html/blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="html/portfolio.html">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="html/forum.html">Forum</a></li>     <!--adding link for forum page-->
-
-                <li class="nav-item contact-highlight">
-                  <a class="nav-link" href="html/contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="html/feedback.html">Feedback</a>
-                </li>
-                <li class="nav-item1">      
-                  <a class="nav-link" id="booking" href="html/booking.html">Book a Service</a>
-                </li>
-              </ul>
-              <label class="switch theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                  <i class="fas fa-sun sun-icon"></i>
-                  <i class="fas fa-moon moon-icon"></i>
-                </span>
-              </label>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- end header section -->
-
-    <!-- slider section -->
-    <section class="slider_section " style="margin-top: 0px;">
-      <div class="container " style="margin-top: 80px;">
-        <div class="row" >
-          <div class="col-md-6 ">
-            <div class="detail-box" style="margin-top: 100px;">
-              <h1>
-                <span id="typing-text"></span>
-              </h1>
-              <p>
-                At Sachiva, we specialize in web development, software
-                solutions, and cybersecurity. Our expert team ensures seamless
-                digital transformation for businesses of all sizes.
-              </p>
-              <a href="html/contact.html">
-                Contact Us
+  <body>
+    <div class="hero_area">
+      <!-- header section -->
+      <header class="header_section">
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              <a class="navbar-brand" href="./">
+                <img src="images/logo_blue.png" alt="Logo" class="main-logo" />
+                <span>sachiva</span>
               </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class=""> </span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <!-- Home Link -->
+                  <li class="nav-item active fw-bold">
+                    <a class="nav-link" href="index.html"
+                      >Home <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <!-- Make dropdown menu for about and contributers -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >About</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="html/about.html" class="dropdown-item"
+                          >About us</a
+                        >
+                        <a href="html/contributors.html" class="dropdown-item">
+                          Contributors
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- Make dropdown for services , blog , portfolio -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Programs</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="html/service.html"
+                          >Services</a
+                        >
+                        <a href="html/blog.html" class="dropdown-item">
+                          Blog
+                        </a>
+                        <a href="html/portfolio.html" class="dropdown-item">
+                          Portfolio
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- make dropdown for forum , contact , feedback -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Contacts</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item contact-highlight"
+                          href="html/contact.html"
+                          >Contact Us</a
+                        >
+                        <a href="html/feedback.html" class="dropdown-item">
+                          FeedBack
+                        </a>
+                        <a href="html/forum.html" class="dropdown-item">
+                          Forum
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!--adding link for forum page-->
+                  <li class="nav-item1">
+                    <a class="nav-link" id="booking" href="html/booking.html"
+                      >Book a Service</a
+                    >
+                  </li>
+                </ul>
+                <label class="switch theme-switch">
+                  <input type="checkbox" id="theme-toggle" />
+                  <span class="slider">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                  </span>
+                </label>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- end header section -->
+
+      <!-- slider section -->
+      <section class="slider_section" style="margin-top: 0px">
+        <div class="container" style="margin-top: 80px">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-box" style="margin-top: 100px">
+                <h1>
+                  <span id="typing-text"></span>
+                </h1>
+                <p>
+                  At Sachiva, we specialize in web development, software
+                  solutions, and cybersecurity. Our expert team ensures seamless
+                  digital transformation for businesses of all sizes.
+                </p>
+                <a href="html/contact.html"> Contact Us </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="images/maintenance.gif" alt="" />
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
+        </div>
+      </section>
+      <!-- end slider section -->
+    </div>
+
+    <!-- about section -->
+    <section class="about_section layout_padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+            <div class="detail-box">
+              <h2>About us</h2>
+              <p>
+                Sachiva is a leading IT solutions provider offering web
+                development, cybersecurity, and software management services.
+                Our mission is to empower businesses with innovative technology.
+              </p>
+              <a href="html/about.html">Read More</a>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-6">
             <div class="img-box">
-              <img src="images/maintenance.gif" alt="">
+              <img src="images/about_us.gif" alt="" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- end slider section -->
+    <!-- end about section -->
 
-  </div>
-
-  <!-- about section -->
-  <section class="about_section layout_padding-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
-            <h2>About us</h2>
-            <p>
-              Sachiva is a leading IT solutions provider offering web
-              development, cybersecurity, and software management services.
-              Our mission is to empower businesses with innovative technology.
-            </p>
-                          <a href="html/about.html">Read More</a>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/about_us.gif" alt="" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end about section -->
-
-  <!-- professional section -->
-  <section class="professional_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/Expert_Solutions.gif" alt="Professional Home Services" loading="lazy">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2>Expert Solutions for Your Home & Business</h2>
-            <p>
-              We provide top-quality repair, maintenance, and professional home services tailored to your
-              needs. Our skilled team ensures efficiency, reliability, and customer satisfaction in every project.
-            </p>
-                          <a href="html/service.html">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end professional section -->
-
-  <!-- service section -->
-<section class="service_section layout_padding">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2>Our Services</h2>
-    </div>
-    <div class="row">
-      
-      <!-- Web Development Service -->
-      <div class="col-sm-6 col-md-3 mx-auto">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            
-            <!-- Front Face -->
-            <div class="flip-card-front">
-              <div class="box">
-                <div class="img-box">
-                  <img src="images/os1.png" alt="Web Development" loading="lazy" />
-                </div>
-                <div class="detail-box">
-                  <h5>Web Development</h5>
-                  <p>Custom websites tailored for businesses, eCommerce, and startups.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Back Face -->
-            <div class="flip-card-back">
-              <h3 class="back-title">Web Development</h3>
-              
-              <div class="service-overview">
-                <div class="overview-item">
-                  <i class="fas fa-clock"></i>
-                  <span class="overview-label">Timeline:</span>
-                  <span class="overview-value">2-8 weeks</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-indian-rupee-sign"></i>
-                  <span class="overview-label">Starting Cost:</span>
-                  <span class="overview-value">₹6,999</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-laptop-code"></i>
-                  <span class="overview-label">Type:</span>
-                  <span class="overview-value">Responsive Design</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-tools"></i>
-                  <span class="overview-label">Tech Stack:</span>
-                  <span class="overview-value">HTML, CSS, JS, PHP</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-headset"></i>
-                  <span class="overview-label">Support:</span>
-                  <span class="overview-value">6 months free</span>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <!-- Software Management Service -->
-      <div class="col-sm-6 col-md-3 mx-auto">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            
-            <!-- Front Face -->
-            <div class="flip-card-front">
-              <div class="box">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="Software Management" loading="lazy" />
-                </div>
-                <div class="detail-box">
-                  <h5>Software Management</h5>
-                  <p>Smart, scalable, and efficient software solutions tailored to your business needs.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Back Face -->
-            <div class="flip-card-back">
-              <h3 class="back-title">Software Management</h3>
-              
-              <div class="service-overview">
-                <div class="overview-item">
-                  <i class="fas fa-clock"></i>
-                  <span class="overview-label">Timeline:</span>
-                  <span class="overview-value">4-12 weeks</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-indian-rupee-sign"></i>
-                  <span class="overview-label">Starting Cost:</span>
-                  <span class="overview-value">₹15,999</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-cogs"></i>
-                  <span class="overview-label">Type:</span>
-                  <span class="overview-value">Custom Software</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-database"></i>
-                  <span class="overview-label">Features:</span>
-                  <span class="overview-value">Database, Analytics</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-sync-alt"></i>
-                  <span class="overview-label">Updates:</span>
-                  <span class="overview-value">Regular maintenance</span>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <!-- Google Ads Service -->
-      <div class="col-sm-6 col-md-3 mx-auto">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            
-            <!-- Front Face -->
-            <div class="flip-card-front">
-              <div class="box">
-                <div class="img-box">
-                  <img src="images/os3.png" alt="Google Ads" loading="lazy" />
-                </div>
-                <div class="detail-box">
-                  <h5>Google Ads</h5>
-                  <p>Maximize your online visibility with our expert Google Ads services.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Back Face -->
-            <div class="flip-card-back">
-              <h3 class="back-title">Google Ads</h3>
-              
-              <div class="service-overview">
-                <div class="overview-item">
-                  <i class="fas fa-clock"></i>
-                  <span class="overview-label">Setup Time:</span>
-                  <span class="overview-value">1-2 weeks</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-indian-rupee-sign"></i>
-                  <span class="overview-label">Management Fee:</span>
-                  <span class="overview-value">₹8,999/month</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-bullseye"></i>
-                  <span class="overview-label">Type:</span>
-                  <span class="overview-value">PPC Campaigns</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-chart-line"></i>
-                  <span class="overview-label">Reporting:</span>
-                  <span class="overview-value">Weekly analytics</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-target"></i>
-                  <span class="overview-label">Focus:</span>
-                  <span class="overview-value">ROI optimization</span>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <!-- Cybersecurity Service -->
-      <div class="col-sm-6 col-md-3 mx-auto">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            
-            <!-- Front Face -->
-            <div class="flip-card-front">
-              <div class="box">
-                <div class="img-box">
-                  <img src="images/os4.png" alt="Cybersecurity" loading="lazy" />
-                </div>
-                <div class="detail-box">
-                  <h5>Cybersecurity</h5>
-                  <p>Protect your business from online threats with our security solutions.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Back Face -->
-            <div class="flip-card-back">
-              <h3 class="back-title">Cybersecurity</h3>
-              
-              <div class="service-overview">
-                <div class="overview-item">
-                  <i class="fas fa-clock"></i>
-                  <span class="overview-label">Assessment:</span>
-                  <span class="overview-value">1-3 weeks</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-indian-rupee-sign"></i>
-                  <span class="overview-label">Starting Cost:</span>
-                  <span class="overview-value">₹12,999</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-shield-alt"></i>
-                  <span class="overview-label">Type:</span>
-                  <span class="overview-value">Threat Protection</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-eye"></i>
-                  <span class="overview-label">Monitoring:</span>
-                  <span class="overview-value">24/7 surveillance</span>
-                </div>
-                
-                <div class="overview-item">
-                  <i class="fas fa-certificate"></i>
-                  <span class="overview-label">Compliance:</span>
-                  <span class="overview-value">Industry standards</span>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="btn-box">
-                    <a href="html/service.html">View More</a>
-    </div>
-  </div>
-</section>
-<!-- end service section -->
-
- <!-- === Recommendation Section === -->
-<section id="smart-recommender" class="container my-5">
-  <h2 class="text-center mb-4">Not Sure What You Need?</h2>
-  <div class="d-flex justify-content-center flex-wrap gap-3">
-    <button class="btn btn-outline-primary smart-btn" onclick="recommend('business')">Grow My Business</button>
-    <button class="btn btn-outline-success smart-btn" onclick="recommend('home')">Fix My Home</button>
-    <button class="btn btn-outline-warning smart-btn" onclick="recommend('design')">Need Design Help</button>
-    <button class="btn btn-outline-info smart-btn" onclick="recommend('other')">Something Else</button>
-  </div>
-
-  <div class="mt-4" id="recommendationResult"></div>
-</section>
-
-
-
-  <!-- Owner message -->
-  <section class="client_section">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>Owner Message</h2>
-      </div>
-      <div class="item">
-        <div class="box">
-          <div class="client_id">
+    <!-- professional section -->
+    <section class="professional_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
             <div class="img-box">
-              <img src="images/owner.png">
-            </div>
-            <div class="client_detail">
-              <div class="client_info">
-                <h6>Shivani Sharma</h6>
-              </div>
-              <i class="fa fa-quote-left" aria-hidden="true"></i>
+              <img
+                src="images/Expert_Solutions.gif"
+                alt="Professional Home Services"
+                loading="lazy"
+              />
             </div>
           </div>
-          <div class="client_text">
-            <p>
-              "At Sachiva, we believe in leveraging technology to empower businesses and individuals.
-              Our mission is to provide top-notch IT solutions, ensuring security, innovation, and
-              efficiency for our clients. Your trust drives us to deliver excellence every day."
-            </p>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h2>Expert Solutions for Your Home & Business</h2>
+              <p>
+                We provide top-quality repair, maintenance, and professional
+                home services tailored to your needs. Our skilled team ensures
+                efficiency, reliability, and customer satisfaction in every
+                project.
+              </p>
+              <a href="html/service.html">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- end professional section -->
+
+    <!-- service section -->
+    <section class="service_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>Our Services</h2>
+        </div>
+        <div class="row">
+          <!-- Web Development Service -->
+          <div class="col-sm-6 col-md-3 mx-auto">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front Face -->
+                <div class="flip-card-front">
+                  <div class="box">
+                    <div class="img-box">
+                      <img
+                        src="images/os1.png"
+                        alt="Web Development"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="detail-box">
+                      <h5>Web Development</h5>
+                      <p>
+                        Custom websites tailored for businesses, eCommerce, and
+                        startups.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="flip-card-back">
+                  <h3 class="back-title">Web Development</h3>
+
+                  <div class="service-overview">
+                    <div class="overview-item">
+                      <i class="fas fa-clock"></i>
+                      <span class="overview-label">Timeline:</span>
+                      <span class="overview-value">2-8 weeks</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-indian-rupee-sign"></i>
+                      <span class="overview-label">Starting Cost:</span>
+                      <span class="overview-value">₹6,999</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-laptop-code"></i>
+                      <span class="overview-label">Type:</span>
+                      <span class="overview-value">Responsive Design</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-tools"></i>
+                      <span class="overview-label">Tech Stack:</span>
+                      <span class="overview-value">HTML, CSS, JS, PHP</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-headset"></i>
+                      <span class="overview-label">Support:</span>
+                      <span class="overview-value">6 months free</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Management Service -->
+          <div class="col-sm-6 col-md-3 mx-auto">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front Face -->
+                <div class="flip-card-front">
+                  <div class="box">
+                    <div class="img-box">
+                      <img
+                        src="images/s1.png"
+                        alt="Software Management"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="detail-box">
+                      <h5>Software Management</h5>
+                      <p>
+                        Smart, scalable, and efficient software solutions
+                        tailored to your business needs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="flip-card-back">
+                  <h3 class="back-title">Software Management</h3>
+
+                  <div class="service-overview">
+                    <div class="overview-item">
+                      <i class="fas fa-clock"></i>
+                      <span class="overview-label">Timeline:</span>
+                      <span class="overview-value">4-12 weeks</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-indian-rupee-sign"></i>
+                      <span class="overview-label">Starting Cost:</span>
+                      <span class="overview-value">₹15,999</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-cogs"></i>
+                      <span class="overview-label">Type:</span>
+                      <span class="overview-value">Custom Software</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-database"></i>
+                      <span class="overview-label">Features:</span>
+                      <span class="overview-value">Database, Analytics</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-sync-alt"></i>
+                      <span class="overview-label">Updates:</span>
+                      <span class="overview-value">Regular maintenance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Ads Service -->
+          <div class="col-sm-6 col-md-3 mx-auto">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front Face -->
+                <div class="flip-card-front">
+                  <div class="box">
+                    <div class="img-box">
+                      <img
+                        src="images/os3.png"
+                        alt="Google Ads"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="detail-box">
+                      <h5>Google Ads</h5>
+                      <p>
+                        Maximize your online visibility with our expert Google
+                        Ads services.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="flip-card-back">
+                  <h3 class="back-title">Google Ads</h3>
+
+                  <div class="service-overview">
+                    <div class="overview-item">
+                      <i class="fas fa-clock"></i>
+                      <span class="overview-label">Setup Time:</span>
+                      <span class="overview-value">1-2 weeks</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-indian-rupee-sign"></i>
+                      <span class="overview-label">Management Fee:</span>
+                      <span class="overview-value">₹8,999/month</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-bullseye"></i>
+                      <span class="overview-label">Type:</span>
+                      <span class="overview-value">PPC Campaigns</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-chart-line"></i>
+                      <span class="overview-label">Reporting:</span>
+                      <span class="overview-value">Weekly analytics</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-target"></i>
+                      <span class="overview-label">Focus:</span>
+                      <span class="overview-value">ROI optimization</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cybersecurity Service -->
+          <div class="col-sm-6 col-md-3 mx-auto">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front Face -->
+                <div class="flip-card-front">
+                  <div class="box">
+                    <div class="img-box">
+                      <img
+                        src="images/os4.png"
+                        alt="Cybersecurity"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="detail-box">
+                      <h5>Cybersecurity</h5>
+                      <p>
+                        Protect your business from online threats with our
+                        security solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="flip-card-back">
+                  <h3 class="back-title">Cybersecurity</h3>
+
+                  <div class="service-overview">
+                    <div class="overview-item">
+                      <i class="fas fa-clock"></i>
+                      <span class="overview-label">Assessment:</span>
+                      <span class="overview-value">1-3 weeks</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-indian-rupee-sign"></i>
+                      <span class="overview-label">Starting Cost:</span>
+                      <span class="overview-value">₹12,999</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-shield-alt"></i>
+                      <span class="overview-label">Type:</span>
+                      <span class="overview-value">Threat Protection</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-eye"></i>
+                      <span class="overview-label">Monitoring:</span>
+                      <span class="overview-value">24/7 surveillance</span>
+                    </div>
+
+                    <div class="overview-item">
+                      <i class="fas fa-certificate"></i>
+                      <span class="overview-label">Compliance:</span>
+                      <span class="overview-value">Industry standards</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-box">
+          <a href="html/service.html">View More</a>
+        </div>
+      </div>
+    </section>
+    <!-- end service section -->
+
+    <!-- === Recommendation Section === -->
+    <section id="smart-recommender" class="container my-5">
+      <h2 class="text-center mb-4">Not Sure What You Need?</h2>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <button
+          class="btn btn-outline-primary smart-btn"
+          onclick="recommend('business')"
+        >
+          Grow My Business
+        </button>
+        <button
+          class="btn btn-outline-success smart-btn"
+          onclick="recommend('home')"
+        >
+          Fix My Home
+        </button>
+        <button
+          class="btn btn-outline-warning smart-btn"
+          onclick="recommend('design')"
+        >
+          Need Design Help
+        </button>
+        <button
+          class="btn btn-outline-info smart-btn"
+          onclick="recommend('other')"
+        >
+          Something Else
+        </button>
+      </div>
+
+      <div class="mt-4" id="recommendationResult"></div>
+    </section>
+
+    <!-- Owner message -->
+    <section class="client_section">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>Owner Message</h2>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="client_id">
+              <div class="img-box">
+                <img src="images/owner.png" />
+              </div>
+              <div class="client_detail">
+                <div class="client_info">
+                  <h6>Shivani Sharma</h6>
+                </div>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="client_text">
+              <p>
+                "At Sachiva, we believe in leveraging technology to empower
+                businesses and individuals. Our mission is to provide top-notch
+                IT solutions, ensuring security, innovation, and efficiency for
+                our clients. Your trust drives us to deliver excellence every
+                day."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- client section -->
 
     <section class="client_section mt-5">
-        <div class="container">
-            <div class="heading_container heading_center">
-                <h2>
-                    What Our Clients Say
-                </h2>
-            </div>
-            <div class="carousel-wrap layout_padding2-top ">
-                <div class="owl-carousel">
-                    <div class="item">
-                        <div class="box">
-                            <div class="client_id">
-                                <div class="img-box">
-              <img src="images/client-1.jpg" alt="" loading="lazy">
-                                </div>
-                                <div class="client_detail">
-                                    <div class="client_info">
-                                        <h6>
-                                            Jorch morik
-                                        </h6>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="client_text">
-                                <p>
-                                    Chunks as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin words, combined with a handful of model sentence
-                                    structures, to generate Lorem Ipsum
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <div class="client_id">
-                                <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="">
-                                </div>
-                                <div class="client_detail">
-                                    <div class="client_info">
-                                        <h6>
-                                           Richard Brown 
-                                        </h6>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="client_text">
-                                <p>
-                                    Sachiva provided excellent website for my business. It was exactly what I was looking for.
-                                    I will totally recommend this to everyone
-                                    to try their service once.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <div class="client_id">
-                                <div class="img-box">
-                                    <img src="images/client-1.jpg" alt="">
-                                </div>
-                                <div class="client_detail">
-                                    <div class="client_info">
-                                        <h6>
-                                            Jorch morik
-                                        </h6>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="client_text">
-                                <p>
-                                    Chunks as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin words, combined with a handful of model sentence
-                                    structures, to generate Lorem Ipsum
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <div class="client_id">
-                                <div class="img-box">
-                                    <img src="images/client-2.jpg" alt="" loading="lazy">
-                                </div>
-                                <div class="client_detail">
-                                    <div class="client_info">
-                                        <h6>
-                                           Richard Brown 
-                                        </h6>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="client_text">
-                                <p>
-                                    Sachiva provided excellent website for my business. It was exactly what I was looking for.
-                                    I will totally recommend this to everyone
-                                    to try their service once.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>What Our Clients Say</h2>
         </div>
+        <div class="carousel-wrap layout_padding2-top">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-1.jpg" alt="" loading="lazy" />
+                  </div>
+                  <div class="client_detail">
+                    <div class="client_info">
+                      <h6>Jorch morik</h6>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="client_text">
+                  <p>
+                    Chunks as necessary, making this the first true generator on
+                    the Internet. It uses a dictionary of over 200 Latin words,
+                    combined with a handful of model sentence structures, to
+                    generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="client_detail">
+                    <div class="client_info">
+                      <h6>Richard Brown</h6>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="client_text">
+                  <p>
+                    Sachiva provided excellent website for my business. It was
+                    exactly what I was looking for. I will totally recommend
+                    this to everyone to try their service once.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-1.jpg" alt="" />
+                  </div>
+                  <div class="client_detail">
+                    <div class="client_info">
+                      <h6>Jorch morik</h6>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="client_text">
+                  <p>
+                    Chunks as necessary, making this the first true generator on
+                    the Internet. It uses a dictionary of over 200 Latin words,
+                    combined with a handful of model sentence structures, to
+                    generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" loading="lazy" />
+                  </div>
+                  <div class="client_detail">
+                    <div class="client_info">
+                      <h6>Richard Brown</h6>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="client_text">
+                  <p>
+                    Sachiva provided excellent website for my business. It was
+                    exactly what I was looking for. I will totally recommend
+                    this to everyone to try their service once.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Let's Talk</h2>
+          <p>
+            Every high-quality home service starts with a chat.<br />
+            Our team leads client conversations and will be happy to discuss
+            your queries and needs.<br />
+            We’ll also bring in the right people when needed.
+          </p>
+          <a href="./html/contact.html" class="cta-btn"
+            >Tell us about your Query</a
+          >
+        </div>
+        <div class="footer-right">
+          <ul class="contact-list">
+            <li>
+              <span>Email</span>
+              <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
+            </li>
+            <li>
+              <span>Address</span>
+              <a href="https://maps.google.com" target="_blank">
+                Church Street, Bangalore, Karnataka, 1234
+              </a>
+            </li>
+          </ul>
+          <div class="footer-social-icons">
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
 
-</footer>
+      <div
+        class="footer-copyright text-center"
+        style="margin-top: 32px; color: #c1cbe2; font-size: 1rem"
+      >
+        &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      </div>
+    </footer>
 
+    <!-- end info_section -->
 
+    <!-- footer section -->
 
+    <!--top scroll-->
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <!-- Scripts -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/slidersection.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- end info_section -->
+    <script>
+      const recommendations = {
+        business: [
+          {
+            title: "Digital Marketing",
+            desc: "Promote your business online.",
+            icon: "📈",
+          },
+          {
+            title: "Business Strategy",
+            desc: "Plan and grow your company.",
+            icon: "📊",
+          },
+        ],
+        home: [
+          { title: "Plumbing", desc: "Fix leaks and pipes.", icon: "🚰" },
+          {
+            title: "Electricians",
+            desc: "Get electrical work done.",
+            icon: "💡",
+          },
+        ],
+        design: [
+          {
+            title: "Logo Design",
+            desc: "Create a unique brand logo.",
+            icon: "🎨",
+          },
+          {
+            title: "UI/UX",
+            desc: "Design engaging user experiences.",
+            icon: "📱",
+          },
+        ],
+        other: [
+          {
+            title: "Custom Consulting",
+            desc: "Let’s talk and find the right solution.",
+            icon: "🧠",
+          },
+        ],
+      };
 
-<!-- footer section -->
+      document.querySelectorAll(".recommend-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const type = btn.getAttribute("data-type");
+          const services = recommendations[type];
 
-<!--top scroll-->
-<button id="backToTop" title="Go to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
+          let output = `<div class="row justify-content-center">`;
 
-  <!-- Scripts -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="js/slidersection.js"></script>
-
-  <script>
-  const recommendations = {
-    business: [
-      { title: "Digital Marketing", desc: "Promote your business online.", icon: "📈" },
-      { title: "Business Strategy", desc: "Plan and grow your company.", icon: "📊" }
-    ],
-    home: [
-      { title: "Plumbing", desc: "Fix leaks and pipes.", icon: "🚰" },
-      { title: "Electricians", desc: "Get electrical work done.", icon: "💡" }
-    ],
-    design: [
-      { title: "Logo Design", desc: "Create a unique brand logo.", icon: "🎨" },
-      { title: "UI/UX", desc: "Design engaging user experiences.", icon: "📱" }
-    ],
-    other: [
-      { title: "Custom Consulting", desc: "Let’s talk and find the right solution.", icon: "🧠" }
-    ]
-  };
-
-  document.querySelectorAll(".recommend-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const type = btn.getAttribute("data-type");
-      const services = recommendations[type];
-
-      let output = `<div class="row justify-content-center">`;
-
-      services.forEach(service => {
-        output += `
+          services.forEach((service) => {
+            output += `
           <div class="col-md-4 mb-3">
             <div class="card shadow-sm h-100">
               <div class="card-body">
@@ -768,21 +945,45 @@
             </div>
           </div>
         `;
+          });
+
+          output += `</div>`;
+          document.getElementById("recommendationResult").innerHTML = output;
+        });
+      });
+    </script>
+
+    <script src="js/navbar.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector(".header_section");
+        console.log("Header found? ", header); // ✅ should NOT be null
+      });
+    </script>
+    <!-- <script>
+      // for dropdown toggle
+      document.querySelectorAll(".drop-toggle").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation(); // prevent auto close immediately
+          this.parentElement.classList.toggle("show");
+
+          // Close other dropdowns
+          document.querySelectorAll(".drop").forEach((dropd) => {
+            if (dropd !== this.parentElement) {
+              dropd.classList.remove("show");
+            }
+          });
+        });
       });
 
-      output += `</div>`;
-      document.getElementById("recommendationResult").innerHTML = output;
-    });
-  });
-</script>
-
-     <script src="js/navbar.js"></script>
-     <script>
-       document.addEventListener("DOMContentLoaded", function () {
-      const header = document.querySelector(".header_section");
-      console.log("Header found? ", header); // ✅ should NOT be null
-    });
-     </script>
-</body>
-
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (e) {
+        if (!e.target.closest(".drop")) {
+          document.querySelectorAll(".drop").forEach((dropd) => {
+            dropd.classList.remove("show");
+          });
+        }
+      });
+    </script> -->
+  </body>
 </html>

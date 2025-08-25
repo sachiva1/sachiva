@@ -304,6 +304,13 @@ a:focus {
   transform: none;
 }
 
+/* Remove background from .active nav link */
+.dropdown-item.active{
+  background-color: transparent !important;
+  color: inherit !important; /* Keep default text color */
+}
+
+
 .quote_btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -624,6 +631,33 @@ body.dark-mode .header_section.scrolled {
 
 .service-btn:hover {
   transform: scale(1.15);
+}
+/* service text animation */
+.heading-services , .heading-conti ,.heading-blog , .heading-forum ,.title{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  width:0;
+  animation: typing 3s steps(22 , end) forwards , blink 0.6s step-end 3s , hidecursor 0s forwards 1.2s;
+}
+@keyframes  typing{
+  from{
+    width: 0;
+  }to{
+    width: 22ch;
+  }
+  
+}
+@keyframes blink {
+  50%{
+    border-color: transparent;
+  }
+}
+@keyframes hidecursor{
+  to{
+    border-right: none;
+  }
 }
 
 .about_section .row {
@@ -1104,16 +1138,15 @@ background-clip: padding-box, border-box;
   margin-bottom: 30px;
 }
 
-.contact-form .btn-send{
-  background: linear-gradient(45deg,rgb(83, 157, 110), rgb(92, 120, 165));
+.contact-form .btn-send {
+  background: linear-gradient(45deg, rgb(83, 157, 110), rgb(92, 120, 165));
   border: none;
   border-radius: 8px 67px;
-
 }
 
-.contact-form .btn-send:hover{
+.contact-form .btn-send:hover {
   color: rgb(211, 206, 206);
-  background:linear-gradient(45deg, rgb(92, 120, 165),rgb(83, 157, 110)); ;
+  background: linear-gradient(45deg, rgb(92, 120, 165), rgb(83, 157, 110));
 }
 
 .contact_section input,
@@ -1473,13 +1506,13 @@ background-clip: padding-box, border-box;
 /* Contact Form Styles */
 .contact-container,
 .booking-container {
-background: linear-gradient(45deg,
-  rgba(15, 12, 41, 0.9) 0%,
-  rgba(133, 90, 112, 0.7) 35%,
-  rgba(40, 40, 94, 0.8) 65%,
-  rgba(79, 6, 83, 0.6) 100%
-);
-
+  background: linear-gradient(
+    45deg,
+    rgba(15, 12, 41, 0.9) 0%,
+    rgba(133, 90, 112, 0.7) 35%,
+    rgba(40, 40, 94, 0.8) 65%,
+    rgba(79, 6, 83, 0.6) 100%
+  );
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
