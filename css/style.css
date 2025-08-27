@@ -1337,7 +1337,6 @@ background-clip: padding-box, border-box;
           display: flex;
           flex-wrap: wrap;
           gap: 40px;
-          justify-content: space-between;
         }
         
         .footer-column {
