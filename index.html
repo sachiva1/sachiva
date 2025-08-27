@@ -666,51 +666,258 @@
         </div>
     </section>
 
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
+<!-- Footer -->
+<!-- Sample content to push footer down -->
+    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+        <h1>Website Content Example</h1>
+        <p>This is sample content to demonstrate how the footer with newsletter appears at the bottom of the page. Scroll down to see the complete footer with the integrated newsletter section.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
     </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
 
-</footer>
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <div class="footer-container">
+            <!-- Left Column - Let's Talk -->
+            <div class="footer-column footer-left">
+                <h2>Let's Talk</h2>
+                <p>
+                    Every high-quality home service starts with a chat. Our team leads client conversations
+                    and will be happy to discuss your queries and needs. We'll also bring in the right people when needed.
+                </p>
+                <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
+            </div>
+            
+            <!-- Middle Column - Contact Details -->
+            <div class="footer-column footer-center">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span>Email</span>
+                        <a href="mailto:sachiva@gmail.com">sachiva@gmail.com</a>
+                    </li>
+                    <li>
+                        <span>Phone</span>
+                        <a href="tel:+917550000000">+91 7550000000</a>
+                    </li>
+                    <li>
+                        <span>Address</span>
+                        <a href="https://maps.google.com" target="_blank">
+                            Church Street,<br>
+                            Bangalore, Karnataka, 1234
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-social-icons">
+                    <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <!-- Right Column - Newsletter -->
+            <div class="footer-column footer-right">
+                <h3>Stay Updated</h3>
+                <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and home service tips.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required id="emailInput">
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-copyright text-center">
+            &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+        </div>
+    </footer>
 
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set copyright year
+    document.getElementById('displayDateYear').innerText = new Date().getFullYear();
+    
+    // Create toast notification container
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    document.body.appendChild(toastContainer);
+    
+    // Newsletter form handling
+    const newsletterForm = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('emailInput');
+    
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        
+        // Simple email validation
+        if (!isValidEmail(email)) {
+            showToast('Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // Simulate API call (replace with actual API call)
+        simulateSubscription(email)
+            .then(() => {
+                showToast('Successfully subscribed to newsletter!', 'success');
+                newsletterForm.reset();
+            })
+            .catch(error => {
+                showToast('Subscription failed. Please try again.', 'error');
+                console.error('Subscription error:', error);
+            });
+    });
+    
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Simulate subscription API call (replace with actual fetch/axios call)
+    function simulateSubscription(email) {
+        return new Promise((resolve, reject) => {
+            // Simulate network request with 80% success rate
+            setTimeout(() => {
+                if (Math.random() > 0.2) {
+                    resolve({ success: true, message: 'Subscribed successfully' });
+                } else {
+                    reject({ success: false, message: 'Server error' });
+                }
+            }, 800);
+        });
+    }
+    
+    // Show toast notification
+    function showToast(message, type = 'info') {
+        const toast = document.createElement('div');
+        toast.className = `toast-notification ${type}`;
+        toast.innerHTML = `
+            <div class="toast-content">
+                <span class="toast-message">${message}</span>
+                <button class="toast-close">&times;</button>
+            </div>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Add close functionality
+        const closeBtn = toast.querySelector('.toast-close');
+        closeBtn.addEventListener('click', () => {
+            toast.classList.add('hide');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        });
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.classList.add('hide');
+                setTimeout(() => {
+                    if (toast.parentNode) toast.remove();
+                }, 300);
+            }
+        }, 5000);
+    }
+});
+
+// Add CSS for toast notifications
+const toastStyles = `
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-notification {
+    background: black;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    max-width: 400px;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: slideIn 0.3s forwards;
+    border-left: 4px solid;
+}
+
+.toast-notification.success {
+    border-left-color: #4CAF50;
+}
+
+.toast-notification.error {
+    border-left-color: #F44336;
+}
+
+.toast-notification.info {
+    border-left-color: #2196F3;
+}
+
+.toast-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+.toast-notification.hide {
+    animation: slideOut 0.3s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+`;
+
+// Inject styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = toastStyles;
+document.head.appendChild(styleSheet);
+</script>
 
 
 
