@@ -68,18 +68,35 @@
         transition: all 0.5s ease;
         font-size: 0.95rem;
       }
-
-      .nav-item:hover {
-        background: linear-gradient(
-          120deg,
-          blue,
-          rgb(0, 247, 255),
-          rgb(0, 255, 0)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
+      /* Show dropdown on hover for desktop */
+      @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        }
+      }
+      /* Style the dropdown menu container */
+      .dropdown-menu {
+        background: rgba(255, 255, 255, 0.7); /* White with transparency */
+        backdrop-filter: blur(8px); /* Glass blur effect */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        padding: 8px 0; /* Space inside */
+        transition: all 0.3s ease;
+      }
+      /* Hover effect for dropdown links */
+      .dropdown-menu .dropdown-item {
+        padding: 10px 20px; /* More clickable area */
+        transition: all 0.2s ease;
+      }
+      .dropdown-menu .dropdown-item:hover {
+        border-radius: 10px;
+        color: #007bff; /* Bootstrap blue text */
+        transform: translateX(5px); /* subtle slide to the right */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        font-size: 1rem;
       }
 
       .nav-item::after {
@@ -196,35 +213,75 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
+                  <!-- Home Link -->
                   <li class="nav-item">
                     <a class="nav-link" href="../index.html">Home</a>
                   </li>
-                  <li class="nav-item active fw-bold">
-                    <a class="nav-link" href="about.html"
-                      >About <span class="sr-only">(current)</span></a
+                  <!-- Make dropdown menu for about and contributers -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >About</a
                     >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item active fw-bold" href="about.html"
+                          >About <span class="sr-only">(current)</span></a
+                        >
+                        <a href="contributors.html" class="dropdown-item">
+                          Contributors
+                        </a>
+                      </li>
+                    </ul>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="service.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contributors.html"
-                      >Contributors</a
+                  <!-- Make dropdown for services , blog , portfolio -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Programs</a
                     >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="service.html"
+                          >Services</a
+                        >
+                        <a href="blog.html" class="dropdown-item"> Blog </a>
+                        <a href="portfolio.html" class="dropdown-item">
+                          Portfolio
+                        </a>
+                      </li>
+                    </ul>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="portfolio.html">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="forum.html">Forum</a>
+                  <!-- make dropdown for forum , contact  -->
+                  <li class="nav-item dropdown">
+                    <a
+                      href="#"
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Contacts</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item contact-highlight"
+                          href="contact.html"
+                          >Contact Us</a
+                        >
+                        <a href="forum.html" class="dropdown-item"> Forum </a>
+                      </li>
+                    </ul>
                   </li>
 
-                  <li class="nav-item contact-highlight">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
                   <li class="nav-item1">
                     <a class="nav-link" id="booking" href="booking.html"
                       >Book a Service</a
@@ -298,22 +355,18 @@
                 🌟To be a leading digital solutions partner that empowers
                 businesses with innovation
               </li>
-              <li>
-                💡 Inspire innovation, creativity, and sustainability.
-              </li>
+              <li>💡 Inspire innovation, creativity, and sustainability.</li>
               <li>
                 🔮 Shape the future of businesses with technology-driven growth.
               </li>
               <li>
-                🛡️ Security, and Create a world where every business thrives online.
+                🛡️ Security, and Create a world where every business thrives
+                online.
               </li>
             </ul>
           </div>
           <div class="visulizer">
-            <img
-              src="../images/strategy.gif"
-              alt="Funny GIF" 
-            />
+            <img src="../images/strategy.gif" alt="Funny GIF" />
           </div>
         </div>
         <div class="mission aboutAll">
@@ -342,18 +395,20 @@
             </ul>
           </div>
           <div class="visulizer">
-            <img
-              src="../images/goals.gif"
-              alt="Funny GIF" 
-            />
+            <img src="../images/goals.gif" alt="Funny GIF" />
           </div>
         </div>
         <div class="team aboutAll">
-          <h2> <img id="logo" src="../images/business.png" alt=""> Meet Our Team</h2>
+          <h2>
+            <img id="logo" src="../images/business.png" alt="" /> Meet Our Team
+          </h2>
           <div class="team-grid">
             <!-- Team Member 1-->
             <div class="team-card">
-              <img src="https://avatar.iran.liara.run/public/girl" alt="Shivani Sharma" />
+              <img
+                src="https://avatar.iran.liara.run/public/girl"
+                alt="Shivani Sharma"
+              />
               <h3>Shivani Sharma</h3>
               <p>Founder & CEO</p>
               <p class="bio">
@@ -363,7 +418,10 @@
             </div>
             <!-- Team Member 2-->
             <div class="team-card">
-              <img src="https://avatar.iran.liara.run/public/boy" alt="Web Developer" />
+              <img
+                src="https://avatar.iran.liara.run/public/boy"
+                alt="Web Developer"
+              />
               <h3>Rohit Khandelwal</h3>
               <p>Frontend & Backend</p>
               <p class="bio">
@@ -373,7 +431,10 @@
             </div>
             <!-- Team Member 3-->
             <div class="team-card">
-              <img src="https://avatar.iran.liara.run/public/boy?username=Rohit" alt="Cybersecurity Expert" />
+              <img
+                src="https://avatar.iran.liara.run/public/boy?username=Rohit"
+                alt="Cybersecurity Expert"
+              />
               <h3>Robin Alli</h3>
               <p>Cybersecurity Expert</p>
               <p class="bio">
@@ -448,6 +509,8 @@
     <script src="../js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="../js/custom.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Display current year
       document.getElementById("displayDateYear").textContent =
