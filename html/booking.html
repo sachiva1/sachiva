@@ -282,7 +282,6 @@
                   class="form-control"
                   placeholder="Please enter the service you want :)"
                   id="other"
-                  required
                 />
               </div>
               <button type="submit" class="book">Book Service</button>
@@ -417,10 +416,14 @@
         .getElementById("service")
         .addEventListener("change", function () {
           const otherGroup = document.querySelector(".form-group.other");
+          const otherInput = document.getElementById("other"); // Get the input element
+
           if (this.value === "other") {
             otherGroup.style.display = "block";
+            otherInput.required = true; // Make it required when visible
           } else {
             otherGroup.style.display = "none";
+            otherInput.required = false;
           }
         });
 
