@@ -422,32 +422,32 @@ body.dark-mode .header_section.scrolled {
   padding-bottom: 90px;
 }
 
-.slider_section .detail-box h1 {
+.slider_section .detail-box h2 {
   font-weight: bold;
   margin-bottom: 25px;
   color: #0355cc;
 }
 
 .slider_section .detail-box p {
-  color: #444;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .slider_section .detail-box a {
   display: inline-block;
-  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   padding: 10px 45px;
-  background-color: #ff8a1d;
+  background: linear-gradient(45deg, #ff8a1d, #ff5252, #ffc107);
   border: 1px solid #ff8a1d;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #ffffff;
   margin-top: 15px;
 }
 
 .slider_section .detail-box a:hover {
-  background-color: transparent;
-  color: #ff8a1d;
+  background: #f56506;
+  transform: scale(1.03);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .slider_section .img-box img {
@@ -792,7 +792,8 @@ background-clip: padding-box, border-box;
   width: 100%;
 }
 
-.professional_section .detail-box h2 {
+.professional_section .detail-box h3 {
+  font-family:"Merriweather Sans", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: #0355cc;
@@ -805,18 +806,19 @@ background-clip: padding-box, border-box;
 .professional_section .detail-box a {
   margin-top: 25px;
   display: inline-block;
-  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   padding: 10px 45px;
-  background-color: #ff8a1d;
+  background: linear-gradient(45deg, #ff8a1d, #ff5252, #ffc107);
   border: 1px solid #ff8a1d;
-  border-radius: 2px;
+  border-radius: 10px;
   color: #ffffff;
 }
 
 .professional_section .detail-box a:hover {
-  background-color: transparent;
-  color: #ff8a1d;
+ background: #f56506;
+ transform: scale(1.03);
+ box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .blog_section p {
@@ -867,10 +869,8 @@ background-clip: padding-box, border-box;
 }
 
 .service_section .box {
-  margin-top: 30px;
+  margin-top: 8vh;
   text-align: center;
-  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
   padding: 25px 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -884,8 +884,6 @@ background-clip: padding-box, border-box;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-radius: 12px;
-  background-color: #ffffff;
   transform: translateY(0);
   cursor: pointer;
 }
@@ -904,30 +902,38 @@ background-clip: padding-box, border-box;
   align-items: center;
 }
 
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); 
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+
 .service_section .box .img-box img {
   max-height: 100%;
   max-width: 100%;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  animation: pulseScale 2s ease-in-out infinite;
 }
+
 
 .service_section .box .detail-box {
   margin-top: 15px;
 }
 
 .service_section .box .detail-box h5 {
+  color: #0056b3;
   font-weight: bold;
 }
 
 .service_section .box .detail-box p {
+  opacity: 0.8;
   margin: 0;
-}
-
-.service_section .box:hover {
-  background-color: #ff8a1d;
-  color: #ffffff;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Lift effect */
-  transform: translateY(-8px) scale(1.03); /* Scale & lift */
 }
 
 .service_section .box:hover .img-box img {
@@ -950,15 +956,15 @@ background-clip: padding-box, border-box;
   font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
   padding: 10px 45px;
-  background-color: #0355cc;
-  border: 1px solid #0355cc;
-  border-radius: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(45deg,#007bff,#00bfff);
   color: #ffffff;
 }
 
 .service_section .btn-box a:hover {
-  background-color: transparent;
-  color: #0355cc;
+  background: #1a5dd2;
+  transform: scale(1.04);
 }
 
 .about_section_layout_padding h2 {
@@ -2611,15 +2617,15 @@ body,
 }
 
 .flip-card-front {
-  background: linear-gradient(135deg, #a3bef6, #ffffff);
+  background: rgba(210, 220, 232, 0.7);
   z-index: 2;
   border-radius: 30px;
   border: 1px solid rgb(98, 159, 205);
 }
 
 [data-theme="dark"] .flip-card-front {
-  background: linear-gradient(135deg, #1a1a1a, #1a1a1a);
-
+  background:linear-gradient(45deg, rgba(137, 176, 218, 0.2), rgba(188, 194, 200, 0.4));
+  border: none;
   color: #ffffff;
 }
 
@@ -2632,6 +2638,10 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+[data-theme="dark"] .flip-card-back{
+  background-color: #037da6;
 }
 
 /* Service card styling */

@@ -58,18 +58,6 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   background-color: var(--dark-bg);
 }
 
-[data-theme="dark"] .service_section .box {
-  background-color: var(--dark-card-bg) !important;
-  color: var(--dark-text) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-}
-
-[data-theme="dark"] .service_section .box:hover {
-  background-color: var(--dark-accent) !important;
-  color: #ffffff !important;
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.3) !important;
-}
-
 [data-theme="dark"] .service_section .box:hover .img-box img {
   filter: brightness(1.2) invert(0.9);
 }
@@ -342,7 +330,7 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   background-color: var(--dark-bg) !important;
 }
 
-[data-theme="dark"] .professional_section .detail-box h2 {
+[data-theme="dark"] .professional_section .detail-box h3 {
   color: var(--dark-accent) !important;
 }
 
@@ -368,7 +356,7 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   background-color: var(--dark-bg) !important;
 }
 
-[data-theme="dark"] .slider_section .detail-box h1 {
+[data-theme="dark"] .slider_section .detail-box h2 {
   color: var(--dark-accent) !important;
 }
 
