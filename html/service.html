@@ -1085,6 +1085,24 @@
     </section>
     <!-- End FAQ Section -->
 
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all accordion buttons
+    const accordionButtons = document.querySelectorAll(".accordion-button");
+    accordionButtons.forEach((btn) => {
+      btn.classList.add("collapsed");
+      btn.setAttribute("aria-expanded", "false");
+    });
+
+    // Select all accordion collapse elements
+    const accordionItems = document.querySelectorAll(".accordion-collapse");
+    accordionItems.forEach((item) => {
+      item.classList.remove("show");
+    });
+  });
+</script>
+
+
     <!-- Footer -->
     <!-- Footer -->
     <footer class="custom-footer">
@@ -1117,7 +1135,7 @@
             </li>
           </ul>
           <div class="footer-social-icons">
-            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.facebook.com/"
               ><i class="fab fa-facebook-f"></i
             ></a>
