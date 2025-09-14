@@ -41,6 +41,65 @@
 
     <!-- Custom Styles -->
     <style>
+      .faq-toggle-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        margin-left: auto; /* Push icon to far right */
+        transition: transform 0.3s;
+      }
+      .faq-toggle-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        transition: transform 0.3s, opacity 0.3s;
+        opacity: 1;
+      }
+      .accordion-button .faq-toggle-icon .faq-plus {
+        display: none;
+      }
+      .accordion-button.collapsed .faq-toggle-icon .faq-plus {
+        display: block;
+      }
+      .accordion-button.collapsed .faq-toggle-icon .faq-minus {
+        display: none;
+      }
+      .accordion-button:not(.collapsed) .faq-toggle-icon .faq-plus {
+        display: none;
+      }
+      .accordion-button:not(.collapsed) .faq-toggle-icon .faq-minus {
+        display: block;
+      }
+      /* Dark theme: Remove blue highlight and text glow */
+      body.dark-mode .faq_section .accordion-button:not(.collapsed) {
+        color: #fff !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        position: relative;
+        z-index: 2;
+      }
+      body.dark-mode .faq_section .accordion-collapse {
+        position: relative;
+        z-index: 1;
+      }
+      /* Glow outside the entire accordion item in dark mode when open */
+      body.dark-mode .faq_section .accordion-item.show {
+        box-shadow: 0 0 15px 6px rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+      /* body.dark-mode .faq_section .accordion-item:not(.show) {
+        box-shadow: none;
+      } */
+      /* White text inside accordion body in dark mode without glow */
+      body.dark-mode .faq_section .accordion-body {
+        color: #fff !important;
+        text-shadow: none !important;
+      }
       .header_section {
         border-radius: 100px;
         margin: 20px;
@@ -800,6 +859,7 @@
               >
                 Do you provide same-day service for urgent home maintenance
                 issues?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -832,6 +892,7 @@
                 aria-controls="faqTwo"
               >
                 What’s included in your deep cleaning service?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -866,6 +927,7 @@
                 aria-controls="faqThree"
               >
                 How do you estimate the cost for renovation and painting work?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -897,6 +959,7 @@
                 aria-controls="faqFour"
               >
                 Can you repair all types of home appliances?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -929,6 +992,7 @@
                 aria-controls="faqFive"
               >
                 Do you help with IT network setup for small offices and homes?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -962,6 +1026,7 @@
                 aria-controls="faqSix"
               >
                 What are the pricing options for security system installation?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -994,6 +1059,7 @@
                 aria-controls="faqSeven"
               >
                 What are the pricing options for pest control services?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -1026,8 +1092,8 @@
                 aria-expanded="false"
                 aria-controls="faqEight"
               >
-                What are the pricing options for gardening and landscaping
-                services?
+                What are the pricing options for gardening and landscaping services?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -1061,6 +1127,7 @@
                 aria-controls="faqNine"
               >
                 What are the pricing options for smart home automation services?
+                <span class="faq-toggle-icon"></span>
               </button>
             </h2>
             <div
@@ -1206,5 +1273,24 @@
     </script>
 
     <script src="../js/service.js"></script>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelectorAll(".faq_section .accordion-button")
+          .forEach(function (btn) {
+            var iconSpan = btn.querySelector(".faq-toggle-icon");
+            if (iconSpan) {
+              iconSpan.innerHTML =
+                `<svg class="faq-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                <svg class="faq-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>`;
+            }
+          });
+      });
+    </script>
   </body>
 </html>
