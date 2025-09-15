@@ -12,7 +12,7 @@
 
 ### 💻 Hero Section + About
 ![Hero section](https://github.com/sachiva1/sachiva/blob/main/images/image.png)
-![Alt Text](https://github.com/sachiva1/sachiva/blob/main/images/image1.png)
+![About Page](https://github.com/sachiva1/sachiva/blob/main/images/image1.png)
 
 ### 🛠 IT & Digital Services
 ![IT Services](https://github.com/sachiva1/sachiva/blob/main/images/image-2.png)
