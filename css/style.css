@@ -422,32 +422,32 @@ body.dark-mode .header_section.scrolled {
   padding-bottom: 90px;
 }
 
-.slider_section .detail-box h2 {
+.slider_section .detail-box h1 {
   font-weight: bold;
   margin-bottom: 25px;
   color: #0355cc;
 }
 
 .slider_section .detail-box p {
-  font-size: 1rem;
+  color: #444;
+  font-size: 15px;
 }
 
 .slider_section .detail-box a {
   display: inline-block;
-  font-weight: 600;
+  font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
   padding: 10px 45px;
-  background: linear-gradient(45deg, #ff8a1d, #ff5252, #ffc107);
+  background-color: #ff8a1d;
   border: 1px solid #ff8a1d;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #ffffff;
   margin-top: 15px;
 }
 
 .slider_section .detail-box a:hover {
-  background: #f56506;
-  transform: scale(1.03);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  color: #ff8a1d;
 }
 
 .slider_section .img-box img {
@@ -792,8 +792,7 @@ background-clip: padding-box, border-box;
   width: 100%;
 }
 
-.professional_section .detail-box h3 {
-  font-family:"Merriweather Sans", sans-serif;
+.professional_section .detail-box h2 {
   text-transform: uppercase;
   font-weight: bold;
   color: #0355cc;
@@ -806,23 +805,22 @@ background-clip: padding-box, border-box;
 .professional_section .detail-box a {
   margin-top: 25px;
   display: inline-block;
-  font-weight: 600;
+  font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
   padding: 10px 45px;
-  background: linear-gradient(45deg, #ff8a1d, #ff5252, #ffc107);
+  background-color: #ff8a1d;
   border: 1px solid #ff8a1d;
-  border-radius: 10px;
+  border-radius: 2px;
   color: #ffffff;
 }
 
 .professional_section .detail-box a:hover {
- background: #f56506;
- transform: scale(1.03);
- box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  color: #ff8a1d;
 }
 
 .blog_section p {
-  color: #555050;
+  color: #282828;
   font-style: italic;
 }
 
@@ -869,8 +867,10 @@ background-clip: padding-box, border-box;
 }
 
 .service_section .box {
-  margin-top: 8vh;
+  margin-top: 30px;
   text-align: center;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
   padding: 25px 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -884,6 +884,8 @@ background-clip: padding-box, border-box;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: 12px;
+  background-color: #ffffff;
   transform: translateY(0);
   cursor: pointer;
 }
@@ -902,38 +904,30 @@ background-clip: padding-box, border-box;
   align-items: center;
 }
 
-@keyframes pulseScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2); 
-  }
-  100% {
-    transform: scale(1); 
-  }
-}
-
 .service_section .box .img-box img {
   max-height: 100%;
   max-width: 100%;
-  transition: all 0.3s ease;
-  animation: pulseScale 2s ease-in-out infinite;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-
 
 .service_section .box .detail-box {
   margin-top: 15px;
 }
 
 .service_section .box .detail-box h5 {
-  color: #0056b3;
   font-weight: bold;
 }
 
 .service_section .box .detail-box p {
-  opacity: 0.8;
   margin: 0;
+}
+
+.service_section .box:hover {
+  background-color: #ff8a1d;
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Lift effect */
+  transform: translateY(-8px) scale(1.03); /* Scale & lift */
 }
 
 .service_section .box:hover .img-box img {
@@ -956,15 +950,15 @@ background-clip: padding-box, border-box;
   font-family: "Merriweather Sans", sans-serif;
   text-transform: uppercase;
   padding: 10px 45px;
-  border-radius: 10px;
-  font-weight: 600;
-  background: linear-gradient(45deg,#007bff,#00bfff);
+  background-color: #0355cc;
+  border: 1px solid #0355cc;
+  border-radius: 0;
   color: #ffffff;
 }
 
 .service_section .btn-box a:hover {
-  background: #1a5dd2;
-  transform: scale(1.04);
+  background-color: transparent;
+  color: #0355cc;
 }
 
 .about_section_layout_padding h2 {
@@ -2617,15 +2611,15 @@ body,
 }
 
 .flip-card-front {
-  background: rgba(210, 220, 232, 0.7);
+  background: linear-gradient(135deg, #a3bef6, #ffffff);
   z-index: 2;
   border-radius: 30px;
   border: 1px solid rgb(98, 159, 205);
 }
 
 [data-theme="dark"] .flip-card-front {
-  background:linear-gradient(45deg, rgba(137, 176, 218, 0.2), rgba(188, 194, 200, 0.4));
-  border: none;
+  background: linear-gradient(135deg, #1a1a1a, #1a1a1a);
+
   color: #ffffff;
 }
 
@@ -2638,10 +2632,6 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-[data-theme="dark"] .flip-card-back{
-  background-color: #037da6;
 }
 
 /* Service card styling */
