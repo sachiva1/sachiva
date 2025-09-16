@@ -107,3 +107,9 @@
   font-size: 0.85rem;
   color: #444;
 }
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
