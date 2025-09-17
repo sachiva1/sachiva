@@ -10,7 +10,7 @@
   <meta name="description" content="Learn more about Sachiva's home and IT service solutions." />
   <meta name="author" content="Sachiva Team" />
 
-   <link rel="icon" href="../images/logo_blue.png">
+  <link rel="icon" href="../images/logo_blue.png">
   <title>Blog - Sachiva</title>
 
   <!-- CSS & Fonts -->
@@ -26,20 +26,24 @@
 
   <!-- Custom Styles -->
   <style>
-.header_section{
+    .header_section {
       border-radius: 100px;
       margin: 20px;
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-      width: calc(100% - 40px); /* Account for margin */
+      width: calc(100% - 40px);
+      /* Account for margin */
     }
-    .navbar-nav{
+
+    .navbar-nav {
       display: flex;
       /*justify-content: space-between;*/
       padding-right: 100px;
       padding-left: 30px;
 
     }
-    .nav-item{         /*Adding styling to nav bar as it was overflowing out of page*/
+
+    .nav-item {
+      /*Adding styling to nav bar as it was overflowing out of page*/
       /*display: flex;
       justify-content: center;
       align-items: center;*/
@@ -53,7 +57,7 @@
       font-size: 0.95rem;
     }
 
-    .nav-item:hover{
+    .nav-item:hover {
       background: linear-gradient(120deg, blue, rgb(0, 247, 255), rgb(0, 255, 0));
       background-clip: text;
       -webkit-background-clip: text;
@@ -76,30 +80,41 @@
     }
 
     @keyframes slideUnderline {
-      from { width: 0; height: 0px;}
-      to { width: 100%; height: 3px;}
+      from {
+        width: 0;
+        height: 0px;
+      }
+
+      to {
+        width: 100%;
+        height: 3px;
+      }
     }
 
-    #booking{          /*Adding styling to booking*/
+    #booking {
+      /*Adding styling to booking*/
       background-color: #ff8a1d;
       margin: 10px;
-      font-weight:900;
+      font-weight: 900;
       padding: 10px !important;
       color: white;
       border-radius: 12px;
       animation: pulseShadow 2s infinite;
       transition: transform 0.5s ease, background-color 0.5s ease;
     }
+
     @keyframes pulseShadow {
-        0% {
-            box-shadow: 0 0 0 0 #ff8a1d;
-        }
-        70% {
-            box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
-        }
+      0% {
+        box-shadow: 0 0 0 0 #ff8a1d;
+      }
+
+      70% {
+        box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+      }
     }
 
     .fw-bold {
@@ -110,8 +125,8 @@
       position: relative;
       top: 60px;
     }
-    
-    #booking:hover{
+
+    #booking:hover {
       transform: scale(1.1);
       background-color: #ff8a1d;
     }
@@ -146,84 +161,101 @@
       font-size: 28px;
       color: white;
     }
+
     .more-content {
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
 
-.card{
-  border-radius: 12px;
-}
-
-
-/* Adding enhanced styling to cards*/
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 320px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.9s ease;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-back li{
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 10px;
-}
-
-.flip-card-front, .flip-card-back {
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.flip-card-front {
-  background: #fff;
-}
-
-.flip-card-back {
-  background-color: #be006f;
-  transform: rotateY(180deg);
-}
-
-.cleaning .flip-card-front { background: linear-gradient(to bottom right, #39e8ff, #ff6e6e); }
-.pest .flip-card-front { background: linear-gradient(to bottom right, #fafd49, #a9ff46); }
-.paint .flip-card-front { background: linear-gradient(to bottom right, #ed78ff, #ff3884); }
-.plant .flip-card-front { background: linear-gradient(to bottom right, #31ff42, #199700); }
-.tech .flip-card-front { background: linear-gradient(to bottom right, #63fff7, #3b2e75); }
-.home .flip-card-front { background: linear-gradient(to bottom right, #ff77e8, #ff9046); }
+    .card {
+      border-radius: 12px;
+    }
 
 
+    /* Adding enhanced styling to cards*/
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 320px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.9s ease;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-back li {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .flip-card-front {
+      background: #fff;
+    }
+
+    .flip-card-back {
+      background-color: #be006f;
+      transform: rotateY(180deg);
+    }
+
+    .cleaning .flip-card-front {
+      background: linear-gradient(to bottom right, #39e8ff, #ff6e6e);
+    }
+
+    .pest .flip-card-front {
+      background: linear-gradient(to bottom right, #fafd49, #a9ff46);
+    }
+
+    .paint .flip-card-front {
+      background: linear-gradient(to bottom right, #ed78ff, #ff3884);
+    }
+
+    .plant .flip-card-front {
+      background: linear-gradient(to bottom right, #31ff42, #199700);
+    }
+
+    .tech .flip-card-front {
+      background: linear-gradient(to bottom right, #63fff7, #3b2e75);
+    }
+
+    .home .flip-card-front {
+      background: linear-gradient(to bottom right, #ff77e8, #ff9046);
+    }
   </style>
   <!-- Animate.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-<!-- WOW.js for animation trigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script>
-  new WOW().init();
-</script>
+  <!-- WOW.js for animation trigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 
 </head>
 
@@ -248,13 +280,14 @@
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="contributors.html">Contributors</a></li>
-                <li class="nav-item active fw-bold"><a class="nav-link" href="blog.html">Blog <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item active fw-bold"><a class="nav-link" href="blog.html">Blog <span
+                      class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
                 <li class="nav-item contact-highlight"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item1">      
-                  <a class = "nav-link" id = "booking" href="booking.html">Book a Service</a>
-                </li>      
+                <li class="nav-item1">
+                  <a class="nav-link" id="booking" href="booking.html">Book a Service</a>
+                </li>
               </ul>
               <label class="switch theme-switch">
                 <input type="checkbox" id="theme-toggle">
@@ -271,232 +304,249 @@
   </div>
   <!-- End Header -->
 
-<!-- BLOG SECTION -->
-<!-- Introducing flip card functinality in the cards to enhance UI-->
-<section class="blog_section layout_padding" id="blog">
-<div class="container">
-  <div class="heading_container heading_center">
-    <h2 class="wow animate__animated animate__fadeInDown">Our Latest Blog</h2>
-    <p class="wow animate__animated animate__fadeIn">Explore insightful reads and stories from our team.</p>
-  </div>
+  <!-- BLOG SECTION -->
+  <!-- Introducing flip card functinality in the cards to enhance UI-->
+  <section class="blog_section layout_padding" id="blog">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2 class="wow animate__animated animate__fadeInDown">Our Latest Blog</h2>
+        <p class="wow animate__animated animate__fadeIn">Explore insightful reads and stories from our team.</p>
+      </div>
 
-  <div class="row mt-4">
+      <div class="row mt-4">
 
-    <!-- Flip Card 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card tech" data-wow-delay="0s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-shield-alt fa-5x mb-3 text-secondary"></i>
-            <h5>Smart Homes, Smarter Lives</h5>
-            <p>Discover how Sachiva transforms everyday living with cutting-edge smart home automation services.</p>
+        <!-- Flip Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card tech" data-wow-delay="0s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-shield-alt fa-5x mb-3 text-secondary"></i>
+                <h5>Smart Homes, Smarter Lives</h5>
+                <p>Discover how Sachiva transforms everyday living with cutting-edge smart home automation services.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Voice-controlled appliances integration</li>
+                  <li>Smart lighting & energy-saving systems</li>
+                  <li>Hassle-free automation customized for your home</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Voice-controlled appliances integration</li>
-              <li>Smart lighting & energy-saving systems</li>
-              <li>Hassle-free automation customized for your home</li>
-            </ul>
+        </div>
+
+        <!-- Flip Card 4: Gardening -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card plant" data-wow-delay="0.6s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-seedling fa-5x mb-3 text-success"></i>
+                <h5>Green Spaces, Fresh Vibes</h5>
+                <p>Bring nature closer with our expert gardening and landscaping services.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Lawn maintenance & garden care</li>
+                  <li>Landscape design & installation</li>
+                  <li>Seasonal planting & upkeep</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Flip Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card tech" data-wow-delay="0.2s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-network-wired fa-5x mb-3 text-info"></i>
+                <h5>Tech Works? We’ve Got You</h5>
+                <p>Unplug the stress. Sachiva’s doorstep IT services solve your laptop, network, and software issues –
+                  fast.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Instant tech support at your doorstep</li>
+                  <li>Laptop, printer, Wi-Fi, and setup assistance</li>
+                  <li>Affordable & professional IT solutions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card home" data-wow-delay="0.4s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-wrench fa-5x mb-3 text-primary"></i>
+                <h5>Home Maintenance Simplified</h5>
+                <p>Leaky faucets? Flickering lights? Get it all fixed with a single tap. Discover our trusted repair
+                  solutions.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Instant plumbing & electrical support</li>
+                  <li>Deep cleaning & appliance repair</li>
+                  <li>Verified service professionals</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 6: Pest Control -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card pest" data-wow-delay="0.4s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-bug fa-5x mb-3 text-primary"></i>
+                <h5>Pest-Free, Peace of Mind</h5>
+                <p>Say goodbye to unwanted guests with our safe and effective pest control solutions.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Termite, cockroach & rodent control</li>
+                  <li>Safe & eco-friendly chemicals</li>
+                  <li>Long-lasting protection</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 5: Painting -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card paint" data-wow-delay="0.2s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-paint-roller fa-5x mb-3 text-info"></i>
+                <h5>Colors & Comfort, Your Way</h5>
+                <p>Transform your space with our painting and renovation services, tailored to your style.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Interior & exterior painting</li>
+                  <li>Wall repairs & renovations</li>
+                  <li>Premium quality materials</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Flip Card 7: Cleaning -->
+        <div class="col-md-4 mb-4">
+          <div class="flip-card cleaning" data-wow-delay="0s">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fa fa-broom fa-5x mb-3 text-secondary"></i>
+                <h5>Sparkling Spaces, Stress-Free Living</h5>
+                <p>From homes to offices, our professional cleaning services keep your space spotless and fresh.</p>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                  <li>Deep cleaning for homes & offices</li>
+                  <li>Eco-friendly cleaning products</li>
+                  <li>Flexible scheduling & quick service</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-<!-- Flip Card 4: Gardening -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card plant" data-wow-delay="0.6s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-seedling fa-5x mb-3 text-success"></i>
-            <h5>Green Spaces, Fresh Vibes</h5>
-            <p>Bring nature closer with our expert gardening and landscaping services.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Lawn maintenance & garden care</li>
-              <li>Landscape design & installation</li>
-              <li>Seasonal planting & upkeep</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  </section>
 
+  <!-- Script to toggle Read More -->
+  <script>
+    document.querySelectorAll(".read-more-btn").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const card = btn.closest(".card-body");
+        const moreContent = card.querySelector(".more-content");
+        moreContent.classList.toggle("d-none");
 
-    <!-- Flip Card 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card tech" data-wow-delay="0.2s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-network-wired fa-5x mb-3 text-info"></i>
-            <h5>Tech Works? We’ve Got You</h5>
-            <p>Unplug the stress. Sachiva’s doorstep IT services solve your laptop, network, and software issues – fast.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Instant tech support at your doorstep</li>
-              <li>Laptop, printer, Wi-Fi, and setup assistance</li>
-              <li>Affordable & professional IT solutions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Flip Card 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card home" data-wow-delay="0.4s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-wrench fa-5x mb-3 text-primary"></i>
-            <h5>Home Maintenance Simplified</h5>
-            <p>Leaky faucets? Flickering lights? Get it all fixed with a single tap. Discover our trusted repair solutions.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Instant plumbing & electrical support</li>
-              <li>Deep cleaning & appliance repair</li>
-              <li>Verified service professionals</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Flip Card 6: Pest Control -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card pest" data-wow-delay="0.4s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-bug fa-5x mb-3 text-primary"></i>
-            <h5>Pest-Free, Peace of Mind</h5>
-            <p>Say goodbye to unwanted guests with our safe and effective pest control solutions.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Termite, cockroach & rodent control</li>
-              <li>Safe & eco-friendly chemicals</li>
-              <li>Long-lasting protection</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Flip Card 5: Painting -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card paint" data-wow-delay="0.2s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-paint-roller fa-5x mb-3 text-info"></i>
-            <h5>Colors & Comfort, Your Way</h5>
-            <p>Transform your space with our painting and renovation services, tailored to your style.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Interior & exterior painting</li>
-              <li>Wall repairs & renovations</li>
-              <li>Premium quality materials</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-
-    <!-- Flip Card 7: Cleaning -->
-    <div class="col-md-4 mb-4">
-      <div class="flip-card cleaning" data-wow-delay="0s">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fa fa-broom fa-5x mb-3 text-secondary"></i>
-            <h5>Sparkling Spaces, Stress-Free Living</h5>
-            <p>From homes to offices, our professional cleaning services keep your space spotless and fresh.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li>Deep cleaning for homes & offices</li>
-              <li>Eco-friendly cleaning products</li>
-              <li>Flexible scheduling & quick service</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</section>
-
-<!-- Script to toggle Read More -->
-<script>
-  document.querySelectorAll(".read-more-btn").forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const card = btn.closest(".card-body");
-      const moreContent = card.querySelector(".more-content");
-      moreContent.classList.toggle("d-none");
-
-      if (btn.textContent.includes("Read More")) {
-        btn.textContent = "Show Less";
-      } else {
-        btn.textContent = "Read More";
-      }
+        if (btn.textContent.includes("Read More")) {
+          btn.textContent = "Show Less";
+        } else {
+          btn.textContent = "Read More";
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 
 
- <!-- Footer -->
- <footer class="custom-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Let's Talk</h2>
-      <p>
-        Every high-quality home service starts with a chat.<br> Our team leads client conversations
-        and will be happy to discuss your queries and needs.<br>
-        We’ll also bring in the right people when needed.
-      </p>
-      <a href="contact.html" class="cta-btn">Tell us about your Query</a>
-    </div>
-    <div class="footer-right">
-      <ul class="contact-list">
-        <li>
-          <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
-        </li>
-        <li>
-          <span>Phone</span>
-          <a href="tel:+9175XXXXXXX">+91 75XXXXXXX</a>
-        </li>
-        <li>
-          <span>Address</span>
-          <a href="https://maps.google.com" target="_blank">
-            Church Street,
-            Bangalore, Karnataka, 1234
-          </a>
-        </li>
-      </ul>
-      <div class="footer-social-icons">
-        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <!-- Left Column - Let's Talk -->
+      <div class="footer-column footer-left">
+        <h2>Let's Talk</h2>
+        <p>
+          Every high-quality home service starts with a chat. Our team leads client conversations
+          and will be happy to discuss your queries and needs. We'll also bring in the right people when needed.
+        </p>
+        <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
+      </div>
+
+      <!-- Middle Column - Contact Details -->
+      <div class="footer-column footer-center">
+        <h3>Contact Info</h3>
+        <ul class="contact-list">
+          <li>
+            <span>Email</span>
+            <a href="mailto:sachiva@gmail.com">sachiva@gmail.com</a>
+          </li>
+          <li>
+            <span>Phone</span>
+            <a href="tel:+917550000000">+91 7550000000</a>
+          </li>
+          <li>
+            <span>Address</span>
+            <a href="https://maps.google.com" target="_blank">
+              Church Street,<br>
+              Bangalore, Karnataka, 1234
+            </a>
+          </li>
+        </ul>
+        <div class="footer-social-icons">
+          <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Right Column - Newsletter -->
+      <div class="footer-column footer-right">
+        <h3>Stay Updated</h3>
+        <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and home service tips.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required id="emailInput">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
       </div>
     </div>
-  </div>
-  
-<div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
-</div>
 
-</footer>
-<button id="backToTop" title="Go to top">
+    <div class="footer-copyright text-center">
+      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+    </div>
+  </footer>
+
+
+  <button id="backToTop" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-  
+
   <!-- JS Scripts -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
@@ -507,7 +557,7 @@
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
   <script src="../js/navbar.js"></script>
-  
+
 </body>
 
 </html>
