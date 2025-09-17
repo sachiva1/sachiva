@@ -92,7 +92,7 @@
 @media (max-width: 480px) {}
 
 @media (max-width: 400px) {
-    .about_section button{
+    .about_section button {
         align-items: center;
     }
 }
