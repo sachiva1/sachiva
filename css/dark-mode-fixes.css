@@ -318,7 +318,11 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
 }
 
 [data-theme="dark"] p {
+<<<<<<< HEAD
   color: rgb(20, 20, 20);
+=======
+  color: var(--dark-icon) !important;
+>>>>>>> origin/main
 }
 
 [data-theme="dark"] .text-muted {
