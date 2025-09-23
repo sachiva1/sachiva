@@ -729,4 +729,8 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Flip Card Dark Mode Enhancement */
+[data-theme="dark"] .flip-card-front p {
+  color: #f5f5f5 !important; /* readable on dark bg */
+}
 
