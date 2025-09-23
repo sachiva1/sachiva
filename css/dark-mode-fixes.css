@@ -318,7 +318,7 @@ body, button, a, input, .box, .card, .contributor-card, .service_section .box {
 }
 
 [data-theme="dark"] p {
-  color: rgb(209, 204, 204);
+  color: rgb(20, 20, 20);
 }
 
 [data-theme="dark"] .text-muted {
