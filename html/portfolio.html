@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Basic Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +12,7 @@
   <link rel="icon" href="../images/logo_blue.png">
   <title>Portfolio - Sachiva</title>
 
-  <!-- CSS & Fonts -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,7 +27,6 @@
   <link rel="stylesheet" href="../css/responsive.css" />
   <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
 
-  <!-- Custom Styles -->
   <style>
     .header_section {
       border-radius: 100px;
@@ -511,10 +509,8 @@
       margin: 5px;
     }
   </style>
-  <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <!-- WOW.js for animation trigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>
     new WOW().init();
@@ -525,7 +521,6 @@
 
 <body>
 
-  <!-- Header -->
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
@@ -569,21 +564,18 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
-    <!-- Sachiva Hero Section (Split View with GIFs) -->
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <div class="hero-content">
-        <div class="half">
+        <div class="half" data-aos="fade-right">
           <h1>Designer</h1>
           <p>UI/UX enthusiast bringing creativity into every pixel. Specialized in clean interfaces and aesthetic
             visuals.</p>
         </div>
-        <div class="hero-image">
+        <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
           <img src="https://media.giphy.com/media/jRf5fsn8G6YaogAWxn/giphy.gif" alt="Designer Coder"
             style=" height:250px; width: 200px;">
         </div>
-        <div class="half">
+        <div class="half" data-aos="fade-left">
           <h1>Web Developer</h1>
           <p>Building responsive websites and scalable platforms using modern frameworks to bring businesses online
             efficiently.
@@ -594,16 +586,15 @@
 
 
 
-    <!--Portfolio-->
     <section class="portfolio-section">
-      <div class="portfolio-header">
+      <div class="portfolio-header" data-aos="fade-up">
         <h2>Works Done by Sachiva</h2>
         <p>We tackle meaningful challenges with technology and innovation. Here’s how we solve impact-driven problems.
         </p>
       </div>
 
       <div class="portfolio-grid">
-        <div class="portfolio-card fade-in-up">
+        <div class="portfolio-card fade-in-up" data-aos="fade-up">
           <img src="https://i.gifer.com/74pZ.gif" alt="AI Healthcare GIF">
           <div class="portfolio-content">
             <h3>AI in Healthcare Diagnosis</h3>
@@ -636,7 +627,7 @@
           </div>
         </div>
 
-        <div class="portfolio-card fade-in-up">
+        <div class="portfolio-card fade-in-up" data-aos="fade-up" data-aos-delay="100">
           <img src="https://i.gifer.com/2mVW.gif" alt="Education Technology Animation">
           <div class="portfolio-content">
             <h3>Interactive EdTech for Rural Schools</h3>
@@ -669,7 +660,7 @@
           </div>
         </div>
 
-        <div class="portfolio-card fade-in-up">
+        <div class="portfolio-card fade-in-up" data-aos="fade-up" data-aos-delay="200">
           <img src="https://i.gifer.com/8opi.gif" alt="Startup Branding Animation">
           <div class="portfolio-content">
             <h3>Startup Branding & Pitch Design</h3>
@@ -707,10 +698,8 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
-      <!-- Left Column - Let's Talk -->
       <div class="footer-column footer-left">
         <h2>Let's Talk</h2>
         <p>
@@ -720,7 +709,6 @@
         <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
       </div>
 
-      <!-- Middle Column - Contact Details -->
       <div class="footer-column footer-center">
         <h3>Contact Info</h3>
         <ul class="contact-list">
@@ -748,7 +736,6 @@
         </div>
       </div>
 
-      <!-- Right Column - Newsletter -->
       <div class="footer-column footer-right">
         <h3>Stay Updated</h3>
         <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and home service tips.
@@ -761,7 +748,7 @@
     </div>
 
     <div class="footer-copyright text-center">
-      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
   </footer>
 
@@ -769,7 +756,6 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- JS Scripts -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -779,6 +765,10 @@
     document.getElementById("displayDateYear").textContent = new Date().getFullYear();
   </script>
   <script src="../js/navbar.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

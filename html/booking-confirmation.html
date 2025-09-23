@@ -14,6 +14,7 @@
     <link rel="icon" href="../images/logo_blue.png" />
     <title>Booking Confirmation - Sachiva</title>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -397,9 +398,9 @@
 
     <section class="contact_section layout_padding">
       <div class="container my-5">
-        <div class="confirmation-container">
-          <div class="confirmation-header">
-            <div class="success-icon">
+        <div class="confirmation-container" data-aos="fade-up">
+          <div class="confirmation-header" data-aos="fade-up">
+            <div class="success-icon" data-aos="zoom-in" data-aos-delay="200">
               <i class="fas fa-check-circle"></i>
             </div>
             <h2>Booking Confirmed! 🎉</h2>
@@ -410,7 +411,7 @@
           </div>
 
           <div class="details-container">
-            <div class="booking-details">
+            <div class="booking-details" data-aos="fade-right">
               <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
               <div class="detail-row">
                 <span class="detail-label">Booking ID:</span>
@@ -464,7 +465,7 @@
               </div>
             </div>
 
-            <div class="next-steps">
+            <div class="next-steps" data-aos="fade-left">
               <h4><i class="fas fa-info-circle"></i> What's Next?</h4>
               <ul>
                 <li>
@@ -486,7 +487,7 @@
             </div>
           </div>
 
-          <div class="action-buttons">
+          <div class="action-buttons" data-aos="fade-up" data-aos-delay="400">
             <button
               class="btn-confirmation btn-success-custom"
               id="printConfirmation"
@@ -510,8 +511,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="custom-footer">
+    <footer class="custom-footer" data-aos="fade-up">
       <div class="footer-container">
         <div class="footer-left">
           <h2>Let's Talk</h2>
@@ -559,7 +559,7 @@
         class="footer-copyright text-center"
         style="margin-top: 32px; color: #c1cbe2; font-size: 1rem"
       >
-        &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+        © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
       </div>
     </footer>
 

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Basic Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +12,8 @@
   <link rel="icon" href="../images/logo_blue.png" />
   <title>About Us - Sachiva</title>
 
-  <!-- CSS & Fonts -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
   <link rel="stylesheet" href="../css/about.css" />
 
-  <!-- Custom Styles -->
   <style>
     .header_section {
       border-radius: 100px;
@@ -159,7 +158,6 @@
 </head>
 
 <body>
-  <!-- Header -->
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
@@ -217,16 +215,13 @@
       </div>
     </header>
   </div>
-  <!-- End Header -->
-
-  <!-- About Section -->
   <section class="about_section layout_padding">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <div>
         <div class="detail-box">
           <h2>About Us</h2>
           <div class="flex">
-            <div>
+            <div data-aos="fade-right">
               <div class="text-content">
                 <p style="text-align: justify">
                   At <i>Sachiva</i>, we specialize in delivering high-quality
@@ -245,12 +240,12 @@
                 </p>
               </div>
             </div>
-            <div class="img-box">
+            <div class="img-box" data-aos="fade-left">
               <img src="../images/maintenance.gif" alt="About Sachiva" />
             </div>
           </div>
 
-          <button class="explore-btn" onclick="location.href='service.html'">
+          <button class="explore-btn" onclick="location.href='service.html'" data-aos="zoom-in">
             Explore Our Services
           </button>
 
@@ -260,9 +255,9 @@
     </div>
 
     <div class="about-description">
-      <h1 class="title">About Detail Description</h1>
-      <div class="underLine"></div>
-      <div class="vision aboutAll">
+      <h1 class="title" data-aos="fade-up">About Detail Description</h1>
+      <div class="underLine" data-aos="fade-up" data-aos-delay="200"></div>
+      <div class="vision aboutAll" data-aos="fade-up">
         <div class="vision-about about-content">
           <h2><img id="logo" src="../images/Vision.png" alt="" /> Vision</h2>
           <ul>
@@ -285,7 +280,7 @@
           <img src="../images/strategy.gif" alt="Funny GIF" />
         </div>
       </div>
-      <div class="mission aboutAll">
+      <div class="mission aboutAll" data-aos="fade-up">
         <div class="mission-about about-content">
           <h2>
             <img id="logo" src="../images/Mission.png" alt="error" /> Mission
@@ -314,11 +309,10 @@
           <img src="../images/goals.gif" alt="Funny GIF" />
         </div>
       </div>
-      <div class="team aboutAll">
+      <div class="team aboutAll" data-aos="fade-up">
         <h2> <img id="logo" src="../images/business.png" alt=""> Meet Our Team</h2>
         <div class="team-grid">
-          <!-- Team Member 1-->
-          <div class="team-card">
+          <div class="team-card" data-aos="zoom-in" data-aos-duration="1000">
             <img src="https://avatar.iran.liara.run/public/girl" alt="Shivani Sharma" />
             <h3>Shivani Sharma</h3>
             <p>Founder & CEO</p>
@@ -327,8 +321,7 @@
               technology-driven solutions that simplify and secure businesses.
             </p>
           </div>
-          <!-- Team Member 2-->
-          <div class="team-card">
+          <div class="team-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
             <img src="https://avatar.iran.liara.run/public/boy" alt="Web Developer" />
             <h3>Rohit Khandelwal</h3>
             <p>Frontend & Backend</p>
@@ -337,8 +330,7 @@
               tailored for business growth.
             </p>
           </div>
-          <!-- Team Member 3-->
-          <div class="team-card">
+          <div class="team-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
             <img src="https://avatar.iran.liara.run/public/boy?username=Rohit" alt="Cybersecurity Expert" />
             <h3>Robin Alli</h3>
             <p>Cybersecurity Expert</p>
@@ -351,10 +343,7 @@
       </div>
     </div>
   </section>
-  <!-- End About Section -->
-
-  <!-- Footer -->
-  <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
       <div class="footer-left">
         <h2>Let's Talk</h2>
@@ -393,14 +382,13 @@
     </div>
 
     <div class="footer-copyright text-center" style="margin-top: 32px; color: #c1cbe2; font-size: 1rem">
-      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
   </footer>
   <button id="backToTop" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- JS Scripts -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -411,6 +399,12 @@
       new Date().getFullYear();
   </script>
   <script src="../js/navbar.js"></script>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 
 </html>
