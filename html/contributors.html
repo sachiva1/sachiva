@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Basic Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,6 +12,7 @@
   <link rel="icon" href="../images/logo_blue.png" />
   <title>Contributors - Sachiva</title>
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -387,7 +387,7 @@
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section" data-aos="fade-up">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -398,7 +398,7 @@
             Meet the amazing people who contribute to making Sachiva better
             every day
           </p>
-          <a href="https://github.com/sachiva1/sachiva" target="_blank" class="contributor-link">
+          <a href="https://github.com/sachiva1/sachiva" target="_blank" class="contributor-link" data-aos="zoom-in" data-aos-delay="400">
             <i class="fab fa-github"></i> View on GitHub
           </a>
         </div>
@@ -406,25 +406,25 @@
     </div>
   </section>
   <section>
-    <div class="container-gssoc">
+    <div class="container-gssoc" data-aos="fade-up">
       <h1>🏆 GSSoC'25 Leaderboard</h1>
 
       <div class="stats">
-        <div class="stat-card">
+        <div class="stat-card" data-aos="zoom-in">
           <p>Contributors</p>
           <h2 id="stat-contributors">...</h2>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
           <p>Pull Requests</p>
           <h2 id="stat-prs">...</h2>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
           <p>Total Points</p>
           <h2 id="stat-points">...</h2>
         </div>
       </div>
 
-      <div class="leaderboard">
+      <div class="leaderboard" data-aos="fade-up">
         <div class="leaderboard-header">
           <div>#</div>
           <div>Contributor</div>
@@ -634,7 +634,7 @@
 
   <section class="contributors-section">
     <div class="container">
-      <div class="heading_container heading_center">
+      <div class="heading_container heading_center" data-aos="fade-up">
         <h2 class="contributors-heading">Our Amazing Contributors</h2>
         <p class="contributors-subtext">
           Thank you to all the wonderful people who have contributed to this
@@ -649,7 +649,7 @@
         <p class="mt-3">Fetching contributors from GitHub...</p>
       </div>
 
-      <div id="error" class="error-message" style="display: none">
+      <div id="error" class="error-message" style="display: none" data-aos="fade-up">
         <h4>
           <i class="fas fa-exclamation-triangle"></i> Unable to Load
           Contributors
@@ -662,12 +662,11 @@
         </p>
       </div>
 
-      <div id="contributors-grid" class="row" style="display: none"></div>
+      <div id="contributors-grid" class="row" style="display: none" data-aos="fade-up"></div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
       <div class="footer-left">
         <h2>Let's Talk</h2>
@@ -706,7 +705,7 @@
     </div>
 
     <div class="footer-copyright text-center" style="margin-top: 32px; color: #c1cbe2; font-size: 1rem">
-      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
   </footer>
   <button id="backToTop" title="Go to top">
@@ -768,6 +767,9 @@
     function createContributorCard(contributor) {
       const colDiv = document.createElement("div");
       colDiv.className = "col-lg-3 col-md-4 col-sm-6 col-12";
+      // Added data-aos="zoom-in" and a data-aos-offset to trigger the animation slightly sooner.
+      colDiv.setAttribute("data-aos", "zoom-in");
+      colDiv.setAttribute("data-aos-offset", "100");
 
       colDiv.innerHTML = `
         <div class="contributor-card">
@@ -831,8 +833,11 @@
       setTimeout(updateContributorsSectionTheme, 100);
     });
   </script>
-
   <script src="../js/navbar.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+     AOS.init();
+   </script>
 </body>
 
 </html>

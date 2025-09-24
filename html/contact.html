@@ -17,8 +17,7 @@
   <title>Contact Us - Sachiva</title>
 
 
-   
-
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -225,13 +224,13 @@
     </header>
   </div>
 
-  <section class="contact_section layout_padding">
+  <section class="contact_section layout_padding" data-aos="fade-up">
     <h2 class="first-heading">Feel free to reach out !!!</h2>
       <div class="contact-para">Connect with us, your every message means a lot too us. <br> We are happy to provide you our best services</div>
 
     <div class="container my-5">
       <div class="contact-container">
-        <div class="contact-form">
+        <div class="contact-form" data-aos="fade-right">
           <h2>Contact Us</h2>
           <form id="contactForm">
             <div class="form-group">
@@ -249,7 +248,7 @@
             <div id="formAlert" class="alert d-none"></div>
           </form>
         </div>
-        <div class="contact-image">
+        <div class="contact-image" data-aos="fade-left">
                       <img src="../images/contact_us_img.png" alt="Contact Illustration" loading="lazy">
         </div>
       </div>
@@ -258,8 +257,7 @@
 
 
 
- <!-- Footer -->
- <footer class="custom-footer">
+ <footer class="custom-footer" data-aos="fade-up">
   <div class="footer-container">
     <div class="footer-left">
       <h2>Let's Talk</h2>
@@ -274,7 +272,7 @@
       <ul class="contact-list">
         <li>
           <span>Email</span>
-          <a href="mailto:hello@example.com">sachiva@gmail.com</a>
+          <a href="mailto:sachiva@gmail.com">sachiva@gmail.com</a>
         </li>
         <li>
           <span>Phone</span>
@@ -298,7 +296,7 @@
   </div>
   
 <div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+  © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
 </div>
 
 </footer>
@@ -350,6 +348,11 @@
     });
   </script>
      <script src="../js/navbar.js"></script>
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        AOS.init();
+     </script>
 </body>
 
 </html>
