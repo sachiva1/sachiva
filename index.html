@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,18 +7,17 @@
   <link rel="icon" href="./images/logo_blue.png">
   <title>Sachiva</title>
 
-  <!-- CSS links -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link href="css/responsive.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/dark-mode-fixes.css" rel="stylesheet" />
-  <!-- Consolidated CSS links for maintainability -->
-
   <style>
     .header_section {
       border-radius: 100px;
@@ -137,7 +135,6 @@
 <body>
   <div class="hero_area">
 
-    <!-- header section -->
     <header class="header_section">
       <div class="header_bottom">
         <div class="container-fluid">
@@ -160,8 +157,6 @@
                 <li class="nav-item"><a class="nav-link" href="html/blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="html/portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="html/forum.html">Forum</a></li>
-                <!--adding link for forum page-->
-
                 <li class="nav-item contact-highlight">
                   <a class="nav-link" href="html/contact.html">Contact Us</a>
                 </li>
@@ -184,13 +179,10 @@
         </div>
       </div>
     </header>
-    <!-- end header section -->
-
-    <!-- slider section -->
-    <section class="slider_section " style="margin-top: 0px;">
-      <div class="container " style="margin-top: 80px;">
+    <section class="slider_section" style="margin-top: 0px;" data-aos="fade-up">
+      <div class="container" style="margin-top: 80px;">
         <div class="row">
-          <div class="col-md-6 ">
+          <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
             <div class="detail-box" style="margin-top: 100px;">
               <h2>
                 <span id="typing-text"></span>
@@ -205,7 +197,7 @@
               </a>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div class="img-box">
               <img src="images/maintenance.gif" alt="">
             </div>
@@ -213,13 +205,10 @@
         </div>
       </div>
     </section>
-    <!-- end slider section -->
+    </div>
 
-  </div>
-
-  <!-- about section -->
   <section class="about_section layout_padding-bottom">
-    <div class="container">
+    <div class="container" data-aos="fade-right">
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <div class="detail-box">
@@ -240,10 +229,7 @@
       </div>
     </div>
   </section>
-  <!-- end about section -->
-
-  <!-- professional section -->
-  <section class="professional_section layout_padding">
+  <section class="professional_section layout_padding" data-aos="fade-up">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -264,22 +250,17 @@
       </div>
     </div>
   </section>
-  <!-- end professional section -->
-
-  <!-- service section -->
   <section class="service_section layout_padding">
-    <div class="container">
+    <div class="container" data-aos="zoom-in">
       <div class="heading_container heading_center">
         <h2>Our Services</h2>
       </div>
       <div class="row">
 
-        <!-- Web Development Service -->
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="flip-card">
             <div class="flip-card-inner">
 
-              <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="box">
                   <div class="img-box">
@@ -294,7 +275,6 @@
                 </div>
               </div>
 
-              <!-- Back Face -->
               <div class="flip-card-back">
                 <h3 class="back-title">Web Development</h3>
 
@@ -335,12 +315,10 @@
           </div>
         </div>
 
-        <!-- Software Management Service -->
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="flip-card">
             <div class="flip-card-inner">
 
-              <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="box">
                   <div class="img-box">
@@ -353,7 +331,6 @@
                 </div>
               </div>
 
-              <!-- Back Face -->
               <div class="flip-card-back">
                 <h3 class="back-title">Software Management</h3>
 
@@ -394,12 +371,10 @@
           </div>
         </div>
 
-        <!-- Google Ads Service -->
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="flip-card">
             <div class="flip-card-inner">
 
-              <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="box">
                   <div class="img-box">
@@ -412,7 +387,6 @@
                 </div>
               </div>
 
-              <!-- Back Face -->
               <div class="flip-card-back">
                 <h3 class="back-title">Google Ads</h3>
 
@@ -453,12 +427,10 @@
           </div>
         </div>
 
-        <!-- Cybersecurity Service -->
         <div class="col-sm-6 col-md-3 mx-auto">
           <div class="flip-card">
             <div class="flip-card-inner">
 
-              <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="box">
                   <div class="img-box">
@@ -471,7 +443,6 @@
                 </div>
               </div>
 
-              <!-- Back Face -->
               <div class="flip-card-back">
                 <h3 class="back-title">Cybersecurity</h3>
 
@@ -519,10 +490,7 @@
       </div>
     </div>
   </section>
-  <!-- end service section -->
-
-  <!-- === Recommendation Section === -->
-  <section id="smart-recommender" class="container my-5">
+  <section id="smart-recommender" class="container my-5" data-aos="fade-up">
     <h2 class="text-center mb-4">Not Sure What You Need?</h2>
     <div class="d-flex justify-content-center flex-wrap gap-3">
       <button class="btn btn-outline-primary smart-btn" onclick="recommend('business')"> <b>Grow My
@@ -537,8 +505,7 @@
 
 
 
-  <!-- Owner message -->
-  <section class="client_section">
+  <section class="client_section" data-aos="fade-up">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>Owner Message</h2>
@@ -568,9 +535,7 @@
     </div>
   </section>
 
-  <!-- client section -->
-
-  <section class="client_section mt-5">
+  <section class="client_section mt-5" data-aos="fade-up">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
@@ -700,8 +665,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <!-- Sample content to push footer down -->
   <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
     <h1>Website Content Example</h1>
     <p>This is sample content to demonstrate how the footer with newsletter appears at the bottom of the page. Scroll
@@ -710,10 +673,8 @@
       molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
   </div>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
-      <!-- Left Column - Let's Talk -->
       <div class="footer-column footer-left">
         <h2>Let's Talk</h2>
         <p>
@@ -723,7 +684,6 @@
         <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
       </div>
 
-      <!-- Middle Column - Contact Details -->
       <div class="footer-column footer-center">
         <h3>Contact Info</h3>
         <ul class="contact-list">
@@ -751,7 +711,6 @@
         </div>
       </div>
 
-      <!-- Right Column - Newsletter -->
       <div class="footer-column footer-right">
         <h3>Stay Updated</h3>
         <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and home service tips.
@@ -764,7 +723,7 @@
     </div>
 
     <div class="footer-copyright text-center">
-      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
   </footer>
 
@@ -832,7 +791,7 @@
         toast.innerHTML = `
             <div class="toast-content">
                 <span class="toast-message">${message}</span>
-                <button class="toast-close">&times;</button>
+                <button class="toast-close">×</button>
             </div>
         `;
 
@@ -959,16 +918,10 @@
 
 
 
-  <!-- end info_section -->
-
-  <!-- footer section -->
-
-  <!--top scroll-->
   <button id="backToTop" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Scripts -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -1026,6 +979,10 @@
       const header = document.querySelector(".header_section");
       console.log("Header found? ", header); // ✅ should NOT be null
     });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 </body>
 

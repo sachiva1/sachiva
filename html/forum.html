@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Basic Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +12,7 @@
    <link rel="icon" href="../images/logo_blue.png">
   <title>Forum Us - Sachiva</title>
 
-  <!-- CSS & Fonts -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,7 +23,6 @@
   <link rel="stylesheet" href="../css/responsive.css" />
   <link rel="stylesheet" href="../css/dark-mode-fixes.css" />
 
-  <!-- Custom Styles -->
   <style>
    .header_section{
       border-radius: 100px;
@@ -141,7 +139,6 @@
 </head>
 
 <body>
-  <!-- Header -->
   <div class="hero_area">
     <header class="header_section">
       <div class="header_bottom">
@@ -182,15 +179,11 @@
       </div>
     </header>
   </div>
-  <!-- End Header -->
-
-  <!-- Forum Section -->
-    <section class="Forum_section layout_padding">
-    <div class="container">
+  <section class="Forum_section layout_padding">
+    <div class="container" data-aos="fade-up">
         <div class="row">
         <div class="col-12">
             
-            <!-- Forum Header -->
             <div class="detail-box text-center">
                 <h2><i class="fa-solid fa-comments"></i>  Community Forum</h2>
                 <p style="text-align: justify;">
@@ -199,11 +192,9 @@
                 </p>
             </div>
 
-            <!-- Forum Threads -->
             <div class="forum-list mt-4">
             
-                <!-- Thread 1 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in">
                     <h4>💡 How do I troubleshoot a washing machine that won’t start?</h4>
                     <div class="forum-info">
                         <span class="forum-category">Home Maintenance</span> 
@@ -218,8 +209,7 @@
                     </div>
                 </div>
 
-                <!-- Thread 2 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in" data-aos-delay="100">
                     <h4>🖥 Best programming language for building an e-commerce site?</h4>
                     <div class="forum-info">
                         <span class="forum-category">IT & Network Setup</span> 
@@ -233,8 +223,7 @@
                     </div>
                 </div>
 
-                <!-- Thread 3 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in" data-aos-delay="200">
                     <h4>🤖 How can AI improve customer service for small businesses?</h4>
                     <div class="forum-info">
                         <span class="forum-category">IT & Network Setup</span> 
@@ -248,8 +237,7 @@
                     </div>
                 </div>
 
-                <!-- Thread 4 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in" data-aos-delay="300">
                     <h4>🔧 My microwave is making strange noises — should I be worried?</h4>
                     <div class="forum-info">
                         <span class="forum-category">Appliance Repair</span> 
@@ -262,8 +250,7 @@
                     </div>
                 </div>
 
-                <!-- Thread 5 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in" data-aos-delay="400">
                     <h4>🎨 What's the best primer to use before painting over dark colored walls?</h4>
                     <div class="forum-info">
                         <span class="forum-category">Renovation & Painting</span> 
@@ -277,8 +264,7 @@
                     </div>
                 </div>
 
-                <!-- Thread 6 -->
-                <div class="forum-thread">
+                <div class="forum-thread" data-aos="zoom-in" data-aos-delay="500">
                     <h4>🐜 How to get rid of ants in the kitchen without using harsh chemicals?</h4>
                     <div class="forum-info">
                         <span class="forum-category">Pest Control</span> 
@@ -296,7 +282,7 @@
         </div>
         </div>
         <div class="parent-container" style="display: flex; justify-content: center; align-items: center;">
-          <div class="services-sec">
+          <div class="services-sec" data-aos="fade-up" data-aos-delay="600">
             <h3>Want to explore our services?</h3>
             <button class="service-btn" onclick="location.href='service.html'">Click here :)</button>
             
@@ -307,10 +293,7 @@
 
     </section>
 
-  <!-- End Forum Section -->
-
- <!-- Footer -->
- <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
   <div class="footer-container">
     <div class="footer-left">
       <h2>Let's Talk</h2>
@@ -349,7 +332,7 @@
   </div>
   
 <div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-  &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+  © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
 </div>
 
 </footer>
@@ -357,7 +340,6 @@
     <i class="fas fa-arrow-up"></i>
   </button>
   
-  <!-- JS Scripts -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -393,6 +375,10 @@
     });
   </script>
      <script src="../js/navbar.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
 </body>
 
 </html>

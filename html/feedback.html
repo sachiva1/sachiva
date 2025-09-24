@@ -11,7 +11,8 @@
    
   <link rel="icon" href="../images/logo_blue.png">
   <title>Feedback - Sachiva</title>
-
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -424,8 +425,8 @@
 
   <section class="contact_section layout_padding">
     <div class="container">
-      <div class="feedback-container">
-        <div class="feedback-form">
+      <div class="feedback-container" data-aos="fade-up">
+        <div class="feedback-form" data-aos="fade-right">
           <h2><i class="fas fa-comments"></i> Share Your Feedback</h2>
           <form id="feedbackForm">
             <div class="form-group">
@@ -526,7 +527,7 @@
           </form>
         </div>
 
-        <div class="feedback-illustration">
+        <div class="feedback-illustration" data-aos="fade-left">
           <img src="../images/contact_us_img.png" alt="Feedback Illustration" loading="lazy">
           <h3>Your Voice Matters!</h3>
           <p>We value your feedback and use it to continuously improve our services. Your honest opinions help us provide better experiences for all our customers.</p>
@@ -545,8 +546,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
+  <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
       <div class="footer-left">
         <h2>Let's Talk</h2>
@@ -585,7 +585,7 @@
     </div>
     
     <div class="footer-copyright text-center" style="margin-top:32px;color:#c1cbe2;font-size:1rem;">
-      &copy; <span id="displayDateYear"></span> All Rights Reserved By Sachiva
+      © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
   </footer>
 
@@ -677,6 +677,11 @@
   </script>
   
   <script src="../js/navbar.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
