@@ -33,7 +33,6 @@ $(".owl-carousel").owlCarousel({
 
 // Theme Toggle Functionality
 const toggleCheckbox = document.getElementById('theme-toggle');
-console.log("clicked");
 const currentTheme = localStorage.getItem('theme') || 'light';
 
 function applyTheme(theme) {
