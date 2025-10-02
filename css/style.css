@@ -547,16 +547,36 @@ body.dark-mode .header_section.scrolled {
 }
 
 .forum-thread {
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
+  padding: 1.5em;
+  margin: 1em auto;
+  border-radius: 16px;
+  border: 2px solid #9ed1e2;
+  background: rgba(215, 227, 239,0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Hover effect for interactivity */
+.forum-thread:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .forum-thread {
+  background: rgb(31, 31, 31);
 }
 
 .forum-info {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+    display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .forum-info span {
@@ -568,26 +588,76 @@ body.dark-mode .header_section.scrolled {
   box-shadow: 2px 2px 10px black;
 }
 
+/* Base button styles */
+.forum-category,
+.forum-replies,
+.forum-date {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  margin: 0.5em;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Hover effects */
+.forum-category:hover,
+.forum-replies:hover,
+.forum-date:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Specific button styles */
 .forum-category {
-  background-color: rgb(0, 174, 255);
+  background: linear-gradient(45deg, rgb(4, 94, 136), rgb(60, 151, 175), rgb(0, 55, 80));
+  color: rgb(219, 219, 219);
 }
 
 .forum-replies {
-  background-color: palevioletred;
+  background: linear-gradient(45deg, rgb(225, 143, 143), rgb(93, 0, 0));
+  color: white;
 }
 
 .forum-date {
-  background-color: burlywood;
+  background: linear-gradient(45deg, rgb(138, 95, 38), rgb(95, 54, 1));
+  color: rgb(219, 219, 219);
 }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .forum-category,
+  .forum-replies,
+  .forum-date {
+    font-size: 0.9rem;
+    padding: 0.6em 1.2em;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+  .forum-thread h4 {
+    font-size: 1.2rem;
+  }
+}
+
 
 .forum-replies-list {
   display: none; /* Hide replies by default */
 }
 
+.forum-thread h4 {
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: rgb(3, 47, 110);
+}
+
 .forum-thread h4:hover {
   transform: scale(1.01);
   cursor: pointer;
-  color: #00bfff;
 }
 
 .forum-replies-list {
