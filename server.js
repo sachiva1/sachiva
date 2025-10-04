@@ -2,10 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
-
-dotenv.config();
-const path = require("path");
-const { message } = require("statuses");
+const { body, validationResult } = require('express-validator');
+const escapeHtml = require('escape-html');
 
 const app = express();
 
@@ -31,20 +29,26 @@ transporter.verify((error, success) => {
   }
 });
 
-app.post("/contact", async (req, res) => {
+app.post("/contact", [
+  body('name').trim().isLength({ min: 1 }).withMessage('Name is required').escape(),
+  body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
+  body('message').trim().isLength({ min: 1 }).withMessage('Message is required').escape()
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      message: errors.array()[0].msg,
+      success: false,
+    });
+  }
+
   try {
     const { name, email, message } = req.body;
-    if (!name || !email || !message) {
-      return res.status(400).json({
-        message: "Please provide full details!",
-        success: false,
-      });
-    }
 
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: process.env.GMAIL_USER,
-      subject: `New Collaboration Request from ${name} - Sachiva`,
+      subject: `New Collaboration Request from ${escapeHtml(name)} - Sachiva`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
           <div style="text-align: center; margin-bottom: 30px;">
@@ -54,17 +58,17 @@ app.post("/contact", async (req, res) => {
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
             <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
           </div>
           <div style="background-color: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
             <h3 style="color: #333; margin-top: 0;">Message</h3>
-            <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
+            <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</p>
           </div>
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
             <p style="color: #666; font-size: 14px;">
               This email was sent from the Sachiva contact form.<br>
-              Reply directly to this email to respond to ${name}.
+              Reply directly to this email to respond to ${escapeHtml(name)}.
             </p>
           </div>
         </div>
