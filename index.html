@@ -129,6 +129,176 @@
       filter: brightness(1.2) contrast(1.2);
     }
 
+    /* === Improved Footer CSS === */
+    .custom-footer {
+      background-color: #0d1a2e;
+      color: #c1cbe2;
+      padding: 60px 0 20px;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 2px;
+      background-color: #007bff;
+    }
+
+    .footer-column p,
+    .footer-column ul {
+      margin-bottom: 0;
+    }
+
+    .footer-column .navbar-brand {
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .footer-column .main-logo {
+      width: 45px;
+      height: 45px;
+    }
+
+    .footer-column .navbar-brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-tagline {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .footer-links,
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li,
+    .contact-list li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a,
+    .contact-list a {
+      color: #c1cbe2;
+      text-decoration: none;
+      transition: color 0.3s ease, padding-left 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover,
+    .contact-list a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    .contact-list span {
+      display: block;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+      font-size: 0.9rem;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .footer-social-icons a {
+      color: #c1cbe2;
+      font-size: 1.2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-social-icons a:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .newsletter-text {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .newsletter-input {
+      background-color: #1a2c44;
+      border: 1px solid #3a4d6c;
+      color: #fff;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .newsletter-input::placeholder {
+      color: #8a9bb5;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+
+    .newsletter-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .footer-copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #3a4d6c;
+      font-size: 0.9rem;
+      color: #8a9bb5;
+    }
   </style>
 </head>
 
@@ -675,53 +845,53 @@
 
   <footer class="custom-footer" data-aos="fade-up">
     <div class="footer-container">
+      <!-- Column 1: Brand and Socials -->
       <div class="footer-column footer-left">
-        <h2>Let's Talk</h2>
-        <p>
-          Every high-quality home service starts with a chat. Our team leads client conversations
-          and will be happy to discuss your queries and needs. We'll also bring in the right people when needed.
-        </p>
-        <a href="./html/contact.html" class="cta-btn">Tell us about your Query</a>
-      </div>
-
-      <div class="footer-column footer-center">
-        <h3>Contact Info</h3>
-        <ul class="contact-list">
-          <li>
-            <span>Email</span>
-            <a href="mailto:sachiva@gmail.com">sachiva@gmail.com</a>
-          </li>
-          <li>
-            <span>Phone</span>
-            <a href="tel:+917550000000">+91 7550000000</a>
-          </li>
-          <li>
-            <span>Address</span>
-            <a href="https://maps.google.com" target="_blank">
-              Church Street,<br>
-              Bangalore, Karnataka, 1234
-            </a>
-          </li>
-        </ul>
+        <a class="navbar-brand" href="./">
+          <img src="images/logo_blue.png" alt="Logo" class="main-logo">
+          <span>sachiva</span>
+        </a>
+        <p class="footer-tagline">Empowering businesses with innovative technology, ensuring security, innovation, and efficiency.</p>
         <div class="footer-social-icons">
-          <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/" aria-label="Follow us on Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="html/about.html">About Us</a></li>
+          <li><a href="html/service.html">Services</a></li>
+          <li><a href="html/blog.html">Blog</a></li>
+          <li><a href="html/contact.html">Contact</a></li>
+          <li><a href="html/feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="footer-column footer-center">
+        <h3>Contact Info</h3>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:sachiva@gmail.com">sachiva@gmail.com</a></li>
+          <li><span>Phone</span><a href="tel:+917550000000">+91 7550000000</a></li>
+          <li><span>Address</span><a href="https://maps.google.com" target="_blank">Church Street, Bangalore</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Newsletter -->
       <div class="footer-column footer-right">
         <h3>Stay Updated</h3>
-        <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and home service tips.
-        </p>
+        <p class="newsletter-text">Subscribe to our newsletter for the latest updates, offers, and tech tips.</p>
         <form class="newsletter-form" id="newsletterForm">
           <input type="email" class="newsletter-input" placeholder="Your email address" required id="emailInput">
           <button type="submit" class="newsletter-btn">Subscribe</button>
         </form>
       </div>
     </div>
-
     <div class="footer-copyright text-center">
       © <span id="displayDateYear"></span> All Rights Reserved By Sachiva
     </div>
