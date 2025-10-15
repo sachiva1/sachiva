@@ -1,0 +1,88 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #cce7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 360px;
+}
+
+/* Form Box */
+.form-box {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Form */
+.form {
+  display: none;
+}
+.form.active {
+  display: block;
+}
+
+/* Input Box */
+.input-box {
+  position: relative;
+  margin-bottom: 18px;
+}
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.input-box i {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #ff9933;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn:hover {
+  background: #e68a00;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.option, .forgot {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.option a, .forgot a {
+  color: #6baef5;
+  text-decoration: none;
+}
