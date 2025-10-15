@@ -1,0 +1,145 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #8ec5fc; /* soft light blue like login/signup page */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat widget */
+.chat-widget {
+  width: 360px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* Header */
+.chat-header {
+  background-color: #ff914d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+}
+
+/* Minimize button */
+.chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Chat body */
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+/* Chat box */
+.chat-box {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Messages */
+.bot-msg, .user-msg {
+  max-width: 80%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.bot-msg {
+  background-color: #e4e9ff;
+  align-self: flex-start;
+}
+
+.user-msg {
+  background-color: #ffdab3;
+  align-self: flex-end;
+}
+
+/* Chat input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 0;
+}
+
+.chat-input button {
+  background-color: #ff914d; /* orange button */
+  border: none;
+  padding: 8px 12px;        /* adjust to fit image */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  background-color: #ff7b00;
+}
+
+.chat-input button img {
+  width: 20px;  /* size of arrow image */
+  height: 20px;
+  pointer-events: none; /* image won’t block clicks */
+}
+
+.chat-input i {
+  pointer-events: none;  /* icon does not block clicks */
+}
+
+
+.chat-input button:hover {
+  background-color: #ff7b00;
+}
+
+/* Examples buttons */
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  gap: 5px;
+}
+
+.example-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.example-btn:hover {
+  background-color: #ffdab3;
+}
